@@ -617,94 +617,66 @@
                 <div class="col-12 col-md-12 col-xl-8 col-left">
                     <div class="card mb-4">
                         <div class="card-body">
-
-                            <div class="glide details">
-                                <div class="glide__track" data-glide-el="track">
-                                    <ul class="glide__slides">
-                                        <li class="glide__slide">
-                                            <img alt="detail" src="img/proyects/proyecto1.jpg"
-                                                class="responsive border-0 border-radius img-fluid mb-3" />
-                                        </li>
-                                        <li class="glide__slide">
-                                            <img alt="detail" src="img/proyects/proyecto2.jpg"
-                                                class="responsive border-0 border-radius img-fluid mb-3" />
-                                        </li>
-                                        <li class="glide__slide">
-                                            <img alt="detail" src="img/proyects/proyecto3.jpg"
-                                                class="responsive border-0 border-radius img-fluid mb-3" />
-                                        </li>
-                                        <li class="glide__slide">
-                                            <img alt="detail" src="img/proyects/proyecto4.png"
-                                                class="responsive border-0 border-radius img-fluid mb-3" />
-                                        </li>
-                                        <li class="glide__slide">
-                                            <img alt="detail" src="img/proyects/proyecto5.png"
-                                                class="responsive border-0 border-radius img-fluid mb-3" />
-                                        </li>
-                                        <li class="glide__slide">
-                                            <img alt="detail" src="img/proyects/proyecto5.png"
-                                                class="responsive border-0 border-radius img-fluid mb-3" />
-                                        </li>
-                                    </ul>
-                                </div>
+                            <div class="btn-group mb-3">
+                              <button type="button" class="btn btn-primary active" data-view="simuladores">Simuladores</button>
+                              <button type="button" class="btn btn-primary" data-view="recorridos360">Recorridos 360</button>
+                              <button type="button" class="btn btn-primary" data-view="visualizacion3d">Visualización 3D</button>
+                              <button type="button" class="btn btn-primary" data-view="realidadVirtual">Realidad Virtual</button>
+                              <button type="button" class="btn btn-primary" data-view="realidadAumentada">Realidad Aumentada</button>
                             </div>
-
-                            <div class="glide thumbs">
-                                <div class="glide__track" data-glide-el="track">
+                          
+                            <div class="content-container">
+                              <!-- Contenido de Simuladores -->
+                              <div class="content-section" data-view="simuladores">
+                                <div class="glide details">
+                                  <div class="glide__track" data-glide-el="track">
                                     <ul class="glide__slides">
-                                        <li class="glide__slide">
-                                            <img alt="thumb" src="img/proyects/proyecto1.jpg"
-                                                class="responsive border-0 border-radius img-fluid" />
-                                        </li>
-                                        <li class="glide__slide">
-                                            <img alt="thumb" src="img/proyects/proyecto2.jpg"
-                                                class="responsive border-0 border-radius img-fluid" />
-                                        </li>
-                                        <li class="glide__slide">
-                                            <img alt="thumb" src="img/proyects/proyecto3.jpg"
-                                                class="responsive border-0 border-radius img-fluid" />
-                                        </li>
-                                        <li class="glide__slide">
-                                            <img alt="thumb" src="img/proyects/proyecto4.png"
-                                                class="responsive border-0 border-radius img-fluid" />
-                                        </li>
-                                        <li class="glide__slide">
-                                            <img alt="thumb" src="img/proyects/proyecto5.png"
-                                                class="responsive border-0 border-radius img-fluid" />
-                                        </li>
-                                        <li class="glide__slide">
-                                            <img alt="thumb" src="img/proyects/proyecto5.png"
-                                                class="responsive border-0 border-radius img-fluid" />
-                                        </li>
+                                      <li class="glide__slide">
+                                        <img alt="detail" src="img/proyects/proyecto1.jpg" class="responsive border-0 border-radius img-fluid mb-3" />
+                                      </li>
+                                      <!-- Agrega más slides según sea necesario -->
                                     </ul>
+                                  </div>
                                 </div>
-                                <div class="glide__arrows" data-glide-el="controls">
-                                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i
-                                            class="simple-icon-arrow-left"></i></button>
-                                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i
-                                            class="simple-icon-arrow-right"></i></button>
+                          
+                                <div class="glide thumbs">
+                                  <div class="glide__track" data-glide-el="track">
+                                    <ul class="glide__slides">
+                                      <li class="glide__slide">
+                                        <img alt="thumb" src="img/proyects/proyecto1.jpg" class="responsive border-0 border-radius img-fluid" />
+                                      </li>
+                                      <!-- Agrega más slides según sea necesario -->
+                                    </ul>
+                                  </div>
+                                  <div class="glide__arrows" data-glide-el="controls">
+                                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="simple-icon-arrow-left"></i></button>
+                                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="simple-icon-arrow-right"></i></button>
+                                  </div>
                                 </div>
+                              </div>
+                          
+                              <!-- Contenido de Recorridos 360 -->
+                              <div class="content-section" data-view="recorridos360" style="display: none;">
+                                <!-- Agrega el contenido de Recorridos 360 aquí -->
+                              </div>
+                          
+                              <!-- Contenido de Visualización 3D -->
+                              <div class="content-section" data-view="visualizacion3d" style="display: none;">
+                                <!-- Agrega el contenido de Visualización 3D aquí -->
+                              </div>
+                          
+                              <!-- Contenido de Realidad Virtual -->
+                              <div class="content-section" data-view="realidadVirtual" style="display: none;">
+                                <!-- Agrega el contenido de Realidad Virtual aquí -->
+                              </div>
+                          
+                              <!-- Contenido de Realidad Aumentada -->
+                              <div class="content-section" data-view="realidadAumentada" style="display: none;">
+                                <!-- Agrega el contenido de Realidad Aumentada aquí -->
+                              </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <ul class="nav nav-tabs card-header-tabs " role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="first-tab" data-toggle="tab" href="#first" role="tab"
-                                        aria-controls="first" aria-selected="true">Details</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="second-tab" data-toggle="tab" href="#second" role="tab"
-                                        aria-controls="second" aria-selected="false">Comments(19)</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="third-tab" data-toggle="tab" href="#third" role="tab"
-                                        aria-controls="third" aria-selected="false">Questions(5)</a>
-                                </li>
-                            </ul>
-                        </div>
+                          </div>
+                          
                         <div class="card-body">
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="first" role="tabpanel"
