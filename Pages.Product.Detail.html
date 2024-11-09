@@ -757,187 +757,364 @@
     <main>
       <div class="container-fluid">
         <div class="row">
-          <div class="col-12">
-            <div class="mb-2">
-              <h1>Product Details</h1>
-              <nav
-                class="breadcrumb-container d-none d-sm-block d-lg-inline-block"
-                aria-label="breadcrumb"
-              >
-                <ol class="breadcrumb pt-0">
-                  <li class="breadcrumb-item">
-                    <a href="#">Home</a>
-                  </li>
-                  <li class="breadcrumb-item">
-                    <a href="#">Library</a>
-                  </li>
-                  <li class="breadcrumb-item active" aria-current="page">
-                    Data
-                  </li>
-                </ol>
-              </nav>
-            </div>
-            <div class="separator mb-5"></div>
+          
+          <!-- <div class="mb-2">  -->
+              
+           
+          <!-- <div class="separator mb-5"></div>  -->
           </div>
         </div>
-
-
 
         <div class="row">
           <div class="col-12 col-md-12 col-xl-8 col-center">
             <div class="card mb-4">
               <div class="card-body">
-
-
-                       
-<!-- Botones -->
-                <div class="btn-group mb-3 col-auto ">
-                  <button
-                    type="button"
-                    class="btn btn-primary active"
-                    data-view="simuladores"
-                  >
-                    Simuladores
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-primary"
-                    data-view="recorridos360"
-                  >
-                    Tutoriales
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-primary"
-                    data-view="visualizacion3d"
-                  >
-                    Descargas
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-primary"
-                    data-view="realidadVirtual"
-                  >
-                    Documentación
-                  </button>
-                </div>
-
                 <div class="content-container">
                   <!-- Contenido de Simuladores -->
-                  <div class="content-section" data-view="simuladores">
-                    <div class="glide details">
-                      <div class="glide__track" data-glide-el="track">
-                        <ul class="glide__slides">
-                          <li class="glide__slide">
-                            <img
-                              alt="detail"
-                              src="img/proyects/proyecto1.jpg"
-                              class="responsive border-0 border-radius img-fluid mb-3"
-                            />
-                          </li>
-                          <li class="glide__slide">
-                            <img
-                              alt="detail"
-                              src="img/proyects/proyecto1.jpg"
-                              class="responsive border-0 border-radius img-fluid mb-3"
-                            />
-                          </li>
-                          <li class="glide__slide">
-                            <img
-                              alt="detail"
-                              src="img/proyects/proyecto2.jpg"
-                              class="responsive border-0 border-radius img-fluid mb-3"
-                            />
-                          </li>
-                          <li class="glide__slide">
-                            <img
-                              alt="detail"
-                              src="img/proyects/proyecto3.jpg"
-                              class="responsive border-0 border-radius img-fluid mb-3"
-                            />
-                          </li>
-                          <li class="glide__slide">
-                            <img
-                              alt="detail"
-                              src="img/proyects/proyecto4.png"
-                              class="responsive border-0 border-radius img-fluid mb-3"
-                            />
-                          </li>
-                          <li class="glide__slide">
-                            <img
-                              alt="detail"
-                              src="img/proyects/proyecto5.png"
-                              class="responsive border-0 border-radius img-fluid mb-3"
-                            />
-                          </li>
-                          <li class="glide__slide">
-                            <img
-                              alt="detail"
-                              src="img/proyects/proyecto5.png"
-                              class="responsive border-0 border-radius img-fluid mb-3"
-                            />
-                          </li>
-                        </ul>
-                      </div>
+                  <div class="container my-5">
+                    <div class="btn-group mb-3 col-auto row">
+                      <button
+                        type="button"
+                        class="btn btn-primary active"
+                        data-view="simuladores"
+                        onclick="showContent('simuladores')">
+                        Simuladores
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        data-view="videosTutoriales"
+                        onclick="showContent('videosTutoriales')">
+                        Tutoriales
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        data-view="descargas"
+                        onclick="showContent('descargas')">
+                        Descargas
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        data-view="documentosPDF"
+                        onclick="showContent('documentosPDF')">
+                        Documentación
+                      </button>
                     </div>
-
-                    <div class="glide thumbs">
-                      <div class="glide__track" data-glide-el="track">
-                        <ul class="glide__slides">
-                          <li class="glide__slide">
-                            <img
-                              alt="thumb"
-                              src="img/proyects/proyecto1.jpg"
-                              class="responsive border-0 border-radius img-fluid"
-                            />
-                          </li>
-                          <li class="glide__slide">
-                            <img alt="thumb" src="img/proyects/proyecto1.jpg"
-                                class="responsive border-0 border-radius img-fluid" />
-                        </li>
-                        <li class="glide__slide">
-                            <img alt="thumb" src="img/proyects/proyecto2.jpg"
-                                class="responsive border-0 border-radius img-fluid" />
-                        </li>
-                        <li class="glide__slide">
-                            <img alt="thumb" src="img/proyects/proyecto3.jpg"
-                                class="responsive border-0 border-radius img-fluid" />
-                        </li>
-                        <li class="glide__slide">
-                            <img alt="thumb" src="img/proyects/proyecto4.png"
-                                class="responsive border-0 border-radius img-fluid" />
-                        </li>
-                        <li class="glide__slide">
-                            <img alt="thumb" src="img/proyects/proyecto5.png"
-                                class="responsive border-0 border-radius img-fluid" />
-                        </li>
-                        <li class="glide__slide">
-                            <img alt="thumb" src="img/proyects/proyecto5.png"
-                                class="responsive border-0 border-radius img-fluid" />
-                        </li>
-                        </ul>
+                
+                    <div class="content-container">
+                      <!-- Contenido de Simuladores -->
+                      <div class="content-section" data-view="simuladores">
+                        <div class="glide details">
+                          <div class="glide__track" data-glide-el="track">
+                            <ul class="glide__slides">
+                              <li class="glide__slide">
+                                <img
+                                  alt="detail"
+                                  src="img/proyects/proyecto1.jpg"
+                                  class="responsive border-0 border-radius img-fluid mb-3"
+                                />
+                              </li>
+                              <li class="glide__slide">
+                                <img
+                                  alt="detail"
+                                  src="img/proyects/proyecto1.jpg"
+                                  class="responsive border-0 border-radius img-fluid mb-3"
+                                />
+                              </li>
+                              <li class="glide__slide">
+                                <img
+                                  alt="detail"
+                                  src="img/proyects/proyecto2.jpg"
+                                  class="responsive border-0 border-radius img-fluid mb-3"
+                                />
+                              </li>
+                              <li class="glide__slide">
+                                <img
+                                  alt="detail"
+                                  src="img/proyects/proyecto3.jpg"
+                                  class="responsive border-0 border-radius img-fluid mb-3"
+                                />
+                              </li>
+                              <li class="glide__slide">
+                                <img
+                                  alt="detail"
+                                  src="img/proyects/proyecto4.png"
+                                  class="responsive border-0 border-radius img-fluid mb-3"
+                                />
+                              </li>
+                              <li class="glide__slide">
+                                <img
+                                  alt="detail"
+                                  src="img/proyects/proyecto5.png"
+                                  class="responsive border-0 border-radius img-fluid mb-3"
+                                />
+                              </li>
+                              <li class="glide__slide">
+                                <img
+                                  alt="detail"
+                                  src="img/proyects/proyecto5.png"
+                                  class="responsive border-0 border-radius img-fluid mb-3"
+                                />
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                
+                        <div class="glide thumbs">
+                          <div class="glide__track" data-glide-el="track">
+                            <ul class="glide__slides">
+                              <li class="glide__slide">
+                                <img
+                                  alt="thumb"
+                                  src="img/proyects/proyecto1.jpg"
+                                  class="responsive border-0 border-radius img-fluid"
+                                />
+                              </li>
+                              <li class="glide__slide">
+                                <img
+                                  alt="thumb"
+                                  src="img/proyects/proyecto1.jpg"
+                                  class="responsive border-0 border-radius img-fluid"
+                                />
+                              </li>
+                              <li class="glide__slide">
+                                <img
+                                  alt="thumb"
+                                  src="img/proyects/proyecto2.jpg"
+                                  class="responsive border-0 border-radius img-fluid"
+                                />
+                              </li>
+                              <li class="glide__slide">
+                                <img
+                                  alt="thumb"
+                                  src="img/proyects/proyecto3.jpg"
+                                  class="responsive border-0 border-radius img-fluid"
+                                />
+                              </li>
+                              <li class="glide__slide">
+                                <img
+                                  alt="thumb"
+                                  src="img/proyects/proyecto4.png"
+                                  class="responsive border-0 border-radius img-fluid"
+                                />
+                              </li>
+                              <li class="glide__slide">
+                                <img
+                                  alt="thumb"
+                                  src="img/proyects/proyecto5.png"
+                                  class="responsive border-0 border-radius img-fluid"
+                                />
+                              </li>
+                              <li class="glide__slide">
+                                <img
+                                  alt="thumb"
+                                  src="img/proyects/proyecto5.png"
+                                  class="responsive border-0 border-radius img-fluid"
+                                />
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="glide__arrows" data-glide-el="controls">
+                            <button
+                              class="glide__arrow glide__arrow--left"
+                              data-glide-dir="<">
+                              <i class="simple-icon-arrow-left"></i>
+                            </button>
+                            <button
+                              class="glide__arrow glide__arrow--right"
+                              data-glide-dir=">">
+                              <i class="simple-icon-arrow-right"></i>
+                            </button>
+                          </div>
+                        </div>
                       </div>
-                      <div class="glide__arrows" data-glide-el="controls">
-                        <button
-                          class="glide__arrow glide__arrow--left"
-                          data-glide-dir="<"
-                        >
-                          <i class="simple-icon-arrow-left"></i>
-                        </button>
-                        <button
-                          class="glide__arrow glide__arrow--right"
-                          data-glide-dir=">"
-                        >
-                          <i class="simple-icon-arrow-right"></i>
-                        </button>
+                
+                      <!-- Contenido de Recorridos 360 -->
+                      <div
+                        class="content-section"
+                        data-view="videosTutoriales"
+                        style="display: none">
+                        <div class="video-container">
+                          <iframe
+                            width="560"
+                            height="315"
+                            src="https://www.youtube.com/embed/Z4AuIpzZUTc"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                          ></iframe>
+                        </div>
+                        
+                        <style>
+                          .video-container {
+                            position: relative;
+                            padding-bottom: 56.25%;
+                            height: 0;
+                            overflow: hidden;
+                          }
+                        
+                          .video-container iframe {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                          }
+                        </style>
                       </div>
+                
+                      <!-- Descargas -->
+                      <div
+                        class="content-section"
+                        data-view="descargas"
+                        style="display: none">
+                        <div class="video-container">
+                          <div class="download-container">
+                            <a href="https://drive.usercontent.google.com/download?id=1etvtcT9jrVF0ab33cub3EgRkHPRchguz&export=download&authuser=0" class="download-btn">
+                              <img src="img/pdfIcon.png" alt="PDF Icon" class="download-icon"> Descargar Archivo
+                            </a>
+                          </div>
+                        </div>
+                        
+                        <style>
+                          .video-container {
+                            position: relative;
+                            padding-bottom: 56.25%;
+                            height: 0;
+                            overflow: hidden;
+                            background-color: bisque;
+                          }
+                        
+                          .video-container iframe,
+                          .video-container .download-container {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                          }
+                        
+                          .download-container {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                          }
+                        
+                          .download-btn {
+                            display: inline-flex;
+                            align-items: center;
+                            background-color: #007bff;
+                            color: #fff;
+                            text-decoration: none;
+                            padding: 10px 20px;
+                            border-radius: 5px;
+                            transition: background-color 0.3s ease;
+                          }
+                        
+                          .download-btn:hover {
+                            background-color: #0056b3;
+                          }
+                        
+                          .download-icon {
+                            width: 20px;
+                            height: 20px;
+                            margin-right: 10px;
+                          }
+                        </style>
+                                              
+                      </div>
+                
+                      <!-- PDF Viewer -->
+                      <div
+                        class="content-section"
+                        data-view="documentosPDF"
+                        style="display: none">
+                        <div class="video-container">
+                          <div class="pdf-viewer-container">
+                            <iframe
+                              src="documents\Proyecto __ PLANTA INDUSTRIAL AUTOMATIZACIÓN.pdf"
+                              frameborder="0"
+                              allowfullscreen
+                            ></iframe>
+                          </div>
+                        </div>
+                        
+                        <style>
+                          .video-container {
+                            position: relative;
+                            padding-bottom: 56.25%;
+                            height: 0;
+                            overflow: hidden;
+                          }
+                        
+                          .video-container .pdf-viewer-container {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                          }
+                        
+                          .pdf-viewer-container iframe {
+                            width: 100%;
+                            height: 100%;
+                          }
+                        </style>
+                      </div>
+                
                     </div>
                   </div>
+                
+                  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+                  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js"></script>
+                  <script>
+                    function showContent(view) {
+                      var contentAreas = document.querySelectorAll('.content-section');
+                      contentAreas.forEach(function(area) {
+                        if (area.getAttribute('data-view') === view) {
+                          area.style.display = 'block';
+                        } else {
+                          area.style.display = 'none';
+                        }
+                      });
+                
+                      var buttons = document.querySelectorAll('.btn-group button');
+                      buttons.forEach(function(button) {
+                        if (button.getAttribute('data-view') === view) {
+                          button.classList.add('active');
+                        } else {
+                          button.classList.remove('active');
+                        }
+                      });
+                
+                      if (view === 'simuladores') {
+                        new Glide('.glide.details', {
+                          type: 'carousel',
+                          perView: 1,
+                          autoplay: 3000,
+                          hoverpause: true
+                        }).mount();
+                
+                        new Glide('.glide.thumbs', {
+                          type: 'carousel',
+                          perView: 5,
+                          focusAt: 'center',
+                          gap: 10,
+                          autoplay: 3000,
+                          hoverpause: true
+                        }).mount();
+                      }
+                    }
+                  </script>
 
                   <!-- Contenido de Recorridos 360 -->
                   <div
                     class="content-section"
-                    data-view="recorridos360"
+                    data-view="videosTutoriales"
                     style="display: none"
                   >
                     <!-- Agrega el contenido de Recorridos 360 aquí -->
@@ -946,7 +1123,7 @@
                   <!-- Contenido de Visualización 3D -->
                   <div
                     class="content-section"
-                    data-view="visualizacion3d"
+                    data-view="descargas"
                     style="display: none"
                   >
                     <!-- Agrega el contenido de Visualización 3D aquí -->
@@ -955,7 +1132,7 @@
                   <!-- Contenido de Realidad Virtual -->
                   <div
                     class="content-section"
-                    data-view="realidadVirtual"
+                    data-view="documentosPDF"
                     style="display: none"
                   >
                     <!-- Agrega el contenido de Realidad Virtual aquí -->
