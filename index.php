@@ -71,7 +71,7 @@
                         data-toggle="tooltip" data-placement="left" title="Dark Mode">
                         <input class="custom-switch-input" id="switchDark" type="checkbox" checked>
                         <label class="custom-switch-btn" for="switchDark"></label>
-                        <label class="admin-switch-btn" for="admink"></label>
+                        <label class="admin-switch-btn custom-switch-btn" for="admink"></label>
                     </div>
                 </div>
 
