@@ -42,7 +42,7 @@
                 </svg>
             </a>
 
-            <div class="search" data-search-path="Pages.Search.html?q=">
+            <div class="search" data-search-path="Pages.Search.php?q=">
                 <input placeholder="Search...">
                 <span class="search-icon">
                     <i class="simple-icon-magnifier"></i>
@@ -51,7 +51,7 @@
         </div>
 
 
-        <a class="navbar-logo" href="index.html">
+        <a class="navbar-logo" href="index.php">
             <span class="logo d-none d-xs-block"></span>
             <span class="logo-mobile d-block d-xs-none"></span>
         </a>
@@ -264,7 +264,7 @@
                <!--Quienes somos-->
                <ul class="list-unstyled" data-link="quienesomos">
                    <li>
-                       <a href="1_Quienes.Somos_Origenes.html">
+                       <a href="1_Quienes.Somos_Origenes.php">
                            <i class="simple-icon-rocket"></i> <span class="d-inline-block">Orígenes</span>
                        </a>
                    </li>
@@ -390,7 +390,7 @@
                        <div id="collapselabxr" class="collapse show">
                            <ul class="list-unstyled inner-level-menu">
                                <li>
-                                   <a href="2_Laboratorios_sobre.html" style="color: brown;">
+                                   <a href="2_Laboratorios_sobre.php" style="color: brown;">
                                        <i class="simple-icon-login"></i> <span class="d-inline-block">Sobre el Laboratorio</span>
                                    </a>
                                </li>
@@ -410,7 +410,7 @@
                                    </a>
                                </li>
                                <li>
-                                   <a href="2_Laboratorios_proyectos.html">
+                                   <a href="2_Laboratorios_proyectos.php">
                                        <i class="simple-icon-notebook"></i> <span class="d-inline-block">Proyectos I+D</span>
                                    </a>
                                </li>
@@ -437,7 +437,7 @@
                        <div id="lab4" class="collapse show">
                            <ul class="list-unstyled inner-level-menu">
                                <li>
-                                   <a href="Pages.Product.List.html">
+                                   <a href="Pages.Product.List.php">
                                        <i class="simple-icon-login"></i> <span class="d-inline-block">Sobre el Laboratorio</span>
                                    </a>
                                </li>
@@ -713,7 +713,7 @@
                 <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
                     <div class="card">
                         <div class="position-relative">
-                            <a href="Pages.Product.Detail.html"><img class="card-img-top" src="img\proyects\proyecto1.jpg"
+                            <a href="Pages.Product.Detail.php"><img class="card-img-top" src="img\proyects\proyecto1.jpg"
                                     alt="Card image cap"></a>
                             <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
                         </div>
@@ -728,7 +728,7 @@
                                     </div>
                                 </div>
                                 <div class="col-10">
-                                    <a href="Pages.Product.Detail.html">
+                                    <a href="Pages.Product.Detail.php">
                                         <p class="list-item-heading mb-4 pt-1">Industria | PLANTA DE PRODUCIÓN DE CARNE | UE4</p>
                                     </a>
                                     <footer>
@@ -743,7 +743,7 @@
                 <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
                     <div class="card">
                         <div class="position-relative">
-                            <a href="Pages.Product.Detail.html"><img class="card-img-top" src="img\proyects\proyecto2.jpg"
+                            <a href="Pages.Product.Detail.php"><img class="card-img-top" src="img\proyects\proyecto2.jpg"
                                     alt="Card image cap"></a>
                             <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
                             <span
@@ -760,7 +760,7 @@
                                     </div>
                                 </div>
                                 <div class="col-10">
-                                    <a href="Pages.Product.Detail.html">
+                                    <a href="Pages.Product.Detail.php">
                                         <p class="list-item-heading mb-4 pt-1">Industria | PLANTA INDUSTRIAL AUTOMATIZACIÓN | UE5</p>
                                     </a>
                                     <footer>
@@ -776,7 +776,7 @@
                 <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
                     <div class="card">
                         <div class="position-relative">
-                            <a href="Pages.Product.Detail.html"><img class="card-img-top" src="img\proyects\proyecto3.jpg"
+                            <a href="Pages.Product.Detail.php"><img class="card-img-top" src="img\proyects\proyecto3.jpg"
                                     alt="Card image cap"></a>
                             <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
                         </div>
@@ -791,7 +791,7 @@
                                     </div>
                                 </div>
                                 <div class="col-10">
-                                    <a href="Pages.Product.Detail.html">
+                                    <a href="Pages.Product.Detail.php">
                                         <p class="list-item-heading mb-4 pt-1">Industria | LOBBY WEBXR | Unity</p>
                                     </a>
                                     <footer>
@@ -807,7 +807,7 @@
                 <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
                     <div class="card">
                         <div class="position-relative">
-                            <a href="Pages.Product.Detail.html"><img class="card-img-top" src="img\proyects\proyecto4.png"
+                            <a href="Pages.Product.Detail.php"><img class="card-img-top" src="img\proyects\proyecto4.png"
                                     alt="Card image cap"></a>
                             <span
                                 class="badge badge-pill badge-secondary position-absolute badge-top-left">TRENDING</span>
@@ -823,7 +823,7 @@
                                     </div>
                                 </div>
                                 <div class="col-10">
-                                    <a href="Pages.Product.Detail.html">
+                                    <a href="Pages.Product.Detail.php">
                                         <p class="list-item-heading mb-4 pt-1">Industria | PLANTA DE PROCESAMIENTO DE CARNE | UE5</p>
                                     </a>
                                     <footer>
@@ -839,7 +839,7 @@
                 <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
                     <div class="card">
                         <div class="position-relative">
-                            <a href="Pages.Product.Detail.html"><img class="card-img-top" src="img\proyects\proyecto5.png"
+                            <a href="Pages.Product.Detail.php"><img class="card-img-top" src="img\proyects\proyecto5.png"
                                     alt="Card image cap"></a>
                             <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
                         </div>
@@ -854,7 +854,7 @@
                                     </div>
                                 </div>
                                 <div class="col-10">
-                                    <a href="Pages.Product.Detail.html">
+                                    <a href="Pages.Product.Detail.php">
                                         <p class="list-item-heading mb-4 pt-1">Napoleonshat</p>
                                     </a>
                                     <footer>
@@ -870,7 +870,7 @@
                 <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
                     <div class="card">
                         <div class="position-relative">
-                            <a href="Pages.Product.Detail.html"><img class="card-img-top" src="img/cards/thumb-3.jpg"
+                            <a href="Pages.Product.Detail.php"><img class="card-img-top" src="img/cards/thumb-3.jpg"
                                     alt="Card image cap"></a>
                             <span
                                 class="badge badge-pill badge-secondary position-absolute badge-top-left">TRENDING</span>
@@ -886,7 +886,7 @@
                                     </div>
                                 </div>
                                 <div class="col-10">
-                                    <a href="Pages.Product.Detail.html">
+                                    <a href="Pages.Product.Detail.php">
                                         <p class="list-item-heading mb-4 pt-1">Petit Gâteau</p>
                                     </a>
                                     <footer>
@@ -902,7 +902,7 @@
                 <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
                     <div class="card">
                         <div class="position-relative">
-                            <a href="Pages.Product.Detail.html"><img class="card-img-top" src="img/cards/thumb-1.jpg"
+                            <a href="Pages.Product.Detail.php"><img class="card-img-top" src="img/cards/thumb-1.jpg"
                                     alt="Card image cap"></a>
                             <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
                             <span
@@ -919,7 +919,7 @@
                                     </div>
                                 </div>
                                 <div class="col-10">
-                                    <a href="Pages.Product.Detail.html">
+                                    <a href="Pages.Product.Detail.php">
                                         <p class="list-item-heading mb-4 pt-1">Industria | PLANTA DE PRODUCIÓN DE CARNE | UE4</p>
                                     </a>
                                     <footer>
@@ -935,7 +935,7 @@
                 <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
                     <div class="card">
                         <div class="position-relative">
-                            <a href="Pages.Product.Detail.html"><img class="card-img-top" src="img/cards/thumb-2.jpg"
+                            <a href="Pages.Product.Detail.php"><img class="card-img-top" src="img/cards/thumb-2.jpg"
                                     alt="Card image cap"></a>
                             <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
                             <span
@@ -952,7 +952,7 @@
                                     </div>
                                 </div>
                                 <div class="col-10">
-                                    <a href="Pages.Product.Detail.html">
+                                    <a href="Pages.Product.Detail.php">
                                         <p class="list-item-heading mb-4 pt-1">Industria | PLANTA INDUSTRIAL AUTOMATIZACIÓN | UE5</p>
                                     </a>
                                     <footer>
