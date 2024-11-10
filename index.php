@@ -49,7 +49,7 @@
                 </svg>
             </a>
 
-            <div class="search" data-search-path="Pages.Search.html?q=">
+            <div class="search" data-search-path="Pages.Search.php?q=">
                 <input placeholder="Search...">
                 <span class="search-icon">
                     <i class="simple-icon-magnifier"></i>
@@ -59,7 +59,7 @@
         </div>
 
 
-        <a class="navbar-logo" href="index.html">
+        <a class="navbar-logo" href="index.php">
             <span class="logo d-none d-xs-block"></span>
             <span class="logo-mobile d-block d-xs-none"></span>
         </a>
@@ -273,7 +273,7 @@
                 <!--Quienes somos-->
                 <ul class="list-unstyled" data-link="quienesomos">
                     <li>
-                        <a href="1_Quienes.Somos_Origenes.html">
+                        <a href="1_Quienes.Somos_Origenes.php">
                             <i class="simple-icon-rocket"></i> <span class="d-inline-block">Orígenes</span>
                         </a>
                     </li>
@@ -399,7 +399,7 @@
                         <div id="collapselabxr" class="collapse show">
                             <ul class="list-unstyled inner-level-menu">
                                 <li>
-                                    <a href="2_Laboratorios_sobre.html" style="color: brown;">
+                                    <a href="2_Laboratorios_sobre.php" style="color: brown;">
                                         <i class="simple-icon-login"></i> <span class="d-inline-block">Sobre el Laboratorio</span>
                                     </a>
                                 </li>
@@ -419,7 +419,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="2_Laboratorios_proyectos.html">
+                                    <a href="2_Laboratorios_proyectos.php">
                                         <i class="simple-icon-notebook"></i> <span class="d-inline-block">Proyectos I+D</span>
                                     </a>
                                 </li>
@@ -446,7 +446,7 @@
                         <div id="lab4" class="collapse show">
                             <ul class="list-unstyled inner-level-menu">
                                 <li>
-                                    <a href="Pages.Product.List.html">
+                                    <a href="Pages.Product.List.php">
                                         <i class="simple-icon-login"></i> <span class="d-inline-block">Sobre el Laboratorio</span>
                                     </a>
                                 </li>
