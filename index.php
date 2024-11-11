@@ -65,24 +65,14 @@
         </a>
 
         <div class="navbar-right">
-            <div class="header-icons d-inline align-middle">
-                <div class="d-md-inline-block align-text-bottom mr-3">
+            <div class="header-icons d-inline-block align-middle">
+                <div class="d-none d-md-inline-block align-text-bottom mr-3">
                     <div class="custom-switch custom-switch-primary-inverse custom-switch-small pl-1" 
                         data-toggle="tooltip" data-placement="left" title="Dark Mode">
                         <input class="custom-switch-input" id="switchDark" type="checkbox" checked>
                         <label class="custom-switch-btn" for="switchDark"></label>
                     </div>
-                    
                 </div>
-                <div class="d-md-inline-block align-text-bottom mr-3 " style="display: none;">
-                    <div class="custom-switch custom-switch-primary-inverse custom-switch-small pl-1" 
-                        data-toggle="tooltip" data-placement="left" title="Admin Mode">
-                        <input class="custom-switch-input" id="switchDark" type="checkbox" checked>
-                        <label class="custom-switch-btn" for="switchDark"></label>
-                    </div>
-                    
-                </div>
-                
 
                 <div class="position-relative d-none d-sm-inline-block">
                     <button class="header-icon btn btn-empty" type="button" id="iconMenuButton" data-toggle="dropdown"

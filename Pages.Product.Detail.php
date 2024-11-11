@@ -1672,14 +1672,7 @@
               </div>
               <div class="card-body">
                 <div class="mb-3">
-                  <div class="post-icon mr-3 d-inline-block">
-                    <a href="#"><i class="simple-icon-heart mr-1"></i></a>
-                    <span>4 Likes</span>
-                  </div>
-                  <div class="post-icon d-inline-block">
-                    <i class="simple-icon-bubble mr-1"></i>
-                    <span>1 Comment</span>
-                  </div>
+                  
                 </div>
                 <p class="mb-3">
                   Vivamus ultricies augue vitae commodo condimentum. Nullam
@@ -1696,6 +1689,16 @@
                   Mauris posuere erat sapien, a convallis libero lobortis sit
                   amet. Suspendisse in orci tellus.
                 </p>
+                <div class="mb-3">
+                  <div class="post-icon mr-3 d-inline-block">
+                    <a href="#"><i class="simple-icon-heart mr-1"></i></a>
+                    <span>4 Likes</span>
+                  </div>
+                  <div class="post-icon d-inline-block">
+                    <i class="simple-icon-bubble mr-1"></i>
+                    <span>1 Comment</span>
+                  </div>
+                </div>
                 <p class="text-muted text-small mb-2">Tags</p>
                 <p class="mb-3">
                   <a href="#">
