@@ -1036,9 +1036,10 @@
                     role="tabpanel"
                     aria-labelledby="first-tab"
                   >
-                    <p class="font-weight-bold">Augue Vitae Commodo</p>
+                    
+                    <h1>Nombre del proyecto</h1>
                     <p>
-                      Vivamus ultricies augue vitae commodo condimentum. Nullam
+                      Descripcion augue vitae commodo condimentum. Nullam
                       faucibus eros eu mauris feugiat, eget consectetur tortor
                       tempus. Sed volutpat mollis dui eget fringilla. Vestibulum
                       blandit urna ut tellus lobortis tristique. Vestibulum ante
@@ -1049,7 +1050,7 @@
                       auctor sapien varius.
                       <br />
                       <br />
-                      Nulla non purus fermentum, pulvinar dui condimentum,
+                      Categoria purus fermentum, pulvinar dui condimentum,
                       malesuada nibh. Sed viverra quam urna, at condimentum ante
                       viverra non. Mauris posuere erat sapien, a convallis
                       libero lobortis sit amet. Suspendisse in orci tellus.
@@ -1567,7 +1568,7 @@
                   
                 </div>
                 <p class="mb-3">
-                  Vivamus ultricies augue vitae commodo condimentum. Nullam
+                  Reseña del proyecto augue vitae commodo condimentum. Nullam
                   faucibus eros eu mauris feugiat, eget consectetur tortor
                   tempus.
                   <br /><br />
