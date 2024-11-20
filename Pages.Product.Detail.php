@@ -1026,7 +1026,7 @@
                     <!-- Agrega el contenido de Realidad Aumentada aquí -->
                   </div>
                 </div>
-              </div>
+              <!-- </div> -->
 
               <div class="card-body">
                 <div class="tab-content">
