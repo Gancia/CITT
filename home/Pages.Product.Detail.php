@@ -772,7 +772,7 @@
                 <div class="content-container">
                   <!-- Contenido de Simuladores -->
                   <div class="container my-5">
-                    <div class="btn-group mb-3 col-auto row">
+                  <div class="btn-group mb-3 row w-100">
                       <button
                         type="button"
                         class="btn btn-primary active"
@@ -1026,7 +1026,7 @@
                     <!-- Agrega el contenido de Realidad Aumentada aquí -->
                   </div>
                 </div>
-              <!-- </div> -->
+              </div> 
 
               <div class="card-body">
                 <div class="tab-content">
