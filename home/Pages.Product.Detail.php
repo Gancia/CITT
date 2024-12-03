@@ -26,37 +26,42 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
                 <div class="content-container">
                   <!-- Contenido de Simuladores -->
                   <div class="container my-5">
-                  <div class="btn-group mb-3 row w-100">
-                      <button
-                        type="button"
-                        class="btn btn-primary active"
-                        data-view="simuladores"
-                        onclick="showContent('simuladores')">
-                        Simuladores
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-primary"
-                        data-view="videosTutoriales"
-                        onclick="showContent('videosTutoriales')">
-                        Tutoriales
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-primary"
-                        data-view="descargas"
-                        onclick="showContent('descargas')">
-                        Descargas
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-primary"
-                        data-view="documentosPDF"
-                        onclick="showContent('documentosPDF')">
-                        Documentación
-                      </button>
-                    </div>
-                
+                  
+                    <div class="card-header">
+  <ul class="nav nav-tabs card-header-tabs" role="tablist">
+    <!-- Simuladores -->
+    <li class="nav-item">
+      <a class="nav-link active" id="simuladores-tab" data-toggle="tab" href="#simuladores" role="tab"
+         aria-controls="simuladores" aria-selected="true" onclick="showContent('simuladores')">
+        <i class="iconsminds-monitor-3 large-icon initial-height"></i> Simuladores
+      </a>
+    </li>
+    <!-- Tutoriales -->
+    <li class="nav-item">
+      <a class="nav-link" id="tutoriales-tab" data-toggle="tab" href="#videosTutoriales" role="tab"
+         aria-controls="videosTutoriales" aria-selected="false" onclick="showContent('videosTutoriales')">
+        <i class="iconsminds-video large-icon initial-height"></i> Tutoriales
+      </a>
+    </li>
+    <!-- Descargas -->
+    <li class="nav-item">
+      <a class="nav-link" id="descargas-tab" data-toggle="tab" href="#descargas" role="tab"
+         aria-controls="descargas" aria-selected="false" onclick="showContent('descargas')">
+        <i class="iconsminds-download large-icon initial-height"></i> Descargas
+      </a>
+    </li>
+    <!-- Documentación -->
+    <li class="nav-item">
+      <a class="nav-link" id="documentacion-tab" data-toggle="tab" href="#documentosPDF" role="tab"
+         aria-controls="documentosPDF" aria-selected="false" onclick="showContent('documentosPDF')">
+        <i class="iconsminds-receipt-4 large-icon initial-height"></i> Documentación
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+                    
                     <div class="content-container">
                       <!-- Contenido de Simuladores -->
                       <div class="content-section" data-view="simuladores">
@@ -812,40 +817,86 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
           <div class="col-12 col-md-12 col-xl-4 col-right">
             <div class="card mb-4">
-              <div class="position-absolute card-top-buttons">
-                <button class="btn btn-header-light icon-button">
-                  <i class="simple-icon-refresh"></i>
-                </button>
-              </div>
-              <div class="card-body">
-                <div class="mb-3">
-                  
-                </div>
-                <p class="mb-3">
-                  Reseña del proyecto augue vitae commodo condimentum. Nullam
-                  faucibus eros eu mauris feugiat, eget consectetur tortor
-                  tempus.
-                  <br /><br />
-                  Sed volutpat mollis dui eget fringilla. Vestibulum blandit
-                  urna ut tellus lobortis tristique. Vestibulum ante ipsum
-                  primis in faucibus orci luctus et ultrices posuere cubilia
-                  Curae; Pellentesque quis cursus mauris.
-                  <br /><br />
-                  Nulla non purus fermentum, pulvinar dui condimentum, malesuada
-                  nibh. Sed viverra quam urna, at condimentum ante viverra non.
-                  Mauris posuere erat sapien, a convallis libero lobortis sit
-                  amet. Suspendisse in orci tellus.
-                </p>
-                <div class="mb-3">
-                  <div class="post-icon mr-3 d-inline-block">
-                    <a href="#"><i class="simple-icon-heart mr-1"></i></a>
-                    <span>4 Likes</span>
-                  </div>
-                  <div class="post-icon d-inline-block">
-                    <i class="simple-icon-bubble mr-1"></i>
-                    <span>1 Comment</span>
-                  </div>
-                </div>
+            <div class="card-body">
+                                    <h3 class="mbW-5">CATEGORIAS</h3>
+
+                                    <ul class=" nav nav-tabs">
+                                        <li class="nav-itemw">
+
+                                               <i class="pb-2 iconsminds-security-settings large-icon initial-height"></i>Simuladores
+                                        </li>
+                                    </ul>
+                                <br>
+                            <div>
+                                <div id="accordion">
+                                    <div >
+                                        <button class="btn btn-link p-0 pb-2 font-weight-bold"
+                                            data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                            <i class="simple-icon-login "></i>
+                                            <span class="d-inline-block">Carpeta 1</span>
+                                        </button>
+
+                                        <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                                            <div class="pb-2">
+                                                <li>
+                                                    <a href="#">
+                                                      <i class="iconsminds-monitor---tablet"></i>
+                                                      <span class="d-inline-block">Instalaciones</span>
+                                                    </a>
+                                                  </li>
+                                                  <li>
+                                                    <a href="#">
+                                                      <i class="iconsminds-monitor---tablet"></i>
+                                                      <span class="d-inline-block">Instalaciones</span>
+                                                    </a>
+                                                  </li>
+                                                  <li>
+                                                    <a href="#">
+                                                      <i class="iconsminds-monitor---tablet"></i>
+                                                      <span class="d-inline-block">Instalaciones</span>
+                                                    </a>
+                                                  </li>
+ 
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <button class="btn btn-link collapsed p-0 pb-2 font-weight-bold"
+                                            data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                                            aria-controls="collapseTwo">
+                                            <i class="simple-icon-login "></i>
+                                            <span class="d-inline-block">Carpeta 2</span>
+                                        </button>
+                                        <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                                            <div class="pb-2">
+                                                <li>
+                                                    <a href="#">
+                                                      <i class="iconsminds-monitor---tablet"></i>
+                                                      <span class="d-inline-block">Instalaciones</span>
+                                                    </a>
+                                                  </li>
+                                                  <li>
+                                                    <a href="#">
+                                                      <i class="iconsminds-monitor---tablet"></i>
+                                                      <span class="d-inline-block">Instalaciones</span>
+                                                    </a>
+                                                  </li>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </div> 
+                        </div>
+                    </div>
+
+
+
                 <p class="text-muted text-small mb-2">Tags</p>
                 <p class="mb-3">
                   <a href="#">
@@ -869,72 +920,126 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
                     >
                   </a>
                 </p>
-              </div>
             </div>
-
-            <div class="card mb-4 d-none d-lg-block">
-              <div class="card-body">
-                <h5 class="card-title">
-                  <span>Similar Projects</span
-                  ><a class="btn-link float-right text-small pt-1" href="#"
-                    >View All</a
-                  >
-                </h5>
-                <div class="row social-image-row gallery">
-                  <div class="col-6">
-                    <a href="img/pry">
-                      <img
-                        class="img-fluid border-radius"
-                        src="img/proyects/proyecto1.jpg"
-                      />
-                    </a>
-                  </div>
-                  <div class="col-6">
-                    <a href="img/proyects/proyecto1.jpg">
-                      <img
-                        class="img-fluid border-radius"
-                        src="img/proyects/proyecto2.jpg"
-                      />
-                    </a>
-                  </div>
-                  <div class="col-6">
-                    <a href="img/proyects/proyecto1.jpg">
-                      <img
-                        class="img-fluid border-radius"
-                        src="img/proyects/proyecto3.jpg"
-                      />
-                    </a>
-                  </div>
-                  <div class="col-6">
-                    <a href="img/proyects/proyecto1.jpg">
-                      <img
-                        class="img-fluid border-radius"
-                        src="img/proyects/proyecto4.png"
-                      />
-                    </a>
-                  </div>
-                  <div class="col-6">
-                    <a href="img/proyects/proyecto1.jpg">
-                      <img
-                        class="img-fluid border-radius"
-                        src="img/proyects/proyecto5.png"
-                      />
-                    </a>
-                  </div>
-                  <div class="col-6">
-                    <a href="img/proyects/proyecto1.jpg">
-                      <img
-                        class="img-fluid border-radius"
-                        src="img/proyects/proyecto5.png"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
+
+        <h5 class="mb-4">Proyectos de Realidad Virtual en Logística</h5>
+<div class="row mb-4">
+    <div class="col-md-12 mb-4">
+        <div class="glide center">
+            <div class="glide__track pb-3" data-glide-el="track">
+                <div class="glide__slides">
+                    <!-- Proyecto 1 -->
+                    <div class="glide__slide">
+                        <div class="card">
+                            <div class="position-relative">
+                                <a href="img/proyects/proyecto1.jpg">
+                                    <img class="card-img-top img-fluid border-radius" src="img/proyects/proyecto1.jpg"
+                                        alt="Simulador de Almacén Virtual">
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="mb-4">Simulador de Almacén Virtual</h6>
+                                <p class="text-muted text-small mb-0 font-weight-light">
+                                    Entrena personal en la gestión de inventarios mediante un entorno virtual que simula
+                                    almacenes en tiempo real.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Proyecto 2 -->
+                    <div class="glide__slide">
+                        <div class="card">
+                            <div class="position-relative">
+                                <a href="img/proyects/proyecto2.jpg">
+                                    <img class="card-img-top img-fluid border-radius" src="img/proyects/proyecto2.jpg"
+                                        alt="Planificación de Rutas">
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="mb-4">Planificación de Rutas en VR</h6>
+                                <p class="text-muted text-small mb-0 font-weight-light">
+                                    Utiliza realidad virtual para diseñar rutas de entrega optimizadas y evaluar riesgos
+                                    en tiempo real.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Proyecto 3 -->
+                    <div class="glide__slide">
+                        <div class="card">
+                            <div class="position-relative">
+                                <a href="img/proyects/proyecto3.jpg">
+                                    <img class="card-img-top img-fluid border-radius" src="img/proyects/proyecto3.jpg"
+                                        alt="Picking Dinámico">
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="mb-4">Picking Dinámico con VR</h6>
+                                <p class="text-muted text-small mb-0 font-weight-light">
+                                    Simula escenarios de picking en almacenes para optimizar tiempos y reducir errores
+                                    humanos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Proyecto 4 -->
+                    <div class="glide__slide">
+                        <div class="card">
+                            <div class="position-relative">
+                                <a href="img/proyects/proyecto4.png">
+                                    <img class="card-img-top img-fluid border-radius" src="img/proyects/proyecto4.png"
+                                        alt="Entrenamiento en Montacargas">
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="mb-4">Entrenamiento en Montacargas</h6>
+                                <p class="text-muted text-small mb-0 font-weight-light">
+                                    Capacita operadores en el manejo seguro de montacargas dentro de escenarios
+                                    virtuales.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Proyecto 5 -->
+                    <div class="glide__slide">
+                        <div class="card">
+                            <div class="position-relative">
+                                <a href="img/proyects/proyecto5.png">
+                                    <img class="card-img-top img-fluid border-radius" src="img/proyects/proyecto5.png"
+                                        alt="Control de Flotas en VR">
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="mb-4">Control de Flotas en VR</h6>
+                                <p class="text-muted text-small mb-0 font-weight-light">
+                                    Permite a los supervisores monitorear y planificar operaciones de transporte
+                                    mediante entornos inmersivos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="glide__arrows slider-nav" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--left left-arrow btn btn-link" data-glide-dir="<">
+                    <i class="simple-icon-arrow-left"></i>
+                </button>
+                <div class="glide__bullets slider-dot-container" data-glide-el="controls[nav]">
+                    <button class="glide__bullet slider-dot" data-glide-dir="=0"></button>
+                    <button class="glide__bullet slider-dot" data-glide-dir="=1"></button>
+                    <button class="glide__bullet slider-dot" data-glide-dir="=2"></button>
+                    <button class="glide__bullet slider-dot" data-glide-dir="=3"></button>
+                    <button class="glide__bullet slider-dot" data-glide-dir="=4"></button>
+                </div>
+                <button class="glide__arrow glide__arrow--right right-arrow btn btn-link" data-glide-dir=">">
+                    <i class="simple-icon-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
     </main>
 
     <footer class="page-footer">
