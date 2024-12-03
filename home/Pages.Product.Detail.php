@@ -167,7 +167,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
                         <div class="video-container">
                           <div class="pdf-viewer-container">
                             <iframe
-                              src="documents\Proyecto __ PLANTA INDUSTRIAL AUTOMATIZACIÓN.pdf"
+                              src="../documents/Proyecto __ PLANTA INDUSTRIAL AUTOMATIZACIÓN.pdf"
                               frameborder="0"
                               allowfullscreen
                             ></iframe>
@@ -882,50 +882,50 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
                 </h5>
                 <div class="row social-image-row gallery">
                   <div class="col-6">
-                    <a href="img/products/marble-cake.jpg">
+                    <a href="img/pry">
                       <img
                         class="img-fluid border-radius"
-                        src="img/products/marble-cake-thumb.jpg"
+                        src="img/proyects/proyecto1.jpg"
                       />
                     </a>
                   </div>
                   <div class="col-6">
-                    <a href="img/products/parkin.jpg">
+                    <a href="img/proyects/proyecto1.jpg">
                       <img
                         class="img-fluid border-radius"
-                        src="img/products/parkin-thumb.jpg"
+                        src="img/proyects/proyecto2.jpg"
                       />
                     </a>
                   </div>
                   <div class="col-6">
-                    <a href="img/products/fruitcake.jpg">
+                    <a href="img/proyects/proyecto1.jpg">
                       <img
                         class="img-fluid border-radius"
-                        src="img/products/fruitcake-thumb.jpg"
+                        src="img/proyects/proyecto3.jpg"
                       />
                     </a>
                   </div>
                   <div class="col-6">
-                    <a href="img/products/tea-loaf.jpg">
+                    <a href="img/proyects/proyecto1.jpg">
                       <img
                         class="img-fluid border-radius"
-                        src="img/products/tea-loaf-thumb.jpg"
+                        src="img/proyects/proyecto4.png"
                       />
                     </a>
                   </div>
                   <div class="col-6">
-                    <a href="img/products/napoleonshat.jpg">
+                    <a href="img/proyects/proyecto1.jpg">
                       <img
                         class="img-fluid border-radius"
-                        src="img/products/napoleonshat-thumb.jpg"
+                        src="img/proyects/proyecto5.png"
                       />
                     </a>
                   </div>
                   <div class="col-6">
-                    <a href="img/products/magdalena.jpg">
+                    <a href="img/proyects/proyecto1.jpg">
                       <img
                         class="img-fluid border-radius"
-                        src="img/products/magdalena-thumb.jpg"
+                        src="img/proyects/proyecto5.png"
                       />
                     </a>
                   </div>
