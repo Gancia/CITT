@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/vendor/glide.core.min.css" />
     <link rel="stylesheet" href="css/vendor/baguetteBox.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+
 
 
   
@@ -273,7 +276,7 @@
                 <!--Quienes somos-->
                 <ul class="list-unstyled" data-link="quienesomos">
                     <li>
-                        <a href="1_Quienes.Somos_Origenes.php">
+                        <a href="OTT.php">
                             <i class="simple-icon-rocket"></i> <span class="d-inline-block">Orígenes</span>
                         </a>
                     </li>
