@@ -79,7 +79,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
             </div>
             <div class="w-60 d-flex align-items-center">
                 <div class="card-body">
-                    <a href="2.2_Laboratorios_prac.html">
+                    <a href="Pages.Product.Detail.php">
                         <h5 class="mb-3 listing-heading ellipsis"> Gestion de Distribucion </h5>
                     </a>
                     <p class="listing-desc text-muted ellipsis">
@@ -104,7 +104,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
     <div class="col-12 col-lg-6 mb-5">
         <div class="card flex-row listing-card-container">
             <div class="w-40 position-relative">
-                <a href="img\proyects\proyecto2.jpg">
+                <a href="Pages.Product.Detail.php">
                 <!--a href="Pages.Blog.Detail.ejemplo.html" class="video-play-icon"--> <!--COLOCAR UN VIDEO-->
                     <span></span>
                 </a>
@@ -112,7 +112,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
             </div>
             <div class="w-60 d-flex align-items-center">
                 <div class="card-body">
-                    <a href="Pages.Blog.Detail.ejemplo.html">
+                    <a href="Pages.Product.Detail.php">
                         <h5 class="mb-3 listing-heading ellipsis">Almacenamiento</h5>
                     </a>
                     <p class="listing-desc text-muted ellipsis">
@@ -135,13 +135,13 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
     <div class="col-12 col-lg-6 mb-5">
         <div class="card flex-row listing-card-container">
             <div class="w-40 position-relative">
-                <a href="Pages.Blog.Detail.ejemplo.html">
+                <a href="Pages.Product.Detail.php">
                     <img class="card-img-left" src="img\proyects\proyecto3.jpg" alt="Card image cap">
                 </a>
             </div>
             <div class="w-60 d-flex align-items-center">
                 <div class="card-body">
-                    <a href="Pages.Blog.Detail.ejemplo.html">
+                    <a href="Pages.Product.Detail.php">
                         <h5 class="mb-3 listing-heading ellipsis"> Empaque</h5>
                     </a>
                     <p class="listing-desc text-muted ellipsis">
