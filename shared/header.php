@@ -254,6 +254,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="#proyectos">
+                            <i class="iconsminds-chemical"></i> Proyectos
+                        </a>
+                    </li>
+
+                    <li>
                         <a href="#formacion">
                             <i class="
                             iconsminds-student-male-female"></i> Formación
@@ -539,6 +545,30 @@
                         </div>
                     </li>
 
+                    <ul class="list-unstyled" data-link="investigacion" id="investigacion">
+                    <!--Proyectos-->     
+                    <li>
+                        <a href="#" data-toggle="collapse" data-target="#collapseinv" aria-expanded="true"
+                            aria-controls="#collapseinv" class="rotate-arrow-icon opacity-50">
+                            <i class="simple-icon-arrow-down"></i> <span class="d-inline-block">Proyectos</span>
+                        </a>
+                        <div id="collapseinv" class="collapse show">
+                            <ul class="list-unstyled inner-level-menu">
+                                <li>
+                                    <a href="#">
+                                        <i class="iconsminds-factory-1"></i> <span class="d-inline-block">Investigación</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="iconsminds-satelite-2"></i> <span class="d-inline-block">Difución cientifica</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+
                     <!--Eventos-->                   
                     <li>
                         <a href="#" data-toggle="collapse" data-target="#collapseeventos" aria-expanded="true"
@@ -567,6 +597,10 @@
                     </li>
 
                 </ul>
+                
+
+
+                
 
                 <!--FORMACIÓN-->
                 <ul class="list-unstyled" data-link="formacion">
