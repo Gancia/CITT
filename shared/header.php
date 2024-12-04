@@ -432,7 +432,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="2.6_Laboratorios_prácticas.php">
                                         <i class="simple-icon-control-play"></i> <span class="d-inline-block">Prácticas</span>
                                     </a>
                                 </li>
