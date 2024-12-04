@@ -303,7 +303,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
                 <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
                     <div class="card">
                         <div class="position-relative">
-                            <a href="Pages.Product.Detail.php"><img class="card-img-top" src="img/cards/thumb-2.jpg"
+                            <a href="Pages.Product.Detail.php"><img class="card-img-top" src="img/proyects/proyecto2.jpg"
                                     alt="Card image cap"></a>
                             <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
                             <span
