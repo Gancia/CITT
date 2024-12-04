@@ -40,27 +40,27 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
                                 <div class="glide__track" data-glide-el="track">
                                     <ul class="glide__slides">
                                         <li class="glide__slide">
-                                            <img alt="detail" src="img/products/header1.jpg"
+                                            <img alt="detail" src="img/proyects/proyecto1.jpg"
                                                 class="responsive border-0 border-radius img-fluid mb-3" />
                                         </li>
                                         <li class="glide__slide">
-                                            <img alt="detail" src="img/products/napoleonshat.jpg"
+                                            <img alt="detail" src="img/proyects/proyecto2.jpg"
                                                 class="responsive border-0 border-radius img-fluid mb-3" />
                                         </li>
                                         <li class="glide__slide">
-                                            <img alt="detail" src="img/products/marble-cake.jpg"
+                                            <img alt="detail" src="img/proyects/proyecto3.jp"
                                                 class="responsive border-0 border-radius img-fluid mb-3" />
                                         </li>
                                         <li class="glide__slide">
-                                            <img alt="detail" src="img/products/fruitcake.jpg"
+                                            <img alt="detail" src="img/proyects/proyecto4.jp"
                                                 class="responsive border-0 border-radius img-fluid mb-3" />
                                         </li>
                                         <li class="glide__slide">
-                                            <img alt="detail" src="img/products/magdalena.jpg"
+                                            <img alt="detail" src="img/proyects/proyecto5.jp"
                                                 class="responsive border-0 border-radius img-fluid mb-3" />
                                         </li>
                                         <li class="glide__slide">
-                                            <img alt="detail" src="img/products/tea-loaf.jpg"
+                                            <img alt="detail" src="img/proyects/proyecto2.jp"
                                                 class="responsive border-0 border-radius img-fluid mb-3" />
                                         </li>
                                     </ul>
@@ -71,27 +71,27 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
                                 <div class="glide__track" data-glide-el="track">
                                     <ul class="glide__slides">
                                         <li class="glide__slide">
-                                            <img alt="thumb" src="img/products/parkin-thumb.jpg"
+                                            <img alt="thumb" src="img/proyects/proyecto2.jpg"
                                                 class="responsive border-0 border-radius img-fluid" />
                                         </li>
                                         <li class="glide__slide">
-                                            <img alt="thumb" src="img/products/napoleonshat-thumb.jpg"
+                                            <img alt="thumb" src="img/proyects/proyecto3.jpg"
                                                 class="responsive border-0 border-radius img-fluid" />
                                         </li>
                                         <li class="glide__slide">
-                                            <img alt="thumb" src="img/products/marble-cake-thumb.jpg"
+                                            <img alt="thumb" src="img/proyects/proyecto4.png"
                                                 class="responsive border-0 border-radius img-fluid" />
                                         </li>
                                         <li class="glide__slide">
-                                            <img alt="thumb" src="img/products/fruitcake-thumb.jpg"
+                                            <img alt="thumb" src="img/proyects/proyecto3.jpg"
                                                 class="responsive border-0 border-radius img-fluid" />
                                         </li>
                                         <li class="glide__slide">
-                                            <img alt="thumb" src="img/products/magdalena-thumb.jpg"
+                                            <img alt="thumb" src="img/proyects/proyecto3.jpg"
                                                 class="responsive border-0 border-radius img-fluid" />
                                         </li>
                                         <li class="glide__slide">
-                                            <img alt="thumb" src="img/products/tea-loaf-thumb.jpg"
+                                            <img alt="thumb" src="img/proyects/proyecto3.jpg"
                                                 class="responsive border-0 border-radius img-fluid" />
                                         </li>
                                     </ul>
