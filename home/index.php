@@ -129,7 +129,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
                             <div class="card d-flex flex-row">
                                 <div class="w-50 position-relative">
-                                    <img class="card-img-left" src="img/cards/thumb-4.jpg" alt="Card image cap">
+                                    <img class="card-img-left" src="img/proyects/proyecto1.jpg" alt="Card image cap">
                                     <span
                                         class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
                                 </div>
