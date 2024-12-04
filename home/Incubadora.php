@@ -12,70 +12,75 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
     <div class="container-fluid">
         <!-- Encabezado principal -->
         <div class="text-center mb-4">
-            <h1>Oficina de Transferencia de Tecnología (OTT) - UPEC</h1>
+            <h1>Incubadora de Empresas - UPEC</h1>
             <h3>
-                La OTT UPEC facilita la transferencia de conocimientos y tecnologías hacia la sociedad, promoviendo el desarrollo económico e innovación en sectores estratégicos.
+                La Incubadora de Empresas de la UPEC impulsa proyectos innovadores, promoviendo el emprendimiento y la transferencia de conocimientos hacia el ecosistema empresarial y social.
             </h3>
         </div>
 
         <!-- Video introductorio -->
         <div class="position-relative mb-4">
-            <video id="intro-video" class="video-js card-img video-content" controls preload="auto" poster="img/social/header3.jpg" data-setup="{}">
-                <source src="https://virprot.com/videos/MemoriasLuisV.mp4" type='video/mp4'>
+            <video id="intro-video" class="video-js card-img video-content" controls preload="auto" poster="img/incubadora/header.jpg" data-setup="{}">
+                <source src="https://example.com/videos/incubadora_intro.mp4" type='video/mp4'>
             </video>
         </div>
 
-        <!-- Áreas de Impacto -->
+        <!-- Servicios de la Incubadora -->
         <section>
-            <h5 class="mb-4">Áreas de Impacto</h5>
+            <h5 class="mb-4">Servicios de la Incubadora</h5>
             <div class="row slick-container">
-                <!-- Innovación Empresarial -->
+                <!-- Asesoría y Consultoría -->
                 <div class="col-md-4">
                     <div class="card h-100">
-                        <img class="card-img-top" src="img/cards/industry.jpg" alt="Innovación Empresarial">
+                        <img class="card-img-top" src="img/cards/asesoria.jpg" alt="Asesoría y Consultoría">
                         <div class="card-body">
-                            <h5 class="card-title">Innovación Empresarial</h5>
-                            <p>Implementa tecnologías avanzadas para optimizar procesos y generar soluciones disruptivas en empresas y startups.</p>
+                            <h5 class="card-title">Asesoría y Consultoría</h5>
+                            <p>
+                                Brindamos orientación personalizada en áreas clave como estrategia empresarial, financiamiento, y desarrollo de modelos de negocio.
+                            </p>
                             <ul>
-                                <li>Inteligencia Artificial</li>
-                                <li>Automatización de Procesos</li>
-                                <li>Big Data</li>
-                                <li>Realidad Extendida</li>
-                                <li>Prototipado Rápido</li>
+                                <li>Evaluación de Ideas de Negocio</li>
+                                <li>Diseño de Modelos CANVAS</li>
+                                <li>Planificación Estratégica</li>
+                                <li>Gestión Financiera</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <!-- Educación -->
+                <!-- Espacios de Coworking -->
                 <div class="col-md-4">
                     <div class="card h-100">
-                        <img class="card-img-top" src="img/cards/realdiadvirtual.jpg" alt="Educación">
+                        <img class="card-img-top" src="img/cards/coworking.jpg" alt="Espacios de Coworking">
                         <div class="card-body">
-                            <h5 class="card-title">Educación</h5>
-                            <p>Fomenta la transferencia de conocimiento a través de talleres, laboratorios y programas educativos innovadores.</p>
+                            <h5 class="card-title">Espacios de Coworking</h5>
+                            <p>
+                                Proveemos infraestructura y espacios colaborativos equipados con tecnología para facilitar el desarrollo de proyectos.
+                            </p>
                             <ul>
-                                <li>Laboratorios XR</li>
-                                <li>Fablab</li>
-                                <li>Simulación Educativa</li>
-                                <li>Capacitación Técnica</li>
+                                <li>Acceso a Internet de Alta Velocidad</li>
+                                <li>Áreas de Trabajo Compartidas</li>
+                                <li>Salas de Reunión</li>
+                                <li>Laboratorios de Prototipado</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <!-- Desarrollo Sostenible -->
+                <!-- Formación y Networking -->
                 <div class="col-md-4">
                     <div class="card h-100">
-                        <img class="card-img-top" src="img/cards/ods.webp" alt="Desarrollo Sostenible">
+                        <img class="card-img-top" src="img/cards/formacion.jpg" alt="Formación y Networking">
                         <div class="card-body">
-                            <h5 class="card-title">Desarrollo Sostenible</h5>
-                            <p>Apoya iniciativas alineadas con los Objetivos de Desarrollo Sostenible para fomentar el impacto social y ambiental positivo.</p>
+                            <h5 class="card-title">Formación y Networking</h5>
+                            <p>
+                                Organizamos capacitaciones y eventos que conectan a emprendedores con expertos y redes de financiamiento.
+                            </p>
                             <ul>
-                                <li>Proyectos Ambientales</li>
-                                <li>Impacto Social</li>
-                                <li>Innovación Verde</li>
-                                <li>Colaboración Multisectorial</li>
+                                <li>Talleres y Seminarios</li>
+                                <li>Charlas con Expertos</li>
+                                <li>Vinculación con Inversionistas</li>
+                                <li>Acceso a Redes de Mentores</li>
                             </ul>
                         </div>
                     </div>
@@ -83,19 +88,20 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
             </div>
         </section>
 
-        <!-- Descripción OTT -->
+        <!-- Descripción Incubadora -->
         <section class="mt-4">
             <div class="card">
                 <div class="card-body">
-                    <h2 class="card-title">¿Qué es la OTT?</h2>
+                    <h2 class="card-title">¿Qué es la Incubadora de Empresas?</h2>
                     <p>
-                        La Oficina de Transferencia de Tecnología (OTT) de la UPEC es un espacio diseñado para promover la colaboración entre la academia, las empresas y la sociedad. Su objetivo principal es fomentar la investigación aplicada y el desarrollo de proyectos que generen valor para la comunidad y contribuyan al desarrollo regional.
+                        La Incubadora de Empresas de la UPEC es un espacio creado para apoyar a emprendedores en la transformación de sus ideas en negocios sostenibles. Ofrecemos servicios de acompañamiento, formación y acceso a recursos que potencian la innovación y el desarrollo empresarial en la región.
                     </p>
                 </div>
             </div>
         </section>
     </div>
 </main>
+
 <!-- Pie de página -->
 <footer class="page-footer">
     <div class="footer-content">
