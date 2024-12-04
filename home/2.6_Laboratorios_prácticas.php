@@ -163,7 +163,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
         <div class="card flex-row listing-card-container">
             <div class="w-40 position-relative">
                 <a href="Pages.Blog.Detail.ejemplo.html">
-                    <img class="card-img-left" src="img\proyects\proyecto4.jpg" alt="Card image cap">
+                    <img class="card-img-left" src="img\proyects\proyecto4.png" alt="Card image cap">
                 </a>
             </div>
             <div class="w-60 d-flex align-items-center">
@@ -191,7 +191,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
         <div class="card flex-row listing-card-container">
             <div class="w-40 position-relative">
                 <a href="Pages.Blog.Detail.ejemplo.html">
-                    <img class="card-img-left" src="img\proyects\proyecto5.jpg" alt="Card image cap">
+                    <img class="card-img-left" src="img\proyects\proyecto5.png" alt="Card image cap">
                 </a>
             </div>
             <div class="w-60 d-flex align-items-center">
