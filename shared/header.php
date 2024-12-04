@@ -223,14 +223,14 @@
                     </li> -->
 
                     <li>
-                        <a href="#quienesomos">
+                        <a href="#quienesomosOTT">
                             <i class="iconsminds-digital-drawing"></i>
                             <span>OTT</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="#quienesomos">
+                        <a href="#quienesomosIncubadora">
                             <i class="iconsminds-footprint-2"></i>
                             <span>Incubadora</span>
                         </a>
@@ -273,8 +273,8 @@
 
         <div class="sub-menu">
             <div class="scroll">
-                <!--Quienes somos-->
-                <ul class="list-unstyled" data-link="quienesomos">
+                <!--Quienes somos OTT-->
+                <ul class="list-unstyled" data-link="quienesomosOTT">
                     <li>
                         <a href="OTT.php">
                             <i class="simple-icon-rocket"></i> <span class="d-inline-block">Orígenes</span>
@@ -302,7 +302,39 @@
                     </li>
                 </ul>
 
+                  <!--Quienes somos Incubadora-->
 
+                <ul class="list-unstyled" data-link="quienesomosIncubadora">
+                    <li>
+                        <a href="Incubadora.php">
+                            <i class="simple-icon-rocket"></i> <span class="d-inline-block">Orígenes</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="simple-icon-pie-chart"></i> <span class="d-inline-block">Misión y visión</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="iconsminds-profile"></i> <span class="d-inline-block">Equipo de trabajo</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="iconsminds-edit-map"></i> <span class="d-inline-block">Donde estamos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="iconsminds-business-mens"></i> <span class="d-inline-block">Colaboradores</span>
+                        </a>
+                    </li>
+                </ul>
+
+
+
+                
                 <!--Servicios-->
                 <ul class="list-unstyled" data-link="servicios" id="servicios">
                     <!--Hojas de ruta-->     
