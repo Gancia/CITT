@@ -7,168 +7,151 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
 ?>
 
-    <!--Contenido Principal-->
-
-    <main>
-    <header class="bg-primary text-white text-center py-4">
-        <h1>Oficina de Transferencia Tecnológica</h1>
-        <p>UPEC - Innovación y Desarrollo</p>
-    </header>
-
-    <!-- Introducción -->
-    <section class="container my-5">
-        <h2 class="text-center">Nosotros</h2>
+<!-- Contenido Principal -->
+<main>
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8">
-                <p>
-                    Durante los últimos años, las actividades relacionadas con transferencia tecnológica adquieren
-                    relevancia y tienden a crecer, con un alto impacto a nivel local, nacional e internacional.
-                </p>
-                <p>
-                    Tanto las universidades, el sector público y privado, en el contexto social, económico y
-                    tecnológico, se han visto la necesidad de fortalecer alianzas estratégicas...
-                </p>
-            </div>
-            <div class="col-md-4 text-center">
-                <img src="img/imagen-triangulo-DERECHO.png" alt="Triángulo Derecho" class="img-fluid">
-                <p class="mt-2">PROFESIONALISMO Y CONFIANZA</p>
-            </div>
-        </div>
-    </section>
+            <div class="col-12 survey-app text-center">
+                <div class="mb-2">
+                    <h1>Oficina de Transferencia de Tecnología (OTT) - UPEC</h1>
+                </div>
+                <div>
+                    <h3>
+                        La OTT UPEC tiene como objetivo principal facilitar la transferencia de conocimientos y tecnologías hacia la sociedad, promoviendo el desarrollo económico y la innovación en diferentes sectores estratégicos.
+                    </h3>
+                </div>
 
-    <!-- Información clave -->
-    <section class="bg-light py-5">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <h3>36 años ininterrumpidos</h3>
-                    <p>de Experiencia</p>
-                    <p>UPEC – Tulcán</p>
-                </div>
-                <div class="col-md-4">
-                    <h3>Objetivo</h3>
-                    <p>
-                        Planificar, programar, promover y ejecutar proyectos de vinculación y de investigación científica
-                        y tecnológica...
-                    </p>
-                </div>
-                <div class="col-md-4">
-                    <h3>Misión</h3>
-                    <p>
-                        El Centro de Transferencia de Tecnología de la UPEC, es un espacio estratégico basado en
-                        actividades académicas y de investigación...
-                    </p>
+                <div class="position-relative mb-3">
+                    <video id="my-video" class="video-js card-img video-content" controls preload="auto" poster="img/social/header3.jpg" data-setup="{}">
+                        <source src="https://virprot.com/videos/MemoriasLuisV.mp4" type='video/mp4'>
+                    </video>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Valores -->
-    <section class="container my-5">
-        <h2 class="text-center">Valores</h2>
-        <ul>
-            <li><b>Responsabilidad del ser humano ante Dios:</b> Implica el respeto a la dignidad y derechos...</li>
-            <li><b>Excelencia académica:</b> Garantía de una formación de calidad.</li>
-            <li><b>Respeto:</b> En un ambiente que asegure un ejercicio libre, cordial y pluralista...</li>
-            <!-- Agregar los demás valores -->
-        </ul>
-    </section>
+        <h5 class="mb-4">Áreas de Impacto</h5>
+        <div class="row mb-4">
+            <div class="col-md-12 mb-4 pl-0 pr-0">
+                <div class="slick-container">
+                    <div class="slick basic">
+                        <!-- Sector: Innovación Empresarial -->
+                        <div class="card d-flex flex-row">
+                            <div class="w-50 position-relative">
+                                <img class="card-img-left" src="img/cards/industry.jpg" alt="Innovación Empresarial">
+                                <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">Nuevo</span>
+                            </div>
+                            <div class="w-50">
+                                <div class="card-body">
+                                    <h2>Innovación Empresarial</h2>
+                                    Implementa tecnologías avanzadas para optimizar procesos y generar soluciones disruptivas en empresas y startups.
+                                    <br><br>
+                                    <ul>
+                                        <li>Inteligencia Artificial</li>
+                                        <li>Automatización de Procesos</li>
+                                        <li>Big Data</li>
+                                        <li>Realidad Extendida</li>
+                                        <li>Prototipado Rápido</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
 
-    <!-- Equipo -->
-    <section class="bg-light py-5">
-        <div class="container">
-            <h2 class="text-center">Nuestro equipo de trabajo</h2>
+                        <!-- Sector: Educación -->
+                        <div class="card d-flex flex-row">
+                            <div class="w-50 position-relative">
+                                <img class="card-img-left" src="img/cards/realdiadvirtual.jpg" alt="Educación">
+                                <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">Educación</span>
+                            </div>
+                            <div class="w-50">
+                                <div class="card-body">
+                                    <h2>Educación</h2>
+                                    Fomenta la transferencia de conocimiento a través de talleres, laboratorios y programas educativos innovadores.
+                                    <br><br>
+                                    <ul>
+                                        <li>Laboratorios XR</li>
+                                        <li>Fablab</li>
+                                        <li>Simulación Educativa</li>
+                                        <li>Capacitación Técnica</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sector: Desarrollo Sostenible -->
+                        <div class="card d-flex flex-row">
+                            <div class="w-50 position-relative">
+                                <img class="card-img-left" src="img/cards/ods.webp" alt="Desarrollo Sostenible">
+                                <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">ODS</span>
+                            </div>
+                            <div class="w-50">
+                                <div class="card-body">
+                                    <h2>Desarrollo Sostenible</h2>
+                                    Apoya iniciativas alineadas con los Objetivos de Desarrollo Sostenible para fomentar el impacto social y ambiental positivo.
+                                    <br><br>
+                                    <ul>
+                                        <li>Proyectos Ambientales</li>
+                                        <li>Impacto Social</li>
+                                        <li>Innovación Verde</li>
+                                        <li>Colaboración Multisectorial</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">¿Qué es la OTT?</h2>
+                        <p>
+                            La Oficina de Transferencia de Tecnología (OTT) de la UPEC es un espacio diseñado para promover la colaboración entre la academia, las empresas y la sociedad, mediante la transferencia de conocimientos y tecnologías innovadoras. Su objetivo principal es fomentar la investigación aplicada y el desarrollo de proyectos que generen valor para la comunidad y contribuyan al desarrollo regional.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Pie de página -->
+<footer class="page-footer">
+    <div class="footer-content">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6">
-                    <h4>Darío Javier Robayo Jacome</h4>
-                    <p><b>Cargo:</b> Coordinador del CTT</p>
-                    <p><b>Correo:</b> drobayo@upec.edu.ec</p>
+                <div class="col-12 col-sm-6">
+                    <p class="mb-0 text-muted">Copyright © 2024</p>
                 </div>
-                <div class="col-md-6">
-                    <h4>Galo Mauricio López Sevilla</h4>
-                    <p><b>Cargo:</b> Director Escuela de Ingenierías</p>
-                    <p><b>Correo:</b> glopez@upec.edu.ec</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contacto -->
-    <section class="container my-5">
-        <h2 class="text-center">Contáctenos</h2>
-        <p class="text-center">Ven a visitar nuestras instalaciones o envíanos un correo electrónico. Estamos atentos a
-            las necesidades de nuestros clientes.</p>
-        <div class="row">
-            <div class="col-md-4">
-                <h4>Dirección</h4>
-                <p>Av. Universitaria y Eloy Alfaro. Tulcán, Ecuador</p>
-            </div>
-            <div class="col-md-4">
-                <h4>Llámenos</h4>
-                <p>(593) 6 298 9000</p>
-                <p>ext.: 1001 y 1002</p>
-            </div>
-            <div class="col-md-4">
-                <h4>Escríbenos</h4>
-                <p>ctt@upec.edu.ec</p>
-                <p>glopez@upec.edu.ec</p>
-                <p>ei@upec.edu.ec</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-primary text-white text-center py-3">
-        <p>&copy; 2024 UPEC INNOVACIÓN - Centro de Transferencia Tecnológica</p>
-    </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    </main>
-
-    <!--Pie de pagina-->
-
-    <footer class="page-footer">
-        <div class="footer-content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 col-sm-6">
-                        <p class="mb-0 text-muted">Copyright © 2024</p>
-                    </div>
-                    <div class="col-sm-6 d-none d-sm-block">
-                        <ul class="breadcrumb pt-0 pr-0 float-right">
-                            <li class="breadcrumb-item mb-0">
-                                <a href="#" class="btn-link">Terminos y condiciones</a>
-                            </li>
-                            <li class="breadcrumb-item mb-0">
-                                <a href="#" class="btn-link">Política de privacidad </a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="col-sm-6 d-none d-sm-block">
+                    <ul class="breadcrumb pt-0 pr-0 float-right">
+                        <li class="breadcrumb-item mb-0">
+                            <a href="#" class="btn-link">Términos y Condiciones</a>
+                        </li>
+                        <li class="breadcrumb-item mb-0">
+                            <a href="#" class="btn-link">Política de Privacidad</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <script src="js/vendor/jquery-3.3.1.min.js"></script>
-    <script src="js/vendor/bootstrap.bundle.min.js"></script>
-    <script src="js/vendor/Chart.bundle.min.js"></script>
-    <script src="js/vendor/chartjs-plugin-datalabels.js"></script>
-    <script src="js/vendor/moment.min.js"></script>
-    <script src="js/vendor/fullcalendar.min.js"></script>
-    <script src="js/vendor/datatables.min.js"></script>
-    <script src="js/vendor/perfect-scrollbar.min.js"></script>
-    <script src="js/vendor/progressbar.min.js"></script>
-    <script src="js/vendor/jquery.barrating.min.js"></script>
-    <script src="js/vendor/select2.full.js"></script>
-    <script src="js/vendor/nouislider.min.js"></script>
-    <script src="js/vendor/bootstrap-datepicker.js"></script>
-    <script src="js/vendor/Sortable.js"></script>
-    <script src="js/vendor/mousetrap.min.js"></script>
-    <script src="js/vendor/glide.min.js"></script>
-    <script src="js/dore.script.js"></script>
-    <script src="js/scripts.js"></script>
+<script src="js/vendor/jquery-3.3.1.min.js"></script>
+<script src="js/vendor/bootstrap.bundle.min.js"></script>
+<script src="js/vendor/perfect-scrollbar.min.js"></script>
+<script src="js/vendor/Chart.bundle.min.js"></script>
+<script src="js/vendor/Sortable.js"></script>
+<script src="js/vendor/select2.full.js"></script>
+<script src="js/vendor/mousetrap.min.js"></script>
+<script src="js/dore.script.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/vendor/baguetteBox.min.js"></script>
+<script src="js/vendor/glide.min.js"></script>
+<script src="js/vendor/slick.min.js"></script>
+
 </body>
-
 </html>

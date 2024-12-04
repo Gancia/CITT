@@ -136,14 +136,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-2">
-                                    <div class="custom-control custom-checkbox pl-1">
-                                        <label class="custom-control custom-checkbox  mb-0">
-                                            <input type="checkbox" class="custom-control-input">
-                                            <span class="custom-control-label">&nbsp;</span>
-                                        </label>
-                                    </div>
-                                </div>
+                                
                                 <div class="col-10">
                                     <a href="Pages.Product.Detail.php">
                                         <p class="list-item-heading mb-4 pt-1">Industria | PLANTA DE PRODUCIÓN DE CARNE | UE4</p>
@@ -168,14 +161,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-2">
-                                    <div class="custom-control custom-checkbox pl-1">
-                                        <label class="custom-control custom-checkbox  mb-0">
-                                            <input type="checkbox" class="custom-control-input">
-                                            <span class="custom-control-label">&nbsp;</span>
-                                        </label>
-                                    </div>
-                                </div>
+                                
                                 <div class="col-10">
                                     <a href="Pages.Product.Detail.php">
                                         <p class="list-item-heading mb-4 pt-1">Industria | PLANTA INDUSTRIAL AUTOMATIZACIÓN | UE5</p>
@@ -199,14 +185,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-2">
-                                    <div class="custom-control custom-checkbox pl-1">
-                                        <label class="custom-control custom-checkbox  mb-0">
-                                            <input type="checkbox" class="custom-control-input">
-                                            <span class="custom-control-label">&nbsp;</span>
-                                        </label>
-                                    </div>
-                                </div>
+                                
                                 <div class="col-10">
                                     <a href="Pages.Product.Detail.php">
                                         <p class="list-item-heading mb-4 pt-1">Industria | LOBBY WEBXR | Unity</p>
@@ -231,14 +210,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-2">
-                                    <div class="custom-control custom-checkbox pl-1">
-                                        <label class="custom-control custom-checkbox  mb-0">
-                                            <input type="checkbox" class="custom-control-input">
-                                            <span class="custom-control-label">&nbsp;</span>
-                                        </label>
-                                    </div>
-                                </div>
+                                
                                 <div class="col-10">
                                     <a href="Pages.Product.Detail.php">
                                         <p class="list-item-heading mb-4 pt-1">Industria | PLANTA DE PROCESAMIENTO DE CARNE | UE5</p>
@@ -262,17 +234,10 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-2">
-                                    <div class="custom-control custom-checkbox pl-1">
-                                        <label class="custom-control custom-checkbox  mb-0">
-                                            <input type="checkbox" class="custom-control-input">
-                                            <span class="custom-control-label">&nbsp;</span>
-                                        </label>
-                                    </div>
-                                </div>
+                                
                                 <div class="col-10">
                                     <a href="Pages.Product.Detail.php">
-                                        <p class="list-item-heading mb-4 pt-1">Napoleonshat</p>
+                                        <p class="list-item-heading mb-4 pt-1">Industria | PLANTA DE PRODUCIÓN DE CARNE | UE4</p>
                                     </a>
                                     <footer>
                                         <p class="text-muted text-small mb-0 font-weight-light">19.04.2018</p>
@@ -287,24 +252,17 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
                 <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
                     <div class="card">
                         <div class="position-relative">
-                            <a href="Pages.Product.Detail.php"><img class="card-img-top" src="img/cards/thumb-3.jpg"
+                            <a href="Pages.Product.Detail.php"><img class="card-img-top" src="img/proyects/proyecto4.png"
                                     alt="Card image cap"></a>
                             <span
                                 class="badge badge-pill badge-secondary position-absolute badge-top-left">TRENDING</span>
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-2">
-                                    <div class="custom-control custom-checkbox pl-1">
-                                        <label class="custom-control custom-checkbox  mb-0">
-                                            <input type="checkbox" class="custom-control-input">
-                                            <span class="custom-control-label">&nbsp;</span>
-                                        </label>
-                                    </div>
-                                </div>
+                                
                                 <div class="col-10">
                                     <a href="Pages.Product.Detail.php">
-                                        <p class="list-item-heading mb-4 pt-1">Petit Gâteau</p>
+                                        <p class="list-item-heading mb-4 pt-1">Industria | PLANTA DE PRODUCIÓN DE CARNE | UE4</p>
                                     </a>
                                     <footer>
                                         <p class="text-muted text-small mb-0 font-weight-light">01.03.2018</p>
@@ -319,7 +277,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
                 <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
                     <div class="card">
                         <div class="position-relative">
-                            <a href="Pages.Product.Detail.php"><img class="card-img-top" src="img/cards/thumb-1.jpg"
+                            <a href="Pages.Product.Detail.php"><img class="card-img-top" src="img/proyects/proyecto5.png"
                                     alt="Card image cap"></a>
                             <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
                             <span
@@ -327,14 +285,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-2">
-                                    <div class="custom-control custom-checkbox pl-1">
-                                        <label class="custom-control custom-checkbox  mb-0">
-                                            <input type="checkbox" class="custom-control-input">
-                                            <span class="custom-control-label">&nbsp;</span>
-                                        </label>
-                                    </div>
-                                </div>
+                                
                                 <div class="col-10">
                                     <a href="Pages.Product.Detail.php">
                                         <p class="list-item-heading mb-4 pt-1">Industria | PLANTA DE PRODUCIÓN DE CARNE | UE4</p>
@@ -360,14 +311,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-2">
-                                    <div class="custom-control custom-checkbox pl-1">
-                                        <label class="custom-control custom-checkbox  mb-0">
-                                            <input type="checkbox" class="custom-control-input">
-                                            <span class="custom-control-label">&nbsp;</span>
-                                        </label>
-                                    </div>
-                                </div>
+                                
                                 <div class="col-10">
                                     <a href="Pages.Product.Detail.php">
                                         <p class="list-item-heading mb-4 pt-1">Industria | PLANTA INDUSTRIAL AUTOMATIZACIÓN | UE5</p>
