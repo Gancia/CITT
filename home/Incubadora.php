@@ -19,11 +19,19 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
         </div>
 
         <!-- Video introductorio -->
-        <div class="position-relative mb-4">
-            <video id="intro-video" class="video-js card-img video-content" controls preload="auto" poster="img/incubadora/header.jpg" data-setup="{}">
-                <source src="https://example.com/videos/incubadora_intro.mp4" type='video/mp4'>
-            </video>
-        </div>
+<div class="position-relative mb-4">
+    <div class="embed-responsive embed-responsive-16by9">
+        <iframe 
+            class="embed-responsive-item" 
+            src="https://www.youtube.com/embed/_89kW5wlfug" 
+            title="Video Introductorio de la Incubadora" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+    </div>
+</div>
+
 
         <!-- Servicios de la Incubadora -->
         <section>

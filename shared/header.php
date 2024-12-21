@@ -254,7 +254,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#proyectos">
+                        <a href="#investigacion">
                             <i class="iconsminds-chemical"></i> Proyectos
                         </a>
                     </li>
