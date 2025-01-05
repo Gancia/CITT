@@ -1,0 +1,41 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>CITT</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <{% load static %}
+        <link rel="stylesheet" href="{% static 'font/iconsmind-s/css/iconsminds.css' %}" />
+        <link rel="stylesheet" href="{% static 'font/simple-line-icons/css/simple-line-icons.css' %}" />
+        
+        <link rel="stylesheet" href="{% static 'css/vendor/bootstrap.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/vendor/bootstrap.rtl.only.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/vendor/perfect-scrollbar.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/vendor/select2.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/vendor/select2-bootstrap.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/vendor/component-custom-switch.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/vendor/glide.core.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/vendor/baguetteBox.min.css' %}" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+        
+        <link rel="stylesheet" href="{% static 'css/vendor/slick.css' %}" />
+    </head>
+<body>
+    
+    <!-- Incluir el archivo header.html -->
+    {% include "header.html" %}
+
+    <!-- Aquí se incluirá el contenido de cada página -->
+    <div>
+        {% block content %}
+        <!-- Este bloque será reemplazado por el contenido específico de cada página -->
+        {% endblock %}
+    </div>
+</body>
+</html>
+
+
+

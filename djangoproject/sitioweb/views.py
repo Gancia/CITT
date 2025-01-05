@@ -47,6 +47,7 @@ def dynamic_page(request):
 
     # Verificar si la plantilla correspondiente existe
     try:
-        return render(request, f"{page}.html")  # Renderizar la plantilla con el nombre especificado
+        # Ahora renderizamos la página extendiendo la plantilla base
+        return render(request, f"{page}.html", {'base_template': 'base.html'})
     except Exception:
-        return render(request, "404.html")  # Cargar una página de error si la plantilla no existe
+        return render(request, "404.html")
