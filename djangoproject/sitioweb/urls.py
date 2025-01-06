@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 
 
+
 urlpatterns = [
     path('', views.hello, name='home'),  # Página inicial
     path('about/', views.about, name='about'),  # Página "Laboratorios proyectos"
