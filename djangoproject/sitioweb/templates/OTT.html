@@ -1,12 +1,7 @@
-<?php
-// Incluir el encabezado
-include '../shared/header.php';
 
-// Cargar la página solicitada
-$page = isset($_GET['page']) ? $_GET['page'] : 'home';
+{% extends "base.html" %}
 
-?>
-
+{% block content %}
 <!-- Contenido Principal -->
 <main>
     <div class="container-fluid">
@@ -144,3 +139,4 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
 </body>
 </html>
+{% endblock %}
