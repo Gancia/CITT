@@ -1,5 +1,10 @@
 from django.urls import path
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
+
+
+
 
 
 
@@ -17,5 +22,10 @@ urlpatterns = [
     path('auth/login/', views.auth_login, name='auth_login'),  # Página "Login"
     path('auth/register/', views.auth_register, name='auth_register'),  # Página "Register"
     path('', views.dynamic_page, name='dynamic_page'),  # Ruta que maneja las páginas dinámicas
+    path('css/<path:path>', views.serve_static_file, name='serve_static_file'),
+    path('js/<path:path>', views.serve_static_file, name='serve_static_file'),
+    path('img/<path:path>', views.serve_static_file, name='serve_static_file')
 
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

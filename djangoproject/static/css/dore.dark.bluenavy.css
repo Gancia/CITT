@@ -1209,13 +1209,14 @@ button {
   padding-top: 1rem;
   background: initial;
   padding-left: 0;
+  padding-top: 0.5rem;
   padding-right: 0;
   margin-right: 1.5rem;
   font-weight: 600;
   letter-spacing: 0.5px;
   color: #707070; }
 
-
+.nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
   border: initial;
   position: relative;

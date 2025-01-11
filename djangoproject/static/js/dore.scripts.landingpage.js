@@ -321,14 +321,13 @@ $.dore = function (element, options) {
       $(".mobile-menu").addClass("default-transition");
       $("body").removeClass("show-spinner");
     }
-    init();
-  };
-  
-  $.fn.dore = function (options) {
-    return this.each(function () {
-      if (undefined == $(this).data("dore")) {
-        var plugin = new $.dore(this, options);
-        $(this).data("dore", plugin);
-      }
+    $(function() {
+      $.fn.dore = function(options) {
+        return this.each(function() {
+          if (undefined == $(this).data("dore")) {
+            var plugin = new $.dore(this, options);
+            $(this).data("dore", plugin);
+          }
+        });
+      };
     });
-  };

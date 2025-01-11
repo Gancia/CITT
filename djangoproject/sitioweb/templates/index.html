@@ -51,7 +51,9 @@
 
                             <div class="card d-flex flex-row">
                                 <div class="w-50 position-relative">
-                                    <img class="card-img-left" src="img/cards/industry.jpg" alt="Card image cap">
+                                    {% load static %}
+
+                                    <img class="card-img-left" src="{% static 'img/cards/industry.jpg'%}" alt="Card image cap">
                                     <span
                                         class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
                                 </div>
