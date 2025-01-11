@@ -110,28 +110,29 @@ html {
   background: #18191b; }
 
 :root {
-  --theme-color-1: #236591;
-  --theme-color-2: #1d477a;
-  --theme-color-3: #637383;
-  --theme-color-4: #385068;
-  --theme-color-5: #2e5585;
-  --theme-color-6: #4d5f72;
-  --theme-color-1-10: rgba(35, 101, 145, 0.1);
-  --theme-color-2-10: rgba(29, 71, 122, 0.1);
-  --theme-color-3-10: rgba(99, 115, 131, 0.1);
-  --theme-color-4-10: rgba(56, 80, 104, 0.1);
-  --theme-color-5-10: rgba(46, 85, 133, 0.1);
-  --theme-color-6-10: rgba(77, 95, 114, 0.1);
-  --primary-color: #8f8f8f;
-  --foreground-color: #1e2022;
-  --separator-color: #424242; }
+  --theme-color-1: #126937; /* Verde principal */
+  --theme-color-2: #116133; /* Variación más oscura de verde */
+  --theme-color-3: #FECE00; /* Amarillo brillante */
+  --theme-color-4: #FFFFFF; /* Fondo blanco */
+  --theme-color-5: #6F6F6F; /* Gris neutro para bordes, iconos */
+  --theme-color-6: #5F5F5F; /* Gris oscuro para texto */
+  --theme-color-1-10: rgba(18, 105, 55, 0.1); /* Verde translúcido */
+  --theme-color-2-10: rgba(17, 97, 51, 0.1); /* Verde oscuro translúcido */
+  --theme-color-3-10: rgba(254, 206, 0, 0.1); /* Amarillo translúcido */
+  --theme-color-4-10: rgba(255, 255, 255, 0.1); /* Blanco translúcido */
+  --theme-color-5-10: rgba(111, 111, 111, 0.1); /* Gris translúcido */
+  --theme-color-6-10: rgba(95, 95, 95, 0.1); /* Gris oscuro translúcido */
+  --primary-color: var(--theme-color-1); /* Usamos el verde como primario */
+  --foreground-color: var(--theme-color-5); /* Gris neutro para elementos secundarios */
+  --separator-color: var(--theme-color-5); /* Gris para líneas y separadores */
+}
 
 body {
   font-family: "Nunito", sans-serif;
   font-size: 0.8rem;
   font-weight: 400;
-  color: #8f8f8f;
-  background: #18191b; }
+  color: var(--theme-color-6);
+  background: var(--theme-color-4); }
   body.background {
     height: 100%; }
     body.background main {
