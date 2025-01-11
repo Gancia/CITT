@@ -182,9 +182,9 @@ body {
   background-color: #424242; }
 
 .logo-single {
-  width: 110px;
-  height: 35px;
-  background: url("../logos/white.svg") no-repeat;
+  width: 150px;
+  height: 45px;
+  background: url("../logos/logoupec.png") no-repeat;
   background-position: center center;
   display: inline-block;
   margin-bottom: 60px; }
@@ -1386,7 +1386,7 @@ button {
           margin-right: 15px; } }
   .navbar .search {
     position: relative;
-    width: 230px;
+    width: 330px;
     border-radius: 20px;
     background: #1f1e1c; }
     .navbar .search input {
