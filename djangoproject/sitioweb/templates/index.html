@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+{% load static %}
     <!--Contenido Principal-->
 
     <main>
@@ -21,7 +21,7 @@
                     </ul>
                      <div class="position-relative mb-3">
                         <video id="my-video" class="video-js card-img video-content" controls
-                            preload="auto" poster="img/social/header3.jpg"
+                            preload="auto" poster="{% static 'img/social/header3.jpg' %}"
                             data-setup="{}">
                             <source
                                 src="https://virprot.com/videos/MemoriasLuisV.mp4"
@@ -51,7 +51,7 @@
 
                             <div class="card d-flex flex-row">
                                 <div class="w-50 position-relative">
-                                    {% load static %}
+                                    
 
                                     <img class="card-img-left" src="{% static 'img/cards/industry.jpg'%}" alt="Card image cap">
                                     <span
@@ -76,7 +76,7 @@
                             </div>
                             <div class="card d-flex flex-row">
                                 <div class="w-50 position-relative">
-                                    <img class="card-img-left" src="img/cards/ods.webp" alt="Card image cap">
+                                    <img class="card-img-left" src="{% static 'img/cards/ods.webp'%} " alt="Card image cap">
                                     <span
                                         class="badge badge-pill badge-theme-1 position-absolute badge-top-left">Sector 1</span>
                                 </div>
@@ -101,7 +101,7 @@
 
                             <div class="card d-flex flex-row">
                                 <div class="w-50 position-relative">
-                                    <img class="card-img-left" src="img/cards/realdiadvirtual.jpg" alt="Card image cap">
+                                    <img class="card-img-left" src="{% static 'img/cards/realdiadvirtual.jpg' %}" alt="Card image cap">
                                     <span
                                         class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
                                 </div>
@@ -125,7 +125,7 @@
 
                             <div class="card d-flex flex-row">
                                 <div class="w-50 position-relative">
-                                    <img class="card-img-left" src="img/proyects/proyecto1.jpg" alt="Card image cap">
+                                    <img class="card-img-left" src="{% static 'img/proyects/proyecto1.jpg' %}" alt="Card image cap">
                                     <span
                                         class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
                                 </div>
@@ -195,11 +195,11 @@
                             <div class="glide gallery mb-4">
                                 <div class="glide__track" data-glide-el="track">
                                     <div class="glide__slides Active">
-                                        <a href="img/cards/upec1.jpg">
-                                            <img class="card-img" src="img/cards/upec1.jpg" alt="First image">
+                                        <a href="{% static 'img/cards/upec1.jpg'%}">
+                                            <img class="card-img" src="{% static 'img/cards/upec1.jpg'%} " alt="First image">
                                         </a>
                                         <a href="img/cards/upec2.png">
-                                            <img class="card-img" src="img/cards/upec2.png" alt="Second image">
+                                            <img class="card-img" src="{% static 'img/cards/upec2.png'%}" alt="Second image">
                                         </a>
                                     </div>
                                 </div>
@@ -218,7 +218,7 @@
 
                             <div class="position-relative mb-3">
                                 <video id="my-video" class="video-js card-img video-content" controls
-                                    preload="auto" poster="img/cards/upec3.jpg"
+                                    preload="auto" poster="{% static 'img/cards/upec3.jpg'%}"
                                     data-setup="{}">
                                     <source
                                         src="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4"
