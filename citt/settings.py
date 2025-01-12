@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'citt.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(default='postrgres://postgres:postgres@localhost/postgres')
+    'default': dj_database_url.config(default='postgres://postgres:postgres@localhost/postgres')
 }
 
 
