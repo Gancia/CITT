@@ -43,3 +43,27 @@ body.show-spinner::after {
     -webkit-transform: rotate(360deg);
   }
 }
+
+.main-menu .active {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.sub-menu .active {
+  color: var(--theme-color-1);
+}
+
+.menu-sub-hidden .sub-menu {
+  transform: translateX(-100%);
+}
+
+.sub-menu {
+  transition: transform 0.3s ease-out;
+}
+
+.collapse {
+  display: none;
+}
+
+.collapse.show {
+  display: block;
+}

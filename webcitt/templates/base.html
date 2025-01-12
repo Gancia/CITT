@@ -1,555 +1,657 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <!-- Archivos CSS -->
+    <link
       rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
-      crossorigin="anonymous">
-  <link href="{% static 'css/dore.dark.bluenavy.css' %}" rel="stylesheet">
-  <link href="{% static 'css/main.css' %}" rel="stylesheet">
-  <title>Portal CITT</title>
-</head>
+      href="{% static 'font/iconsmind-s/css/iconsminds.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'font/simple-line-icons/css/simple-line-icons.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/vendor/bootstrap.min.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'css/vendor/bootstrap.rtl.only.min.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'css/vendor/perfect-scrollbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/dore.light.bluenavy.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
 
-<body>
-  <nav class="navbar fixed-top">
-    <div class="d-flex align-items-center navbar-left">
-      <a href="#" class="menu-button d-none d-md-block">
-          <svg class="main" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 17">
-              <rect x="0.48" y="0.5" width="7" height="1" />
-              <rect x="0.48" y="7.5" width="7" height="1" />
-              <rect x="0.48" y="15.5" width="7" height="1" />
-          </svg>
-          <svg class="sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 17">
-              <rect x="1.56" y="0.5" width="16" height="1" />
-              <rect x="1.56" y="7.5" width="16" height="1" />
-              <rect x="1.56" y="15.5" width="16" height="1" />
-          </svg>
-      </a>
+    <title>{% block title %}Portal CITT{% endblock %}</title>
+  </head>
 
-      <a href="#" class="menu-button-mobile d-xs-block d-sm-block d-md-none">
+  <body id="app-container" class="menu-default menu-sub-hidden">
+    <!-- Navbar simplificado -->
+    <nav class="navbar fixed-top">
+      <div class="d-flex align-items-center navbar-left">
+        <a href="#" class="menu-button d-none d-md-block">
+          <svg
+            class="main"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 9 17">
+            <rect x="0.48" y="0.5" width="7" height="1" />
+            <rect x="0.48" y="7.5" width="7" height="1" />
+            <rect x="0.48" y="15.5" width="7" height="1" />
+          </svg>
+          <svg
+            class="sub"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 18 17">
+            <rect x="1.56" y="0.5" width="16" height="1" />
+            <rect x="1.56" y="7.5" width="16" height="1" />
+            <rect x="1.56" y="15.5" width="16" height="1" />
+          </svg>
+        </a>
+
+        <a href="#" class="menu-button-mobile d-xs-block d-sm-block d-md-none">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 17">
-              <rect x="0.5" y="0.5" width="25" height="1" />
-              <rect x="0.5" y="7.5" width="25" height="1" />
-              <rect x="0.5" y="15.5" width="25" height="1" />
+            <rect x="0.5" y="0.5" width="25" height="1" />
+            <rect x="0.5" y="7.5" width="25" height="1" />
+            <rect x="0.5" y="15.5" width="25" height="1" />
           </svg>
+        </a>
+
+        <div class="search" data-search-path="Pages.Search.html?q=">
+          <input placeholder="Search..." />
+          <span class="search-icon">
+            <i class="simple-icon-magnifier"></i>
+          </span>
+        </div>
+      </div>
+
+      <a class="navbar-logo" href="#">
+        <span class="logo d-none d-xs-block"></span>
+        <span class="logo-mobile d-block d-xs-none"></span>
       </a>
 
-      <div class="search" data-search-path="Pages.Search.html?q=">
-          <input placeholder="Search...">
-          <span class="search-icon">
-              <i class="simple-icon-magnifier"></i>
-          </span>
-      </div>
-  </div>
-
-
-    <a class="navbar-logo" href="index.html">
-      <span class="logo d-none d-xs-block"></span>
-      <span class="logo-mobile d-block d-xs-none"></span>
-    </a>
-
-    <div class="navbar-right">
-      <div class="header-icons d-inline-block align-middle">
-        <div class="d-none d-md-inline-block align-text-bottom mr-3">
-          <div class="custom-switch custom-switch-primary-inverse custom-switch-small pl-1" data-toggle="tooltip"
-            data-placement="left" title="Dark Mode">
-            <input class="custom-switch-input" id="switchDark" type="checkbox" checked>
-            <label class="custom-switch-btn" for="switchDark"></label>
+      <div class="navbar-right">
+        <div class="header-icons d-inline-block align-middle">
+          <div class="d-none d-md-inline-block align-text-bottom mr-3">
+            <div
+              class="custom-switch custom-switch-primary-inverse custom-switch-small pl-1"
+              data-toggle="tooltip"
+              data-placement="left"
+              title="Dark Mode">
+              <input
+                class="custom-switch-input"
+                id="switchDark"
+                type="checkbox"
+                checked />
+              <label class="custom-switch-btn" for="switchDark"></label>
+            </div>
           </div>
-        </div>
 
-        <div class="position-relative d-none d-sm-inline-block">
-          <button class="header-icon btn btn-empty" type="button" id="iconMenuButton" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <i class="simple-icon-grid"></i>
+          <div class="position-relative d-none d-sm-inline-block">
+            <button
+              class="header-icon btn btn-empty"
+              type="button"
+              id="iconMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false">
+              <i class="simple-icon-grid"></i>
+            </button>
+            <div
+              class="dropdown-menu dropdown-menu-right mt-3 position-absolute"
+              id="iconMenuDropdown">
+              <a href="#" class="icon-menu-item">
+                <i class="iconsminds-equalizer d-block"></i>
+                <span>Settings</span>
+              </a>
+
+              <a href="#" class="icon-menu-item">
+                <i class="iconsminds-male-female d-block"></i>
+                <span>Users</span>
+              </a>
+
+              <a href="#" class="icon-menu-item">
+                <i class="iconsminds-puzzle d-block"></i>
+                <span>Components</span>
+              </a>
+
+              <a href="#" class="icon-menu-item">
+                <i class="iconsminds-bar-chart-4 d-block"></i>
+                <span>Profits</span>
+              </a>
+
+              <a href="#" class="icon-menu-item">
+                <i class="iconsminds-file d-block"></i>
+                <span>Surveys</span>
+              </a>
+
+              <a href="#" class="icon-menu-item">
+                <i class="iconsminds-suitcase d-block"></i>
+                <span>Tasks</span>
+              </a>
+            </div>
+          </div>
+
+          <button
+            class="header-icon btn btn-empty"
+            type="button"
+            id="fullScreenButton">
+            <i class="simple-icon-size-fullscreen"></i>
+            <i class="simple-icon-size-actual"></i>
           </button>
-          <div class="dropdown-menu dropdown-menu-right mt-3  position-absolute" id="iconMenuDropdown">
-            <a href="#" class="icon-menu-item">
-              <i class="iconsminds-equalizer d-block"></i>
-              <span>Settings</span>
-            </a>
+        </div>
 
-            <a href="#" class="icon-menu-item">
-              <i class="iconsminds-male-female d-block"></i>
-              <span>Users</span>
-            </a>
+        <div class="user d-inline-block">
+          <button
+            class="btn btn-empty p-0"
+            type="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false">
+            <span class="name">Sarah Kortney</span>
+            <span>
+              <img alt="Profile Picture" src="img/profiles/l-1.jpg" />
+            </span>
+          </button>
 
-            <a href="#" class="icon-menu-item">
-              <i class="iconsminds-puzzle d-block"></i>
-              <span>Components</span>
-            </a>
-
-            <a href="#" class="icon-menu-item">
-              <i class="iconsminds-bar-chart-4 d-block"></i>
-              <span>Profits</span>
-            </a>
-
-            <a href="#" class="icon-menu-item">
-              <i class="iconsminds-file d-block"></i>
-              <span>Surveys</span>
-            </a>
-
-            <a href="#" class="icon-menu-item">
-              <i class="iconsminds-suitcase d-block"></i>
-              <span>Tasks</span>
-            </a>
-
+          <div class="dropdown-menu dropdown-menu-right mt-3">
+            <a class="dropdown-item" href="#">Account</a>
+            <a class="dropdown-item" href="#">Features</a>
+            <a class="dropdown-item" href="#">History</a>
+            <a class="dropdown-item" href="#">Support</a>
+            <a class="dropdown-item" href="#">Sign out</a>
           </div>
         </div>
-
-        <button class="header-icon btn btn-empty " type="button" id="fullScreenButton">
-          <i class="simple-icon-size-fullscreen"></i>
-          <i class="simple-icon-size-actual"></i>
-        </button>
-
       </div>
+    </nav>
 
-      <div class="user d-inline-block">
-        <button class="btn btn-empty p-0" type="button" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">
-          <span class="name">Sarah Kortney</span>
-          <span>
-            <img alt="Profile Picture" src="img/profiles/l-1.jpg" />
-          </span>
-        </button>
-
-        <div class="dropdown-menu dropdown-menu-right mt-3">
-          <a class="dropdown-item" href="#">Account</a>
-          <a class="dropdown-item" href="#">Features</a>
-          <a class="dropdown-item" href="#">History</a>
-          <a class="dropdown-item" href="#">Support</a>
-          <a class="dropdown-item" href="#">Sign out</a>
+    <!-- Menú -->
+    <div class="menu">
+      <!-- Menú Principal -->
+      <div class="main-menu">
+        <div class="scroll">
+          <ul class="list-unstyled">
+            <li {% if request.resolver_match.url_name == 'ott' %}class="active"{% endif %}>
+              <a href="{% url 'ott' %}" data-link="ott-menu">
+                <i class="iconsminds-police-station"></i>
+                <span style="display: block;">OTT</span>
+              </a>
+            </li>
+            <li {% if request.resolver_match.url_name == 'incubadora' %}class="active"{% endif %}>
+              <a href="{% url 'incubadora' %}" data-link="incubadora-menu">
+                <i class="iconsminds-digital-drawing"></i>
+                <span style="display: block;">Incubadora</span>
+              </a>
+            </li>
+            <li {% if request.resolver_match.url_name == 'uexperimentales' %}class="active"{% endif %}>
+              <a href="{% url 'uexperimentales' %}" data-link="uexperimentales-menu">
+                <i class="iconsminds-cpu"></i>
+                <span style="display: block;">Unidades Experimentales</span>
+              </a>
+            </li>
+            <!-- ... otros elementos del menú ... -->
+          </ul>
         </div>
       </div>
-    </div>
-  </nav>
 
-  <!--Menu Principal-->
+      <!-- Menú Secundario -->
+      <div class="sub-menu">
+        <div class="scroll">
+          <!-- Submenú OTT -->
+          <ul class="list-unstyled" data-link="ott-menu" {% if request.resolver_match.url_name != 'ott' %}style="display:none"{% endif %}>
+            <li>
+              <a href="#">
+                <i class="simple-icon-rocket"></i> 
+                <span class="d-inline-block">Sobre OTT</span>
+              </a>
+            </li>
+            <!-- ... otros items del submenu ... -->
+          </ul>
 
-  <div class="menu">
-    <div class="main-menu">
-      <div class="scroll">
-        <ul class="list-unstyled">
-          <li class="active">
-            <a href="#quienesomos">
-              <i class="iconsminds-police-station"></i>
-              <span>Quiénes somos</span>
-            </a>
-          </li>
-          <li>
-            <a href="#servicios">
-              <i class="iconsminds-digital-drawing"></i> Servicios
-            </a>
-          </li>
-          <li>
-            <a href="#labs">
-              <i class="iconsminds-cpu"></i> Laboratorios
-            </a>
-          </li>
+          <!-- Submenú Incubadora -->
+          <ul class="list-unstyled" data-link="incubadora-menu" {% if request.resolver_match.url_name != 'incubadora' %}style="display:none"{% endif %}>
+            <li>
+              <a href="#">
+                <i class="simple-icon-rocket"></i>
+                <span class="d-inline-block">Sobre Incubadora</span>
+              </a>
+            </li>
+            <!-- ... otros items del submenu ... -->
+          </ul>
 
-          <li>
-            <a href="#investigacion">
-              <i class="iconsminds-chemical"></i> Investigación
-            </a>
-          </li>
-          <li>
-            <a href="#formacion">
-              <i class="
-                        iconsminds-student-male-female"></i> Formación
-            </a>
-          </li>
-          <li>
-            <a href="#noticias">
-              <i class="simple-icon-heart"></i> Noticias
-            </a>
-          </li>
+          <!--Quienes somos-->
+          <ul class="list-unstyled" data-link="quienesomos">
+            <li>
+              <a href="#">
+                <i class="simple-icon-rocket"></i>
+                <span class="d-inline-block">¿Quiénes somos?</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="simple-icon-pie-chart"></i>
+                <span class="d-inline-block">Misión y visión</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="iconsminds-profile"></i>
+                <span class="d-inline-block">Equipo de trabajo</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="iconsminds-edit-map"></i>
+                <span class="d-inline-block">Donde estamos</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="iconsminds-business-mens"></i>
+                <span class="d-inline-block">Colaboradores</span>
+              </a>
+            </li>
+          </ul>
 
-        </ul>
-      </div>
-    </div>
+          <!--Servicios-->
+          <ul class="list-unstyled" data-link="servicios" id="servicios">
+            <!--Hojas de ruta-->
+            <li>
+              <a
+                href="#"
+                data-toggle="collapse"
+                data-target="#collapsehojaruta"
+                aria-expanded="true"
+                aria-controls="#collapsehojaruta"
+                class="rotate-arrow-icon opacity-50">
+                <i class="simple-icon-arrow-down"></i>
+                <span class="d-inline-block">Hojas de ruta</span>
+              </a>
+              <div id="collapsehojaruta" class="collapse show">
+                <ul class="list-unstyled inner-level-menu">
+                  <li>
+                    <a href="#">
+                      <i class="iconsminds-factory-1"></i>
+                      <span class="d-inline-block">Gestión Logística</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="iconsminds-satelite-2"></i>
+                      <span class="d-inline-block">Gestión de Transporte</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
 
-    <!--Menu Secundario-->
-
-    <div class="sub-menu">
-      <div class="scroll">
-        <!--Quienes somos-->
-        <ul class="list-unstyled" data-link="quienesomos">
-          <li class="active">
-            <a href="1_Quienes.Somos_Origenes.html">
-              <i class="simple-icon-rocket"></i> <span class="d-inline-block">Orígenes</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="simple-icon-pie-chart"></i> <span class="d-inline-block">Misión y visión</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="iconsminds-profile"></i> <span class="d-inline-block">Equipo de trabajo</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="iconsminds-edit-map"></i> <span class="d-inline-block">Donde estamos</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="iconsminds-business-mens"></i> <span class="d-inline-block">Colaboradores</span>
-            </a>
-          </li>
-        </ul>
-
-
-        <!--Servicios-->
-        <ul class="list-unstyled" data-link="servicios" id="servicios">
-          <!--Hojas de ruta-->
-          <li>
-            <a href="#" data-toggle="collapse" data-target="#collapsehojaruta" aria-expanded="true"
-              aria-controls="#collapsehojaruta" class="rotate-arrow-icon opacity-50">
-              <i class="simple-icon-arrow-down"></i> <span class="d-inline-block">Hojas de ruta</span>
-            </a>
-            <div id="collapsehojaruta" class="collapse show">
-              <ul class="list-unstyled inner-level-menu">
-                <li>
-                  <a href="#">
-                    <i class="iconsminds-factory-1"></i> <span class="d-inline-block">Gestión Logística</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="iconsminds-satelite-2"></i> <span class="d-inline-block">Gestión de Transporte</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-
-          <!--Colaboración-->
-          <li>
-            <a href="#" data-toggle="collapse" data-target="#collapsecolaboracion" aria-expanded="true"
-              aria-controls="#collapsecolaboracion" class="rotate-arrow-icon opacity-50">
-              <i class="simple-icon-arrow-down"></i> <span class="d-inline-block">Colaboración</span>
-            </a>
-            <div id="collapsecolaboracion" class="collapse show">
-              <ul class="list-unstyled inner-level-menu">
-                <li>
-                  <a href="#">
-                    <i class="iconsminds-headset"></i> <span class="d-inline-block">Asesoramiento</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="iconsminds-preview"></i> <span class="d-inline-block">Convenios</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="iconsminds-monitor---tablet"></i> <span class="d-inline-block">Prácticas y
-                      Pasantías</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="iconsminds-diamond"></i> <span class="d-inline-block">Emprendimiento</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="iconsminds-calendar-4"></i> <span class="d-inline-block">Convocatorias</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <!--Casos de exito-->
-          <li>
-            <a href="#" data-toggle="collapse" data-target="#collapsecasosexito" aria-expanded="true"
-              aria-controls="#collapsecasosexito" class="rotate-arrow-icon opacity-50">
-              <i class="simple-icon-arrow-down"></i> <span class="d-inline-block">Casos de éxito</span>
-            </a>
-            <div id="collapsecasosexito" class="collapse show">
-              <ul class="list-unstyled inner-level-menu">
-                <li>
-                  <a href="#">
-                    <i class="iconsminds-books"></i> <span class="d-inline-block">Vinculación</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="iconsminds-box-full"></i> <span class="d-inline-block">Contratos I+D</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="iconsminds-environmental-3"></i> <span class="d-inline-block">Iniciativas
-                      sectoriales</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-
-        </ul>
-
-        <!--Laboratorios-->
-        <ul class="list-unstyled" data-link="labs" id="labs">
-          <li>
-            <a href="#" data-toggle="collapse" data-target="#collapselabxr" aria-expanded="true"
-              aria-controls="#collapselabxr" class="rotate-arrow-icon opacity-50">
-              <i class="simple-icon-arrow-down"></i> <span class="d-inline-block">Laboratorio XR</span>
-            </a>
-            <div id="collapselabxr" class="collapse show">
-              <ul class="list-unstyled inner-level-menu">
-                <li>
-                  <a href="2_Laboratorios_sobre.html">
-                    <i class="simple-icon-login"></i> <span class="d-inline-block">Sobre el Laboratorio</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="simple-icon-organization"></i> <span class="d-inline-block">Tecnologías</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="iconsminds-monitor---tablet"></i> <span class="d-inline-block">Instalaciones</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="simple-icon-people"></i> <span class="d-inline-block">Equipo de trabajo</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="simple-icon-notebook"></i> <span class="d-inline-block">Proyectos I+D</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="iconsminds-student-male-female"></i> <span class="d-inline-block">Formación</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="simple-icon-control-play"></i> <span class="d-inline-block">Prácticas</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
+            <!--Colaboración-->
+            <li>
+              <a
+                href="#"
+                data-toggle="collapse"
+                data-target="#collapsecolaboracion"
+                aria-expanded="true"
+                aria-controls="#collapsecolaboracion"
+                class="rotate-arrow-icon opacity-50">
+                <i class="simple-icon-arrow-down"></i>
+                <span class="d-inline-block">Colaboración</span>
+              </a>
+              <div id="collapsecolaboracion" class="collapse show">
+                <ul class="list-unstyled inner-level-menu">
+                  <li>
+                    <a href="#">
+                      <i class="iconsminds-headset"></i>
+                      <span class="d-inline-block">Asesoramiento</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="iconsminds-preview"></i>
+                      <span class="d-inline-block">Convenios</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="iconsminds-monitor---tablet"></i>
+                      <span class="d-inline-block">Prácticas y Pasantías</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="iconsminds-diamond"></i>
+                      <span class="d-inline-block">Emprendimiento</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="iconsminds-calendar-4"></i>
+                      <span class="d-inline-block">Convocatorias</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <!--Casos de exito-->
+            <li>
+              <a
+                href="#"
+                data-toggle="collapse"
+                data-target="#collapsecasosexito"
+                aria-expanded="true"
+                aria-controls="#collapsecasosexito"
+                class="rotate-arrow-icon opacity-50">
+                <i class="simple-icon-arrow-down"></i>
+                <span class="d-inline-block">Casos de éxito</span>
+              </a>
+              <div id="collapsecasosexito" class="collapse show">
+                <ul class="list-unstyled inner-level-menu">
+                  <li>
+                    <a href="#">
+                      <i class="iconsminds-books"></i>
+                      <span class="d-inline-block">Vinculación</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="iconsminds-box-full"></i>
+                      <span class="d-inline-block">Contratos I+D</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="iconsminds-environmental-3"></i>
+                      <span class="d-inline-block">Iniciativas
+                        sectoriales</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
 
           <!--Laboratorios-->
-          <li>
-            <a href="#" data-toggle="collapse" data-target="#lab4" aria-expanded="true" aria-controls="#lab4"
-              class="rotate-arrow-icon opacity-50">
-              <i class="simple-icon-arrow-down"></i> <span class="d-inline-block">Laboratorio Logística 4.0</span>
-            </a>
-            <div id="lab4" class="collapse show">
-              <ul class="list-unstyled inner-level-menu">
-                <li>
-                  <a href="Pages.Product.List.html">
-                    <i class="simple-icon-login"></i> <span class="d-inline-block">Sobre el Laboratorio</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="simple-icon-organization"></i> <span class="d-inline-block">Tecnologías</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="iconsminds-monitor---tablet"></i> <span class="d-inline-block">Instalaciones</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="simple-icon-people"></i> <span class="d-inline-block">Equipo de trabajo</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="simple-icon-notebook"></i> <span class="d-inline-block">Proyectos I+D</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="simple-icon-control-play"></i> <span class="d-inline-block">Prácticas</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
+          <ul class="list-unstyled" data-link="labs" id="labs">
+            <li>
+              <a
+                href="#"
+                data-toggle="collapse"
+                data-target="#collapselabxr"
+                aria-expanded="true"
+                aria-controls="#collapselabxr"
+                class="rotate-arrow-icon opacity-50">
+                <i class="simple-icon-arrow-down"></i>
+                <span class="d-inline-block">Laboratorio XR</span>
+              </a>
+              <div id="collapselabxr" class="collapse show">
+                <ul class="list-unstyled inner-level-menu">
+                  <li>
+                    <a href="2_Laboratorios_sobre.html">
+                      <i class="simple-icon-login"></i>
+                      <span class="d-inline-block">Sobre el Laboratorio</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="simple-icon-organization"></i>
+                      <span class="d-inline-block">Tecnologías</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="iconsminds-monitor---tablet"></i>
+                      <span class="d-inline-block">Instalaciones</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="simple-icon-people"></i>
+                      <span class="d-inline-block">Equipo de trabajo</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="simple-icon-notebook"></i>
+                      <span class="d-inline-block">Proyectos I+D</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="iconsminds-student-male-female"></i>
+                      <span class="d-inline-block">Formación</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="simple-icon-control-play"></i>
+                      <span class="d-inline-block">Prácticas</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
 
-        <!--Investigación-->
-        <ul class="list-unstyled" data-link="investigacion" id="investigacion">
-          <!--Unidad de Investigación-->
-          <li>
-            <a href="#" data-toggle="collapse" data-target="#collapseinv" aria-expanded="true"
-              aria-controls="#collapseinv" class="rotate-arrow-icon opacity-50">
-              <i class="simple-icon-arrow-down"></i> <span class="d-inline-block">Unidad de Investigación</span>
-            </a>
-            <div id="collapseinv" class="collapse show">
-              <ul class="list-unstyled inner-level-menu">
-                <li>
-                  <a href="#">
-                    <i class="iconsminds-factory-1"></i> <span class="d-inline-block">Investigación</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="iconsminds-satelite-2"></i> <span class="d-inline-block">Difución cientifica</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
+            <!--Laboratorios-->
+            <li>
+              <a
+                href="#"
+                data-toggle="collapse"
+                data-target="#lab4"
+                aria-expanded="true"
+                aria-controls="#lab4"
+                class="rotate-arrow-icon opacity-50">
+                <i class="simple-icon-arrow-down"></i>
+                <span class="d-inline-block">Laboratorio Logística 4.0</span>
+              </a>
+              <div id="lab4" class="collapse show">
+                <ul class="list-unstyled inner-level-menu">
+                  <li>
+                    <a href="Pages.Product.List.html">
+                      <i class="simple-icon-login"></i>
+                      <span class="d-inline-block">Sobre el Laboratorio</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="simple-icon-organization"></i>
+                      <span class="d-inline-block">Tecnologías</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="iconsminds-monitor---tablet"></i>
+                      <span class="d-inline-block">Instalaciones</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="simple-icon-people"></i>
+                      <span class="d-inline-block">Equipo de trabajo</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="simple-icon-notebook"></i>
+                      <span class="d-inline-block">Proyectos I+D</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="simple-icon-control-play"></i>
+                      <span class="d-inline-block">Prácticas</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
 
-          <!--Eventos-->
-          <li>
-            <a href="#" data-toggle="collapse" data-target="#collapseeventos" aria-expanded="true"
-              aria-controls="#collapseeventos" class="rotate-arrow-icon opacity-50">
-              <i class="simple-icon-arrow-down"></i> <span class="d-inline-block">Eventos</span>
-            </a>
-            <div id="collapseeventos" class="collapse show">
-              <ul class="list-unstyled inner-level-menu">
-                <li>
-                  <a href="#">
-                    <i class="simple-icon-globe"></i> <span class="d-inline-block">Congresos</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="simple-icon-share"></i> <span class="d-inline-block">Seminarios</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="simple-icon-social-youtube"></i> <span class="d-inline-block">Webinars</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
+          <!--Investigación-->
+          <ul
+            class="list-unstyled"
+            data-link="investigacion"
+            id="investigacion">
+            <!--Unidad de Investigación-->
+            <li>
+              <a
+                href="#"
+                data-toggle="collapse"
+                data-target="#collapseinv"
+                aria-expanded="true"
+                aria-controls="#collapseinv"
+                class="rotate-arrow-icon opacity-50">
+                <i class="simple-icon-arrow-down"></i>
+                <span class="d-inline-block">Unidad de Investigación</span>
+              </a>
+              <div id="collapseinv" class="collapse show">
+                <ul class="list-unstyled inner-level-menu">
+                  <li>
+                    <a href="#">
+                      <i class="iconsminds-factory-1"></i>
+                      <span class="d-inline-block">Investigación</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="iconsminds-satelite-2"></i>
+                      <span class="d-inline-block">Difución cientifica</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
 
-        </ul>
+            <!--Eventos-->
+            <li>
+              <a
+                href="#"
+                data-toggle="collapse"
+                data-target="#collapseeventos"
+                aria-expanded="true"
+                aria-controls="#collapseeventos"
+                class="rotate-arrow-icon opacity-50">
+                <i class="simple-icon-arrow-down"></i>
+                <span class="d-inline-block">Eventos</span>
+              </a>
+              <div id="collapseeventos" class="collapse show">
+                <ul class="list-unstyled inner-level-menu">
+                  <li>
+                    <a href="#">
+                      <i class="simple-icon-globe"></i>
+                      <span class="d-inline-block">Congresos</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="simple-icon-share"></i>
+                      <span class="d-inline-block">Seminarios</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="simple-icon-social-youtube"></i>
+                      <span class="d-inline-block">Webinars</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
 
-        <!--FORMACIÓN-->
-        <ul class="list-unstyled" data-link="formacion">
-          <li>
-            <a href="#">
-              <i class="simple-icon-graduation"></i> <span class="d-inline-block">Formación grado</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="simple-icon-graduation"></i> <span class="d-inline-block">Formación posgrado</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="simple-icon-graduation"></i> <span class="d-inline-block">Cursos a la medida</span>
-            </a>
-          </li>
+          <!--FORMACIÓN-->
+          <ul class="list-unstyled" data-link="formacion">
+            <li>
+              <a href="#">
+                <i class="simple-icon-graduation"></i>
+                <span class="d-inline-block">Formación grado</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="simple-icon-graduation"></i>
+                <span class="d-inline-block">Formación posgrado</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="simple-icon-graduation"></i>
+                <span class="d-inline-block">Cursos a la medida</span>
+              </a>
+            </li>
+          </ul>
 
-        </ul>
-
-
-        <!--NOTICIAS-->
-        <ul class="list-unstyled" data-link="noticias">
-          <li>
-            <a href="#">
-              <i class="simple-icon-star"></i> <span class="d-inline-block">Columnas</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="simple-icon-notebook"></i> <span class="d-inline-block">Artículos</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="simple-icon-cursor"></i> <span class="d-inline-block">Prensa</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="simple-icon-event"></i> <span class="d-inline-block">Blog</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="simple-icon-fire"></i> <span class="d-inline-block">Novedades</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="simple-icon-question"></i> <span class="d-inline-block">Historias que inspiran</span>
-            </a>
-          </li>
-        </ul>
-
+          <!--NOTICIAS-->
+          <ul class="list-unstyled" data-link="noticias">
+            <li>
+              <a href="#">
+                <i class="simple-icon-star"></i>
+                <span class="d-inline-block">Columnas</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="simple-icon-notebook"></i>
+                <span class="d-inline-block">Artículos</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="simple-icon-cursor"></i>
+                <span class="d-inline-block">Prensa</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="simple-icon-event"></i>
+                <span class="d-inline-block">Blog</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="simple-icon-fire"></i>
+                <span class="d-inline-block">Novedades</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="simple-icon-question"></i>
+                <span class="d-inline-block">Historias que inspiran</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
 
+    <!-- Contenido Principal -->
+    <main>
+      <div class="container-fluid">{% block content %} {% endblock %}</div>
+    </main>
 
-  <!--Contenido Principal-->
-
-  <main>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <h1>Origenes</h1>
-          <nav class="breadcrumb-container d-none d-sm-block d-lg-inline-block" aria-label="breadcrumb">
-            <ol class="breadcrumb pt-0">
-              <li class="breadcrumb-item">
-                <a href="#">Home</a>
-              </li>
-              <li class="breadcrumb-item">
-                <a href="#">Library</a>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">Data</li>
-            </ol>
-          </nav>
-          <div class="separator mb-5"></div>
-        </div>
-
-      
-    </div>
-  </main>
-
-  <!--Pie de pagina-->
-
-  <footer class="page-footer">
-    <div class="footer-content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12 col-sm-6">
-            <p class="mb-0 text-muted">Copyright © 2024</p>
-          </div>
-          <div class="col-sm-6 d-none d-sm-block">
-            <ul class="breadcrumb pt-0 pr-0 float-right">
-              <li class="breadcrumb-item mb-0">
-                <a href="#" class="btn-link">Terminos y condiciones</a>
-              </li>
-              <li class="breadcrumb-item mb-0">
-                <a href="#" class="btn-link">Política de privacidad </a>
-              </li>
-            </ul>
+    <!-- Footer -->
+    <footer class="page-footer">
+      <div class="footer-content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12 col-sm-6">
+              <p class="mb-0 text-muted">CITT 2024</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-</body>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="{% static 'js/vendor/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/vendor/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/vendor/perfect-scrollbar.min.js' %}"></script>
+    <!-- Agregar los scripts faltantes -->
+    <script src="{% static 'js/vendor/bootstrap.notify.min.js' %}"></script>
+    <script src="{% static 'js/vendor/mousetrap.min.js' %}"></script>
+    <script src="{% static 'js/dore.script.js' %}"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+
+    {% block extra_scripts %}{% endblock %}
+  </body>
 </html>

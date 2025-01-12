@@ -20,5 +20,10 @@ from webcitt import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home),
+    path('', views.home_view),
+    path('ott/', views.ott_view, name='ott'),
+    path('incubadora/', views.incubadora_view, name='incubadora'),
+    path('uexperimentales/', views.unidadesexperimentales_view, name='uexperimentales'),
+    path('hublab/', views.hublab_view, name='hublab'),
+    path('formacion/', views.formacion_view, name='formacion'),
 ]
