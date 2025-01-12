@@ -2,256 +2,554 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="{% static 'css/main.css' %}" rel="stylesheet"/>
-    <title>Portal CITT</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+      crossorigin="anonymous">
+  <link href="{% static 'css/dore.dark.bluenavy.css' %}" rel="stylesheet">
+  <link href="{% static 'css/main.css' %}" rel="stylesheet">
+  <title>Portal CITT</title>
 </head>
+
 <body>
-    <div style="width: 1512px; height: 982px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
-        
-        <div style="align-self: stretch; flex: 1 1 0; background: #0E1418; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 8px; display: flex">
-          <div style="align-self: stretch; padding: 8px; background: #121A1F; justify-content: flex-start; align-items: center; gap: 127px; display: inline-flex">
-            <div style="width: 25px; height: 25px; position: relative">
-              <div style="width: 25px; height: 25px; left: 0px; top: 0px; position: absolute; background: #CECECE"></div>
-              <div style="width: 18.75px; height: 14.58px; left: 3.12px; top: 5.21px; position: absolute; background: #CECECE"></div>
-            </div>
-            <div style="flex: 1 1 0; height: 33px; justify-content: space-between; align-items: center; display: flex">
-              <div style="justify-content: center; align-items: center; gap: 10px; display: flex">
-                <div style="color: #27929E; font-size: 22px; font-family: Montserrat; font-weight: 900; line-height: 33px; word-wrap: break-word">CITT</div>
-              </div>
-              <div style="justify-content: flex-start; align-items: center; gap: 16px; display: flex">
-                <div style="width: 54px; height: 30px; padding: 3px; background: #27929E; border-radius: 24px; overflow: hidden; justify-content: flex-start; align-items: center; gap: 10px; display: flex">
-                  <div style="width: 30px; height: 30px; position: relative; border-radius: 99px; border: 2px #CECECE solid"></div>
-                  <div style="width: 18px; height: 18px; position: relative">
-                    <div style="width: 18px; height: 18px; left: 0px; top: 0px; position: absolute; background: #CECECE"></div>
-                    <div style="width: 6.30px; height: 6.30px; left: 11.70px; top: 0px; position: absolute; background: #CECECE"></div>
-                  </div>
-                </div>
-                <div style="width: 30px; height: 30px; position: relative">
-                  <div style="width: 30px; height: 30px; left: 0px; top: 0px; position: absolute; background: #E6E6E6"></div>
-                  <div style="width: 25px; height: 25px; left: 2.50px; top: 2.50px; position: absolute; background: #CECECE"></div>
-                </div>
-              </div>
-            </div>
+  <nav class="navbar fixed-top">
+    <div class="d-flex align-items-center navbar-left">
+      <a href="#" class="menu-button d-none d-md-block">
+          <svg class="main" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 17">
+              <rect x="0.48" y="0.5" width="7" height="1" />
+              <rect x="0.48" y="7.5" width="7" height="1" />
+              <rect x="0.48" y="15.5" width="7" height="1" />
+          </svg>
+          <svg class="sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 17">
+              <rect x="1.56" y="0.5" width="16" height="1" />
+              <rect x="1.56" y="7.5" width="16" height="1" />
+              <rect x="1.56" y="15.5" width="16" height="1" />
+          </svg>
+      </a>
+
+      <a href="#" class="menu-button-mobile d-xs-block d-sm-block d-md-none">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 17">
+              <rect x="0.5" y="0.5" width="25" height="1" />
+              <rect x="0.5" y="7.5" width="25" height="1" />
+              <rect x="0.5" y="15.5" width="25" height="1" />
+          </svg>
+      </a>
+
+      <div class="search" data-search-path="Pages.Search.html?q=">
+          <input placeholder="Search...">
+          <span class="search-icon">
+              <i class="simple-icon-magnifier"></i>
+          </span>
+      </div>
+  </div>
+
+
+    <a class="navbar-logo" href="index.html">
+      <span class="logo d-none d-xs-block"></span>
+      <span class="logo-mobile d-block d-xs-none"></span>
+    </a>
+
+    <div class="navbar-right">
+      <div class="header-icons d-inline-block align-middle">
+        <div class="d-none d-md-inline-block align-text-bottom mr-3">
+          <div class="custom-switch custom-switch-primary-inverse custom-switch-small pl-1" data-toggle="tooltip"
+            data-placement="left" title="Dark Mode">
+            <input class="custom-switch-input" id="switchDark" type="checkbox" checked>
+            <label class="custom-switch-btn" for="switchDark"></label>
           </div>
-          <div style="align-self: stretch; flex: 1 1 0; justify-content: flex-start; align-items: flex-start; gap: 8px; display: inline-flex">
-            <div style="align-self: stretch; padding: 16px; background: #121A1F; border-radius: 8px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
-              <div style="align-self: stretch; height: 26px; padding-top: 4px; padding-bottom: 4px; flex-direction: column; justify-content: center; align-items: center; gap: 4px; display: flex">
-                <div style="align-self: stretch; color: #27929E; font-size: 12px; font-family: Roboto; font-weight: 400; word-wrap: break-word">Explorar</div>
-                <div style="align-self: stretch; height: 0px; border: 1px #27929E solid"></div>
-              </div>
-              <div style="height: 308px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                <div style="align-self: stretch; padding-top: 8px; padding-bottom: 8px; padding-right: 4px; justify-content: space-between; align-items: center; display: inline-flex">
-                  <div style="justify-content: flex-start; align-items: center; gap: 4px; display: flex">
-                    <div style="height: 20px; justify-content: center; align-items: center; gap: 10px; display: flex">
-                      <div style="width: 20px; height: 20px; position: relative">
-                        <div style="width: 4.44px; height: 5.92px; left: 5.03px; top: 7.16px; position: absolute; background: #CECECE"></div>
-                        <div style="width: 4.47px; height: 5.92px; left: 10.53px; top: 7.16px; position: absolute; background: #CECECE"></div>
-                        <div style="width: 20px; height: 20px; left: 0px; top: 0px; position: absolute; background: #CECECE"></div>
-                      </div>
-                    </div>
-                    <div style="justify-content: center; align-items: center; display: flex">
-                      <div style="color: #CECECE; font-size: 14px; font-family: Roboto; font-weight: 500; word-wrap: break-word">OTT</div>
-                    </div>
-                  </div>
-                  <div style="width: 10px; height: 10px; position: relative">
-                    <div style="width: 9px; height: 5.25px; left: 0.50px; top: 2.38px; position: absolute; background: #CECECE"></div>
-                  </div>
-                </div>
-                <div style="align-self: stretch; padding-top: 8px; padding-bottom: 8px; padding-right: 4px; justify-content: space-between; align-items: center; display: inline-flex">
-                  <div style="justify-content: flex-start; align-items: center; gap: 4px; display: flex">
-                    <div style="height: 20px; justify-content: center; align-items: center; gap: 10px; display: flex">
-                      <div style="width: 17.94px; height: 20px; position: relative">
-                        <div style="width: 17.94px; height: 20px; left: 0px; top: 0px; position: absolute; background: #CECECE"></div>
-                      </div>
-                    </div>
-                    <div style="justify-content: center; align-items: center; display: flex">
-                      <div style="color: #CECECE; font-size: 14px; font-family: Roboto; font-weight: 500; word-wrap: break-word">Incubadora</div>
-                    </div>
-                  </div>
-                  <div style="width: 10px; height: 10px; position: relative">
-                    <div style="width: 9px; height: 5.25px; left: 0.50px; top: 2.38px; position: absolute; background: #CECECE"></div>
-                  </div>
-                </div>
-                <div style="align-self: stretch; padding-top: 8px; padding-bottom: 8px; padding-right: 4px; justify-content: space-between; align-items: center; display: inline-flex">
-                  <div style="justify-content: flex-start; align-items: center; gap: 4px; display: flex">
-                    <div style="width: 26px; flex-direction: column; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
-                      <div style="width: 18.65px; height: 20px; position: relative">
-                        <div style="width: 18.65px; height: 20px; left: 0px; top: 0px; position: absolute; background: #CECECE"></div>
-                      </div>
-                    </div>
-                    <div style="justify-content: center; align-items: center; display: flex">
-                      <div style="color: #CECECE; font-size: 14px; font-family: Roboto; font-weight: 500; word-wrap: break-word">Unidades<br/>Experimentales</div>
-                    </div>
-                  </div>
-                  <div style="width: 10px; height: 10px; position: relative">
-                    <div style="width: 9px; height: 5.25px; left: 0.50px; top: 2.38px; position: absolute; background: #CECECE"></div>
-                  </div>
-                </div>
-                <div style="align-self: stretch; padding-top: 8px; padding-bottom: 8px; padding-right: 4px; justify-content: space-between; align-items: center; display: inline-flex">
-                  <div style="justify-content: flex-start; align-items: center; gap: 4px; display: flex">
-                    <div style="width: 26px; flex-direction: column; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
-                      <div style="width: 20px; height: 20px; position: relative">
-                        <div style="width: 20px; height: 19.17px; left: 0px; top: 0px; position: absolute; background: #CECECE"></div>
-                      </div>
-                    </div>
-                    <div style="justify-content: center; align-items: center; display: flex">
-                      <div style="color: #CECECE; font-size: 14px; font-family: Roboto; font-weight: 500; word-wrap: break-word">HubLab</div>
-                    </div>
-                  </div>
-                  <div style="width: 10px; height: 10px; position: relative">
-                    <div style="width: 9px; height: 5.25px; left: 0.50px; top: 2.38px; position: absolute; background: #CECECE"></div>
-                  </div>
-                </div>
-                <div style="align-self: stretch; padding-top: 8px; padding-bottom: 8px; padding-right: 4px; justify-content: space-between; align-items: center; display: inline-flex">
-                  <div style="justify-content: flex-start; align-items: center; gap: 4px; display: flex">
-                    <div style="width: 26px; flex-direction: column; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
-                      <div style="width: 15.56px; height: 20px; position: relative">
-                        <div style="width: 15.56px; height: 20px; left: 0px; top: 0px; position: absolute; background: #CECECE"></div>
-                      </div>
-                    </div>
-                    <div style="justify-content: center; align-items: center; display: flex">
-                      <div style="color: #CECECE; font-size: 14px; font-family: Roboto; font-weight: 500; word-wrap: break-word">Investigación</div>
-                    </div>
-                  </div>
-                  <div style="width: 10px; height: 10px; position: relative">
-                    <div style="width: 9px; height: 5.25px; left: 0.50px; top: 2.38px; position: absolute; background: #CECECE"></div>
-                  </div>
-                </div>
-                <div style="align-self: stretch; padding-top: 8px; padding-bottom: 8px; padding-right: 4px; justify-content: space-between; align-items: center; display: inline-flex">
-                  <div style="justify-content: flex-start; align-items: center; gap: 4px; display: flex">
-                    <div style="width: 26px; flex-direction: column; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
-                      <div style="width: 22.34px; height: 20px; position: relative">
-                        <div style="width: 22.34px; height: 14.52px; left: 0px; top: 0px; position: absolute; background: #CECECE"></div>
-                        <div style="width: 13.21px; height: 7.71px; left: 4.56px; top: 12.29px; position: absolute; background: #CECECE"></div>
-                      </div>
-                    </div>
-                    <div style="justify-content: center; align-items: center; display: flex">
-                      <div style="color: #CECECE; font-size: 14px; font-family: Roboto; font-weight: 500; word-wrap: break-word">Formación</div>
-                    </div>
-                  </div>
-                  <div style="width: 10px; height: 10px; position: relative">
-                    <div style="width: 9px; height: 5.25px; left: 0.50px; top: 2.38px; position: absolute; background: #CECECE"></div>
-                  </div>
-                </div>
-              </div>
+        </div>
+
+        <div class="position-relative d-none d-sm-inline-block">
+          <button class="header-icon btn btn-empty" type="button" id="iconMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <i class="simple-icon-grid"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right mt-3  position-absolute" id="iconMenuDropdown">
+            <a href="#" class="icon-menu-item">
+              <i class="iconsminds-equalizer d-block"></i>
+              <span>Settings</span>
+            </a>
+
+            <a href="#" class="icon-menu-item">
+              <i class="iconsminds-male-female d-block"></i>
+              <span>Users</span>
+            </a>
+
+            <a href="#" class="icon-menu-item">
+              <i class="iconsminds-puzzle d-block"></i>
+              <span>Components</span>
+            </a>
+
+            <a href="#" class="icon-menu-item">
+              <i class="iconsminds-bar-chart-4 d-block"></i>
+              <span>Profits</span>
+            </a>
+
+            <a href="#" class="icon-menu-item">
+              <i class="iconsminds-file d-block"></i>
+              <span>Surveys</span>
+            </a>
+
+            <a href="#" class="icon-menu-item">
+              <i class="iconsminds-suitcase d-block"></i>
+              <span>Tasks</span>
+            </a>
+
+          </div>
+        </div>
+
+        <button class="header-icon btn btn-empty " type="button" id="fullScreenButton">
+          <i class="simple-icon-size-fullscreen"></i>
+          <i class="simple-icon-size-actual"></i>
+        </button>
+
+      </div>
+
+      <div class="user d-inline-block">
+        <button class="btn btn-empty p-0" type="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <span class="name">Sarah Kortney</span>
+          <span>
+            <img alt="Profile Picture" src="img/profiles/l-1.jpg" />
+          </span>
+        </button>
+
+        <div class="dropdown-menu dropdown-menu-right mt-3">
+          <a class="dropdown-item" href="#">Account</a>
+          <a class="dropdown-item" href="#">Features</a>
+          <a class="dropdown-item" href="#">History</a>
+          <a class="dropdown-item" href="#">Support</a>
+          <a class="dropdown-item" href="#">Sign out</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!--Menu Principal-->
+
+  <div class="menu">
+    <div class="main-menu">
+      <div class="scroll">
+        <ul class="list-unstyled">
+          <li class="active">
+            <a href="#quienesomos">
+              <i class="iconsminds-police-station"></i>
+              <span>Quiénes somos</span>
+            </a>
+          </li>
+          <li>
+            <a href="#servicios">
+              <i class="iconsminds-digital-drawing"></i> Servicios
+            </a>
+          </li>
+          <li>
+            <a href="#labs">
+              <i class="iconsminds-cpu"></i> Laboratorios
+            </a>
+          </li>
+
+          <li>
+            <a href="#investigacion">
+              <i class="iconsminds-chemical"></i> Investigación
+            </a>
+          </li>
+          <li>
+            <a href="#formacion">
+              <i class="
+                        iconsminds-student-male-female"></i> Formación
+            </a>
+          </li>
+          <li>
+            <a href="#noticias">
+              <i class="simple-icon-heart"></i> Noticias
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+
+    <!--Menu Secundario-->
+
+    <div class="sub-menu">
+      <div class="scroll">
+        <!--Quienes somos-->
+        <ul class="list-unstyled" data-link="quienesomos">
+          <li class="active">
+            <a href="1_Quienes.Somos_Origenes.html">
+              <i class="simple-icon-rocket"></i> <span class="d-inline-block">Orígenes</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="simple-icon-pie-chart"></i> <span class="d-inline-block">Misión y visión</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="iconsminds-profile"></i> <span class="d-inline-block">Equipo de trabajo</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="iconsminds-edit-map"></i> <span class="d-inline-block">Donde estamos</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="iconsminds-business-mens"></i> <span class="d-inline-block">Colaboradores</span>
+            </a>
+          </li>
+        </ul>
+
+
+        <!--Servicios-->
+        <ul class="list-unstyled" data-link="servicios" id="servicios">
+          <!--Hojas de ruta-->
+          <li>
+            <a href="#" data-toggle="collapse" data-target="#collapsehojaruta" aria-expanded="true"
+              aria-controls="#collapsehojaruta" class="rotate-arrow-icon opacity-50">
+              <i class="simple-icon-arrow-down"></i> <span class="d-inline-block">Hojas de ruta</span>
+            </a>
+            <div id="collapsehojaruta" class="collapse show">
+              <ul class="list-unstyled inner-level-menu">
+                <li>
+                  <a href="#">
+                    <i class="iconsminds-factory-1"></i> <span class="d-inline-block">Gestión Logística</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="iconsminds-satelite-2"></i> <span class="d-inline-block">Gestión de Transporte</span>
+                  </a>
+                </li>
+              </ul>
             </div>
-            <div style="flex: 1 1 0; align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: center; gap: 10px; display: inline-flex">
-              <div style="align-self: stretch; height: 977px; background: #121A1F; border-radius: 8px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; gap: 48px; display: flex">
-                <div style="align-self: stretch; height: 48px; padding: 16px; background: #202E37; flex-direction: column; justify-content: center; align-items: center; gap: 8px; display: flex">
-                  <div style="align-self: stretch; color: #9C9C9C; font-size: 14px; font-family: Roboto; font-weight: 400; word-wrap: break-word">Inicio</div>
-                </div>
-                <div style="align-self: stretch; height: 673px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 48px; display: flex">
-                  <div style="align-self: stretch; height: 110px; padding-left: 16px; padding-right: 16px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 24px; display: flex">
-                    <div style="align-self: stretch; justify-content: center; align-items: center; display: inline-flex">
-                      <div style="flex: 1 1 0; text-align: center; color: #27929E; font-size: 24px; font-family: Montserrat; font-weight: 800; word-wrap: break-word">CENTRO DE INNVACIÓN Y TRANSFORMACIÓN TECNOLÓGICA</div>
-                    </div>
-                    <div style="align-self: stretch; height: 57px; flex-direction: column; justify-content: center; align-items: center; display: flex">
-                      <div style="align-self: stretch; text-align: center; color: #9C9C9C; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word">Este portal ha sido diseñado para centralizar toda la información relacionada con los recursos innovadores y académicos de la Universidad Politécnica Estatal del Carchi. Aquí podrá conocer los laboratorios, clubes estudiantiles y la incubadora de proyectos que impulsan el espíritu emprendedor, la investigación y el desarrollo de nuevos conocimientos.</div>
-                    </div>
-                  </div>
-                  <div style="align-self: stretch; height: 515px; padding-bottom: 48px; flex-direction: column; justify-content: center; align-items: center; gap: 24px; display: flex">
-                    <div style="align-self: stretch; height: 37px; padding-left: 16px; padding-right: 16px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 16px; display: flex">
-                      <div style="align-self: stretch; text-align: center; color: #9C9C9C; font-size: 18px; font-family: Roboto; font-weight: 700; word-wrap: break-word">Explorar secciones</div>
-                      <div style="align-self: stretch; height: 0px; border: 2px #9C9C9C solid"></div>
-                    </div>
-                    <div style="align-self: stretch; padding-top: 48px; padding-bottom: 48px; background: #27929E; justify-content: center; align-items: flex-start; gap: 48px; display: inline-flex">
-                      <div style="box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.50); border-radius: 8px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
-                        <img style="width: 250px; height: 250px; padding: 10px" src="https://via.placeholder.com/250x250" />
-                        <div style="align-self: stretch; height: 60px; padding: 10px; background: #202E37; justify-content: center; align-items: center; gap: 16px; display: inline-flex">
-                          <div style="width: 23.33px; height: 30px; position: relative">
-                            <div style="width: 23.33px; height: 30px; left: 0px; top: 0px; position: absolute; background: #CECECE"></div>
-                          </div>
-                          <div style="text-align: center; color: #CECECE; font-size: 16px; font-family: Montserrat; font-weight: 600; word-wrap: break-word">Laboratorios</div>
-                        </div>
-                      </div>
-                      <div style="box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.50); border-radius: 8px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
-                        <img style="width: 250px; height: 250px; padding: 10px" src="https://via.placeholder.com/250x250" />
-                        <div style="align-self: stretch; height: 60px; padding: 10px; background: #202E37; justify-content: center; align-items: center; gap: 16px; display: inline-flex">
-                          <div style="width: 26.92px; height: 30px; position: relative">
-                            <div style="width: 26.92px; height: 30px; left: 0px; top: 0px; position: absolute; background: #CECECE"></div>
-                          </div>
-                          <div style="text-align: center; color: #CECECE; font-size: 16px; font-family: Montserrat; font-weight: 600; word-wrap: break-word">Incubadoras</div>
-                        </div>
-                      </div>
-                      <div style="box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.50); border-radius: 8px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
-                        <img style="width: 250px; height: 250px; padding: 10px" src="https://via.placeholder.com/250x250" />
-                        <div style="align-self: stretch; height: 60px; padding: 10px; background: #202E37; justify-content: center; align-items: center; gap: 16px; display: inline-flex">
-                          <div style="width: 38.82px; height: 30px; position: relative">
-                            <div style="width: 38.82px; height: 30px; left: 0px; top: 0px; position: absolute; background: #CECECE"></div>
-                          </div>
-                          <div style="text-align: center; color: #CECECE; font-size: 16px; font-family: Montserrat; font-weight: 600; word-wrap: break-word">Clubes</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div style="align-self: stretch; height: 160px; padding-left: 24px; padding-right: 24px; padding-top: 16px; padding-bottom: 16px; background: #202E37; justify-content: space-between; align-items: flex-start; display: inline-flex">
-                  <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
-                    <div style="align-self: stretch; height: 24px; flex-direction: column; justify-content: center; align-items: flex-start; gap: 8px; display: flex">
-                      <div style="width: 95px; text-align: center; color: #CECECE; font-size: 14px; font-family: Roboto; font-weight: 500; word-wrap: break-word">Redes sociales</div>
-                      <div style="align-self: stretch; height: 0px; border: 3px #27929E solid"></div>
-                    </div>
-                    <div style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 16px; display: inline-flex">
-                      <div style="width: 25px; height: 25px; position: relative">
-                        <div style="width: 25px; height: 25px; left: 0px; top: 0px; position: absolute; background: #9C9C9C"></div>
-                      </div>
-                      <div style="width: 25px; height: 25px; position: relative">
-                        <div style="width: 25px; height: 25px; left: 0px; top: 0px; position: absolute; background: #9C9C9C"></div>
-                      </div>
-                      <div style="width: 32.14px; height: 25px; justify-content: center; align-items: center; display: flex">
-                        <div style="width: 32.14px; height: 25px; position: relative">
-                          <div style="width: 32.14px; height: 25px; left: 0px; top: 0px; position: absolute">
-                            <div style="width: 32.14px; height: 25px; left: 0px; top: 0px; position: absolute; background: white"></div>
-                            <div style="width: 10.71px; height: 12.50px; left: 12.50px; top: 6.25px; position: absolute; background: black"></div>
-                          </div>
-                          <div style="width: 42.86px; height: 42.86px; left: -5.36px; top: -8.93px; position: absolute; background: #9C9C9C"></div>
-                        </div>
-                      </div>
-                      <div style="width: 25px; height: 25px; position: relative">
-                        <div style="width: 25px; height: 25px; left: 0px; top: 0px; position: absolute; background: #9C9C9C"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
-                    <div style="align-self: stretch; height: 24px; flex-direction: column; justify-content: center; align-items: flex-start; gap: 8px; display: flex">
-                      <div style="text-align: center; color: #CECECE; font-size: 14px; font-family: Roboto; font-weight: 500; word-wrap: break-word">Dirección y contacto</div>
-                      <div style="align-self: stretch; height: 0px; border: 3px #27929E solid"></div>
-                    </div>
-                    <div style="align-self: stretch; height: 64px; flex-direction: column; justify-content: center; align-items: flex-start; gap: 8px; display: flex">
-                      <div style="color: #9C9C9C; font-size: 14px; font-family: Roboto; font-weight: 300; word-wrap: break-word">Calle Antisana y Av. Universitaria</div>
-                      <div style="color: #9C9C9C; font-size: 14px; font-family: Roboto; font-weight: 300; word-wrap: break-word">info@upec.edu.ec</div>
-                      <div style="color: #9C9C9C; font-size: 14px; font-family: Roboto; font-weight: 300; word-wrap: break-word">(06) 2980 837 - 2984 435</div>
-                    </div>
-                  </div>
-                  <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
-                    <div style="align-self: stretch; height: 24px; flex-direction: column; justify-content: center; align-items: flex-start; gap: 8px; display: flex">
-                      <div style="text-align: center; color: #CECECE; font-size: 14px; font-family: Roboto; font-weight: 500; word-wrap: break-word">Desarrolladores</div>
-                      <div style="align-self: stretch; height: 0px; border: 3px #27929E solid"></div>
-                    </div>
-                    <div style="align-self: stretch; height: 88px; flex-direction: column; justify-content: center; align-items: flex-start; gap: 8px; display: flex">
-                      <div style="color: #9C9C9C; font-size: 14px; font-family: Roboto; font-weight: 300; word-wrap: break-word">John Cortés</div>
-                      <div style="color: #9C9C9C; font-size: 14px; font-family: Roboto; font-weight: 300; word-wrap: break-word">Angelo Benavides</div>
-                      <div style="color: #9C9C9C; font-size: 14px; font-family: Roboto; font-weight: 300; word-wrap: break-word">Geovanny Basantes</div>
-                      <div style="color: #9C9C9C; font-size: 14px; font-family: Roboto; font-weight: 300; word-wrap: break-word">Luis Alpala</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          </li>
+
+          <!--Colaboración-->
+          <li>
+            <a href="#" data-toggle="collapse" data-target="#collapsecolaboracion" aria-expanded="true"
+              aria-controls="#collapsecolaboracion" class="rotate-arrow-icon opacity-50">
+              <i class="simple-icon-arrow-down"></i> <span class="d-inline-block">Colaboración</span>
+            </a>
+            <div id="collapsecolaboracion" class="collapse show">
+              <ul class="list-unstyled inner-level-menu">
+                <li>
+                  <a href="#">
+                    <i class="iconsminds-headset"></i> <span class="d-inline-block">Asesoramiento</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="iconsminds-preview"></i> <span class="d-inline-block">Convenios</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="iconsminds-monitor---tablet"></i> <span class="d-inline-block">Prácticas y
+                      Pasantías</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="iconsminds-diamond"></i> <span class="d-inline-block">Emprendimiento</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="iconsminds-calendar-4"></i> <span class="d-inline-block">Convocatorias</span>
+                  </a>
+                </li>
+              </ul>
             </div>
+          </li>
+          <!--Casos de exito-->
+          <li>
+            <a href="#" data-toggle="collapse" data-target="#collapsecasosexito" aria-expanded="true"
+              aria-controls="#collapsecasosexito" class="rotate-arrow-icon opacity-50">
+              <i class="simple-icon-arrow-down"></i> <span class="d-inline-block">Casos de éxito</span>
+            </a>
+            <div id="collapsecasosexito" class="collapse show">
+              <ul class="list-unstyled inner-level-menu">
+                <li>
+                  <a href="#">
+                    <i class="iconsminds-books"></i> <span class="d-inline-block">Vinculación</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="iconsminds-box-full"></i> <span class="d-inline-block">Contratos I+D</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="iconsminds-environmental-3"></i> <span class="d-inline-block">Iniciativas
+                      sectoriales</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+        </ul>
+
+        <!--Laboratorios-->
+        <ul class="list-unstyled" data-link="labs" id="labs">
+          <li>
+            <a href="#" data-toggle="collapse" data-target="#collapselabxr" aria-expanded="true"
+              aria-controls="#collapselabxr" class="rotate-arrow-icon opacity-50">
+              <i class="simple-icon-arrow-down"></i> <span class="d-inline-block">Laboratorio XR</span>
+            </a>
+            <div id="collapselabxr" class="collapse show">
+              <ul class="list-unstyled inner-level-menu">
+                <li>
+                  <a href="2_Laboratorios_sobre.html">
+                    <i class="simple-icon-login"></i> <span class="d-inline-block">Sobre el Laboratorio</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="simple-icon-organization"></i> <span class="d-inline-block">Tecnologías</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="iconsminds-monitor---tablet"></i> <span class="d-inline-block">Instalaciones</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="simple-icon-people"></i> <span class="d-inline-block">Equipo de trabajo</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="simple-icon-notebook"></i> <span class="d-inline-block">Proyectos I+D</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="iconsminds-student-male-female"></i> <span class="d-inline-block">Formación</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="simple-icon-control-play"></i> <span class="d-inline-block">Prácticas</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <!--Laboratorios-->
+          <li>
+            <a href="#" data-toggle="collapse" data-target="#lab4" aria-expanded="true" aria-controls="#lab4"
+              class="rotate-arrow-icon opacity-50">
+              <i class="simple-icon-arrow-down"></i> <span class="d-inline-block">Laboratorio Logística 4.0</span>
+            </a>
+            <div id="lab4" class="collapse show">
+              <ul class="list-unstyled inner-level-menu">
+                <li>
+                  <a href="Pages.Product.List.html">
+                    <i class="simple-icon-login"></i> <span class="d-inline-block">Sobre el Laboratorio</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="simple-icon-organization"></i> <span class="d-inline-block">Tecnologías</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="iconsminds-monitor---tablet"></i> <span class="d-inline-block">Instalaciones</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="simple-icon-people"></i> <span class="d-inline-block">Equipo de trabajo</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="simple-icon-notebook"></i> <span class="d-inline-block">Proyectos I+D</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="simple-icon-control-play"></i> <span class="d-inline-block">Prácticas</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+
+        <!--Investigación-->
+        <ul class="list-unstyled" data-link="investigacion" id="investigacion">
+          <!--Unidad de Investigación-->
+          <li>
+            <a href="#" data-toggle="collapse" data-target="#collapseinv" aria-expanded="true"
+              aria-controls="#collapseinv" class="rotate-arrow-icon opacity-50">
+              <i class="simple-icon-arrow-down"></i> <span class="d-inline-block">Unidad de Investigación</span>
+            </a>
+            <div id="collapseinv" class="collapse show">
+              <ul class="list-unstyled inner-level-menu">
+                <li>
+                  <a href="#">
+                    <i class="iconsminds-factory-1"></i> <span class="d-inline-block">Investigación</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="iconsminds-satelite-2"></i> <span class="d-inline-block">Difución cientifica</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <!--Eventos-->
+          <li>
+            <a href="#" data-toggle="collapse" data-target="#collapseeventos" aria-expanded="true"
+              aria-controls="#collapseeventos" class="rotate-arrow-icon opacity-50">
+              <i class="simple-icon-arrow-down"></i> <span class="d-inline-block">Eventos</span>
+            </a>
+            <div id="collapseeventos" class="collapse show">
+              <ul class="list-unstyled inner-level-menu">
+                <li>
+                  <a href="#">
+                    <i class="simple-icon-globe"></i> <span class="d-inline-block">Congresos</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="simple-icon-share"></i> <span class="d-inline-block">Seminarios</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="simple-icon-social-youtube"></i> <span class="d-inline-block">Webinars</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+        </ul>
+
+        <!--FORMACIÓN-->
+        <ul class="list-unstyled" data-link="formacion">
+          <li>
+            <a href="#">
+              <i class="simple-icon-graduation"></i> <span class="d-inline-block">Formación grado</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="simple-icon-graduation"></i> <span class="d-inline-block">Formación posgrado</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="simple-icon-graduation"></i> <span class="d-inline-block">Cursos a la medida</span>
+            </a>
+          </li>
+
+        </ul>
+
+
+        <!--NOTICIAS-->
+        <ul class="list-unstyled" data-link="noticias">
+          <li>
+            <a href="#">
+              <i class="simple-icon-star"></i> <span class="d-inline-block">Columnas</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="simple-icon-notebook"></i> <span class="d-inline-block">Artículos</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="simple-icon-cursor"></i> <span class="d-inline-block">Prensa</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="simple-icon-event"></i> <span class="d-inline-block">Blog</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="simple-icon-fire"></i> <span class="d-inline-block">Novedades</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="simple-icon-question"></i> <span class="d-inline-block">Historias que inspiran</span>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!--Contenido Principal-->
+
+  <main>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <h1>Origenes</h1>
+          <nav class="breadcrumb-container d-none d-sm-block d-lg-inline-block" aria-label="breadcrumb">
+            <ol class="breadcrumb pt-0">
+              <li class="breadcrumb-item">
+                <a href="#">Home</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="#">Library</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">Data</li>
+            </ol>
+          </nav>
+          <div class="separator mb-5"></div>
+        </div>
+
+      
+    </div>
+  </main>
+
+  <!--Pie de pagina-->
+
+  <footer class="page-footer">
+    <div class="footer-content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-sm-6">
+            <p class="mb-0 text-muted">Copyright © 2024</p>
+          </div>
+          <div class="col-sm-6 d-none d-sm-block">
+            <ul class="breadcrumb pt-0 pr-0 float-right">
+              <li class="breadcrumb-item mb-0">
+                <a href="#" class="btn-link">Terminos y condiciones</a>
+              </li>
+              <li class="breadcrumb-item mb-0">
+                <a href="#" class="btn-link">Política de privacidad </a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
-</html>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 </body>
 </html>
