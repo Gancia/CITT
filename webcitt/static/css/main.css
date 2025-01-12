@@ -1,63 +1,45 @@
-:root {
-  --theme-color-1: #126937; /* Verde principal */
-  --theme-color-2: #116133; /* Variación más oscura de verde */
-  --theme-color-3: #FECE00; /* Amarillo brillante */
-  --theme-color-4: #FFFFFF; /* Fondo blanco */
-  --theme-color-5: #6F6F6F; /* Gris neutro para bordes, iconos */
-  --theme-color-6: #5F5F5F; /* Gris oscuro para texto */
-  --theme-color-1-10: rgba(18, 105, 55, 0.1); /* Verde translúcido */
-  --theme-color-2-10: rgba(17, 97, 51, 0.1); /* Verde oscuro translúcido */
-  --theme-color-3-10: rgba(254, 206, 0, 0.1); /* Amarillo translúcido */
-  --theme-color-4-10: rgba(255, 255, 255, 0.1); /* Blanco translúcido */
-  --theme-color-5-10: rgba(111, 111, 111, 0.1); /* Gris translúcido */
-  --theme-color-6-10: rgba(95, 95, 95, 0.1); /* Gris oscuro translúcido */
-  --primary-color: var(--theme-color-1); /* Verde como primario */
-  --foreground-color: var(--theme-color-5); /* Gris neutro para elementos secundarios */
-  --separator-color: var(--theme-color-6); /* Gris oscuro para líneas y separadores */
-}
-
 html {
   width: 100%;
 }
 
 body {
-  background: #0E1418;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-  flex: 1 0 0;
-  align-self: stretch;
+  overflow-x: hidden !important;
 }
-header {
-  display: flex;
-  padding: 8px 8px;
-  align-items: center;
-  gap: 127px;
-  align-self: stretch;
+
+body.show-spinner>main {
+  overflow: hidden !important;
 }
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex: 1 0 0;
+
+/* Hide everything under body tag */
+body.show-spinner>* {
+  opacity: 0;
 }
-.web-name-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+
+/* Spinner */
+body.show-spinner::after {
+  content: " ";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  border-top-color: rgba(0, 0, 0, 0.3);
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+  left: calc(50% - 15px);
+  top: calc(50% - 15px);
+  position: fixed;
+  z-index: 1;
 }
-.web-name {
-  color: #27929E;
-  font-family: "Montserrat", serif;
-  font-size: 22px;
-  font-style: normal;
-  font-weight: 900;
-  line-height: 33px;
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
-.nav-icons {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
 }
