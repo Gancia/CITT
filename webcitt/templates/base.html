@@ -172,25 +172,36 @@
       <div class="main-menu">
         <div class="scroll">
           <ul class="list-unstyled">
-            <li {% if request.resolver_match.url_name == 'ott' %}class="active"{% endif %}>
-              <a href="{% url 'ott' %}" data-link="ott-menu">
+            <li class="{% if seccion_activa == 'ott' %}active{% endif %}">
+              <a href="{% url 'ott' %}" data-link="ott">
                 <i class="iconsminds-police-station"></i>
                 <span style="display: block;">OTT</span>
               </a>
             </li>
-            <li {% if request.resolver_match.url_name == 'incubadora' %}class="active"{% endif %}>
-              <a href="{% url 'incubadora' %}" data-link="incubadora-menu">
+            <li class="{% if seccion_activa == 'incubadora' %}active{% endif %}">
+              <a href="{% url 'incubadora' %}" data-link="incubadora">
                 <i class="iconsminds-digital-drawing"></i>
                 <span style="display: block;">Incubadora</span>
               </a>
             </li>
-            <li {% if request.resolver_match.url_name == 'uexperimentales' %}class="active"{% endif %}>
-              <a href="{% url 'uexperimentales' %}" data-link="uexperimentales-menu">
+            <li class="{% if seccion_activa == 'uexperimentales' %}active{% endif %}">
+              <a href="{% url 'uexperimentales' %}" data-link="uexperimentales">
                 <i class="iconsminds-cpu"></i>
                 <span style="display: block;">Unidades Experimentales</span>
               </a>
             </li>
-            <!-- ... otros elementos del menú ... -->
+            <li class="{% if seccion_activa == 'hublab' %}active{% endif %}">
+              <a href="{% url 'hublab' %}" data-link="hublab">
+                <i class="iconsminds-cpu"></i>
+                <span style="display: block;">HubLab</span>
+              </a>
+            </li>
+            <li class="{% if seccion_activa == 'formacion' %}active{% endif %}">
+              <a href="{% url 'formacion' %}" data-link="formacion">
+                <i class="iconsminds-cpu"></i>
+                <span style="display: block;">Formación</span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -199,7 +210,7 @@
       <div class="sub-menu">
         <div class="scroll">
           <!-- Submenú OTT -->
-          <ul class="list-unstyled" data-link="ott-menu" {% if request.resolver_match.url_name != 'ott' %}style="display:none"{% endif %}>
+          <ul class="list-unstyled" data-link="ott">
             <li>
               <a href="#">
                 <i class="simple-icon-rocket"></i> 
@@ -210,7 +221,7 @@
           </ul>
 
           <!-- Submenú Incubadora -->
-          <ul class="list-unstyled" data-link="incubadora-menu" {% if request.resolver_match.url_name != 'incubadora' %}style="display:none"{% endif %}>
+          <ul class="list-unstyled" data-link="incubadora">
             <li>
               <a href="#">
                 <i class="simple-icon-rocket"></i>
@@ -220,406 +231,39 @@
             <!-- ... otros items del submenu ... -->
           </ul>
 
-          <!--Quienes somos-->
-          <ul class="list-unstyled" data-link="quienesomos">
+          <!-- Submenú Unidades Experimentales-->
+          <ul class="list-unstyled" data-link="uexperimentales">
             <li>
               <a href="#">
                 <i class="simple-icon-rocket"></i>
-                <span class="d-inline-block">¿Quiénes somos?</span>
+                <span class="d-inline-block">Sobre Unidades Experimentales</span>
               </a>
             </li>
-            <li>
-              <a href="#">
-                <i class="simple-icon-pie-chart"></i>
-                <span class="d-inline-block">Misión y visión</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="iconsminds-profile"></i>
-                <span class="d-inline-block">Equipo de trabajo</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="iconsminds-edit-map"></i>
-                <span class="d-inline-block">Donde estamos</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="iconsminds-business-mens"></i>
-                <span class="d-inline-block">Colaboradores</span>
-              </a>
-            </li>
+            <!-- ... otros items del submenu ... -->
           </ul>
 
-          <!--Servicios-->
-          <ul class="list-unstyled" data-link="servicios" id="servicios">
-            <!--Hojas de ruta-->
+          <!-- Submenú HubLab -->
+          <ul class="list-unstyled" data-link="hublab">
             <li>
-              <a
-                href="#"
-                data-toggle="collapse"
-                data-target="#collapsehojaruta"
-                aria-expanded="true"
-                aria-controls="#collapsehojaruta"
-                class="rotate-arrow-icon opacity-50">
-                <i class="simple-icon-arrow-down"></i>
-                <span class="d-inline-block">Hojas de ruta</span>
+              <a href="#">
+                <i class="simple-icon-rocket"></i>
+                <span class="d-inline-block">Sobre Incubadora</span>
               </a>
-              <div id="collapsehojaruta" class="collapse show">
-                <ul class="list-unstyled inner-level-menu">
-                  <li>
-                    <a href="#">
-                      <i class="iconsminds-factory-1"></i>
-                      <span class="d-inline-block">Gestión Logística</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="iconsminds-satelite-2"></i>
-                      <span class="d-inline-block">Gestión de Transporte</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
             </li>
-
-            <!--Colaboración-->
-            <li>
-              <a
-                href="#"
-                data-toggle="collapse"
-                data-target="#collapsecolaboracion"
-                aria-expanded="true"
-                aria-controls="#collapsecolaboracion"
-                class="rotate-arrow-icon opacity-50">
-                <i class="simple-icon-arrow-down"></i>
-                <span class="d-inline-block">Colaboración</span>
-              </a>
-              <div id="collapsecolaboracion" class="collapse show">
-                <ul class="list-unstyled inner-level-menu">
-                  <li>
-                    <a href="#">
-                      <i class="iconsminds-headset"></i>
-                      <span class="d-inline-block">Asesoramiento</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="iconsminds-preview"></i>
-                      <span class="d-inline-block">Convenios</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="iconsminds-monitor---tablet"></i>
-                      <span class="d-inline-block">Prácticas y Pasantías</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="iconsminds-diamond"></i>
-                      <span class="d-inline-block">Emprendimiento</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="iconsminds-calendar-4"></i>
-                      <span class="d-inline-block">Convocatorias</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <!--Casos de exito-->
-            <li>
-              <a
-                href="#"
-                data-toggle="collapse"
-                data-target="#collapsecasosexito"
-                aria-expanded="true"
-                aria-controls="#collapsecasosexito"
-                class="rotate-arrow-icon opacity-50">
-                <i class="simple-icon-arrow-down"></i>
-                <span class="d-inline-block">Casos de éxito</span>
-              </a>
-              <div id="collapsecasosexito" class="collapse show">
-                <ul class="list-unstyled inner-level-menu">
-                  <li>
-                    <a href="#">
-                      <i class="iconsminds-books"></i>
-                      <span class="d-inline-block">Vinculación</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="iconsminds-box-full"></i>
-                      <span class="d-inline-block">Contratos I+D</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="iconsminds-environmental-3"></i>
-                      <span class="d-inline-block">Iniciativas
-                        sectoriales</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
+            <!-- ... otros items del submenu ... -->
           </ul>
 
-          <!--Laboratorios-->
-          <ul class="list-unstyled" data-link="labs" id="labs">
-            <li>
-              <a
-                href="#"
-                data-toggle="collapse"
-                data-target="#collapselabxr"
-                aria-expanded="true"
-                aria-controls="#collapselabxr"
-                class="rotate-arrow-icon opacity-50">
-                <i class="simple-icon-arrow-down"></i>
-                <span class="d-inline-block">Laboratorio XR</span>
-              </a>
-              <div id="collapselabxr" class="collapse show">
-                <ul class="list-unstyled inner-level-menu">
-                  <li>
-                    <a href="2_Laboratorios_sobre.html">
-                      <i class="simple-icon-login"></i>
-                      <span class="d-inline-block">Sobre el Laboratorio</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="simple-icon-organization"></i>
-                      <span class="d-inline-block">Tecnologías</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="iconsminds-monitor---tablet"></i>
-                      <span class="d-inline-block">Instalaciones</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="simple-icon-people"></i>
-                      <span class="d-inline-block">Equipo de trabajo</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="simple-icon-notebook"></i>
-                      <span class="d-inline-block">Proyectos I+D</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="iconsminds-student-male-female"></i>
-                      <span class="d-inline-block">Formación</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="simple-icon-control-play"></i>
-                      <span class="d-inline-block">Prácticas</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-
-            <!--Laboratorios-->
-            <li>
-              <a
-                href="#"
-                data-toggle="collapse"
-                data-target="#lab4"
-                aria-expanded="true"
-                aria-controls="#lab4"
-                class="rotate-arrow-icon opacity-50">
-                <i class="simple-icon-arrow-down"></i>
-                <span class="d-inline-block">Laboratorio Logística 4.0</span>
-              </a>
-              <div id="lab4" class="collapse show">
-                <ul class="list-unstyled inner-level-menu">
-                  <li>
-                    <a href="Pages.Product.List.html">
-                      <i class="simple-icon-login"></i>
-                      <span class="d-inline-block">Sobre el Laboratorio</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="simple-icon-organization"></i>
-                      <span class="d-inline-block">Tecnologías</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="iconsminds-monitor---tablet"></i>
-                      <span class="d-inline-block">Instalaciones</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="simple-icon-people"></i>
-                      <span class="d-inline-block">Equipo de trabajo</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="simple-icon-notebook"></i>
-                      <span class="d-inline-block">Proyectos I+D</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="simple-icon-control-play"></i>
-                      <span class="d-inline-block">Prácticas</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-
-          <!--Investigación-->
-          <ul
-            class="list-unstyled"
-            data-link="investigacion"
-            id="investigacion">
-            <!--Unidad de Investigación-->
-            <li>
-              <a
-                href="#"
-                data-toggle="collapse"
-                data-target="#collapseinv"
-                aria-expanded="true"
-                aria-controls="#collapseinv"
-                class="rotate-arrow-icon opacity-50">
-                <i class="simple-icon-arrow-down"></i>
-                <span class="d-inline-block">Unidad de Investigación</span>
-              </a>
-              <div id="collapseinv" class="collapse show">
-                <ul class="list-unstyled inner-level-menu">
-                  <li>
-                    <a href="#">
-                      <i class="iconsminds-factory-1"></i>
-                      <span class="d-inline-block">Investigación</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="iconsminds-satelite-2"></i>
-                      <span class="d-inline-block">Difución cientifica</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-
-            <!--Eventos-->
-            <li>
-              <a
-                href="#"
-                data-toggle="collapse"
-                data-target="#collapseeventos"
-                aria-expanded="true"
-                aria-controls="#collapseeventos"
-                class="rotate-arrow-icon opacity-50">
-                <i class="simple-icon-arrow-down"></i>
-                <span class="d-inline-block">Eventos</span>
-              </a>
-              <div id="collapseeventos" class="collapse show">
-                <ul class="list-unstyled inner-level-menu">
-                  <li>
-                    <a href="#">
-                      <i class="simple-icon-globe"></i>
-                      <span class="d-inline-block">Congresos</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="simple-icon-share"></i>
-                      <span class="d-inline-block">Seminarios</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="simple-icon-social-youtube"></i>
-                      <span class="d-inline-block">Webinars</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-
-          <!--FORMACIÓN-->
+          <!-- Submenú Formación -->
           <ul class="list-unstyled" data-link="formacion">
             <li>
               <a href="#">
-                <i class="simple-icon-graduation"></i>
-                <span class="d-inline-block">Formación grado</span>
+                <i class="simple-icon-rocket"></i>
+                <span class="d-inline-block">Sobre Formación</span>
               </a>
             </li>
-            <li>
-              <a href="#">
-                <i class="simple-icon-graduation"></i>
-                <span class="d-inline-block">Formación posgrado</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="simple-icon-graduation"></i>
-                <span class="d-inline-block">Cursos a la medida</span>
-              </a>
-            </li>
+            <!-- ... otros items del submenu ... -->
           </ul>
-
-          <!--NOTICIAS-->
-          <ul class="list-unstyled" data-link="noticias">
-            <li>
-              <a href="#">
-                <i class="simple-icon-star"></i>
-                <span class="d-inline-block">Columnas</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="simple-icon-notebook"></i>
-                <span class="d-inline-block">Artículos</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="simple-icon-cursor"></i>
-                <span class="d-inline-block">Prensa</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="simple-icon-event"></i>
-                <span class="d-inline-block">Blog</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="simple-icon-fire"></i>
-                <span class="d-inline-block">Novedades</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="simple-icon-question"></i>
-                <span class="d-inline-block">Historias que inspiran</span>
-              </a>
-            </li>
-          </ul>
+          
         </div>
       </div>
     </div>
@@ -635,7 +279,7 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-12 col-sm-6">
-              <p class="mb-0 text-muted">CITT 2024</p>
+              <p class="mb-0 text-muted">CITT 2025</p>
             </div>
           </div>
         </div>
