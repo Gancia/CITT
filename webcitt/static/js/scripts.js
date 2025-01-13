@@ -1,4 +1,33 @@
 $(document).ready(function() {
+    // Variables para control del menú
+    var menuClickCount = 0;
+    const allMenuClassNames = "menu-default menu-hidden sub-hidden main-hidden menu-sub-hidden main-show-temporary sub-show-temporary menu-mobile";
+
+    // Función para cambiar las clases del menú
+    function setMenuClassNames(clickIndex) {
+        menuClickCount = clickIndex;
+        const container = $("#app-container");
+        let nextClasses = "";
+
+        // Ciclo de estados del menú
+        if (clickIndex % 3 === 0) {  // Estado inicial: todo visible
+            nextClasses = "menu-default";
+        } else if (clickIndex % 3 === 1) {  // Ocultar submenú
+            nextClasses = "menu-default menu-sub-hidden";
+        } else if (clickIndex % 3 === 2) {  // Ocultar todo
+            nextClasses = "menu-hidden";
+        }
+
+        // Mantener la clase mobile si está presente
+        if (container.hasClass("menu-mobile")) {
+            nextClasses += " menu-mobile";
+        }
+
+        // Aplicar las clases
+        container.removeClass(allMenuClassNames);
+        container.addClass(nextClasses);
+    }
+
     // Función para mostrar el submenú correspondiente
     function showSubMenu(link) {
         // Solo mostrar submenú si es una sección válida
