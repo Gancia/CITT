@@ -5,12 +5,12 @@ $(document).ready(function() {
         $('.sub-menu ul').hide();
         // Muestra el submenú correspondiente al link
         $('.sub-menu ul[data-link="' + link + '"]').show();
+        // Asegurarse que el menú principal esté visible
+        $('#app-container').removeClass('menu-sub-hidden');
     }
 
     // Click handler para los items del menú principal
     $('.main-menu ul li a').on('click', function(e) {
-        e.preventDefault();
-        
         // Obtiene el data-link del item seleccionado
         var link = $(this).attr('data-link');
         
@@ -19,11 +19,6 @@ $(document).ready(function() {
         // Agrega la clase active al item seleccionado
         $(this).parent('li').addClass('active');
         
-        // Cambia las clases del contenedor principal
-        if ($('#app-container').hasClass('menu-sub-hidden')) {
-            $('#app-container').removeClass('menu-sub-hidden');
-        }
-        
         // Muestra el submenú correspondiente
         showSubMenu(link);
         
@@ -31,11 +26,23 @@ $(document).ready(function() {
         if ($('#app-container').hasClass('menu-mobile')) {
             $('#app-container').addClass('sub-show-temporary');
         }
+
+        // Guarda el estado del menú en sessionStorage
+        sessionStorage.setItem('activeMenu', link);
     });
 
-    // Inicialización - muestra el submenú de la sección activa
+    // Al cargar la página, verificar si hay un menú activo
     var activeLink = $('.main-menu ul li.active a').attr('data-link');
     if (activeLink) {
+        // Mostrar el submenú correspondiente a la sección activa
         showSubMenu(activeLink);
+        // Guardar el estado en sessionStorage
+        sessionStorage.setItem('activeMenu', activeLink);
+    } else {
+        // Si no hay menú activo, intentar recuperar del sessionStorage
+        var savedMenu = sessionStorage.getItem('activeMenu');
+        if (savedMenu) {
+            showSubMenu(savedMenu);
+        }
     }
 });
