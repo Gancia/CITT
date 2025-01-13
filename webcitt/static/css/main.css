@@ -68,23 +68,12 @@ body.show-spinner::after {
   display: block;
 }
 
-/* Estilos para la transición de página */
-.fade-transition {
-    animation: fadeEffect 0.5s;
+.navbar-brand {
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    text-decoration: none;
 }
 
-@keyframes fadeEffect {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Contenedor principal necesita posición relativa */
-main {
-    position: relative;
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-}
-
-main.fade-out {
-    opacity: 0;
+.navbar-brand:hover {
+    text-decoration: none;
 }
