@@ -20,8 +20,10 @@ $(document).ready(function() {
 
     // Click handler para los items del menú principal 
     $('.main-menu ul li a').on('click', function(e) {
-        // Obtiene el data-link del item seleccionado
+        e.preventDefault(); // Prevenimos la navegación por defecto
+        
         var link = $(this).attr('data-link');
+        var href = $(this).attr('href');
         
         // Remueve la clase active de todos los items
         $('.main-menu ul li').removeClass('active');
@@ -85,4 +87,7 @@ $(document).ready(function() {
             $('#app-container').addClass('menu-sub-hidden');
         }
     }
+
+    // Agregar la animación de entrada cuando la página carga
+    $('main').addClass('fade-transition');
 });
