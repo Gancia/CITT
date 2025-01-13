@@ -11,8 +11,10 @@ $(document).ready(function() {
 
     // Click handler para los items del menú principal
     $('.main-menu ul li a').on('click', function(e) {
-        // Obtiene el data-link del item seleccionado
+        e.preventDefault(); // Prevenimos la navegación por defecto
+        
         var link = $(this).attr('data-link');
+        var href = $(this).attr('href');
         
         // Remueve la clase active de todos los items
         $('.main-menu ul li').removeClass('active');
@@ -29,6 +31,14 @@ $(document).ready(function() {
 
         // Guarda el estado del menú en sessionStorage
         sessionStorage.setItem('activeMenu', link);
+
+        // Aplicar la transición de desvanecimiento
+        $('main').addClass('fade-out');
+        
+        // Redirigir después de que la transición de desvanecimiento termine
+        setTimeout(function() {
+            window.location.href = href;
+        }, 500);
     });
 
     // Al cargar la página, verificar si hay un menú activo
@@ -45,4 +55,7 @@ $(document).ready(function() {
             showSubMenu(savedMenu);
         }
     }
+
+    // Agregar la animación de entrada cuando la página carga
+    $('main').addClass('fade-transition');
 });

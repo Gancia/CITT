@@ -67,3 +67,24 @@ body.show-spinner::after {
 .collapse.show {
   display: block;
 }
+
+/* Estilos para la transición de página */
+.fade-transition {
+    animation: fadeEffect 0.5s;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Contenedor principal necesita posición relativa */
+main {
+    position: relative;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+main.fade-out {
+    opacity: 0;
+}
