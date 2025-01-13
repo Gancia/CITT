@@ -151,7 +151,7 @@
             aria-expanded="false">
             <span class="name">Sarah Kortney</span>
             <span>
-              <img alt="Profile Picture" src="img/profiles/l-1.jpg" />
+              <img alt="Profile Picture" src="{% static 'img/profiles/l-1.jpg' %}" />
             </span>
           </button>
 
@@ -191,6 +191,36 @@
               </a>
             </li>
             <!-- ... otros elementos del menú ... -->
+             
+            <li {% if request.resolver_match.url_name == 'investigacion' %}class="active"{% endif %}>
+              <a href="#investigacion">
+                  <i class="iconsminds-chemical"></i> 
+                  <span style="display: block;">Investigación</span>
+              </a>
+          </li>
+          <li>
+              <a href="#investigacion">
+                  <i class="iconsminds-chemical"></i> 
+                  <span style="display: block;">Hublab</span>
+              </a>
+          </li>
+
+          <li>
+              <a href="#formacion">
+                  <i class="
+                  iconsminds-student-male-female"></i>
+                  <span style="display: block;">Formación</span>
+              </a>
+          </li>
+          <li>
+              <a href="#noticias">
+                  <i class="simple-icon-heart"></i> 
+                  <span style="display: block;">Noticias</span>
+              </a>
+          </li>
+
+
+
           </ul>
         </div>
       </div>
