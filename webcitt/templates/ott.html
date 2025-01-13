@@ -12,41 +12,61 @@
         </div>
     </div>
 
+</div>
+
     <div class="row">
         <div class="col-12 col-xl-6">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h5 class="mb-4">Historia</h5>
-                    <p>Contenido sobre la historia del OTT...</p>
-                </div>
-            </div>
+            <img class="social-header card-img mb-5" src="{%static 'img/social/Ott7.png' %}">
         </div>
 
         <div class="col-12 col-xl-6">
             <div class="card mb-4">
                 <div class="card-body">
-                    <h5 class="mb-4">Misión y Visión</h5>
-                    <p>Contenido sobre la misión y visión del OTT...</p>
+                    <h5 class="mb-4">OFICINA DE TRANSFERENCIA TECNOLÓGICA</h5>
+                    <p>La Oficina de Transferencia Tecnológica (OTT) es un espacio dedicado a transformar el conocimiento generado en nuestra universidad en soluciones tangibles para la sociedad. Actuamos como el enlace entre la investigación académica, el sector productivo y la comunidad, promoviendo la innovación, el emprendimiento y el impacto social.</p>
                 </div>
             </div>
         </div>
-    </div>
+    </div> 
+
 
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 col-xl-6">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="mb-4">Nuestra misión</h5>
+                    <p>Facilitar y promover la transferencia efectiva de tecnologías, conocimientos científicos y capacidades técnicas desde la universidad hacia el sector productivo, gubernamental y la sociedad civil, mediante el establecimiento de vínculos colaborativos, la gestión estratégica de la propiedad intelectual, el acompañamiento técnico especializado, y el impulso a emprendimientos de base tecnológica, con el fin de potenciar la innovación como motor de transformación y fortalecer la competitividad empresarial</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-xl-6">
             <div class="card mb-4">
                 <div class="card-body">
                     <h5 class="mb-4">Objetivos</h5>
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <ul class="list-unstyled">
                                 <li class="mb-3">
                                     <i class="simple-icon-check mr-2"></i>
-                                    Objetivo 1
+                                    Promover la investigación aplicada y su transferencia al sector productivo.
                                 </li>
                                 <li class="mb-3">
                                     <i class="simple-icon-check mr-2"></i>
-                                    Objetivo 2
+                                    Proteger y gestionar los derechos de propiedad intelectual generados en la universidad.
+                                </li>
+                                <li class="mb-3">
+                                    <i class="simple-icon-check mr-2"></i>
+                                    Facilitar la creación de empresas derivadas y spin-offs basadas en tecnologías innovadoras.
+                                </li>
+                                <li class="mb-3">
+                                    <i class="simple-icon-check mr-2"></i>
+                                    Establecer alianzas estratégicas con empresas, instituciones públicas y privadas.
+
+                                </li>
+                                <li class="mb-3">
+                                    <i class="simple-icon-check mr-2"></i>
+                                    Brindar capacitación en transferencia tecnológica y emprendimiento.
                                 </li>
                             </ul>
                         </div>
@@ -55,7 +75,78 @@
             </div>
         </div>
     </div>
+
+    
 </div>
+
+<div class="row list disable-text-selection" data-check-all="checkAll">
+
+                <div class="col-xl-4 col-lg-6 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="Pages.Product.Detail.html"><img class="card-img-top" src="{%static 'img/cards/OTT1.jpeg' %}"
+                                    alt="Card image cap"></a>
+                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <a href="Pages.Product.Detail.html">
+                                        <p class="list-item-heading mb-4 pt-1">Explora Innovación</p>
+                                    </a>
+                                    <footer>
+                                        <p class="text-muted text-small mb-0 font-weight-light">18.08.2018</p>
+                                    </footer>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+{% comment %}  -------------- Paginatio ---------- {% endcomment %}
+                <div class="col-12">
+                    <nav class="mt-4 mb-3">
+                        <ul class="pagination justify-content-center mb-0">
+                            <li class="page-item ">
+                                <a class="page-link first" href="#">
+                                    <i class="simple-icon-control-start"></i>
+                                </a>
+                            </li>
+                            <li class="page-item ">
+                                <a class="page-link prev" href="#">
+                                    <i class="simple-icon-arrow-left"></i>
+                                </a>
+                            </li>
+                            <li class="page-item active">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+                            <li class="page-item ">
+                                <a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">3</a>
+                            </li>
+                            <li class="page-item ">
+                                <a class="page-link next" href="#" aria-label="Next">
+                                    <i class="simple-icon-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="page-item ">
+                                <a class="page-link last" href="#">
+                                    <i class="simple-icon-control-end"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+{% comment %}--------------- End pagination ---------------- {% endcomment %}
+
+
+
+
 {% endblock %}
 
 {% block extra_scripts %}
