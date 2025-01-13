@@ -67,3 +67,13 @@ body.show-spinner::after {
 .collapse.show {
   display: block;
 }
+
+.navbar-brand {
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.navbar-brand:hover {
+    text-decoration: none;
+}
