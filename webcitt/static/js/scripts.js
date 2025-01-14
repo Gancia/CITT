@@ -30,21 +30,63 @@ $(document).ready(function() {
 
     // Función para mostrar el submenú correspondiente
     function showSubMenu(link) {
-        // Solo mostrar submenú si es una sección válida
+        // Solo actuar si es una sección válida
         if (link && ['ott', 'incubadora', 'uexperimentales', 'hublab', 'formacion'].includes(link)) {
-            // Oculta todos los submenús
-            $('.sub-menu ul').hide();
-            // Muestra el submenú correspondiente al link
-            $('.sub-menu ul[data-link="' + link + '"]').show();
-            // Asegurarse que el menú principal esté visible
-            $('#app-container').removeClass('menu-sub-hidden');
+            // Si el contenedor ya tiene visible el submenú, solo cambiamos el contenido
+            if (!$('#app-container').hasClass('menu-sub-hidden')) {
+                // Hacemos una transición suave entre submenús
+                $('.sub-menu ul').fadeOut(100, function() {
+                    $('.sub-menu ul[data-link="' + link + '"]').fadeIn(100);
+                });
+            } else {
+                // Si el submenú estaba oculto, primero mostramos el contenedor
+                $('#app-container').removeClass('menu-sub-hidden');
+                // Luego mostramos el contenido específico
+                $('.sub-menu ul').hide();
+                $('.sub-menu ul[data-link="' + link + '"]').fadeIn(200);
+            }
         } else {
-            // Si es la página de inicio o una sección inválida, ocultar submenús
-            $('.sub-menu ul').hide();
-            $('#app-container').addClass('menu-sub-hidden');
-            // Limpiar el sessionStorage cuando estamos en inicio
+            // Para la página de inicio o sección inválida
+            $('.sub-menu ul').fadeOut(200, function() {
+                $('#app-container').addClass('menu-sub-hidden');
+            });
             sessionStorage.removeItem('activeMenu');
         }
+    }
+
+    // Función para guardar el estado del colapsador
+    function saveCollapsedState(collapseId) {
+        const openCollapses = sessionStorage.getItem('openCollapses') ? 
+            JSON.parse(sessionStorage.getItem('openCollapses')) : [];
+            
+        if (!openCollapses.includes(collapseId)) {
+            openCollapses.push(collapseId);
+            sessionStorage.setItem('openCollapses', JSON.stringify(openCollapses));
+        }
+    }
+
+    // Función para remover el estado del colapsador
+    function removeCollapsedState(collapseId) {
+        const openCollapses = sessionStorage.getItem('openCollapses') ? 
+            JSON.parse(sessionStorage.getItem('openCollapses')) : [];
+            
+        const index = openCollapses.indexOf(collapseId);
+        if (index > -1) {
+            openCollapses.splice(index, 1);
+            sessionStorage.setItem('openCollapses', JSON.stringify(openCollapses));
+        }
+    }
+
+    // Restaurar estado de los colapsadores al cargar la página
+    function restoreCollapsedStates() {
+        const openCollapses = sessionStorage.getItem('openCollapses') ? 
+            JSON.parse(sessionStorage.getItem('openCollapses')) : [];
+            
+        openCollapses.forEach(collapseId => {
+            $(`#${collapseId}`).addClass('show');
+            $(`[data-target="#${collapseId}"]`).removeClass('collapsed');
+            $(`[data-target="#${collapseId}"]`).attr('aria-expanded', 'true');
+        });
     }
 
     // Click handler para los items del menú principal 
@@ -76,6 +118,7 @@ $(document).ready(function() {
     $('.navbar-brand').on('click', function() {
         // Limpiar el sessionStorage y ocultar submenús
         sessionStorage.removeItem('activeMenu');
+        sessionStorage.removeItem('openCollapses');
         $('.sub-menu ul').hide();
         $('#app-container').addClass('menu-sub-hidden');
     });
@@ -86,11 +129,21 @@ $(document).ready(function() {
         setMenuClassNames(++menuClickCount);
     });
 
+    // Eventos para los colapsadores
+    $('.collapse').on('shown.bs.collapse', function() {
+        saveCollapsedState(this.id);
+    });
+
+    $('.collapse').on('hidden.bs.collapse', function() {
+        removeCollapsedState(this.id);
+    });
+
     // Al cargar la página, verificar la URL actual
     var currentPath = window.location.pathname;
     if (currentPath === '/' || currentPath === '/inicio/') {
         // Si estamos en la página de inicio, limpiar todo
         sessionStorage.removeItem('activeMenu');
+        sessionStorage.removeItem('openCollapses');
         $('.sub-menu ul').hide();
         $('#app-container').addClass('menu-sub-hidden');
         return;
@@ -114,4 +167,7 @@ $(document).ready(function() {
             $('#app-container').addClass('menu-sub-hidden');
         }
     }
+
+    // Restaurar estados de los colapsadores
+    restoreCollapsedStates();
 });
