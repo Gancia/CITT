@@ -109,11 +109,15 @@ body.show-spinner::after {
 }
 
 .navbar-brand {
-    padding: 0 1rem;
+    padding: 0;
     font-size: 1.2rem;
     text-decoration: none;
     font-family: var(--heading-font-family);
     font-weight: 700;
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .navbar-brand:hover {
@@ -133,7 +137,8 @@ body.show-spinner::after {
 }
 
 .text-primary {
-  color: var(--theme-color-1) !important;
+  color: var(--theme-color-3) !important;
+  font-size: 25px;
 }
 
 .bg-primary {
@@ -170,7 +175,7 @@ a:hover {
 /* Elementos nav/tabs */
 .nav-tabs .nav-link.active {
   color: var(--theme-color-1);
-  border-color: var(--theme-color-1);
+  border-color: var (--theme-color-1);
 }
 
 /* Inputs */
@@ -187,6 +192,42 @@ a:hover {
 /* Header */
 .navbar {
   background-color: var(--theme-color-1) !important;
+  padding: 0.5rem 2rem;
+  height: 70px; /* Altura fija del header */
+  z-index: 100;
+}
+
+.navbar .navbar-contents {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar .navbar-center {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.navbar .navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar .user {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .navbar .navbar-right .user,
@@ -200,6 +241,46 @@ a:hover {
 .navbar .search .search-icon:hover,
 .navbar .header-icon:hover {
   color: var(--theme-color-3) !important;
+}
+
+.navbar .search {
+  width: 230px;
+}
+
+.navbar .d-flex.align-items-center.w-100 {
+  height: 100%;
+}
+
+/* Sección izquierda */
+.navbar .d-flex:first-child {
+  flex: 1;
+}
+
+/* Sección derecha */
+.navbar .d-flex:last-child {
+  flex: 1;
+  justify-content: flex-end;
+}
+
+/* Ajustes responsive */
+@media (max-width: 767px) {
+  .navbar {
+    background-color: var(--theme-color-1) !important;
+    padding: 0.5rem 1rem;
+    height: 60px;
+  }
+  
+  .menu-mobile {
+    background-color: var(--theme-color-4);
+  }
+
+  .navbar .navbar-center {
+    display: none;
+  }
+
+  .navbar-brand {
+    font-size: 1rem;
+  }
 }
 
 /* Menú principal */
@@ -318,10 +399,20 @@ a:hover {
 @media (max-width: 767px) {
   .navbar {
     background-color: var(--theme-color-1) !important;
+    padding: 0.5rem 1rem;
+    height: 60px;
   }
   
   .menu-mobile {
     background-color: var(--theme-color-4);
+  }
+
+  .navbar .navbar-center {
+    display: none;
+  }
+
+  .navbar-brand {
+    font-size: 1rem;
   }
 }
 
@@ -362,4 +453,163 @@ p,
 
 .btn {
   font-weight: 500;
+}
+
+.user img {
+  border-radius: 30px;
+  width: 40px;
+}
+
+.header-icon {
+  padding: 0 0.5rem;
+}
+
+.name {
+  margin-right: 0.5rem;
+}
+
+/* Estilo para el botón de menú */
+.menu-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+}
+
+.menu-button i {
+  font-size: 1.2rem;
+  color: var(--theme-color-4);
+  line-height: 1;
+  padding: 0.5rem;
+  transition: transform 0.3s ease; /* Agregamos la transición */
+}
+
+/* Rotación del ícono cuando el menú está en diferentes estados */
+.menu-sub-hidden .menu-button i {
+  transform: rotate(180deg);
+}
+
+.menu-hidden .menu-button i {
+  transform: rotate(360deg);
+}
+
+/* Color blanco para el ícono del menú en el header */
+.navbar .menu-button i {
+  color: var(--theme-color-4) !important; /* Color blanco */
+}
+
+/* Color blanco para el nombre de usuario en el header */
+.navbar .user .name {
+  color: var(--theme-color-4) !important; /* Color blanco */
+}
+
+/* Menú */
+.menu {
+  position: fixed;
+  top: 70px; /* Mismo valor que la altura del header */
+  bottom: 0;
+  padding-top: 0; /* Eliminar el padding superior */
+  z-index: 5;
+  height: calc(100% - 70px); /* Restar la altura del header */
+}
+
+/* Contenido principal */
+main {
+  margin-left: 350px; /* 120px del menú principal + 230px del submenú */
+  margin-right: 60px;
+  margin-top: 70px; /* Mismo valor que la altura del header */
+  margin-bottom: 20px;
+  transition: margin-left 300ms;
+}
+
+/* Ajustes responsive */
+@media (max-width: 1439px) {
+  .navbar {
+    height: 70px;
+  }
+  .menu {
+    top: 70px;
+    height: calc(100% - 70px);
+  }
+  main {
+    margin-top: 70px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .navbar {
+    height: 70px;
+  }
+  .menu {
+    top: 70px;
+    height: calc(100% - 70px);
+  }
+  main {
+    margin-top: 70px;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    height: 60px;
+  }
+  .menu {
+    top: 60px;
+    height: calc(100% - 60px);
+  }
+  main {
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+    margin-top: 60px !important;
+  }
+}
+
+/* Ajustes para el título central */
+.navbar-brand {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-brand a {
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+.navbar-brand a:hover {
+  opacity: 0.9;
+}
+
+/* Ajustes para los botones de la derecha */
+.header-icon {
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-icon i {
+  font-size: 1.2rem;
+  color: var(--theme-color-4);
+}
+
+/* Ajustes para el botón de usuario */
+.user button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.user .name {
+  margin-right: 0.5rem;
+  color: var(--theme-color-4);
+}
+
+.user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
