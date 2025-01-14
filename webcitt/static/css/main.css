@@ -1,9 +1,49 @@
+:root {
+  /* Colores base */
+  --separator-color-light: #f3f3f3;
+  --separator-color: #5F5F5F; 
+  --background-color: #FFFFFF;
+  --foreground-color: #6F6F6F;
+  --input-background: white;
+
+  /* Colores de botones */
+  --dark-btn-background: #126937;
+  --light-btn-background: #FECE00;
+  --button-text-color: #fff;
+
+  /* Colores principales */
+  --theme-color-1: #126937;
+  --theme-color-2: #116133;
+  --theme-color-3: #FECE00;
+  --theme-color-4: #FFFFFF;
+  --theme-color-5: #6F6F6F;
+  --theme-color-6: #5F5F5F;
+
+  /* Colores con transparencia */
+  --theme-color-1-10: rgba(18, 105, 55, 0.1);
+  --theme-color-2-10: rgba(17, 97, 51, 0.1);
+  --theme-color-3-10: rgba(254, 206, 0, 0.1);
+  --theme-color-4-10: rgba(255, 255, 255, 0.1);
+  --theme-color-5-10: rgba(111, 111, 111, 0.1);
+  --theme-color-6-10: rgba(95, 95, 95, 0.1);
+
+  /* Colores primarios y secundarios */
+  --primary-color: #126937;
+  --secondary-color: #6F6F6F;
+
+  /* Fuentes */
+  --heading-font-family: 'Montserrat', sans-serif;
+  --content-font-family: 'Poppins', sans-serif;
+}
+
 html {
   width: 100%;
 }
 
 body {
   overflow-x: hidden !important;
+  color: var(--theme-color-5);
+  font-family: var(--content-font-family);
 }
 
 body.show-spinner>main {
@@ -72,8 +112,254 @@ body.show-spinner::after {
     padding: 0 1rem;
     font-size: 1.2rem;
     text-decoration: none;
+    font-family: var(--heading-font-family);
+    font-weight: 700;
 }
 
 .navbar-brand:hover {
     text-decoration: none;
+}
+
+/* Sobreescribir clases principales */
+.btn-primary {
+  background-color: var(--theme-color-1);
+  border-color: var(--theme-color-1);
+  color: var(--button-text-color);
+}
+
+.btn-secondary {
+  background-color: var(--theme-color-2);
+  border-color: var(--theme-color-2);
+}
+
+.text-primary {
+  color: var(--theme-color-1) !important;
+}
+
+.bg-primary {
+  background-color: var(--theme-color-1) !important;
+}
+
+/* Enlaces */
+a {
+  color: var(--theme-color-1);
+}
+
+a:hover {
+  color: var(--theme-color-2);
+}
+
+/* Bordes */
+.border-primary {
+  border-color: var(--theme-color-1) !important;
+}
+
+/* Badges */
+.badge-primary {
+  background-color: var(--theme-color-1);
+  color: var(--button-text-color);
+}
+
+/* Alerts */
+.alert-primary {
+  color: var(--theme-color-1);
+  background-color: var(--theme-color-1-10);
+  border-color: var (--theme-color-1);
+}
+
+/* Elementos nav/tabs */
+.nav-tabs .nav-link.active {
+  color: var(--theme-color-1);
+  border-color: var(--theme-color-1);
+}
+
+/* Inputs */
+.form-control:focus {
+  border-color: var(--theme-color-1);
+}
+
+/* Checkboxes y radios */
+.custom-control-input:checked ~ .custom-control-label::before {
+  background-color: var(--theme-color-1);
+  border-color: var (--theme-color-1);
+}
+
+/* Header */
+.navbar {
+  background-color: var(--theme-color-1) !important;
+}
+
+.navbar .navbar-right .user,
+.navbar .search input,
+.navbar .menu-button,
+.navbar .header-icon,
+.navbar .navbar-right .user .name {
+  color: var(--theme-color-4) !important;
+}
+
+.navbar .search .search-icon:hover,
+.navbar .header-icon:hover {
+  color: var(--theme-color-3) !important;
+}
+
+/* Menú principal */
+.menu .main-menu {
+  background: var(--theme-color-4);
+}
+
+/* Menú principal - estado normal */
+.menu .main-menu ul li a,
+.menu .main-menu ul li i,
+.menu .main-menu ul li a span {
+  color: var(--theme-color-5) !important; /* Gris de marca */
+  font-family: var(--content-font-family);
+}
+
+/* Menú principal - estado activo */
+.menu .main-menu ul li.active a,
+.menu .main-menu ul li.active i,
+.menu .main-menu ul li.active span {
+  color: var(--theme-color-3) !important; /* Amarillo */
+}
+
+/* Menú principal - estado hover */
+.menu .main-menu ul li a:hover,
+.menu .main-menu ul li a:hover i,
+.menu .main-menu ul li a:hover span {
+  color: var(--theme-color-3) !important; /* Amarillo */
+}
+
+/* Sección activa del menú */
+.menu .main-menu ul li.active {
+  background-color: rgba(254, 206, 0, 0.2); /* Amarillo con opacidad */
+}
+
+.menu .main-menu ul li.active:after {
+  background: var(--theme-color-3) !important; /* Barra indicadora amarilla */
+  width: 4px !important;
+}
+
+/* Menú principal */
+.menu .main-menu ul li a span,  /* Solo el texto del enlace */
+.menu .main-menu ul li i {
+  color: var(--theme-color-5);
+  font-family: var(--content-font-family);
+}
+
+.menu .main-menu .menu-title {
+  font-family: var(--heading-font-family);
+  font-weight: 600;
+}
+
+/* Hover estados del menú */
+.menu .main-menu ul li a:hover,
+.menu .main-menu ul li a:focus {
+  color: var(--theme-color-3) !important;
+}
+
+/* Submenu normal */
+.menu .sub-menu ul li a,
+.menu .sub-menu ul li i {
+  color: var(--theme-color-5) !important; /* Gris de marca */
+  font-family: var(--content-font-family);
+}
+
+/* Submenu normal */
+.menu .sub-menu ul li a span,  /* Solo el texto del enlace */
+.menu .sub-menu ul li i:not(.simple-icon-arrow-down) { /* Excluir el ícono de flecha */
+  color: var(--theme-color-5) !important;
+  font-family: var(--content-font-family);
+}
+
+/* Asegurar que el ícono de flecha use su propia fuente */
+.simple-icon-arrow-down {
+  font-family: 'simple-line-icons' !important;
+}
+
+/* Estado activo del submenu */
+.menu .sub-menu ul li.active a,
+.menu .sub-menu ul li.active i,
+.menu .sub-menu ul li a:hover {
+  color: var(--theme-color-1) !important; /* Verde de marca */
+}
+
+/* Estado activo del submenu */
+.menu .sub-menu ul li.active a span,  /* Solo el texto del enlace */
+.menu .sub-menu ul li.active i:not(.simple-icon-arrow-down),
+.menu .sub-menu ul li a:hover span {  /* Solo el texto en hover */
+  color: var(--theme-color-1) !important;
+}
+
+/* Indicador de selección del submenu */
+.menu .sub-menu ul li.active:after {
+  background: var(--theme-color-1) !important; /* Verde de marca */
+}
+
+/* Para los submenus anidados */
+.menu .sub-menu ul.inner-level-menu li a,
+.menu .sub-menu ul.inner-level-menu li i {
+  color: var(--theme-color-5) !important; /* Gris de marca */
+  font-family: var (--content-font-family);
+}
+
+.menu .sub-menu ul.inner-level-menu li.active a,
+.menu .sub-menu ul.inner-level-menu li.active i,
+.menu .sub-menu ul.inner-level-menu li a:hover {
+  color: var(--theme-color-1) !important; /* Verde de marca */
+}
+
+/* Iconos en el header con color blanco */
+.navbar .menu-button svg .main,
+.navbar .menu-button svg .sub {
+  fill: var(--theme-color-4) !important;
+}
+
+/* Menú móvil */
+@media (max-width: 767px) {
+  .navbar {
+    background-color: var(--theme-color-1) !important;
+  }
+  
+  .menu-mobile {
+    background-color: var(--theme-color-4);
+  }
+}
+
+/* Títulos */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--heading-font-family);
+  font-weight: 600;
+}
+
+/* Elementos que deben usar Montserrat */
+.navbar-brand,
+.menu .main-menu .menu-title,
+.card-title,
+.page-title,
+.nav-tabs .nav-link,
+.btn,
+.dropdown-item,
+.modal-title {
+  font-family: var(--heading-font-family);
+}
+
+/* Elementos de contenido que deben usar Poppins */
+p, 
+.card-text,
+.form-control,
+.input-group-text,
+.navbar .menu-button,
+.menu .main-menu ul li a,
+.menu .sub-menu ul li a {
+  font-family: var(--content-font-family);
+}
+
+/* Ajustes específicos de peso de fuente */
+.nav-tabs .nav-link {
+  font-weight: 500;
+}
+
+.btn {
+  font-weight: 500;
 }

@@ -1,27 +1,30 @@
+// Colores base
 $separator-color-light: #f3f3f3;
-$separator-color: #d7d7d7;
-$background-color: #f8f8f8;
-$foreground-color : white;
+$separator-color: #5F5F5F; // Gris oscuro para separadores
+$background-color: #FFFFFF; // Fondo blanco
+$foreground-color: #6F6F6F; // Gris neutro
 $input-background: white;
 
-$dark-btn-background: #131113;
-$light-btn-background: #ececec;
+$dark-btn-background: #126937; // Verde principal para botones oscuros
+$light-btn-background: #FECE00; // Amarillo para botones claros
 $button-text-color: #fff;
 
-$theme-color-1: #00365a;
-$theme-color-2: #184f90;
-$theme-color-3: #8a9fb4;
-$theme-color-4: #2c4d6e;
-$theme-color-5: #245794;
-$theme-color-6: #6a7b8d;
+// Colores principales del tema
+$theme-color-1: #126937; // Verde principal
+$theme-color-2: #116133; // Verde oscuro
+$theme-color-3: #FECE00; // Amarillo
+$theme-color-4: #FFFFFF; // Blanco
+$theme-color-5: #6F6F6F; // Gris neutro
+$theme-color-6: #5F5F5F; // Gris oscuro
 
-$primary-color: #3a3a3a;
-$secondary-color: #8f8f8f;
-$muted-color: #909090;
+$primary-color: #126937; // Verde principal como color primario
+$secondary-color: #6F6F6F; // Gris neutro como secundario
+$muted-color: #5F5F5F;
 
-$gradient-color-1 : #015994;
-$gradient-color-2 : #00365a;
-$gradient-color-3 : #00538a;
+// Colores para gradientes
+$gradient-color-1: #126937;
+$gradient-color-2: #116133;
+$gradient-color-3: #FECE00;
 
 $lp-bg-color-1 : #001627;
 $lp-bg-color-2 : #01253d;
@@ -41,6 +44,14 @@ $logo-path-mobile: "../logos/mobile.svg";
 
 $lp-logo-path-pinned: "../logos/black.svg";
 $lp-logo-path: "../logos/white-full.svg";
+
+// Colores de estado
+$theme-color-1-10: rgba(18, 105, 55, 0.1);
+$theme-color-2-10: rgba(17, 97, 51, 0.1);
+$theme-color-3-10: rgba(254, 206, 0, 0.1);
+$theme-color-4-10: rgba(255, 255, 255, 0.1);
+$theme-color-5-10: rgba(111, 111, 111, 0.1);
+$theme-color-6-10: rgba(95, 95, 95, 0.1);
 
 @import "../_mixins.scss";
 @import "../_dore.style.scss";
