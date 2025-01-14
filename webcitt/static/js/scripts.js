@@ -116,7 +116,7 @@ $(document).ready(function() {
 
     // Click handler para el logo/inicio
     $('.navbar-brand').on('click', function() {
-        // Limpiar el sessionStorage y ocultar submenús
+        // Limpiar todos los estados guardados
         sessionStorage.removeItem('activeMenu');
         sessionStorage.removeItem('openCollapses');
         $('.sub-menu ul').hide();
