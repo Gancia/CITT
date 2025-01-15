@@ -978,3 +978,41 @@ main {
     transition: transform 0.3s ease;
     transform: rotate(0deg);
 }
+
+/* Estilos base para el botón de menú */
+.menu-button {
+    background: transparent;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.menu-button .rotate-icon {
+    font-size: 1.5rem;
+    color: var(--theme-color-4);
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+    will-change: transform;
+}
+
+/* Estados de rotación */
+#app-container.menu-default .menu-button .rotate-icon {
+    transform: rotate(0deg);
+}
+
+#app-container.menu-sub-hidden .menu-button .rotate-icon {
+    transform: rotate(180deg);
+}
+
+#app-container.menu-hidden .menu-button .rotate-icon {
+    transform: rotate(360deg);
+}
+
+/* Estado hover */
+.menu-button:hover .rotate-icon {
+    color: var(--theme-color-3);
+}
