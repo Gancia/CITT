@@ -988,7 +988,6 @@ main {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
 }
 
 .menu-button .rotate-icon {
@@ -997,22 +996,49 @@ main {
     display: inline-block;
     transition: transform 0.3s ease-in-out;
     will-change: transform;
+    transform-origin: center;
 }
 
 /* Estados de rotación */
-#app-container.menu-default .menu-button .rotate-icon {
+/* Estado inicial - menu y submenu ocultos (palos verticales) */
+#app-container.menu-hidden .menu-button .rotate-icon {
+    transform: rotate(90deg);
+}
+
+/* Solo menu principal visible (palos horizontales) */
+#app-container.menu-default.menu-sub-hidden .menu-button .rotate-icon {
     transform: rotate(0deg);
 }
 
-#app-container.menu-sub-hidden .menu-button .rotate-icon {
+/* Menu y submenu visibles (giro completo) */
+#app-container.menu-default:not(.menu-sub-hidden) .menu-button .rotate-icon {
     transform: rotate(180deg);
 }
 
-#app-container.menu-hidden .menu-button .rotate-icon {
-    transform: rotate(360deg);
-}
-
-/* Estado hover */
+/* Hover state */
 .menu-button:hover .rotate-icon {
     color: var(--theme-color-3);
+}
+
+/* Estilos base para el botón de menú */
+.menu-button .rotate-icon {
+    font-size: 1.5rem;
+    color: var(--theme-color-4);
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+    will-change: transform;
+    transform-origin: center;
+}
+
+/* Estados de rotación con transiciones suaves */
+#app-container.menu-hidden .menu-button .rotate-icon {
+    transform: rotate(90deg);
+}
+
+#app-container.menu-default.menu-sub-hidden .menu-button .rotate-icon {
+    transform: rotate(0deg);
+}
+
+#app-container.menu-default:not(.menu-sub-hidden) .menu-button .rotate-icon {
+    transform: rotate(180deg);
 }

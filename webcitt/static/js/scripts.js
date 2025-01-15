@@ -9,27 +9,32 @@ $(document).ready(function() {
         const container = $("#app-container");
         let nextClasses = "";
 
-        // Ciclo de estados del menú con rotación
-        switch (clickIndex % 3) {
-            case 0: // Estado inicial
-                nextClasses = "menu-default";
-                break;
-            case 1: // Ocultar submenú
-                nextClasses = "menu-default menu-sub-hidden";
-                break;
-            case 2: // Ocultar todo
-                nextClasses = "menu-hidden";
-                break;
-        }
+        // Aplicar las clases con un pequeño retraso para permitir la animación
+        setTimeout(() => {
+            // Ciclo de estados del menú con rotación
+            switch (clickIndex % 3) {
+                case 0: // Todo visible
+                    nextClasses = "menu-default";
+                    break;
+                case 1: // Solo menu principal
+                    nextClasses = "menu-default menu-sub-hidden";
+                    break;
+                case 2: // Todo oculto
+                    nextClasses = "menu-hidden";
+                    break;
+            }
 
-        // Mantener la clase mobile si está presente
-        if (container.hasClass("menu-mobile")) {
-            nextClasses += " menu-mobile";
-        }
+            // Mantener clase mobile si existe
+            if (container.hasClass("menu-mobile")) {
+                nextClasses += " menu-mobile";
+            }
 
-        // Aplicar las clases con transición suave
-        container.removeClass(allMenuClassNames);
-        container.addClass(nextClasses);
+            // Aplicar clases con transición suave
+            container.removeClass(allMenuClassNames);
+            requestAnimationFrame(() => {
+                container.addClass(nextClasses);
+            });
+        }, 50);
     }
 
     // Función para mostrar el submenú correspondiente
@@ -128,14 +133,18 @@ $(document).ready(function() {
     });
 
     // Click handler para el botón del menú
-    $(".menu-button").on("click", function (event) {
+    $(".menu-button").on("click", function(event) {
         event.preventDefault();
+        event.stopPropagation();
+        
+        // Forzar reflow antes de la animación
+        const icon = $(this).find('.rotate-icon')[0];
+        icon.style.transition = 'none';
+        icon.offsetHeight; // Forzar reflow
+        icon.style.transition = 'transform 0.3s ease-in-out';
         
         // Incrementar contador y aplicar clases
         setMenuClassNames(++menuClickCount);
-        
-        // Forzar re-flow para asegurar la animación
-        $(this).find('.rotate-icon')[0].offsetHeight;
     });
 
     // Eventos para los colapsadores
