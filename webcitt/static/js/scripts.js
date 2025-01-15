@@ -9,7 +9,7 @@ $(document).ready(function() {
         const container = $("#app-container");
         let nextClasses = "";
 
-        // Ciclo de estados del menú
+        // Ciclo de estados del menú con rotación
         if (clickIndex % 3 === 0) {  // Estado inicial: todo visible
             nextClasses = "menu-default";
         } else if (clickIndex % 3 === 1) {  // Ocultar submenú
@@ -23,7 +23,7 @@ $(document).ready(function() {
             nextClasses += " menu-mobile";
         }
 
-        // Aplicar las clases
+        // Aplicar las clases con transición
         container.removeClass(allMenuClassNames);
         container.addClass(nextClasses);
     }
@@ -185,7 +185,6 @@ $(document).ready(function() {
             if (href && currentPath.includes(href)) {
                 $(this).addClass('subsection-active');
                 
-                // Si la subsección está dentro de un collapse, expandirlo
                 const collapseParent = $(this).closest('.collapse');
                 if (collapseParent.length) {
                     collapseParent.addClass('show');

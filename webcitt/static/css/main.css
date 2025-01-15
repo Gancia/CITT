@@ -124,6 +124,17 @@ body.show-spinner::after {
     text-decoration: none;
 }
 
+.navbar-brand img {
+  height: 40px;
+  width: auto;
+  vertical-align: middle;
+  transition: transform 0.2s ease;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.05);
+}
+
 /* Sobreescribir clases principales */
 .btn-primary {
   background-color: var(--theme-color-1);
@@ -834,4 +845,136 @@ main {
 
 .menu .sub-menu ul li a.subsection-active span {
     color: var(--theme-color-1) !important;
+}
+
+/* Estilos para el header */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.vertical-separator {
+  width: 1px;
+  height: 40px;
+  background-color: rgba(255,255,255,0.2);
+  margin: 0 15px;
+}
+
+.upec-logo {
+  height: 40px;
+  width: auto;
+  transition: transform 0.2s ease;
+}
+
+.upec-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .navbar-brand {
+    transform: none;
+    position: static;
+    justify-content: center;
+  }
+  
+  .vertical-separator {
+    height: 30px;
+    margin: 0 10px;
+  }
+  
+  .upec-logo {
+    height: 30px;
+  }
+}
+
+/* Hover amarillo para los iconos del header */
+.navbar .menu-button:hover i,
+.navbar .header-icon:hover i,
+.navbar .user:hover .name {
+  color: var(--theme-color-3) !important; /* Color amarillo del tema */
+  transition: color 0.2s ease;
+}
+
+/* Asegurar que el color base sea blanco */
+.navbar .menu-button i,
+.navbar .header-icon i,
+.navbar .user .name {
+  color: var(--theme-color-4) !important; /* Color blanco */
+  transition: color 0.2s ease;
+}
+
+/* Hover amarillo para los iconos del header */
+.navbar .menu-button:hover i.iconsminds-align-justify-all,
+.navbar .header-icon.btn-empty:hover i.simple-icon-grid,
+.navbar .user.dropdown:hover .name {
+  color: var(--theme-color-3) !important;
+  transition: color 0.2s ease;
+}
+
+/* Color base blanco */
+.navbar .menu-button i.iconsminds-align-justify-all,
+.navbar .header-icon.btn-empty i.simple-icon-grid,
+.navbar .user.dropdown .name {
+  color: var(--theme-color-4) !important;
+  transition: color 0.2s ease;
+}
+
+/* Estilos base para iconos del header */
+.navbar .menu-button i,
+.navbar .header-icon i,
+.navbar .user .name {
+  color: var(--theme-color-4) !important;
+  transition: all 0.3s ease;
+}
+
+/* Hover amarillo */
+.navbar .menu-button:hover i.iconsminds-align-justify-all,
+.navbar .header-icon.btn-empty:hover i.simple-icon-grid,
+.navbar .user.dropdown:hover .name {
+  color: var(--theme-color-3) !important;
+}
+
+/* ELIMINAR todo esto ya que interfiere con las animaciones nativas */
+/* Animación de rotación del menú */
+.menu-button i {
+  transform: rotate(0deg);
+  transition: all 0.3s ease;
+}
+
+.menu-sub-hidden .menu-button i {
+  transform: rotate(180deg);
+}
+
+.menu-hidden .menu-button i {
+  transform: rotate(360deg);
+}
+
+/* Estados de rotación */
+#app-container.menu-sub-hidden:not(.menu-hidden) .menu-button i {
+  transform: rotate(180deg);
+}
+
+#app-container.menu-hidden .menu-button i {
+  transform: rotate(360deg);
+}
+
+/* Base styles para el botón de menú */
+.menu-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.menu-button i {
+    display: inline-block;
+    color: var(--theme-color-4) !important;
+    transition: transform 0.3s ease;
+    transform: rotate(0deg);
 }
