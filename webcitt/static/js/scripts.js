@@ -10,12 +10,16 @@ $(document).ready(function() {
         let nextClasses = "";
 
         // Ciclo de estados del menú con rotación
-        if (clickIndex % 3 === 0) {  // Estado inicial: todo visible
-            nextClasses = "menu-default";
-        } else if (clickIndex % 3 === 1) {  // Ocultar submenú
-            nextClasses = "menu-default menu-sub-hidden";
-        } else if (clickIndex % 3 === 2) {  // Ocultar todo
-            nextClasses = "menu-hidden";
+        switch (clickIndex % 3) {
+            case 0: // Estado inicial
+                nextClasses = "menu-default";
+                break;
+            case 1: // Ocultar submenú
+                nextClasses = "menu-default menu-sub-hidden";
+                break;
+            case 2: // Ocultar todo
+                nextClasses = "menu-hidden";
+                break;
         }
 
         // Mantener la clase mobile si está presente
@@ -23,7 +27,7 @@ $(document).ready(function() {
             nextClasses += " menu-mobile";
         }
 
-        // Aplicar las clases con transición
+        // Aplicar las clases con transición suave
         container.removeClass(allMenuClassNames);
         container.addClass(nextClasses);
     }
@@ -126,7 +130,12 @@ $(document).ready(function() {
     // Click handler para el botón del menú
     $(".menu-button").on("click", function (event) {
         event.preventDefault();
+        
+        // Incrementar contador y aplicar clases
         setMenuClassNames(++menuClickCount);
+        
+        // Forzar re-flow para asegurar la animación
+        $(this).find('.rotate-icon')[0].offsetHeight;
     });
 
     // Eventos para los colapsadores
