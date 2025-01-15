@@ -286,6 +286,19 @@ a:hover {
 /* Menú principal */
 .menu .main-menu {
   background: var(--theme-color-4);
+  height: calc(100% - 70px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  -ms-overflow-style: none;
+}
+
+.menu .main-menu::-webkit-scrollbar {
+  width: 4px;
+}
+
+.menu .main-menu::-webkit-scrollbar-thumb {
+  background: var(--theme-color-5);
+  border-radius: 4px;
 }
 
 /* Menú principal - estado normal */
@@ -294,6 +307,19 @@ a:hover {
 .menu .main-menu ul li a span {
   color: var(--theme-color-5) !important; /* Gris de marca */
   font-family: var(--content-font-family);
+  height: 85px; /* Reducido de 110px */
+  padding: 10px 0; /* Reducido el padding */
+}
+
+.menu .main-menu ul li i {
+  font-size: 26px; /* Reducido el tamaño del ícono */
+  line-height: 30px;
+  margin-bottom: 5px; /* Reducido el espacio entre ícono y texto */
+}
+
+.menu .main-menu ul li span {
+  font-size: 12px; /* Texto más pequeño */
+  line-height: 1.2;
 }
 
 /* Menú principal - estado activo */
@@ -414,6 +440,10 @@ a:hover {
   .navbar-brand {
     font-size: 1rem;
   }
+
+  .menu .main-menu ul li a {
+    height: 65px;
+  }
 }
 
 /* Títulos */
@@ -520,7 +550,7 @@ p,
 main {
   margin-left: 350px; /* 120px del menú principal + 230px del submenú */
   margin-right: 60px;
-  margin-top: 70px; /* Mismo valor que la altura del header */
+  margin-top: 100px; /* Aumentamos de 70px a 100px */
   margin-bottom: 20px;
   transition: margin-left 300ms;
 }
@@ -535,7 +565,11 @@ main {
     height: calc(100% - 70px);
   }
   main {
-    margin-top: 70px;
+    margin-top: 100px; /* Mantenemos el espacio en pantallas grandes */
+  }
+
+  .menu .main-menu ul li a {
+    height: 75px;
   }
 }
 
@@ -548,7 +582,11 @@ main {
     height: calc(100% - 70px);
   }
   main {
-    margin-top: 70px;
+    margin-top: 90px; /* Ajustamos un poco para pantallas medianas */
+  }
+
+  .menu .main-menu ul li a {
+    height: 70px;
   }
 }
 
@@ -563,7 +601,7 @@ main {
   main {
     margin-left: 15px !important;
     margin-right: 15px !important;
-    margin-top: 60px !important;
+    margin-top: 80px !important; /* Ajustamos para móviles */
   }
 }
 
@@ -612,4 +650,188 @@ main {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+}
+
+/* Ajustes para el submenú */
+.menu .sub-menu .scroll {
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 10px;
+  scrollbar-width: thin;
+  -ms-overflow-style: none;
+}
+
+.menu .sub-menu .scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.menu .sub-menu .scroll::-webkit-scrollbar-thumb {
+  background: var(--theme-color-5);
+  border-radius: 4px;
+}
+
+/* Menú principal - ajustes de espaciado */
+.menu .main-menu ul li a {
+  padding: 12px 0; /* Aumentamos el padding vertical de 8px a 12px */
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px; /* Reducimos el espacio entre ícono y texto */
+}
+
+.menu .main-menu ul li i {
+  font-size: 24px; /* Ajustamos tamaño del ícono */
+  line-height: 1;
+  margin-bottom: 2px; /* Reducimos el espacio bajo el ícono */
+}
+
+.menu .main-menu ul li span {
+  font-size: 12px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* Ajustes responsive */
+@media (max-width: 1439px) {
+  .menu .main-menu ul li a {
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 1199px) {
+  .menu .main-menu ul li a {
+    padding: 8px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .menu .main-menu ul li a {
+    padding: 6px 0;
+  }
+}
+
+/* Ajustes responsive */
+@media (max-width: 1439px) {
+  .menu .main-menu ul li a {
+    height: 70px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .menu .main-menu ul li a {
+    height: 65px;
+  }
+}
+
+@media (max-width: 767px) {
+  .menu .main-menu ul li a {
+    height: 60px;
+  }
+}
+
+/* Ajustes para elementos del menú principal */
+.menu .main-menu ul li {
+  margin-bottom: 15px; /* Aumentamos el espacio entre elementos del menú */
+}
+
+.menu .main-menu ul li a {
+  height: 65px; /* Reducimos la altura total */
+  padding: 5px 0; /* Reducimos el padding vertical */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0px; /* Eliminamos el espacio entre ícono y texto */
+}
+
+.menu .main-menu ul li i {
+  font-size: 24px;
+  line-height: 1;
+  margin-bottom: 1px; /* Mínimo espacio bajo el ícono */
+}
+
+.menu .main-menu ul li span {
+  font-size: 12px;
+  line-height: 1;
+  text-align: center;
+}
+
+/* Ajustes responsive */
+@media (max-width: 1439px) {
+  .menu .main-menu ul li {
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .menu .main-menu ul li {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .menu .main-menu ul li {
+    margin-bottom: 8px;
+  }
+}
+
+/* Base styles para elementos del menú */
+.menu .main-menu ul li {
+  padding: 10px 0; /* Agregamos padding vertical al li */
+}
+
+.menu .main-menu ul li a {
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  padding: 0; /* Quitamos el padding del enlace */
+}
+
+/* Estado activo - fondo amarillo */
+.menu .main-menu ul li.active {
+  background-color: rgba(254, 206, 0, 0.2); /* Amarillo con opacidad */
+  padding: 15px 0; /* Aumentamos el padding vertical cuando está activo */
+}
+
+/* Media queries */
+@media (max-width: 1439px) {
+  .menu .main-menu ul li {
+    padding: 8px 0;
+  }
+  .menu .main-menu ul li.active {
+    padding: 12px 0;
+  }
+}
+
+@media (max-width: 1199px) {
+  .menu .main-menu ul li {
+    padding: 6px 0;
+  }
+  .menu .main-menu ul li.active {
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .menu .main-menu ul li {
+    padding: 5px 0;
+  }
+  .menu .main-menu ul li.active {
+    padding: 8px 0;
+  }
+}
+
+/* Estilo para subsección activa en el menú secundario */
+.menu .sub-menu ul li a.subsection-active {
+    color: var(--theme-color-1) !important; /* Verde del tema */
+    font-weight: 500;
+}
+
+.menu .sub-menu ul li a.subsection-active span {
+    color: var(--theme-color-1) !important;
 }
