@@ -34,7 +34,7 @@
       <div class="d-flex align-items-center w-100">
         <!-- Sección izquierda -->
         <div class="d-flex align-items-center">
-          <!-- Botón de menú - Ajustado para ocupar solo el espacio del ícono -->
+          <!-- Botón de menú -->
           <a href="#" class="menu-button">
             <i class="iconsminds-align-justify-all"></i>
           </a>
@@ -48,7 +48,7 @@
           </div>
         </div>
 
-        <!-- Título central - Convertido en enlace clickeable -->
+        <!-- Título central -->
         <div class="navbar-brand mx-auto">
           <a href="{% url 'home' %}" class="text-decoration-none">
             <span class="text-primary font-weight-bold">Portal CITT</span>
@@ -57,15 +57,29 @@
 
         <!-- Sección derecha -->
         <div class="d-flex align-items-center">
-          <!-- Botón de aplicaciones - Ajustado para mejor interactividad -->
+          <!-- Botón de aplicaciones -->
           <div class="dropdown">
             <button class="header-icon btn btn-empty" type="button" id="iconMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="simple-icon-grid"></i>
             </button>
-            <!-- Aquí puedes agregar el dropdown-menu si es necesario -->
+            <!-- Dropdown menú de aplicaciones -->
+            <div class="dropdown-menu dropdown-menu-right mt-3" aria-labelledby="iconMenuButton">
+              <a class="dropdown-item" href="#">
+                <i class="simple-icon-doc mr-2"></i> Documentos
+              </a>
+              <a class="dropdown-item" href="#">
+                <i class="simple-icon-calendar mr-2"></i> Calendario
+              </a>
+              <a class="dropdown-item" href="#">
+                <i class="simple-icon-notebook mr-2"></i> Tareas
+              </a>
+              <a class="dropdown-item" href="#">
+                <i class="simple-icon-settings mr-2"></i> Configuración
+              </a>
+            </div>
           </div>
 
-          <!-- Usuario - Ajustado para mejor interactividad -->
+          <!-- Usuario -->
           <div class="user d-inline-block ml-3 dropdown">
             <button class="btn btn-empty p-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="name">Sarah Kortney</span>
@@ -73,7 +87,22 @@
                 <img alt="Profile Picture" src="{% static 'img/profiles/l-1.jpg' %}" />
               </span>
             </button>
-            <!-- Aquí puedes agregar el dropdown-menu si es necesario -->
+            <!-- Dropdown menú de usuario -->
+            <div class="dropdown-menu dropdown-menu-right mt-3">
+              <a class="dropdown-item" href="#">
+                <i class="simple-icon-user mr-2"></i> Perfil
+              </a>
+              <a class="dropdown-item" href="#">
+                <i class="simple-icon-envelope mr-2"></i> Mensajes
+              </a>
+              <a class="dropdown-item" href="#">
+                <i class="simple-icon-bell mr-2"></i> Notificaciones
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">
+                <i class="simple-icon-power mr-2"></i> Cerrar Sesión
+              </a>
+            </div>
           </div>
         </div>
       </div>

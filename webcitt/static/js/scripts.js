@@ -170,4 +170,37 @@ $(document).ready(function() {
 
     // Restaurar estados de los colapsadores
     restoreCollapsedStates();
+
+    // Función para manejar el estado activo de las subsecciones
+    function handleSubsectionActive() {
+        // Obtener la URL actual
+        const currentPath = window.location.pathname;
+        
+        // Remover clase activa de todas las subsecciones
+        $('.sub-menu ul li a').removeClass('subsection-active');
+        
+        // Encontrar y activar la subsección correspondiente
+        $('.sub-menu ul li a').each(function() {
+            const href = $(this).attr('href');
+            if (href && currentPath.includes(href)) {
+                $(this).addClass('subsection-active');
+                
+                // Si la subsección está dentro de un collapse, expandirlo
+                const collapseParent = $(this).closest('.collapse');
+                if (collapseParent.length) {
+                    collapseParent.addClass('show');
+                    collapseParent.prev('.rotate-arrow-icon').removeClass('collapsed');
+                }
+            }
+        });
+    }
+
+    // Ejecutar cuando la página carga
+    handleSubsectionActive();
+
+    // Manejar clicks en los enlaces de subsección
+    $('.sub-menu ul li a').on('click', function() {
+        $('.sub-menu ul li a').removeClass('subsection-active');
+        $(this).addClass('subsection-active');
+    });
 });
