@@ -34,6 +34,11 @@
   /* Fuentes */
   --heading-font-family: 'Montserrat', sans-serif;
   --content-font-family: 'Poppins', sans-serif;
+
+  /* Configuración base para bordes redondeados */
+  --border-radius-lg: 0.75rem;    /* Para contenedores grandes */
+  --border-radius-md: 0.5rem;     /* Para cards y elementos medianos */
+  --border-radius-sm: 0.25rem;    /* Para elementos pequeños */
 }
 
 html {
@@ -206,6 +211,7 @@ a:hover {
   padding: 0.5rem 2rem;
   height: 70px; /* Altura fija del header */
   z-index: 100;
+  border-radius: 0 !important;
 }
 
 .navbar .navbar-contents {
@@ -241,22 +247,6 @@ a:hover {
   gap: 0.5rem;
 }
 
-.navbar .navbar-right .user,
-.navbar .search input,
-.navbar .menu-button,
-.navbar .header-icon,
-.navbar .navbar-right .user .name {
-  color: var(--theme-color-4) !important;
-}
-
-.navbar .search .search-icon:hover,
-.navbar .header-icon:hover {
-  color: var(--theme-color-3) !important;
-}
-
-.navbar .search {
-  width: 230px;
-}
 
 .navbar .d-flex.align-items-center.w-100 {
   height: 100%;
@@ -301,6 +291,7 @@ a:hover {
   overflow-y: auto;
   scrollbar-width: thin;
   -ms-overflow-style: none;
+  border-radius: 0 !important;
 }
 
 .menu .main-menu::-webkit-scrollbar {
@@ -380,6 +371,7 @@ a:hover {
 .menu .sub-menu ul li i {
   color: var(--theme-color-5) !important; /* Gris de marca */
   font-family: var(--content-font-family);
+  border-radius: 0 !important;
 }
 
 /* Submenu normal */
@@ -1041,4 +1033,202 @@ main {
 
 #app-container.menu-default:not(.menu-sub-hidden) .menu-button .rotate-icon {
     transform: rotate(180deg);
+}
+
+/* Tamaños de texto estandarizados */
+h1, .h1 {
+    font-size: 28px !important;
+    line-height: 1.3;
+}
+
+h2, .h2,
+.card-title.large {
+    font-size: 24px !important;
+    line-height: 1.3;
+}
+
+h3, .h3,
+.card-title {
+    font-size: 18px !important;
+    line-height: 1.3;
+}
+
+p, .card-text,
+.btn,
+.nav-link,
+.dropdown-item {
+    font-size: 14px !important;
+    line-height: 1.5;
+}
+
+/* Ajuste para íconos */
+.icon-size {
+    font-size: 42px !important;
+    margin-bottom: 1rem !important; /* Reducimos el espacio entre ícono y título */
+}
+
+/* Ajustes responsive */
+@media (max-width: 767px) {
+    h1, .h1 {
+        font-size: 24px !important;
+    }
+    
+    h2, .h2,
+    .card-title.large {
+        font-size: 20px !important;
+    }
+    
+    h3, .h3,
+    .card-title {
+        font-size: 16px !important;
+    }
+}
+
+/* Ajuste para íconos en cards */
+.icon-size {
+    font-size: 42px !important; /* Incrementamos el tamaño del ícono */
+    margin-bottom: 1rem !important; /* Reducimos el espacio entre ícono y título */
+}
+
+/* Ajustes para las cards de la página de inicio */
+.equal-height-container .card {
+    height: 100%;
+}
+
+.equal-height-container .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1.5rem 1.25rem; /* Reducimos el padding general de las cards */
+}
+
+.equal-height-container .card-title {
+    font-size: 18px !important;
+    margin-top: 0;
+    margin-bottom: 1rem; /* Espacio entre título y descripción */
+}
+
+.equal-height-container .card-text {
+    font-size: 14px !important;
+    margin-bottom: 0;
+}
+
+/* Contenedores principales con bordes redondeados */
+.card {
+    border-radius: var(--border-radius-md) !important;
+}
+
+/* Cards dentro de contenedores - mantener consistencia */
+.card .card-body {
+    border-radius: var(--border-radius-md);
+}
+
+/* Mantener las esquinas cuadradas en header, menú y submenú */
+.navbar,
+.menu .main-menu,
+.menu .sub-menu {
+    border-radius: 0 !important;
+}
+
+/* Otros contenedores que necesitan bordes redondeados */
+.modal-content {
+    border-radius: var(--border-radius-md) !important;
+}
+
+.dropdown-menu {
+    border-radius: var(--border-radius-sm) !important;
+}
+
+.alert {
+    border-radius: var(--border-radius-sm) !important;
+}
+
+/* Imágenes en cards */
+.card-img,
+.card-img-top,
+.card-img-bottom {
+    border-radius: var(--border-radius-md) !important;
+}
+
+/* Contenedores de tabs */
+.tab-content {
+    border-radius: var(--border-radius-md);
+}
+
+/* Botones ya tienen su propio radio definido */
+
+/* Ajuste para tablas dentro de cards */
+.card .table {
+    border-radius: var(--border-radius-sm);
+}
+
+/* Contenedor de videos y multimedia */
+.video-container {
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+}
+
+/* Mantener bordes redondeados en responsive */
+@media (max-width: 767px) {
+    .card,
+    .modal-content,
+    .tab-content {
+        border-radius: var(--border-radius-sm) !important;
+    }
+}
+
+/* Ajuste para imágenes dentro de cards */
+.card .img-fluid {
+    border-radius: var(--border-radius-md) !important; /* Usar el mismo radio que las cards */
+}
+
+/* Asegurar que las imágenes redondeadas mantengan la consistencia */
+.img-fluid.rounded {
+    border-radius: var(--border-radius-md) !important; /* Sobrescribir la clase .rounded */
+}
+
+/* Ajuste responsive */
+@media (max-width: 767px) {
+    .card .img-fluid,
+    .img-fluid.rounded {
+        border-radius: var(--border-radius-sm) !important;
+    }
+}
+
+/* Clase para el fondo gris de marca */
+.bg-brand-gray {
+  background-color: var(--theme-color-1) !important;
+}
+
+.bg-brand-gray .card-body {
+    border-radius: var(--border-radius-md);
+}
+
+/* Ajustes responsive para el search */
+@media (max-width: 991px) {
+    .navbar .search {
+        width: 180px;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar .search {
+        width: 30px;
+        height: 30px;
+        background: transparent;
+        margin-left: 0.6rem;
+    }
+    
+    .navbar .search input {
+        display: none;
+    }
+    
+    .navbar .search .search-icon {
+        font-size: 17px;
+        width: 30px;
+        height: 30px;
+        bottom: -3px;
+        right: 0;
+    }
 }
