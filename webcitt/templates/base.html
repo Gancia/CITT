@@ -55,40 +55,24 @@
           </a>
           <div class="vertical-separator"></div>
           <a href="https://upec.edu.ec/" target="_blank" class="ml-3">
-            <img alt="UPEC" src="{% static 'img/logo_upec.png' %}" class="upec-logo" />
+            <img alt="UPEC" src="{% static 'img/logo_upec2.png' %}" class="upec-logo" />
           </a>
         </div>
 
         <!-- Sección derecha -->
         <div class="d-flex align-items-center">
-          <!-- Botón de aplicaciones -->
-          <div class="dropdown">
-            <button class="header-icon btn btn-empty" type="button" id="iconMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="simple-icon-grid"></i>
-            </button>
-            <!-- Dropdown menú de aplicaciones -->
-            <div class="dropdown-menu dropdown-menu-right mt-3" aria-labelledby="iconMenuButton">
-              <a class="dropdown-item" href="#">
-                <i class="simple-icon-doc mr-2"></i> Documentos
-              </a>
-              <a class="dropdown-item" href="#">
-                <i class="simple-icon-calendar mr-2"></i> Calendario
-              </a>
-              <a class="dropdown-item" href="#">
-                <i class="simple-icon-notebook mr-2"></i> Tareas
-              </a>
-              <a class="dropdown-item" href="#">
-                <i class="simple-icon-settings mr-2"></i> Configuración
-              </a>
-            </div>
+          <button class="header-icon btn btn-empty " type="button" id="fullScreenButton">
+            <i class="simple-icon-size-fullscreen"></i>
+            <i class="simple-icon-size-actual"></i>
+          </button>
           </div>
 
           <!-- Usuario -->
           <div class="user d-inline-block ml-3 dropdown">
             <button class="btn btn-empty p-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class="name">Sarah Kortney</span>
+              <span class="name">Sara Díaz</span>
               <span>
-                <img alt="Profile Picture" src="{% static 'img/profiles/l-1.jpg' %}" />
+                <img alt="Profile Picture" src="{% static 'img/profiles/l-4.jpg' %}" />
               </span>
             </button>
             <!-- Dropdown menú de usuario -->
@@ -127,26 +111,26 @@
             <li
               class="{% if seccion_activa == 'incubadora' %}active{% endif %}">
               <a href="{% url 'incubadora' %}" data-link="incubadora">
-                <i class="iconsminds-digital-drawing"></i>
+                <i class="iconsminds-plant"></i>
                 <span style="display: block;">Incubadora</span>
               </a>
             </li>
             <li
               class="{% if seccion_activa == 'uexperimentales' %}active{% endif %}">
               <a href="{% url 'uexperimentales' %}" data-link="uexperimentales">
-                <i class="iconsminds-cpu"></i>
+                <i class="iconsminds-chemical"></i>
                 <span style="display: block;">Unidades Experimentales</span>
               </a>
             </li>
             <li class="{% if seccion_activa == 'hublab' %}active{% endif %}">
               <a href="{% url 'hublab' %}" data-link="hublab">
-                <i class="iconsminds-cpu"></i>
+                <i class="iconsminds-start-2"></i>
                 <span style="display: block;">HubLab</span>
               </a>
             </li>
             <li class="{% if seccion_activa == 'formacion' %}active{% endif %}">
               <a href="{% url 'formacion' %}" data-link="formacion">
-                <i class="iconsminds-cpu"></i>
+                <i class="iconsminds-student-male"></i>
                 <span style="display: block;">Formación</span>
               </a>
             </li>
