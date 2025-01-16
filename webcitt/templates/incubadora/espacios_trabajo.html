@@ -5,13 +5,133 @@
 <div class="container-fluid">
     <!-- Encabezado principal -->
     <div class="text-center mb-4">
-        <h1>Espacios de trabajos</h1>
+        <h1>Espacios de Trabajo</h1>
+        <p class="text-muted">Descubre nuestros espacios diseñados para impulsar tu creatividad y productividad</p>
     </div>
 
+    <!-- Espacios Disponibles -->
+    <div class="row mb-4">
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{% static 'img/espacios/coworking.jpg' %}" class="card-img-top" alt="Coworking">
+                <div class="card-body">
+                    <h5 class="card-title">Área de Coworking</h5>
+                    <p class="card-text">Espacio colaborativo con internet de alta velocidad y ambiente dinámico.</p>
+                    <ul class="list-unstyled">
+                        <li><i class="simple-icon-check"></i> WiFi de alta velocidad</li>
+                        <li><i class="simple-icon-check"></i> Escritorios ergonómicos</li>
+                        <li><i class="simple-icon-check"></i> Café y snacks</li>
+                    </ul>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#reservaModal">Reservar</button>
+                </div>
+            </div>
+        </div>
 
-    
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{% static 'img/espacios/sala-reuniones.jpg' %}" class="card-img-top" alt="Sala de Reuniones">
+                <div class="card-body">
+                    <h5 class="card-title">Salas de Reuniones</h5>
+                    <p class="card-text">Espacios equipados para reuniones y presentaciones profesionales.</p>
+                    <ul class="list-unstyled">
+                        <li><i class="simple-icon-check"></i> Proyector</li>
+                        <li><i class="simple-icon-check"></i> Pizarra inteligente</li>
+                        <li><i class="simple-icon-check"></i> Capacidad 10-15 personas</li>
+                    </ul>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#reservaModal">Reservar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{% static 'img/espacios/laboratorio.jpg' %}" class="card-img-top" alt="Laboratorio">
+                <div class="card-body">
+                    <h5 class="card-title">Laboratorio de Prototipado</h5>
+                    <p class="card-text">Equipamiento especializado para desarrollo de prototipos.</p>
+                    <ul class="list-unstyled">
+                        <li><i class="simple-icon-check"></i> Impresoras 3D</li>
+                        <li><i class="simple-icon-check"></i> Herramientas especializadas</li>
+                        <li><i class="simple-icon-check"></i> Asesoría técnica</li>
+                    </ul>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#reservaModal">Reservar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calendario de Disponibilidad -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Calendario de Disponibilidad</h5>
+                    <div id="calendario"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Reserva -->
+<div class="modal fade" id="reservaModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Reservar Espacio</h5>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="formReserva">
+                    <div class="form-group">
+                        <label>Espacio</label>
+                        <select class="form-control" required>
+                            <option value="">Seleccione un espacio</option>
+                            <option>Coworking</option>
+                            <option>Sala de Reuniones</option>
+                            <option>Laboratorio</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Fecha</label>
+                        <input type="date" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Hora</label>
+                        <input type="time" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Duración (horas)</label>
+                        <input type="number" class="form-control" required min="1" max="8">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="submit" form="formReserva" class="btn btn-primary">Confirmar Reserva</button>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block extra_scripts %}
-<!-- Scripts específicos para la página de inicio si son necesarios -->
+<script>
+    $(document).ready(function() {
+        // Inicializar calendario
+        $('#calendario').fullCalendar({
+            // Configuración del calendario
+        });
+
+        // Manejo del formulario de reserva
+        $('#formReserva').on('submit', function(e) {
+            e.preventDefault();
+            // Lógica para procesar la reserva
+            alert('Reserva realizada con éxito');
+            $('#reservaModal').modal('hide');
+        });
+    });
+</script>
 {% endblock %}

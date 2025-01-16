@@ -5,13 +5,165 @@
 <div class="container-fluid">
     <!-- Encabezado principal -->
     <div class="text-center mb-4">
-        <h1>Herramientas tecnológicas</h1>
+        <h1>Herramientas Tecnológicas</h1>
+        <p class="text-muted">Recursos y herramientas para potenciar tu emprendimiento</p>
     </div>
 
+    <!-- Categorías de Herramientas -->
+    <div class="row mb-4">
+        <!-- Software y Aplicaciones -->
+        <div class="col-12 mb-4">
+            <h2 class="mb-3">Software y Aplicaciones</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <i class="simple-icon-screen-desktop large-icon mb-3"></i>
+                            <h5 class="card-title">Suite de Diseño</h5>
+                            <p class="card-text">Adobe Creative Cloud para diseño gráfico y multimedia.</p>
+                            <a href="#" class="btn btn-outline-primary">Acceder</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <i class="simple-icon-cloud large-icon mb-3"></i>
+                            <h5 class="card-title">Almacenamiento Cloud</h5>
+                            <p class="card-text">Google Workspace con almacenamiento ilimitado.</p>
+                            <a href="#" class="btn btn-outline-primary">Acceder</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <i class="simple-icon-chart large-icon mb-3"></i>
+                            <h5 class="card-title">Analytics</h5>
+                            <p class="card-text">Herramientas de análisis de datos y métricas.</p>
+                            <a href="#" class="btn btn-outline-primary">Acceder</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    
+        <!-- Herramientas de Desarrollo -->
+        <div class="col-12 mb-4">
+            <h2 class="mb-3">Herramientas de Desarrollo</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="simple-icon-code"></i> IDEs y Editores</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Visual Studio Code</li>
+                                <li class="list-group-item">Android Studio</li>
+                                <li class="list-group-item">XCode (para Mac)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="simple-icon-rocket"></i> Plataformas Cloud</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">AWS Startup Package</li>
+                                <li class="list-group-item">Google Cloud Platform</li>
+                                <li class="list-group-item">Azure for Startups</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recursos de Diseño -->
+        <div class="col-12 mb-4">
+            <h2 class="mb-3">Recursos de Diseño</h2>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Herramienta</th>
+                            <th>Descripción</th>
+                            <th>Tipo de Licencia</th>
+                            <th>Acceso</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Figma</td>
+                            <td>Diseño de interfaces y prototipos</td>
+                            <td>Premium</td>
+                            <td><a href="#" class="btn btn-sm btn-outline-primary">Solicitar</a></td>
+                        </tr>
+                        <tr>
+                            <td>Canva Pro</td>
+                            <td>Diseño gráfico y marketing</td>
+                            <td>Premium</td>
+                            <td><a href="#" class="btn btn-sm btn-outline-primary">Solicitar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulario de Solicitud -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Solicitar Acceso a Herramientas</h5>
+                    <form id="solicitudHerramientas">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Herramienta Solicitada</label>
+                                <select class="form-control" required>
+                                    <option value="">Seleccione una herramienta</option>
+                                    <option>Adobe Creative Cloud</option>
+                                    <option>AWS Startup Package</option>
+                                    <option>Figma Premium</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Tiempo Requerido</label>
+                                <select class="form-control" required>
+                                    <option value="">Seleccione el tiempo</option>
+                                    <option>1 mes</option>
+                                    <option>3 meses</option>
+                                    <option>6 meses</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Justificación</label>
+                            <textarea class="form-control" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block extra_scripts %}
-<!-- Scripts específicos para la página de inicio si son necesarios -->
+<script>
+    $(document).ready(function() {
+        // Inicializar tooltips
+        $('[data-toggle="tooltip"]').tooltip();
+
+        // Manejo del formulario de solicitud
+        $('#solicitudHerramientas').on('submit', function(e) {
+            e.preventDefault();
+            // Aquí iría la lógica para procesar la solicitud
+            alert('Solicitud enviada correctamente');
+            this.reset();
+        });
+    });
+</script>
 {% endblock %}
