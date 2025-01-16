@@ -4,483 +4,309 @@
 {% block title %}Orígenes - HubLab{% endblock %}
 
 {% block content %}
-<div class="row">
-  <div class="col-12 col-md-12 col-xl-9 ">
-    <div class="card mb-2">
+<div class="container-fluid disable-text-selection">
+  <div class="row">
+      <div class="col-12">
 
-      <div class="card-body" style="padding: 0.5rem;">
-        <div class="row">
+          <div class="mb-3">
+              <h1>HUBLAB</h1>
 
-          <div class="col-10"
-            style="padding-top: 10px;padding-right: 5px; padding-left: 20px;">
-            <h3 class="mbW-6">PLANTA INDUSTRIAL DE PRODUCCIÓN DE LÁCTEOS</h3>
 
+              <nav class="breadcrumb-container d-none d-sm-block d-lg-inline-block" aria-label="breadcrumb">
+                  <ol class="breadcrumb pt-0">
+                      <li class="breadcrumb-item">
+                          <a href="#">Home</a>
+                      </li>
+                      <li class="breadcrumb-item">
+                          <a href="#">Library</a>
+                      </li>
+                      <li class="breadcrumb-item active" aria-current="page">Data</li>
+                  </ol>
+              </nav>
           </div>
-          <div class="col-2 col-center " style="text-align: center;">
+          <div class="mb-2">
+              <a class="btn pt-0 pl-0 d-inline-block d-md-none" data-toggle="collapse" href="#displayOptions"
+                  role="button" aria-expanded="true" aria-controls="displayOptions">
+                  Display Options
+                  <i class="simple-icon-arrow-down align-middle"></i>
+              </a>
+              <div class="d-md-block collapse show" id="displayOptions">
+                  <span class="mr-3 mb-2 d-inline-block float-md-left">
 
-            <button class="btn btn-header-light icon-button ">
-              <a href="#" style="color: brown"><i
-                  class="simple-icon-heart mr-1"></i></a>
-            </button>
-            <span>4 Likes</span>
-          </div>
-        </div>
-        <div class="card mb-2">
-          <div
-            class="card-headers glide gallery glide--ltr glide--carousel glide--swipeable">
-            <ul class=" nav nav-tabs card-header-tabs " role="tablist">
-              <li class="nav-item">
-                <a class="nav-link active" id="first-tab" data-toggle="tab"
-                  href="#galeria" role="tab"
-                  aria-controls="first" aria-selected="true"><i
-                    class="iconsminds-home large-icon1 initial-height"></i>Presentación</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="second-tab" data-toggle="tab"
-                  href="#simuladores" role="tab"
-                  aria-controls="second" aria-selected="false"><i
-                    class="iconsminds-gear large-icon1 initial-height"></i>Recursos
-                  de Aprendizaje y Práctica</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="third-tab" data-toggle="tab"
-                  href="#tutoriales" role="tab"
-                  aria-controls="third" aria-selected="false"><i
-                    class="iconsminds-optimization large-icon1 initial-height"></i>Investigación,
-                  Innovación y Desarrollo</a>
-              </li>
+                      <a href="#" class="mr-2 view-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+                              <path class="view-icon-svg" d="M17.5,3H6.5a.5.5,0,0,1,0-1h11a.5.5,0,0,1,0,1Z" />
+                              <path class="view-icon-svg"
+                                  d="M3,2V3H1V2H3m.12-1H.88A.87.87,0,0,0,0,1.88V3.12A.87.87,0,0,0,.88,4H3.12A.87.87,0,0,0,4,3.12V1.88A.87.87,0,0,0,3.12,1Z" />
+                              <path class="view-icon-svg"
+                                  d="M3,9v1H1V9H3m.12-1H.88A.87.87,0,0,0,0,8.88v1.24A.87.87,0,0,0,.88,11H3.12A.87.87,0,0,0,4,10.12V8.88A.87.87,0,0,0,3.12,8Z" />
+                              <path class="view-icon-svg"
+                                  d="M3,16v1H1V16H3m.12-1H.88a.87.87,0,0,0-.88.88v1.24A.87.87,0,0,0,.88,18H3.12A.87.87,0,0,0,4,17.12V15.88A.87.87,0,0,0,3.12,15Z" />
+                              <path class="view-icon-svg"
+                                  d="M17.5,10H6.5a.5.5,0,0,1,0-1h11a.5.5,0,0,1,0,1Z" />
+                              <path class="view-icon-svg"
+                                  d="M17.5,17H6.5a.5.5,0,0,1,0-1h11a.5.5,0,0,1,0,1Z" /></svg>
+                      </a>
+                      <a href="#" class="mr-2 view-icon active">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+                              <path class="view-icon-svg"
+                                  d="M7,2V8H1V2H7m.12-1H.88A.87.87,0,0,0,0,1.88V8.12A.87.87,0,0,0,.88,9H7.12A.87.87,0,0,0,8,8.12V1.88A.87.87,0,0,0,7.12,1Z" />
+                              <path class="view-icon-svg"
+                                  d="M17,2V8H11V2h6m.12-1H10.88a.87.87,0,0,0-.88.88V8.12a.87.87,0,0,0,.88.88h6.24A.87.87,0,0,0,18,8.12V1.88A.87.87,0,0,0,17.12,1Z" />
+                              <path class="view-icon-svg"
+                                  d="M7,12v6H1V12H7m.12-1H.88a.87.87,0,0,0-.88.88v6.24A.87.87,0,0,0,.88,19H7.12A.87.87,0,0,0,8,18.12V11.88A.87.87,0,0,0,7.12,11Z" />
+                              <path class="view-icon-svg"
+                                  d="M17,12v6H11V12h6m.12-1H10.88a.87.87,0,0,0-.88.88v6.24a.87.87,0,0,0,.88.88h6.24a.87.87,0,0,0,.88-.88V11.88a.87.87,0,0,0-.88-.88Z" />
+                          </svg>
+                      </a>
+                  </span>
+                  <div class="d-block d-md-inline-block">
+                      <div class="btn-group float-md-left mr-1 mb-1">
+                          <button class="btn btn-outline-dark btn-xs dropdown-toggle" type="button"
+                              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Filtrar por Unidad Experimental
+                          </button>
+                          <div class="dropdown-menu">
+                              <a class="dropdown-item" href="#">Realidad Extendida</a>
+                              <a class="dropdown-item" href="#">Smart Process Lab</a>
+                              <a class="dropdown-item" href="#">FabLab</a>
+                              <a class="dropdown-item" href="#">Smart Data Lab</a>
+                              <a class="dropdown-item" href="#">Centro experimental San Francisco</a>
+                              <a class="dropdown-item" href="#">Centro experimental Alonso Tadeo</a>
+                              <a class="dropdown-item" href="#">Turismo</a>
+                          </div>
+                      </div>
+                      <div class="btn-group float-md-left mr-1 mb-1">
+                          <button class="btn btn-outline-dark btn-xs dropdown-toggle" type="button"
+                              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Filtrar por categoria
+                          </button>
+                          <div class="dropdown-menu">
+                              <a class="dropdown-item" href="#">Laboratorio real</a>
+                              <a class="dropdown-item" href="#">Laboratorio virtual</a>
+                              <a class="dropdown-item" href="#">Software especializado</a>
+                              <a class="dropdown-item" href="#">Simulación</a>
+                          </div>
+                      </div>
 
-              <li class="nav-item">
-                <a class="nav-link" id="four-tab" data-toggle="tab" href="#docs"
-                  role="tab"
-                  aria-controls="four" aria-selected="false"><i
-                    class="iconsminds-conference large-icon1 initial-height"></i>Servicios
-                  y Soporte</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" id="five-tab" data-toggle="tab"
-                  href="#innov" role="tab"
-                  aria-controls="five" aria-selected="false"><i
-                    class="iconsminds-conference large-icon1 initial-height"></i>Colaboración
-                  y Networking</a>
-              </li>
-
-            </ul>
-          </div>
-        </div>
-
-        <div class="tab-content card mb-2 ">
-          <div class="tab-pane fade show active " id="galeria" role="tabpanel"
-            aria-labelledby="first-tab">
-
-            <div class="glide details">
-              <div
-                class="glide__track owl-stage owl-carousel home-carousel owl-loaded owl-drag owl-stage-outer"
-                data-glide-el="track">
-                <ul class="glide__slides owl-item active owl-stage">
-                  <li class="glide__slide owl-stage">
-                    <img alt="detail" src="img/products/P6.png"
-                      class="responsive border-0 border-radius img-fluid mb-3" />
-                  </li>
-                  <li class="owl-item">
-                    <img alt="detail" src="img/products/P1.png"
-                      class="responsive border-0 border-radius img-fluid mb-3" />
-                  </li>
-                  <li class="owl-item">
-                    <img alt="detail" src="img/products/P3.png"
-                      class="responsive border-0 border-radius img-fluid mb-3" />
-                  </li>
-                  <li class="glide__slide">
-                    <img alt="detail" src="img/products/P4.png"
-                      class="responsive border-0 border-radius img-fluid mb-3" />
-                  </li>
-                  <li class="glide__slide">
-                    <img alt="detail" src="img/products/P5.png"
-                      class="responsive border-0 border-radius img-fluid mb-3" />
-                  </li>
-                  <li class="glide__slide">
-                    <img alt="detail" src="img/products/P2.png"
-                      class="responsive border-0 border-radius img-fluid mb-3" />
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="glide thumbs">
-              <div class="glide__track" data-glide-el="track">
-                <ul class="glide__slides">
-                  <li class="glide__slide">
-                    <img alt="thumb" src="img/products/P6.png"
-                      class="responsive border-0 border-radius img-fluid" />
-                  </li>
-                  <li class="glide__slide">
-                    <img alt="thumb" src="img/products/P1.png"
-                      class="responsive border-0 border-radius img-fluid" />
-                  </li>
-                  <li class="glide__slide">
-                    <img alt="thumb" src="img/products/P3.png"
-                      class="responsive border-0 border-radius img-fluid" />
-                  </li>
-                  <li class="glide__slide">
-                    <img alt="thumb" src="img/products/P4.png"
-                      class="responsive border-0 border-radius img-fluid" />
-                  </li>
-                  <li class="glide__slide">
-                    <img alt="thumb" src="img/products/P5.png"
-                      class="responsive border-0 border-radius img-fluid" />
-                  </li>
-                  <li class="glide__slide">
-                    <img alt="thumb" src="img/products/P2.png"
-                      class="responsive border-0 border-radius img-fluid" />
-                  </li>
-                </ul>
-              </div>
-              <div class="glide__arrows" data-glide-el="controls">
-                <button class="glide__arrow glide__arrow--left"
-                  data-glide-dir="<"><i
-                    class="simple-icon-arrow-left"></i></button>
-                <button class="glide__arrow glide__arrow--right"
-                  data-glide-dir=">"><i
-                    class="simple-icon-arrow-right"></i></button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Contenido de Simuladores -->
-          <div class="tab-pane fade" id="simuladores" role="tabpanel"
-            aria-labelledby="second-tab">
-            <div class="content-section " data-view="simuladores">
-              <iframe width="100%" height="630" src="360upec/index.html"
-                style="border:none;"></iframe>
-            </div>
-          </div>
-
-          <!-- Contenido de Simuladores -->
-          <div class="tab-pane fade" id="tutoriales" role="tabpanel"
-            aria-labelledby="third-tab">
-            <div class="video-container">
-              <iframe
-                width="100%"
-                height="630"
-                src="https://www.youtube.com/embed/Z4AuIpzZUTc"
-                frameborder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-            </div>
-          </div>
-
-          <!-- PDF Viewer -->
-          <div class="tab-pane fade" id="docs" role="tabpanel"
-            aria-labelledby="four-tab"
-            class="content-section"
-            data-view="documentosPDF">
-            <div class="video-container">
-              <div class="pdf-viewer-container">
-                <iframe
-                  src="documentos/GUÍA DIDÁCTICA Unidad 2.pdf"
-                  frameborder="0"
-                  allowfullscreen></iframe>
-              </div>
-            </div>
-
-            <style>
-                    .video-container {
-                      position: relative;
-
-                      height: 620px;
-                      overflow: hidden;
-                    }
-                  
-                    .video-container .pdf-viewer-container {
-                      position: absolute;
-                      top: 0;
-                      left: 0;
-                      width: 100%;
-                      height: 100%;
-                    }
-                  
-                    .pdf-viewer-container iframe {
-                      width: 100%;
-                      height: 100%;
-                    }
-                  </style>
-          </div>
-
-          <!-- Contenido de Simuladores -->
-          <div class="tab-pane fade" id="documentacions" role="tabpanel"
-            aria-labelledby="four-tab">
-            <div class="video-container">
-              <iframe
-                width="100%"
-                height="610"
-                src="https://www.youtube.com/embed/Z4AuIpzZUTc"
-                frameborder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Contenedor 2-->
-  <div class="col-12 col-md-12 col-xl-3">
-
-    <div class="card mb-2">
-      <div class="card-body">
-        <h3 class="card-title">CATEGORIAS</h3>
-        <ul class=" nav nav-tabs">
-          <li class="nav-item">
-            <i class="pb-2 iconsminds-monitor-3 large-icon initial-height">
-            </i>Recursos de Aprendizaje y Práctica
-          </li>
-        </ul>
-        <br>
-
-        <div>
-          <div id="accordion">
-            <div>
-              <button class="btn btn-link p-0 pb-2 font-weight-bold"
-                data-toggle="collapse" data-target="#collapseOne"
-                aria-expanded="true" aria-controls="collapseOne">
-                <i class="simple-icon-login "></i>
-                <span class="d-inline-block">Modelos y Simulaciones</span>
-              </button>
-              <div id="collapseOne" class="collapse show"
-                data-parent="#accordion">
-                <div class="pb-2">
-                  <li>
-                    <a href="HublabP11.html">
-
-                      <i class="iconsminds-monitor---tablet active"></i>
-                      <span class=" d-inline-block"
-                        style="color: rgb(192, 12, 72);">Simulador recorrido
-                        360</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="iconsminds-monitor---tablet"></i>
-                      <span class="d-inline-block">Simulación proceso
-                        productivo</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="iconsminds-monitor---tablet"></i>
-                      <span class="d-inline-block">Simulador Realidad
-                        Aumentada</span>
-                    </a>
-                  </li>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <button class="btn btn-link collapsed p-0 pb-2 font-weight-bold"
-                data-toggle="collapse" data-target="#collapseTwo"
-                aria-expanded="false"
-                aria-controls="collapseTwo">
-                <i class="simple-icon-login "></i>
-                <span class="d-inline-block">Tutoriales y documentación</span>
-              </button>
-              <div id="collapseTwo" class="collapse" data-parent="#accordion">
-                <div class="pb-2">
-                  <li>
-                    <a href="#">
-                      <i class="iconsminds-monitor---tablet"></i>
-                      <span class="d-inline-block">Guía interactiva sobre cómo
-                        usar</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="iconsminds-monitor---tablet"></i>
-                      <span class="d-inline-block">Requisitos técnicos para
-                        ejecutar</span>
-                    </a>
-                  </li>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <button class="btn btn-link collapsed p-0 pb-2 font-weight-bold"
-                data-toggle="collapse" data-target="#collapseThree"
-                aria-expanded="false"
-                aria-controls="collapseThree">
-                <i class="simple-icon-login "></i>
-                <span class="d-inline-block">Prácticas Guiadas</span>
-              </button>
-              <div id="collapseThree" class="collapse" data-parent="#accordion">
-                <div class="pb-2">
-                  <li>
-                    <a href="#">
-                      <i class="iconsminds-monitor---tablet"></i>
-                      <span class="d-inline-block">Ejercicios prácticos </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="iconsminds-monitor---tablet"></i>
-                      <span class="d-inline-block">Ejercicios prácticos 2</span>
-                    </a>
-                  </li>
-                </div>
-              </div>
-            </div>
-            <div>
-              <button class="btn btn-link collapsed p-0 pb-2 font-weight-bold"
-                data-toggle="collapse" data-target="#collapseFour"
-                aria-expanded="false"
-                aria-controls="collapseFour">
-                <i class="simple-icon-login "></i>
-                <span class="d-inline-block">Proyectos y Ejercicios</span>
-              </button>
-              <div id="collapseFour" class="collapse" data-parent="#accordion">
-                <div class="pb-2">
-                  <li>
-                    <a href="#">
-                      <i class="iconsminds-monitor---tablet"></i>
-                      <span class="d-inline-block">Repositorios de
-                        proyectos</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="iconsminds-monitor---tablet"></i>
-                      <span class="d-inline-block">Plantillas de
-                        proyectos</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="iconsminds-monitor---tablet"></i>
-                      <span class="d-inline-block">Ejercicios prácticos</span>
-                    </a>
-                  </li>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-body">
-        <h3 class="card-title ">DESCRIPCIÓN DEL LABORATORIO</h3>
-        <table class="table table-hover ">
-
-          <tbody class="opacity-50 ">
-            <tr>
-              <th scope="row"><i class="iconsminds-monitor---tablet"></i>
-                Descripción</th>
-
-              <td class="btn-outline-primary mb-2" data-toggle="modal"
-                data-target=".bd-example-modal-lg">Ver descripción</td>
-
-              <div class="modal fade bd-example-modal-lg" tabindex="-1"
-                role="dialog" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title">Descripción del proyecto</h5>
-                      <button type="button" class="close" data-dismiss="modal"
-                        aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      Este proyecto presenta contenido de un entorno de una
-                      fábrica a gran escala, con el tema de una línea de
-                      fabricación de camiones pesados. Incluye estas secciones
-                      de fábrica: montaje de máquinas, montaje de motores, zona
-                      de control, zona de pintura, zona de almacenamiento, zona
-                      de oficinas, vestuarios y duchas, línea de pruebas de
-                      choque de camiones y línea de vías de locomotoras. Este
-                      contenido está diseñado para permitir a los
-                      desarrolladores crear entornos de diferentes estilos, como
-                      industrial, realista, de ciencia ficción y cyberpunk.
-                      Cada objeto está optimizado para su uso en tiempo real
-                      (materiales/colisiones y LOD optimizados).
-                      Para explorar el área de la fábrica, hay algunos vehículos
-                      adicionales que controlar, como un elevador de carga, una
-                      grúa grande y un dron volador.
-                      Incluye muchos elementos funcionales y FX:
-
-                      <br>
-                      <br>
-
-                      Vehículos
-                      Pista de prueba
-                      linea de ensamblaje
-                      Zumbido
-                      sonidos ambientales
-                      Grúas Máquina elevadora¡Y más!
-
-                      Este proyecto presenta contenido de un entorno de una
-                      fábrica a gran escala, con el tema de una línea de
-                      fabricación de camiones pesados. Incluye estas secciones
-                      de fábrica: montaje de máquinas, montaje de motores, zona
-                      de control, zona de pintura, zona de almacenamiento, zona
-                      de oficinas, vestuarios y duchas, línea de pruebas de
-                      choque de camiones y línea de vías de locomotoras. Este
-                      contenido está diseñado para permitir a los
-                      desarrolladores crear entornos de diferentes estilos, como
-                      industrial, realista, de ciencia ficción y cyberpunk.
-                      Cada objeto está optimizado para su uso en tiempo real
-                      (materiales/colisiones y LOD optimizados).
-                      Para explorar el área de la fábrica, hay algunos vehículos
-                      adicionales que controlar, como un elevador de carga, una
-                      grúa grande y un dron volador.
-                      Incluye muchos elementos funcionales y FX:
-
-                      <br>
-                      <br>
-
-                      Vehículos
-                      Pista de prueba
-                      linea de ensamblaje
-                      Zumbido
-                      sonidos ambientales
-                      Grúas Máquina elevadora¡Y más!
-                    </div>
+                      <div class="search-sm d-inline-block float-md-left mr-1 mb-1 align-top">
+                          <input placeholder="Search...">
+                      </div>
                   </div>
-                </div>
+                  <div class="float-md-right">
+                      <span class="text-muted text-small">Displaying 1-10 of 210 items </span>
+                      <button class="btn btn-outline-dark btn-xs dropdown-toggle" type="button"
+                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          20
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-right">
+                          <a class="dropdown-item" href="#">10</a>
+                          <a class="dropdown-item active" href="#">20</a>
+                          <a class="dropdown-item" href="#">30</a>
+                          <a class="dropdown-item" href="#">50</a>
+                          <a class="dropdown-item" href="#">100</a>
+                      </div>
+                  </div>
               </div>
-            </tr>
-
-            <tr>
-              <th scope="row"><i class="iconsminds-monitor---tablet"></i>
-                Asignaturas</th>
-              <td>Producción, manufactura, operaciones, calidad</td>
-            </tr>
-            <tr>
-              <th scope="row"><i class="iconsminds-monitor---tablet"></i>
-                Carreras</th>
-              <td>Industrial, Logística, Administración, Alimentos</td>
-            </tr>
-            <tr>
-              <th scope="row"><i class="iconsminds-monitor---tablet"></i>
-                Licencia</th>
-              <td>Licencia UPEC</td>
-            </tr>
-            <tr>
-              <th scope="row"><i class=" iconsminds-monitor---tablet"></i>
-                Impresiones</th>
-              <td colspan="2">26.250</td>
-            </tr>
-
-          </tbody>
-        </table>
+          </div>
+          <div class="separator mb-5"></div>
       </div>
-    </div>
   </div>
 
+  <div class="row list disable-text-selection" data-check-all="checkAll">
+
+      <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+          <div class="card">
+              <div class="position-relative">
+                  <a href="HublabP1.html"><img class="card-img-top" src="img/cards/lacteos.png"
+                          alt="Card image cap"></a>
+                  <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">Disponible</span>
+              </div>
+              <div class="card-body">
+                  <div class="row">
+                      <div class="col-12">
+                          <a href="HublabP1.html">
+                              <p class="list-item-heading mb-4 pt-1">Planta Industrial de producción de lacteos</p>
+                          </a>
+                          <footer>
+                              <p class="text-muted text-small mb-0 font-weight-light">Categoría: Laboratorio real</p>
+                              <p class="text-muted text-small mb-0 font-weight-light">Unidad Experimental: C.E-San Francisco</p>
+                              <p class="text-muted text-small mb-0 font-weight-light">Diseñado para estudiantes de Alimentos, logística, Industrial, Administración, procesos y afines</p>   
+                              <p class="text-muted text-small mb-0 font-weight-light">Actualizado: enero 2025</p>
+                              <p class="text-muted text-small mb-0 font-weight-light">Visitas 18.080</p>
+                          </footer>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+          <div class="card">
+              <div class="position-relative">
+                  <a href="#"><img class="card-img-top" src="img/cards/proyecto2 1.png"
+                          alt="Card image cap"></a>
+                  <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">Disponible</span>
+              </div>
+              <div class="card-body">
+                  <div class="row">
+                      <div class="col-12">
+                          <a href="#">
+                              <p class="list-item-heading mb-4 pt-1">Laboratorio virtual para diseño y análisis de procesos industriales</p>
+                          </a>
+                          <footer>
+                              <p class="text-muted text-small mb-0 font-weight-light">Categoría: Laboratorio virtual</p>
+                              <p class="text-muted text-small mb-0 font-weight-light">Unidad Experimental: Lab-Realidad Extendida</p>
+                              <p class="text-muted text-small mb-0 font-weight-light">Diseñado para estudiantes de logística, Industrial, Administración, procesos y afines</p>   
+                              <p class="text-muted text-small mb-0 font-weight-light">Actualizado: enero 2025</p>
+                              <p class="text-muted text-small mb-0 font-weight-light">Visitas 11.360</p>
+                          </footer>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+          <div class="card">
+              <div class="position-relative">
+                  <a href="#"><img class="card-img-top" src="img/cards/flexsim.png"
+                          alt="Card image cap"></a>
+                  <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">En desarrollo</span>
+              </div>
+              <div class="card-body">
+                  <div class="row">
+                      <div class="col-12">
+                          <a href="#">
+                              <p class="list-item-heading mb-4 pt-1">Software de Simulación de procesos Industriales FLEXSIM</p>
+                          </a>
+                          <footer>
+                              <p class="text-muted text-small mb-0 font-weight-light">Categoría: Software</p>
+                              <p class="text-muted text-small mb-0 font-weight-light">Unidad Experimental: Lab-Realidad Extendida</p>
+                              <p class="text-muted text-small mb-0 font-weight-light">Diseñado para estudiantes de logística, Industrial, Administración, procesos y afines</p>   
+                              <p class="text-muted text-small mb-0 font-weight-light">Actualizado: enero 2025</p>
+                              <p class="text-muted text-small mb-0 font-weight-light">Visitas 11.360</p>
+                          </footer>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+          <div class="card">
+              <div class="position-relative">
+                  <a href="#"><img class="card-img-top" src="img/cards/tulcan.png"
+                          alt="Card image cap"></a>
+                  <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">Próximamente</span>
+              </div>
+              <div class="card-body">
+                  <div class="row">
+                      <div class="col-12">
+                          <a href="#">
+                              <p class="list-item-heading mb-4 pt-1">Recorrido Turimo Cementerio ciudad de Tulcán</p>
+                          </a>
+                          <footer>
+                              <p class="text-muted text-small mb-0 font-weight-light">Categoría: Laboratorio Real</p>
+                              <p class="text-muted text-small mb-0 font-weight-light">Unidad Experimental: Lab-Turismo</p>
+                              <p class="text-muted text-small mb-0 font-weight-light">Diseñado para estudiantes de turismo, ambiental y afines</p>   
+                              <p class="text-muted text-small mb-0 font-weight-light">Actualizado: enero 2025</p>
+                              <p class="text-muted text-small mb-0 font-weight-light">Visitas 11.360</p>
+                          </footer>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+          <div class="card">
+              <div class="position-relative">
+                  <a href="#"><img class="card-img-top" src="img/cards/tulcan.png"
+                          alt="Card image cap"></a>
+                  <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">Próximamente</span>
+              </div>
+              <div class="card-body">
+                  <div class="row">
+                      <div class="col-12">
+                          <a href="#">
+                              <p class="list-item-heading mb-4 pt-1">Recorrido Turimo Cementerio ciudad de Tulcán</p>
+                          </a>
+                          <footer>
+                              <p class="text-muted text-small mb-0 font-weight-light">Categoría: Laboratorio Real</p>
+                              <p class="text-muted text-small mb-0 font-weight-light">Unidad Experimental: Lab-Turismo</p>
+                              <p class="text-muted text-small mb-0 font-weight-light">Diseñado para estudiantes de turismo, ambiental y afines</p>   
+                              <p class="text-muted text-small mb-0 font-weight-light">Actualizado: enero 2025</p>
+                              <p class="text-muted text-small mb-0 font-weight-light">Visitas 11.360</p>
+                          </footer>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+          <div class="card">
+              <div class="position-relative">
+                  <a href="#"><img class="card-img-top" src="img/cards/lacteos.png"
+                          alt="Card image cap"></a>
+                  <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">Disponible</span>
+              </div>
+              <div class="card-body">
+                  <div class="row">
+                      <div class="col-12">
+                          <a href="#">
+                              <p class="list-item-heading mb-4 pt-1">Planta Industrial de producción de lacteos</p>
+                          </a>
+                          <footer>
+                              <p class="text-muted text-small mb-0 font-weight-light">Categoría: Laboratorio real</p>
+                              <p class="text-muted text-small mb-0 font-weight-light">Unidad Experimental: C.E-San Francisco</p>
+                              <p class="text-muted text-small mb-0 font-weight-light">Diseñado para estudiantes de Alimentos, logística, Industrial, Administración, procesos y afines</p>   
+                              <p class="text-muted text-small mb-0 font-weight-light">Actualizado: enero 2025</p>
+                              <p class="text-muted text-small mb-0 font-weight-light">Visitas 18.080</p>
+                          </footer>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-12">
+          <nav class="mt-4 mb-3">
+              <ul class="pagination justify-content-center mb-0">
+                  <li class="page-item ">
+                      <a class="page-link first" href="#">
+                          <i class="simple-icon-control-start"></i>
+                      </a>
+                  </li>
+                  <li class="page-item ">
+                      <a class="page-link prev" href="#">
+                          <i class="simple-icon-arrow-left"></i>
+                      </a>
+                  </li>
+                  <li class="page-item active">
+                      <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item ">
+                      <a class="page-link" href="#">2</a>
+                  </li>
+                  <li class="page-item">
+                      <a class="page-link" href="#">3</a>
+                  </li>
+                  <li class="page-item ">
+                      <a class="page-link next" href="#" aria-label="Next">
+                          <i class="simple-icon-arrow-right"></i>
+                      </a>
+                  </li>
+                  <li class="page-item ">
+                      <a class="page-link last" href="#">
+                          <i class="simple-icon-control-end"></i>
+                      </a>
+                  </li>
+              </ul>
+          </nav>
+      </div>
+  </div>
 </div>
 {% endblock %}
 
