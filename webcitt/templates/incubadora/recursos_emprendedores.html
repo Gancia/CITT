@@ -5,13 +5,126 @@
 <div class="container-fluid">
     <!-- Encabezado principal -->
     <div class="text-center mb-4">
-        <h1>Recursos para emprendedores</h1>
+        <h1>Recursos para Emprendedores</h1>
+        <p class="text-muted">Herramientas y recursos para impulsar tu emprendimiento</p>
     </div>
 
+    <!-- Sección de Herramientas y Plantillas -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2 class="mb-3">Herramientas y Plantillas</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <i class="iconsminds-file-clipboard-file---text large-icon mb-3"></i>
+                            <h5 class="card-title">Plan de Negocio</h5>
+                            <p class="card-text">Plantilla para desarrollar tu plan de negocio paso a paso.</p>
+                            <a href="#" class="btn btn-outline-primary">Descargar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <i class="iconsminds-calculator large-icon mb-3"></i>
+                            <h5 class="card-title">Calculadora Financiera</h5>
+                            <p class="card-text">Herramienta para proyecciones financieras básicas.</p>
+                            <a href="#" class="btn btn-outline-primary">Acceder</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <i class="iconsminds-pie-chart large-icon mb-3"></i>
+                            <h5 class="card-title">Canvas de Negocio</h5>
+                            <p class="card-text">Plantilla del Business Model Canvas editable.</p>
+                            <a href="#" class="btn btn-outline-primary">Descargar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    
+    <!-- Sección de Recursos Educativos -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2 class="mb-3">Recursos Educativos</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="simple-icon-graduation"></i> Cursos Online</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Marketing Digital para Emprendedores</li>
+                                <li class="list-group-item">Finanzas Básicas</li>
+                                <li class="list-group-item">Diseño de Propuesta de Valor</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="simple-icon-book-open"></i> Biblioteca Digital</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Guías de Emprendimiento</li>
+                                <li class="list-group-item">E-books Especializados</li>
+                                <li class="list-group-item">Casos de Éxito</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calendario de Eventos -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2 class="mb-3">Próximos Eventos</h2>
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Evento</th>
+                                    <th>Descripción</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>15 Enero 2025</td>
+                                    <td>Workshop de Pitch</td>
+                                    <td>Aprende a presentar tu idea efectivamente</td>
+                                    <td><a href="#" class="btn btn-sm btn-outline-primary">Inscribirse</a></td>
+                                </tr>
+                                <tr>
+                                    <td>20 Enero 2025</td>
+                                    <td>Mentorías 1:1</td>
+                                    <td>Sesiones personalizadas con expertos</td>
+                                    <td><a href="#" class="btn btn-sm btn-outline-primary">Reservar</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block extra_scripts %}
-<!-- Scripts específicos para la página de inicio si son necesarios -->
+<script>
+    $(document).ready(function() {
+        // Inicializar tooltips
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
 {% endblock %}
