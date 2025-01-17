@@ -5,10 +5,167 @@
 
 {% block content %}
 <div class="container-fluid">
+    <!-- Encabezado con fondo y estadísticas -->
+    <div class="card mb-4" style="background: linear-gradient(135deg, var(--theme-color-1) 0%, var(--theme-color-2) 100%);">
+        <div class="card-body text-center py-5">
+            <h1 class="display-4 mb-3 text-white">Centro de Formación</h1>
+            <p class="lead mb-5 text-white">Desarrollo de competencias para la innovación y el emprendimiento</p>
+            
+            <div class="row mt-4">
+                <div class="col-md-3 mb-3">
+                    <div class="counter">
+                        <h2 class="display-4 mb-1 text-white">50+</h2>
+                        <p class="lead mb-0 text-white">Cursos Activos</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="counter">
+                        <h2 class="display-4 mb-1 text-white">1000+</h2>
+                        <p class="lead mb-0 text-white">Estudiantes</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="counter">
+                        <h2 class="display-4 mb-1 text-white">30</h2>
+                        <p class="lead mb-0 text-white">Expertos</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="counter">
+                        <h2 class="display-4 mb-1 text-white">95%</h2>
+                        <p class="lead mb-0 text-white">Satisfacción</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Áreas de Formación con cards interactivas -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <h2 class="text-center mb-4">Áreas de Formación</h2>
+            <div class="row">
+                <!-- Área 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 hover-shadow">
+                        <div class="card-body text-center">
+                            <div class="rounded-circle bg-primary p-4 mx-auto mb-4" style="width: 100px; height: 100px;">
+                                <i class="iconsminds-microscope text-white icon-size"></i>
+                            </div>
+                            <h4 class="mb-3">Investigación e Innovación</h4>
+                            <p class="mb-4">Metodologías y herramientas para la investigación aplicada y la innovación tecnológica.</p>
+                            <ul class="list-unstyled text-left">
+                                <li class="mb-2"><i class="simple-icon-check mr-2 text-primary"></i>Métodos de investigación</li>
+                                <li class="mb-2"><i class="simple-icon-check mr-2 text-primary"></i>Gestión de la innovación</li>
+                                <li class="mb-2"><i class="simple-icon-check mr-2 text-primary"></i>Desarrollo de prototipos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Área 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 hover-shadow">
+                        <div class="card-body text-center">
+                            <div class="rounded-circle bg-primary p-4 mx-auto mb-4" style="width: 100px; height: 100px;">
+                                <i class="iconsminds-gears text-white icon-size"></i>
+                            </div>
+                            <h4 class="mb-3">Desarrollo Tecnológico</h4>
+                            <p class="mb-4">Competencias técnicas para el desarrollo de soluciones tecnológicas.</p>
+                            <ul class="list-unstyled text-left">
+                                <li class="mb-2"><i class="simple-icon-check mr-2 text-primary"></i>Programación y desarrollo</li>
+                                <li class="mb-2"><i class="simple-icon-check mr-2 text-primary"></i>Inteligencia artificial</li>
+                                <li class="mb-2"><i class="simple-icon-check mr-2 text-primary"></i>IoT y sistemas embebidos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Área 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 hover-shadow">
+                        <div class="card-body text-center">
+                            <div class="rounded-circle bg-primary p-4 mx-auto mb-4" style="width: 100px; height: 100px;">
+                                <i class="iconsminds-consulting text-white icon-size"></i>
+                            </div>
+                            <h4 class="mb-3">Gestión de Proyectos</h4>
+                            <p class="mb-4">Herramientas y metodologías para la gestión efectiva de proyectos.</p>
+                            <ul class="list-unstyled text-left">
+                                <li class="mb-2"><i class="simple-icon-check mr-2 text-primary"></i>Metodologías ágiles</li>
+                                <li class="mb-2"><i class="simple-icon-check mr-2 text-primary"></i>Gestión de equipos</li>
+                                <li class="mb-2"><i class="simple-icon-check mr-2 text-primary"></i>Evaluación de resultados</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modalidades de Formación -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <h2 class="text-center mb-4">Modalidades de Formación</h2>
+                    <div class="row">
+                        <!-- Modalidad Virtual -->
+                        <div class="col-md-4 mb-4">
+                            <div class="d-flex align-items-center">
+                                <div class="rounded-circle bg-primary p-3 mr-4">
+                                    <i class="iconsminds-monitor text-white icon-size-sm"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Formación Virtual</h5>
+                                    <p class="mb-0 text-muted">Flexibilidad horaria y contenido multimedia interactivo</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modalidad Presencial -->
+                        <div class="col-md-4 mb-4">
+                            <div class="d-flex align-items-center">
+                                <div class="rounded-circle bg-primary p-3 mr-4">
+                                    <i class="iconsminds-conference text-white icon-size-sm"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Formación Presencial</h5>
+                                    <p class="mb-0 text-muted">Prácticas en laboratorios con acompañamiento personalizado</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modalidad Híbrida -->
+                        <div class="col-md-4 mb-4">
+                            <div class="d-flex align-items-center">
+                                <div class="rounded-circle bg-primary p-3 mr-4">
+                                    <i class="iconsminds-sync text-white icon-size-sm"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Formación Híbrida</h5>
+                                    <p class="mb-0 text-muted">Combinación de actividades virtuales y presenciales</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
     <div class="row">
         <div class="col-12">
-            <h1>Formación</h1>
-            <div class="separator mb-5"></div>
+            <div class="card bg-primary text-white">
+                <div class="card-body text-center py-5">
+                    <h2 class="mb-4">¿Listo para empezar tu formación?</h2>
+                    <p class="lead mb-4">Explora nuestro catálogo de cursos y encuentra el programa que mejor se adapte a tus necesidades</p>
+                    <a href="#" class="btn btn-outline-white btn-lg">
+                        <i class="simple-icon-graduation mr-2"></i>
+                        Ver catálogo de cursos
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
