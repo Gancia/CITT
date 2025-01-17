@@ -154,33 +154,28 @@
               </a>
             </li>
             <li>
-              <a href="{% url 'ott_proyectos_logros' %}">
-                <span class="d-inline-block">Proyectos y logros</span>
+              <a href="{% url 'ott_innovacion_tecnologica' %}">
+                <span class="d-inline-block">Innovación tecnológica</span>
               </a>
             </li>
             <li>
-              <a href="{% url 'ott_colaboraciones' %}">
-                <span class="d-inline-block">Colaboraciones</span>
+              <a href="{% url 'ott_capacitacion_consultoria' %}">
+                <span class="d-inline-block">Capacitación y consultoría</span>
               </a>
             </li>
             <li>
-              <a href="{% url 'ott_recursos_capacitacion' %}">
-                <span class="d-inline-block">Recursos y capacitación</span>
+              <a href="{% url 'ott_colaboracion_industria' %}">
+                <span class="d-inline-block">Colaboración con industria</span>
               </a>
             </li>
             <li>
-              <a href="{% url 'ott_evaluacion_transparencia' %}">
-                <span class="d-inline-block">Evaluación y Transparencia</span>
-              </a>
-            </li>
-            <li>
-              <a href="{% url 'ott_portal_usuarios' %}">
-                <span class="d-inline-block">Portal de Usuarios</span>
+              <a href="{% url 'ott_impacto_resultados' %}">
+                <span class="d-inline-block">Impacto y resultados</span>
               </a>
             </li>
             <li>
               <a href="{% url 'ott_contacto' %}">
-                <span class="d-inline-block">Contacto</span>
+                <span class="d-inline-block">Contacto y recursos</span>
               </a>
             </li>
           </ul>
@@ -416,9 +411,7 @@
 
     <!-- Contenido Principal -->
     <main>
-      <div class="container-fluid">
-        {% block content %} {% endblock %}
-      </div>
+      {% block content %} {% endblock %}
     </main>
 
     <!-- Footer -->

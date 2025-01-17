@@ -3,68 +3,79 @@
 
 {% block content %}
 <div class="container-fluid">
-    <div class="row">
+    <!-- Encabezado principal -->
+    <div class="text-center mb-4">
+        <h1>Oficina de Transferencia Tecnológica</h1>
+        <p><i>Conectando la investigación académica con el impacto social</i></p>
+    </div>
+
+    <!-- Video o imagen de presentación -->
+    <div class="row mb-5">
         <div class="col-12">
-            <h1>Orígenes del OTT</h1>
-            <div class="separator mb-5"></div>
+            <div class="card">
+                <div class="card-body text-center">
+                    <img src="{% static 'img/ott/banner_ott.jpg' %}" alt="OTT Banner" class="img-fluid rounded">
+                </div>
+            </div>
         </div>
     </div>
 
-</div>
-
-    <div class="row">
-        <div class="col-12 col-xl-6">
-            <img class="social-header card-img mb-5" src="{%static 'img/social/Ott7.png' %}">
-        </div>
-
-        <div class="col-12 col-xl-6">
-            <div class="card mb-4">
+    <!-- Misión y Visión -->
+    <div class="row mb-4">
+        <div class="col-12 col-xl-6 mb-4">
+            <div class="card h-100">
                 <div class="card-body">
-                    <h5 class="mb-4">Sobre OTT</h5>
-                    <p>La Oficina de Transferencia Tecnológica (OTT) es un espacio dedicado a transformar el conocimiento generado en nuestra universidad en soluciones tangibles para la sociedad. Actuamos como el enlace entre la investigación académica, el sector productivo y la comunidad, promoviendo la innovación, el emprendimiento y el impacto social.</p>
+                    <h2 class="mb-4">Misión</h2>
+                    <p>Facilitar la transferencia efectiva de conocimientos y tecnologías desarrolladas en nuestra institución hacia la sociedad, promoviendo la innovación y el desarrollo económico regional.</p>
                 </div>
             </div>
         </div>
-    </div> 
-
-
-    <div class="row">
-        <div class="col-12 col-xl-6">
-            <div class="card mb-4">
+        <div class="col-12 col-xl-6 mb-4">
+            <div class="card h-100">
                 <div class="card-body">
-                    <h5 class="mb-4">Nuestra misión</h5>
-                    <p>Facilitar y promover la transferencia efectiva de tecnologías, conocimientos científicos y capacidades técnicas desde la universidad hacia el sector productivo, gubernamental y la sociedad civil, mediante el establecimiento de vínculos colaborativos, la gestión estratégica de la propiedad intelectual, el acompañamiento técnico especializado, y el impulso a emprendimientos de base tecnológica, con el fin de potenciar la innovación como motor de transformación y fortalecer la competitividad empresarial</p>
+                    <h2 class="mb-4">Visión</h2>
+                    <p>Ser un referente nacional en la gestión de transferencia tecnológica, reconocidos por nuestra capacidad de convertir la investigación académica en soluciones que beneficien a la sociedad.</p>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="col-12 col-xl-6">
+    <!-- Objetivos Estratégicos -->
+    <div class="row">
+        <div class="col-12">
             <div class="card mb-4">
                 <div class="card-body">
-                    <h5 class="mb-4">Objetivos</h5>
+                    <h2 class="mb-4">Objetivos Estratégicos</h2>
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <ul class="list-unstyled">
                                 <li class="mb-3">
-                                    <i class="simple-icon-check mr-2"></i>
-                                    Promover la investigación aplicada y su transferencia al sector productivo.
+                                    <i class="simple-icon-check mr-2 text-primary"></i>
+                                    Facilitar la conversión de resultados de investigación en productos y servicios
                                 </li>
                                 <li class="mb-3">
-                                    <i class="simple-icon-check mr-2"></i>
-                                    Proteger y gestionar los derechos de propiedad intelectual generados en la universidad.
+                                    <i class="simple-icon-check mr-2 text-primary"></i>
+                                    Promover el desarrollo económico regional y la creación de empleo
                                 </li>
                                 <li class="mb-3">
-                                    <i class="simple-icon-check mr-2"></i>
-                                    Facilitar la creación de empresas derivadas y spin-offs basadas en tecnologías innovadoras.
+                                    <i class="simple-icon-check mr-2 text-primary"></i>
+                                    Gestionar la propiedad intelectual institucional
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-3">
+                                    <i class="simple-icon-check mr-2 text-primary"></i>
+                                    Fomentar relaciones universidad-empresa
                                 </li>
                                 <li class="mb-3">
-                                    <i class="simple-icon-check mr-2"></i>
-                                    Establecer alianzas estratégicas con empresas, instituciones públicas y privadas.
-
+                                    <i class="simple-icon-check mr-2 text-primary"></i>
+                                    Apoyar la creación de spin-offs
                                 </li>
                                 <li class="mb-3">
-                                    <i class="simple-icon-check mr-2"></i>
-                                    Brindar capacitación en transferencia tecnológica y emprendimiento.
+                                    <i class="simple-icon-check mr-2 text-primary"></i>
+                                    Generar recursos financieros complementarios
                                 </li>
                             </ul>
                         </div>
@@ -74,79 +85,101 @@
         </div>
     </div>
 
-    
-</div>
+    <!-- Equipo de Trabajo -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="mb-4 text-center">Equipo de Trabajo</h2>
+                    <div class="row justify-content-center">
+                        <!-- Miembros del equipo -->
+                        <div class="col-12 col-md-6 col-xl-3 d-flex justify-content-center">
+                            <div class="card mb-4">
+                                <div class="card-body text-center">
+                                    <div class="img-container mx-auto" style="width: 100px; height: 100px; overflow: hidden;">
+                                        <img src="{% static 'img/ott/perfil_1.png' %}" class="img-fluid">
+                                    </div>
+                                    <div class="pt-3">
+                                        <h6 class="mb-1">MSc. Miguel Caicedo</h6>
+                                        <p class="text-muted mb-2">Director OTT</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                        <div class="col-12 col-md-6 col-xl-3 d-flex justify-content-center">
+                            <div class="card mb-4">
+                                <div class="card-body text-center">
+                                    <div class="img-container mx-auto" style="width: 100px; height: 100px; overflow: hidden;">
+                                        <img src="{% static 'img/ott/perfil_3.png' %}" class="img-fluid">
+                                    </div>
+                                    <div class="pt-3">
+                                        <h6 class="mb-1">MSc. Anabel Bastidas</h6>
+                                        <p class="text-muted mb-2">Miembro OTT</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                        <div class="col-12 col-md-6 col-xl-3 d-flex justify-content-center">
+                            <div class="card mb-4">
+                                <div class="card-body text-center">
+                                    <div class="img-container mx-auto" style="width: 100px; height: 100px; overflow: hidden;">
+                                        <img src="{% static 'img/ott/perfil_2.png' %}" class="img-fluid">
+                                    </div>
+                                    <div class="pt-3">
+                                        <h6 class="mb-1">MSc. Raul Rosero</h6>
+                                        <p class="text-muted mb-2">Miembro OTT</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div class="row list disable-text-selection" data-check-all="checkAll">
-
-                <div class="col-xl-4 col-lg-6 col-12 col-sm-6 mb-4">
-                    <div class="card">
-                        <div class="position-relative">
-                            <a href="Pages.Product.Detail.html"><img class="card-img-top" src="{%static 'img/cards/OTT1.jpeg' %}"
-                                    alt="Card image cap"></a>
-                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+    <!-- Infraestructura -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="mb-4">Infraestructura</h2>
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-xl-4 mb-4">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <i class="iconsminds-microscope icon-size mb-4 text-primary"></i>
+                                    <h6 class="pt-3">Laboratorios de Investigación</h6>
+                                    <p>Espacios equipados para el desarrollo de proyectos innovadores</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-12">
-                                    <a href="Pages.Product.Detail.html">
-                                        <p class="list-item-heading mb-4 pt-1">Explora Innovación</p>
-                                    </a>
-                                    <footer>
-                                        <p class="text-muted text-small mb-0 font-weight-light">18.08.2018</p>
-                                    </footer>
+                        <div class="col-12 col-md-6 col-xl-4 mb-4">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <i class="iconsminds-conference icon-size mb-4 text-primary"></i>
+                                    <h6 class="pt-3">Salas de Reuniones</h6>
+                                    <p>Espacios para encuentros con empresas y colaboradores</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-4 mb-4">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <i class="iconsminds-computer icon-size mb-4 text-primary"></i>
+                                    <h6 class="pt-3">Centro de Desarrollo</h6>
+                                    <p>Área especializada para prototipado y desarrollo tecnológico</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
-{% comment %}  -------------- Paginatio ---------- {% endcomment %}
-                <div class="col-12">
-                    <nav class="mt-4 mb-3">
-                        <ul class="pagination justify-content-center mb-0">
-                            <li class="page-item ">
-                                <a class="page-link first" href="#">
-                                    <i class="simple-icon-control-start"></i>
-                                </a>
-                            </li>
-                            <li class="page-item ">
-                                <a class="page-link prev" href="#">
-                                    <i class="simple-icon-arrow-left"></i>
-                                </a>
-                            </li>
-                            <li class="page-item active">
-                                <a class="page-link" href="#">1</a>
-                            </li>
-                            <li class="page-item ">
-                                <a class="page-link" href="#">2</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">3</a>
-                            </li>
-                            <li class="page-item ">
-                                <a class="page-link next" href="#" aria-label="Next">
-                                    <i class="simple-icon-arrow-right"></i>
-                                </a>
-                            </li>
-                            <li class="page-item ">
-                                <a class="page-link last" href="#">
-                                    <i class="simple-icon-control-end"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
             </div>
-
-{% comment %}--------------- End pagination ---------------- {% endcomment %}
-
-
-
-
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block extra_scripts %}
-<!-- Scripts específicos para la página de inicio si son necesarios -->
+<!-- Scripts específicos para la página si son necesarios -->
 {% endblock %}

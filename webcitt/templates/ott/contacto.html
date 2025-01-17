@@ -3,15 +3,254 @@
 
 {% block content %}
 <div class="container-fluid">
+    <!-- Encabezado principal -->
+    <div class="text-center mb-4">
+        <h1>Contacto y Recursos</h1>
+        <p><i>Conecta con nosotros y accede a recursos especializados</i></p>
+    </div>
+
     <div class="row">
-        <div class="col-12">
-            <h1>Contacto - Incubadora de Empresas UPEC</h1>
-            <div class="separator mb-5"></div>
+        <!-- Formulario de Contacto -->
+        <div class="col-12 col-xl-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">Formulario de Contacto</h5>
+                    <form>
+                        <div class="form-group">
+                            <label>Nombre completo</label>
+                            <input type="text" class="form-control" placeholder="Ingrese su nombre">
+                        </div>
+                        <div class="form-group">
+                            <label>Correo electrónico</label>
+                            <input type="email" class="form-control" placeholder="correo@ejemplo.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Asunto</label>
+                            <select class="form-control">
+                                <option>Seleccione un asunto</option>
+                                <option>Información general</option>
+                                <option>Propiedad intelectual</option>
+                                <option>Transferencia tecnológica</option>
+                                <option>Colaboración empresarial</option>
+                                <option>Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Mensaje</label>
+                            <textarea class="form-control" rows="4" placeholder="Escriba su mensaje aquí"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="simple-icon-paper-plane mr-2"></i>
+                            Enviar mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ubicación y Redes Sociales -->
+        <div class="col-12 col-xl-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">Ubicación y Redes Sociales</h5>
+                    <div class="mb-4">
+                        <h6 class="mb-3">Dirección</h6>
+                        <p class="mb-1"><i class="simple-icon-location-pin mr-2"></i>Campus UPEC</p>
+                        <p class="mb-1"><i class="simple-icon-clock mr-2"></i>Lunes a Viernes: 8:00 AM - 5:00 PM</p>
+                        <p><i class="simple-icon-phone mr-2"></i>(+593) 6 2224079</p>
+                    </div>
+                    <div class="mb-4">
+                        <h6 class="mb-3">Síguenos en redes sociales</h6>
+                        <div class="social-icons">
+                            <a href="#" class="btn btn-outline-primary rounded-circle mr-2">
+                                <i class="simple-icon-social-facebook"></i>
+                            </a>
+                            <a href="#" class="btn btn-outline-primary rounded-circle mr-2">
+                                <i class="simple-icon-social-twitter"></i>
+                            </a>
+                            <a href="#" class="btn btn-outline-primary rounded-circle mr-2">
+                                <i class="simple-icon-social-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Mapa embebido -->
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.4246466422082!2d-77.73665102636261!3d0.8048831630879212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e296f4b4aee421f%3A0x9d1ad4327d2d4aa4!2sUniversidad%20Polit%C3%A9cnica%20Estatal%20del%20Carchi!5e0!3m2!1ses!2sec!4v1737072881899!5m2!1ses!2sec" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
+    <!-- Recursos -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">Recursos de Apoyo</h5>
+                    <div class="row">
+                        <!-- Biblioteca Virtual -->
+                        <div class="col-12 col-md-4 mb-4">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <i class="iconsminds-library icon-size mb-4 text-primary"></i>
+                                    <h6>Biblioteca Virtual</h6>
+                                    <p class="mb-4">Accede a nuestra colección de recursos digitales especializados.</p>
+                                    <a href="#" class="btn btn-outline-primary">Explorar recursos</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Repositorio Digital -->
+                        <div class="col-12 col-md-4 mb-4">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <i class="iconsminds-data-cloud icon-size mb-4 text-primary"></i>
+                                    <h6>Repositorio Digital</h6>
+                                    <p class="mb-4">Descarga documentos, guías y materiales de apoyo.</p>
+                                    <a href="#" class="btn btn-outline-primary">Ver documentos</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FAQ -->
+                        <div class="col-12 col-md-4 mb-4">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <i class="iconsminds-support icon-size mb-4 text-primary"></i>
+                                    <h6>Preguntas Frecuentes</h6>
+                                    <p class="mb-4">Encuentra respuestas a las preguntas más comunes.</p>
+                                    <a href="#" class="btn btn-outline-primary">Ver FAQ</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Eventos y Capacitaciones -->
+     <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">Próximos Eventos y Capacitaciones</h5>
+                    <div class="row">
+                        <!-- Evento 1 -->
+                        <div class="col-12 col-md-6 col-xl-4 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="event-date mr-3 text-center">
+                                            <h3 class="mb-0 text-primary">15</h3>
+                                            <small class="text-muted">DIC</small>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-1">Workshop: Propiedad Intelectual</h6>
+                                            <p class="mb-0 text-muted"><i class="simple-icon-clock mr-2"></i>14:00 - 17:00</p>
+                                        </div>
+                                    </div>
+                                    <p class="mb-3">Taller práctico sobre protección de propiedad intelectual y patentes.</p>
+                                    <a href="#" class="btn btn-outline-primary btn-sm">Registrarse</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Evento 2 -->
+                        <div class="col-12 col-md-6 col-xl-4 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="event-date mr-3 text-center">
+                                            <h3 class="mb-0 text-primary">20</h3>
+                                            <small class="text-muted">DIC</small>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-1">Seminario: Transferencia Tecnológica</h6>
+                                            <p class="mb-0 text-muted"><i class="simple-icon-clock mr-2"></i>09:00 - 13:00</p>
+                                        </div>
+                                    </div>
+                                    <p class="mb-3">Aprende sobre los procesos de transferencia tecnológica universidad-empresa.</p>
+                                    <a href="#" class="btn btn-outline-primary btn-sm">Registrarse</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Evento 3 -->
+                        <div class="col-12 col-md-6 col-xl-4 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="event-date mr-3 text-center">
+                                            <h3 class="mb-0 text-primary">22</h3>
+                                            <small class="text-muted">DIC</small>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-1">Curso: Innovación Tecnológica</h6>
+                                            <p class="mb-0 text-muted"><i class="simple-icon-clock mr-2"></i>15:00 - 18:00</p>
+                                        </div>
+                                    </div>
+                                    <p class="mb-3">Introducción a los procesos de innovación y desarrollo tecnológico.</p>
+                                    <a href="#" class="btn btn-outline-primary btn-sm">Registrarse</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.event-date {
+    min-width: 60px;
+}
+.social-icons .btn {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    line-height: 40px;
+}
+.social-icons .btn i {
+    line-height: 38px;
+}
+</style>
 {% endblock %}
 
 {% block extra_scripts %}
+<!-- Dependencias necesarias para FullCalendar -->
+<script src="{% static 'js/vendor/moment.min.js' %}"></script>
+<script src="{% static 'js/vendor/fullcalendar.min.js' %}"></script>
+<script src="{% static 'js/vendor/jquery.validate/jquery.validate.min.js' %}"></script>
+<script src="{% static 'js/vendor/jquery.validate/localization/messages_es.js' %}"></script>
 
+<script>
+$(document).ready(function() {
+
+    // Validación del formulario
+    $('form').validate({
+        rules: {
+            nombre: 'required',
+            email: {
+                required: true,
+                email: true
+            },
+            asunto: 'required',
+            mensaje: 'required'
+        },
+        messages: {
+            nombre: 'Por favor ingrese su nombre',
+            email: {
+                required: 'Por favor ingrese su correo electrónico',
+                email: 'Por favor ingrese un correo electrónico válido'
+            },
+            asunto: 'Por favor seleccione un asunto',
+            mensaje: 'Por favor escriba su mensaje'
+        },
+        submitHandler: function(form) {
+            // Aquí va la lógica de envío del formulario
+            alert('Mensaje enviado correctamente');
+            return false;
+        }
+    });
+});
+</script>
 {% endblock %}

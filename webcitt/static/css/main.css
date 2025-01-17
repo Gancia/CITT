@@ -1232,3 +1232,131 @@ p, .card-text,
         right: 0;
     }
 }
+
+/* Estilos para timeline de colaboración */
+.timeline-item {
+    position: relative;
+    padding-top: 20px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: rgba(var(--primary-rgb), 0.1);
+    transform: translateX(-50%);
+}
+
+/* Círculos indicadores en timeline */
+.timeline-indicator {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--theme-color-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.timeline-indicator i {
+    color: var(--theme-color-4);
+    font-size: 24px;
+}
+
+/* Cards de estadísticas */
+.stat-card {
+    padding: 1.5rem;
+    text-align: center;
+    border-right: 1px solid var(--separator-color-light);
+}
+
+.stat-card:last-child {
+    border-right: none;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--theme-color-1);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--theme-color-5);
+    font-size: 0.9rem;
+}
+
+/* Carousel personalizado */
+.custom-carousel {
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+}
+
+.custom-carousel .carousel-item {
+    padding: 2rem;
+}
+
+.custom-carousel .carousel-control-prev,
+.custom-carousel .carousel-control-next {
+    width: 40px;
+    height: 40px;
+    background: var(--theme-color-1);
+    border-radius: 50%;
+    opacity: 0.9;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .timeline-item::before {
+        display: none;
+    }
+    
+    .stat-card {
+        border-right: none;
+        border-bottom: 1px solid var(--separator-color-light);
+        margin-bottom: 1rem;
+    }
+    
+    .stat-card:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Estilos adicionales */
+.event-date {
+    min-width: 60px;
+}
+.social-icons .btn {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    line-height: 40px;
+}
+.social-icons .btn i {
+    line-height: 38px;
+}
+/* Estilos adicionales para el calendario */
+.calendar {
+    min-height: 400px;
+    background: #fff;
+}
+.fc-view-container {
+    background: #fff;
+}
+.fc-event {
+    cursor: pointer;
+    padding: 2px 4px;
+}
+.fc-day-grid-event .fc-content {
+    white-space: normal;
+}
