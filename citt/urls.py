@@ -28,11 +28,10 @@ urlpatterns = [
     path('ott/', views.ott_view, name='ott'),
     path('ott/quienes-somos/', views.ott_quienes_somos_view, name='ott_quienes_somos'),
     path('ott/servicios/', views.ott_servicios_view, name='ott_servicios'),
-    path('ott/proyectos-logros/', views.ott_proyectos_logros_view, name='ott_proyectos_logros'),
-    path('ott/colaboraciones/', views.ott_colaboraciones_view, name='ott_colaboraciones'),
-    path('ott/recursos-capacitacion/', views.ott_recursos_capacitacion_view, name='ott_recursos_capacitacion'),
-    path('ott/evaluacion-transparencia/', views.ott_evaluacion_transparencia_view, name='ott_evaluacion_transparencia'),
-    path('ott/portal-usuarios/', views.ott_portal_usuarios_view, name='ott_portal_usuarios'),
+    path('ott/innovacion-tecnologica/', views.ott_innovacion_tecnologica_view, name='ott_innovacion_tecnologica'),
+    path('ott/capacitacion-consultoria/', views.ott_capacitacion_consultoria_view, name='ott_capacitacion_consultoria'),
+    path('ott/colaboracion-industria/', views.ott_colaboracion_industria_view, name='ott_colaboracion_industria'),
+    path('ott/impacto-resultados/', views.ott_impacto_resultados_view, name='ott_impacto_resultados'),
     path('ott/contacto/', views.ott_contacto_view, name='ott_contacto'),
     
     

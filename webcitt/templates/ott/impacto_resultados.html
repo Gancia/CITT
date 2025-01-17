@@ -1,0 +1,272 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- Encabezado principal -->
+    <div class="text-center mb-4">
+        <h1>Impacto y Resultados</h1>
+        <p><i>Medición y análisis del impacto de nuestra gestión en innovación y transferencia tecnológica</i></p>
+    </div>
+
+    <!-- Indicadores Clave de Rendimiento -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="mb-4">Indicadores Clave de Rendimiento 2023</h2>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-3 mb-4">
+                            <div class="card dashboard-small-chart">
+                                <div class="card-body">
+                                    <p class="lead color-theme-1 mb-1 value">25</p>
+                                    <p class="mb-0 label text-small">Patentes Registradas</p>
+                                    <div class="chart">
+                                        <canvas id="patentesChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 mb-4">
+                            <div class="card dashboard-small-chart">
+                                <div class="card-body">
+                                    <p class="lead color-theme-1 mb-1 value">42</p>
+                                    <p class="mb-0 label text-small">Licencias Otorgadas</p>
+                                    <div class="chart">
+                                        <canvas id="licenciasChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 mb-4">
+                            <div class="card dashboard-small-chart">
+                                <div class="card-body">
+                                    <p class="lead color-theme-1 mb-1 value">15</p>
+                                    <p class="mb-0 label text-small">Empresas Derivadas</p>
+                                    <div class="chart">
+                                        <canvas id="empresasChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 mb-4">
+                            <div class="card dashboard-small-chart">
+                                <div class="card-body">
+                                    <p class="lead color-theme-1 mb-1 value">$2.5M</p>
+                                    <p class="mb-0 label text-small">Ingresos Generados</p>
+                                    <div class="chart">
+                                        <canvas id="ingresosChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Distribución de Proyectos -->
+    <div class="row mb-4">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Distribución de Proyectos por Área</h5>
+                    <div class="chart-container">
+                        <canvas id="distribucionProyectosChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Evolución de Transferencias Tecnológicas</h5>
+                    <div class="chart-container">
+                        <canvas id="evolucionTransferenciasChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Impacto Social -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Impacto Social</h5>
+                    <div class="chart-container">
+                        <canvas id="impactoSocialChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Casos de Éxito -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="mb-4">Casos de Éxito Destacados</h2>
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Biotecnología Agrícola</h5>
+                                    <p class="text-muted">Desarrollo de soluciones sostenibles</p>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Energías Renovables</h5>
+                                    <p class="text-muted">Implementación de sistemas solares</p>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Tecnología Médica</h5>
+                                    <p class="text-muted">Innovación en diagnóstico</p>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{% static 'js/vendor/Chart.bundle.min.js' %}"></script>
+<script>
+    // Configuración de los gráficos pequeños
+    const smallChartOptions = {
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+        maintainAspectRatio: false,
+        scales: {
+            y: {
+                display: false
+            },
+            x: {
+                display: false
+            }
+        }
+    };
+
+    // Gráfico de Patentes
+    new Chart(document.getElementById('patentesChart'), {
+        type: 'line',
+        data: {
+            labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
+            datasets: [{
+                data: [2, 4, 3, 6, 5, 5],
+                borderColor: '#922c88',
+                backgroundColor: 'rgba(146, 44, 136, 0.1)'
+            }]
+        },
+        options: smallChartOptions
+    });
+
+    // Gráfico de distribución de proyectos
+    new Chart(document.getElementById('distribucionProyectosChart'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Biotecnología', 'TIC', 'Energía', 'Manufactura', 'Otros'],
+            datasets: [{
+                data: [30, 25, 20, 15, 10],
+                backgroundColor: [
+                    '#922c88',
+                    '#4556ac',
+                    '#af67a4',
+                    '#2a4c7d',
+                    '#6c757d'
+                ]
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            },
+            maintainAspectRatio: false
+        }
+    });
+
+    // Gráfico de evolución de transferencias
+    new Chart(document.getElementById('evolucionTransferenciasChart'), {
+        type: 'line',
+        data: {
+            labels: ['2019', '2020', '2021', '2022', '2023'],
+            datasets: [{
+                label: 'Transferencias Realizadas',
+                data: [10, 15, 25, 35, 42],
+                borderColor: '#4556ac',
+                backgroundColor: 'rgba(69, 86, 172, 0.1)',
+                fill: true
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            maintainAspectRatio: false
+        }
+    });
+
+    // Gráfico de impacto social
+    new Chart(document.getElementById('impactoSocialChart'), {
+        type: 'bar',
+        data: {
+            labels: ['Empleos Generados', 'Empresas Beneficiadas', 'Comunidades Impactadas', 'Investigadores Involucrados'],
+            datasets: [{
+                label: '2023',
+                data: [150, 42, 25, 85],
+                backgroundColor: '#922c88'
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            maintainAspectRatio: false
+        }
+    });
+
+    // Inicializar los demás gráficos de manera similar...
+</script>
+{% endblock %}

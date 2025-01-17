@@ -12,7 +12,7 @@ def ott_view(request):
     })
     
 def ott_quienes_somos_view(request):
-    return render(request, 'ott/quienes_somos.html', {
+    return render(request, 'ott/ott.html', {
         'seccion_activa': 'ott'
     })
 
@@ -21,28 +21,23 @@ def ott_servicios_view(request):
         'seccion_activa': 'ott'
     })
 
-def ott_proyectos_logros_view(request):
-    return render(request, 'ott/proyectos_logros.html', {
+def ott_innovacion_tecnologica_view(request):
+    return render(request, 'ott/innovacion_tecnologica.html', {
         'seccion_activa': 'ott'
     })
 
-def ott_colaboraciones_view(request):
-    return render(request, 'ott/colaboraciones.html', {
+def ott_capacitacion_consultoria_view(request):
+    return render(request, 'ott/capacitacion_consultoria.html', {
         'seccion_activa': 'ott'
     })
 
-def ott_recursos_capacitacion_view(request):
-    return render(request, 'ott/recursos_capacitacion.html', {
+def ott_colaboracion_industria_view(request):
+    return render(request, 'ott/colaboracion_industria.html', {
         'seccion_activa': 'ott'
     })
 
-def ott_evaluacion_transparencia_view(request):
-    return render(request, 'ott/evaluacion_transparencia.html', {
-        'seccion_activa': 'ott'
-    })
-
-def ott_portal_usuarios_view(request):
-    return render(request, 'ott/portal_usuarios.html', {
+def ott_impacto_resultados_view(request):
+    return render(request, 'ott/impacto_resultados.html', {
         'seccion_activa': 'ott'
     })
 

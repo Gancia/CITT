@@ -220,4 +220,63 @@ $(document).ready(function() {
         $('.sub-menu ul li a').removeClass('subsection-active');
         $(this).addClass('subsection-active');
     });
+
+    // Inicializar carousels
+    $('.carousel').carousel({
+        interval: 5000
+    });
+
+    // Animación de números en estadísticas
+    function animateNumbers() {
+        $('.stat-number').each(function() {
+            const $this = $(this);
+            const num = parseInt($this.text());
+            $({ Counter: 0 }).animate({
+                Counter: num
+            }, {
+                duration: 2000,
+                easing: 'swing',
+                step: function() {
+                    $this.text(Math.ceil(this.Counter));
+                }
+            });
+        });
+    }
+
+    // Ejecutar animación cuando el elemento sea visible
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateNumbers();
+                observer.unobserve(entry.target);
+            }
+        });
+    });
+
+    // Observar el contenedor de estadísticas
+    $('.stats-container').each(function() {
+        observer.observe(this);
+    });
+
+    // Efecto parallax suave en el header
+    $(window).scroll(function() {
+        const scroll = $(window).scrollTop();
+        $('.header-bg').css({
+            transform: `translateY(${scroll * 0.5}px)`
+        });
+    });
+
+    // Tooltips para iconos de timeline
+    $('[data-toggle="tooltip"]').tooltip();
+
+    // Smooth scroll para enlaces internos
+    $('a[href^="#"]').on('click', function(e) {
+        e.preventDefault();
+        const target = $(this.getAttribute('href'));
+        if(target.length) {
+            $('html, body').animate({
+                scrollTop: target.offset().top - 100
+            }, 1000);
+        }
+    });
 });
