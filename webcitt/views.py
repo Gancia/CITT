@@ -164,7 +164,10 @@ def hublab_view(request):
         'seccion_activa': 'hublab'
     })
 
-
+def hublab_planta_lacteos_view(request):
+    return render(request, 'hublab/planta_lacteos.html', {
+        'seccion_activa': 'hublab'
+    })
 
 
 # Formación
