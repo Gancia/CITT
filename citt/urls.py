@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 from webcitt import views
 
 urlpatterns = [
@@ -66,5 +66,17 @@ urlpatterns = [
     
     
     path('formacion/', views.formacion_view, name='formacion'),
+
+    path('account/', include('django.contrib.auth.urls'))
+
+    # path('account/signup/', views.signup_view, name='signup'),
+    # path('account/signout/', views.signup_view, name='signup'),
+    # path('account/profile/', views.profile_view, name='profile'),
+    # path('account/profile/edit/', views.profile_edit_view, name='profile_edit'),
+    # path('account/profile/password/', views.profile_password_view, name='profile_password'),
+    # path('account/profile/delete/', views.profile_delete_view, name='profile_delete'),  
+    # path('account/profile/confirm/', views.profile_confirm_view, name='profile_confirm'),
+    # path('account/profile/confirm/delete/', views.profile_confirm_delete_view, name='profile_confirm_delete'),
+    
     
 ]

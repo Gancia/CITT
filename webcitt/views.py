@@ -1,5 +1,6 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
 # Create your views here.
 def home_view(request):
     return render(request, "inicio.html",
@@ -159,6 +160,7 @@ def uexperimentales_smartdatalab_view(request):
 
 
 # HubLab
+
 def hublab_view(request):
     return render(request, 'hublab/hublab.html', {
         'seccion_activa': 'hublab'
@@ -175,3 +177,8 @@ def formacion_view(request):
     return render(request, 'formacion/formacion.html', {
         'seccion_activa': 'formacion'
     })
+
+# Login
+def salir(request):
+    logout(request)
+    return redirect('home')
