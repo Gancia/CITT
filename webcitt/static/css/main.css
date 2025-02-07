@@ -252,7 +252,6 @@ a:hover {
   display: flex !important;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   height: 100%;
   padding: 0; /* Eliminamos padding adicional */
 }
@@ -528,13 +527,13 @@ p,
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
-  width: 24px !important; /* Mismo ancho que el icono */
-  height: 24px !important; /* Mismo alto que el icono */
+  width: 85px !important; /* Ancho fijo del contenedor */
   padding: 0 !important; /* Eliminar padding */
   margin: 0 !important; /* Eliminar margin */
   background: transparent;
   border: none;
   flex-shrink: 0;
+  position: relative;
 }
 
 .menu-button i {
@@ -545,26 +544,13 @@ p,
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.3s ease;
 }
 
 /* Asegurar que el hover no afecte el tamaño */
 .menu-button:hover {
   width: 24px !important;
   height: 24px !important;
-}
-
-/* Ajuste responsive */
-@media (max-width: 767px) {
-  .menu-button {
-    width: 20px !important;
-    height: 20px !important;
-  }
-  
-  .menu-button i {
-    width: 20px;
-    height: 20px;
-    font-size: 1rem;
-  }
 }
 
 /* Rotación del ícono cuando el menú está en diferentes estados */
@@ -1422,52 +1408,55 @@ p, .card-text,
   z-index: 100;
 }
 
-/* Contenedor principal con grid */
+/* Contenedor principal del navbar */
 .navbar .d-flex.align-items-center.w-100 {
   display: flex !important;
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  padding: 0; /* Eliminamos padding adicional */
+  padding: 0;
 }
 
-/* Sección izquierda - menú y búsqueda */
+/* Sección izquierda */
 .navbar .d-flex.align-items-center:first-child {
   display: flex !important;
   align-items: center;
-  gap: 0.5rem; /* Reducimos el espacio entre elementos */
-  min-width: 280px; /* Ancho mínimo para evitar solapamientos */
-  padding-left: 0; /* Eliminamos padding izquierdo */
+  width: 120px; /* Ancho del menú principal */
+  position: relative;
+  padding-left: 0;
 }
 
-/* Botón de menú - siempre visible */
+/* Botón de menú */
 .menu-button {
-  display: flex !important; /* Quitamos d-none d-md-inline-block */
+  width: 85px !important; /* Ancho fijo del contenedor */
+  height: 24px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: inline-flex !important;
   align-items: center;
   justify-content: center;
-  width: 24px; /* Forzamos el ancho exacto */
-  height: 24px;
   background: transparent;
   border: none;
-  flex-shrink: 0; /* Evita que el botón se comprima */
+  position: relative;
+}
+
+/* Icono del botón - contenedor hijo */
+.menu-button i {
+  width: 24px !important; /* Ancho fijo del icono */
+  height: 24px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  line-height: 1;
+  transition: transform 0.3s ease;
 }
 
 /* Barra de búsqueda */
 .search {
-  position: relative;
-  width: 230px;
+  margin-left: 1rem; /* Espacio entre el botón y el search */
+  width: 180px;
   transition: all 0.3s ease;
-  margin-left: 0.75rem; /* Ajustamos margen izquierdo */
-}
-
-/* Título central */
-.navbar-brand {
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  gap: 0.3rem;
-  margin: 0;
-  padding: 0;
 }
 
 /* Media queries ajustados */
@@ -1482,6 +1471,10 @@ p, .card-text,
 }
 
 @media (max-width: 991px) {
+  .menu-button {
+    width: 70px !important;
+  }
+
   .search {
     width: 150px;
   }
@@ -1499,14 +1492,13 @@ p, .card-text,
 
   /* Contenedor izquierdo más compacto */
   .navbar .d-flex.align-items-center:first-child {
-    min-width: auto;
-    gap: 0.5rem;
+    width: 90px;
   }
 
   /* Contraer search a solo ícono */
   .search {
-    width: 40px;
-    height: 40px;
+    margin-left: 90px;
+    width: 120px;
   }
 
   .search input {
@@ -1541,7 +1533,7 @@ p, .card-text,
   }
 
   .menu-button {
-    width: 32px;
+    width: 60px !important;
     min-width: 32px;
     height: 32px;
   }
@@ -1565,4 +1557,13 @@ p, .card-text,
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Eliminar los media queries que modifican el ancho del contenedor */
+@media (max-width: 1439px), 
+@media (max-width: 1199px),
+@media (max-width: 767px) {
+  .menu-button {
+    width: 85px !important; /* Mantener el mismo ancho en todas las resoluciones */
+  }
 }
