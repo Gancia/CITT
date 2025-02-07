@@ -67,7 +67,8 @@ urlpatterns = [
     
     path('formacion/', views.formacion_view, name='formacion'),
 
-    path('account/', include('django.contrib.auth.urls'))
+    path('account/', include('django.contrib.auth.urls')),
+    path('salir/', views.salir, name='salir')
 
     # path('account/signup/', views.signup_view, name='signup'),
     # path('account/signout/', views.signup_view, name='signup'),
