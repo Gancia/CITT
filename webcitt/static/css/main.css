@@ -253,7 +253,7 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  padding: 0; /* Eliminamos padding adicional */
+  padding: 0;
 }
 
 /* Sección izquierda */
@@ -265,7 +265,7 @@ a:hover {
   display: flex !important;
   align-items: center;
   gap: 0.5rem; /* Reducimos el espacio entre elementos */
-  width: 300px; /* Ancho fijo */
+  width: 85px; /* Ancho fijo del menú principal */
   padding-left: 0; /* Eliminamos padding izquierdo */
 }
 
@@ -1417,13 +1417,63 @@ p, .card-text,
   padding: 0;
 }
 
-/* Sección izquierda */
-.navbar .d-flex.align-items-center:first-child {
+/* Botón de menú */
+.menu-button {
+  width: 85px !important; /* Mismo ancho que el contenedor padre */
+  height: 24px !important;
+  padding: 0 !important;
+  margin: 0 !important;
   display: flex !important;
   align-items: center;
-  width: 120px; /* Ancho del menú principal */
+  justify-content: center;
+  background: transparent;
+  border: none;
   position: relative;
-  padding-left: 0;
+  flex-shrink: 0;
+}
+
+/* Icono del botón */
+.menu-button i {
+  width: 24px !important;
+  height: 24px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: var(--theme-color-4) !important;
+  transition: transform 0.3s ease;
+}
+
+/* Prevenir efectos de hover no deseados */
+.menu-button:hover {
+  width: 85px !important;
+}
+
+/* Asegurar consistencia en estados */
+#app-container.menu-default .menu-button,
+#app-container.menu-sub-hidden .menu-button,
+#app-container.menu-hidden .menu-button {
+  width: 85px !important;
+}
+
+/* Media queries */
+@media (max-width: 991px) {
+  .menu-button {
+    width: 100px !important;
+  }
+  .menu-button:hover {
+    width: 100px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .menu-button {
+    width: 90px !important;
+  }
+  .menu-button:hover {
+    width: 90px !important;
+  }
 }
 
 /* Botón de menú */
@@ -1490,10 +1540,6 @@ p, .card-text,
     padding: 0 0.5rem !important;
   }
 
-  /* Contenedor izquierdo más compacto */
-  .navbar .d-flex.align-items-center:first-child {
-    width: 90px;
-  }
 
   /* Contraer search a solo ícono */
   .search {
@@ -1557,13 +1603,4 @@ p, .card-text,
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* Eliminar los media queries que modifican el ancho del contenedor */
-@media (max-width: 1439px), 
-@media (max-width: 1199px),
-@media (max-width: 767px) {
-  .menu-button {
-    width: 85px !important; /* Mantener el mismo ancho en todas las resoluciones */
-  }
 }
