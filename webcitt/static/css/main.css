@@ -1233,13 +1233,19 @@ p, .card-text,
 }
 
 /* Ajustes responsive para el search */
+@media (max-width: 500px) {
+  .navbar .search {
+      display: none;
+  }
+}
+
 @media (max-width: 991px) {
     .navbar .search {
         width: 150px;
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 805px) {
     .navbar .search {
         width: 30px;
         height: 30px;
