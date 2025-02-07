@@ -149,7 +149,7 @@ body.show-spinner::after {
 
 .btn-secondary {
   background-color: var(--theme-color-2);
-  border-color: var(--theme-color-2);
+  border-color: var (--theme-color-2);
 }
 
 .text-primary {
@@ -208,10 +208,10 @@ a:hover {
 /* Header */
 .navbar {
   background-color: var(--theme-color-1) !important;
-  padding: 0.5rem 2rem;
-  height: 70px; /* Altura fija del header */
-  z-index: 100;
-  border-radius: 0 !important;
+  padding: 0 1rem !important; /* Reducimos el padding horizontal y lo forzamos */
+  height: 70px;
+  display: flex;
+  align-items: center;
 }
 
 .navbar .navbar-contents {
@@ -249,7 +249,12 @@ a:hover {
 
 
 .navbar .d-flex.align-items-center.w-100 {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
   height: 100%;
+  padding: 0; /* Eliminamos padding adicional */
 }
 
 /* Sección izquierda */
@@ -257,10 +262,27 @@ a:hover {
   flex: 1;
 }
 
+.navbar .d-flex.align-items-center:first-child {
+  display: flex !important;
+  align-items: center;
+  gap: 0.5rem; /* Reducimos el espacio entre elementos */
+  width: 300px; /* Ancho fijo */
+  padding-left: 0; /* Eliminamos padding izquierdo */
+}
+
 /* Sección derecha */
 .navbar .d-flex:last-child {
   flex: 1;
   justify-content: flex-end;
+}
+
+.navbar .d-flex.align-items-center:last-child {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  width: 300px; /* Ancho fijo */
+  padding-right: 0; /* Eliminamos padding derecho */
 }
 
 /* Ajustes responsive */
@@ -415,7 +437,7 @@ a:hover {
 .menu .sub-menu ul.inner-level-menu li.active a,
 .menu .sub-menu ul.inner-level-menu li.active i,
 .menu .sub-menu ul.inner-level-menu li a:hover {
-  color: var(--theme-color-1) !important; /* Verde de marca */
+  color: var (--theme-color-1) !important; /* Verde de marca */
 }
 
 /* Iconos en el header con color blanco */
@@ -503,21 +525,46 @@ p,
 
 /* Estilo para el botón de menú */
 .menu-button {
-  display: inline-flex;
+  display: inline-flex !important;
   align-items: center;
   justify-content: center;
-  padding: 0;
-  width: auto;
-  height: auto;
-  cursor: pointer;
+  width: 24px !important; /* Mismo ancho que el icono */
+  height: 24px !important; /* Mismo alto que el icono */
+  padding: 0 !important; /* Eliminar padding */
+  margin: 0 !important; /* Eliminar margin */
+  background: transparent;
+  border: none;
+  flex-shrink: 0;
 }
 
 .menu-button i {
   font-size: 1.2rem;
-  color: var(--theme-color-4);
   line-height: 1;
-  padding: 0.5rem;
-  transition: transform 0.3s ease; /* Agregamos la transición */
+  width: 24px; /* Ancho exacto del icono */
+  height: 24px; /* Alto exacto del icono */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Asegurar que el hover no afecte el tamaño */
+.menu-button:hover {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+/* Ajuste responsive */
+@media (max-width: 767px) {
+  .menu-button {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  
+  .menu-button i {
+    width: 20px;
+    height: 20px;
+    font-size: 1rem;
+  }
 }
 
 /* Rotación del ícono cuando el menú está en diferentes estados */
@@ -612,6 +659,9 @@ main {
 .navbar-brand {
   margin: 0;
   padding: 0;
+  position: static;
+  transform: none;
+  flex: 0 1 auto;
 }
 
 .navbar-brand a {
@@ -975,7 +1025,6 @@ main {
 .menu-button {
     background: transparent;
     border: none;
-    padding: 0.5rem;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
@@ -1359,4 +1408,161 @@ p, .card-text,
 }
 .fc-day-grid-event .fc-content {
     white-space: normal;
+}
+
+/* Estilos base del navbar */
+.navbar {
+  background-color: var(--theme-color-1) !important;
+  height: 70px;
+  padding: 0 1rem !important; /* Reducimos el padding horizontal y lo forzamos */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+/* Contenedor principal con grid */
+.navbar .d-flex.align-items-center.w-100 {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0; /* Eliminamos padding adicional */
+}
+
+/* Sección izquierda - menú y búsqueda */
+.navbar .d-flex.align-items-center:first-child {
+  display: flex !important;
+  align-items: center;
+  gap: 0.5rem; /* Reducimos el espacio entre elementos */
+  min-width: 280px; /* Ancho mínimo para evitar solapamientos */
+  padding-left: 0; /* Eliminamos padding izquierdo */
+}
+
+/* Botón de menú - siempre visible */
+.menu-button {
+  display: flex !important; /* Quitamos d-none d-md-inline-block */
+  align-items: center;
+  justify-content: center;
+  width: 24px; /* Forzamos el ancho exacto */
+  height: 24px;
+  background: transparent;
+  border: none;
+  flex-shrink: 0; /* Evita que el botón se comprima */
+}
+
+/* Barra de búsqueda */
+.search {
+  position: relative;
+  width: 230px;
+  transition: all 0.3s ease;
+  margin-left: 0.75rem; /* Ajustamos margen izquierdo */
+}
+
+/* Título central */
+.navbar-brand {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Media queries ajustados */
+@media (max-width: 1199px) {
+  .navbar {
+    padding: 0 0.75rem !important;
+  }
+
+  .search {
+    width: 180px;
+  }
+}
+
+@media (max-width: 991px) {
+  .search {
+    width: 150px;
+  }
+
+  .navbar-brand .text-primary {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    height: 60px;
+    padding: 0 0.5rem !important;
+  }
+
+  /* Contenedor izquierdo más compacto */
+  .navbar .d-flex.align-items-center:first-child {
+    min-width: auto;
+    gap: 0.5rem;
+  }
+
+  /* Contraer search a solo ícono */
+  .search {
+    width: 40px;
+    height: 40px;
+  }
+
+  .search input {
+    display: none;
+  }
+
+  .search .search-icon {
+    position: static;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Reducir tamaños */
+  .navbar-brand .text-primary {
+    font-size: 0.9rem;
+  }
+
+  .vertical-separator {
+    height: 30px;
+    margin: 0 0.5rem;
+  }
+
+  .upec-logo {
+    height: 30px;
+  }
+
+  #fullScreenButton {
+    display: none !important;
+  }
+
+  .menu-button {
+    width: 32px;
+    min-width: 32px;
+    height: 32px;
+  }
+}
+
+/* Ajustes adicionales para pantallas muy pequeñas */
+@media (max-width: 575px) {
+  .navbar {
+    padding: 0 0.5rem;
+  }
+
+  .navbar-brand .text-primary {
+    font-size: 0.85rem;
+  }
+}
+
+/* Aseguramos que el icono se centre perfectamente */
+.menu-button i {
+  font-size: 1.2rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
