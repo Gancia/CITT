@@ -299,10 +299,6 @@ a:hover {
   .navbar .navbar-center {
     display: none;
   }
-
-  .navbar-brand {
-    font-size: 1rem;
-  }
 }
 
 /* Menú principal */
@@ -459,10 +455,6 @@ a:hover {
 
   .navbar .navbar-center {
     display: none;
-  }
-
-  .navbar-brand {
-    font-size: 1rem;
   }
 
   .menu .main-menu ul li a {
@@ -1243,7 +1235,7 @@ p, .card-text,
 /* Ajustes responsive para el search */
 @media (max-width: 991px) {
     .navbar .search {
-        width: 180px;
+        width: 150px;
     }
 }
 
@@ -1603,4 +1595,60 @@ p, .card-text,
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Ajustes responsive para el navbar en móviles */
+@media (max-width: 767px) {
+  /* Ajustamos el navbar */
+  .navbar {
+    height: 60px;
+    padding: 0 0.5rem !important;
+  }
+
+  /* Reset del contenedor principal para móviles */
+  .navbar .d-flex.align-items-center.w-100 {
+    position: relative; /* Para posicionamiento absoluto del search */
+  }
+
+  /* Ajustamos el search para que quede junto al menú */
+  .navbar .search {
+    position: relative; /* Cambiamos a relative */
+    width: 30px;
+    height: 30px;
+    margin: 0 0 0 0.5rem; /* Agregamos margen izquierdo */
+    z-index: 1;
+  }
+
+  /* Centramos el título y logo */
+  .navbar-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+  }
+
+  /* Ajustamos el botón de menú */
+  .menu-button {
+    width: 60px !important;
+    z-index: 1;
+  }
+
+  /* Ajustamos el contenedor derecho */
+  .navbar .navbar-right {
+    position: relative;
+    z-index: 1;
+    margin-left: auto;
+  }
+
+  .vertical-separator {
+    height: 30px;
+    margin: 0 0.5rem;
+  }
+
+  .upec-logo {
+    height: 30px;
+  }
 }
