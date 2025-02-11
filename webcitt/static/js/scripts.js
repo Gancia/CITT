@@ -33,6 +33,14 @@ $(document).ready(function() {
             container.removeClass(allMenuClassNames);
             requestAnimationFrame(() => {
                 container.addClass(nextClasses);
+
+                // Restaurar el submenú correspondiente a la sección activa
+                if (nextClasses.includes("menu-default") && !nextClasses.includes("menu-sub-hidden")) {
+                    const activeLink = sessionStorage.getItem('activeMenu');
+                    if (activeLink) {
+                        showSubMenu(activeLink);
+                    }
+                }
             });
         }, 50);
     }
@@ -98,10 +106,49 @@ $(document).ready(function() {
         });
     }
 
+    // Función para actualizar el estado del botón de menú
+    function updateMenuButtonState() {
+        const icon = $(".menu-button").find('.rotate-icon')[0];
+        let rotationAngle;
+        switch (menuClickCount % 3) {
+            case 0: // Menú principal y secundario visibles
+                rotationAngle = 0;
+                break;
+            case 1: // Solo menú principal visible
+                rotationAngle = -90;
+                break;
+            case 2: // Todo oculto
+                rotationAngle = -180;
+                break;
+        }
+        icon.style.transform = `rotate(${rotationAngle}deg)`;
+    }
+
     // Click handler para los items del menú principal 
     $('.main-menu ul li a').on('click', function(e) {
+        e.preventDefault(); // Prevenir la recarga de la página
+
         // Obtiene el data-link del item seleccionado
         var link = $(this).attr('data-link');
+        var href = $(this).attr('href');
+        
+        // Verificar si el item ya está activo
+        if ($(this).parent('li').hasClass('active')) {
+            // Si el submenú está visible, ocultarlo
+            if (!$('#app-container').hasClass('menu-sub-hidden')) {
+                $('.sub-menu ul').fadeOut(200, function() {
+                    $('#app-container').addClass('menu-sub-hidden');
+                    menuClickCount = 1; // Ajustar el contador para reflejar el estado
+                    updateMenuButtonState(); // Actualizar el estado del botón de menú
+                });
+            } else {
+                // Si el submenú está oculto, mostrarlo
+                showSubMenu(link);
+                menuClickCount = 0; // Ajustar el contador para reflejar el estado
+                updateMenuButtonState(); // Actualizar el estado del botón de menú
+            }
+            return; // No hacer nada más si ya está activo
+        }
         
         // Remueve la clase active de todos los items
         $('.main-menu ul li').removeClass('active');
@@ -121,15 +168,23 @@ $(document).ready(function() {
         if (['ott', 'incubadora', 'uexperimentales', 'hublab', 'formacion'].includes(link)) {
             sessionStorage.setItem('activeMenu', link);
         }
+
+        // Redireccionar a la vista correspondiente
+        window.location.href = href;
     });
 
     // Click handler para el logo/inicio
-    $('.navbar-brand').on('click', function() {
+    $('.navbar-brand').on('click', function(e) {
+        e.preventDefault(); // Prevenir la recarga de la página
+
         // Limpiar todos los estados guardados
         sessionStorage.removeItem('activeMenu');
         sessionStorage.removeItem('openCollapses');
         $('.sub-menu ul').hide();
         $('#app-container').addClass('menu-sub-hidden');
+
+        // Redireccionar a la página de inicio
+        window.location.href = $(this).attr('href');
     });
 
     // Click handler para el botón del menú
@@ -147,19 +202,7 @@ $(document).ready(function() {
         setMenuClassNames(++menuClickCount);
 
         // Ajustar la rotación del ícono para que sea consistente y en sentido antihorario
-        let rotationAngle;
-        switch (menuClickCount % 3) {
-            case 0: // Menú principal y secundario visibles
-                rotationAngle = 0;
-                break;
-            case 1: // Solo menú principal visible
-                rotationAngle = -90;
-                break;
-            case 2: // Todo oculto
-                rotationAngle = -180;
-                break;
-        }
-        icon.style.transform = `rotate(${rotationAngle}deg)`;
+        updateMenuButtonState();
     });
 
     // Eventos para los colapsadores
@@ -231,7 +274,8 @@ $(document).ready(function() {
     handleSubsectionActive();
 
     // Manejar clicks en los enlaces de subsección
-    $('.sub-menu ul li a').on('click', function() {
+    $('.sub-menu ul li a').on('click', function(e) {
+        e.preventDefault(); // Prevenir la recarga de la página
         $('.sub-menu ul li a').removeClass('subsection-active');
         $(this).addClass('subsection-active');
     });
