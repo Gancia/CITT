@@ -145,6 +145,21 @@ $(document).ready(function() {
         
         // Incrementar contador y aplicar clases
         setMenuClassNames(++menuClickCount);
+
+        // Ajustar la rotación del ícono para que sea consistente y en sentido antihorario
+        let rotationAngle;
+        switch (menuClickCount % 3) {
+            case 0: // Menú principal y secundario visibles
+                rotationAngle = 0;
+                break;
+            case 1: // Solo menú principal visible
+                rotationAngle = -90;
+                break;
+            case 2: // Todo oculto
+                rotationAngle = -180;
+                break;
+        }
+        icon.style.transform = `rotate(${rotationAngle}deg)`;
     });
 
     // Eventos para los colapsadores
