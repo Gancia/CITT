@@ -41,26 +41,21 @@
   --border-radius-sm: 0.25rem;    /* Para elementos pequeños */
 }
 
-html {
+html, body {
   width: 100%;
-}
-
-body {
   overflow-x: hidden !important;
   color: var(--theme-color-5);
   font-family: var(--content-font-family);
 }
 
-body.show-spinner>main {
+body.show-spinner > main {
   overflow: hidden !important;
 }
 
-/* Hide everything under body tag */
-body.show-spinner>* {
+body.show-spinner > * {
   opacity: 0;
 }
 
-/* Spinner */
 body.show-spinner::after {
   content: " ";
   display: inline-block;
@@ -70,22 +65,15 @@ body.show-spinner::after {
   border-radius: 50%;
   border-top-color: rgba(0, 0, 0, 0.3);
   animation: spin 1s ease-in-out infinite;
-  -webkit-animation: spin 1s ease-in-out infinite;
+  position: fixed;
   left: calc(50% - 15px);
   top: calc(50% - 15px);
-  position: fixed;
   z-index: 1;
 }
 
 @keyframes spin {
   to {
     transform: rotate(360deg);
-  }
-}
-
-@-webkit-keyframes spin {
-  to {
-    -webkit-transform: rotate(360deg);
   }
 }
 
@@ -114,19 +102,19 @@ body.show-spinner::after {
 }
 
 .navbar-brand {
-    padding: 0;
-    font-size: 1.2rem;
-    text-decoration: none;
-    font-family: var(--heading-font-family);
-    font-weight: 700;
-    margin: 0;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+  padding: 0;
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .navbar-brand:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .navbar-brand img {
@@ -140,16 +128,15 @@ body.show-spinner::after {
   transform: scale(1.05);
 }
 
-/* Sobreescribir clases principales */
-.btn-primary {
+/* Botones */
+.btn-primary, .badge-primary, .alert-primary {
   background-color: var(--theme-color-1);
-  border-color: var(--theme-color-1);
   color: var(--button-text-color);
 }
 
 .btn-secondary {
   background-color: var(--theme-color-2);
-  border-color: var (--theme-color-2);
+  border-color: var(--theme-color-2);
 }
 
 .text-primary {
@@ -175,23 +162,10 @@ a:hover {
   border-color: var(--theme-color-1) !important;
 }
 
-/* Badges */
-.badge-primary {
-  background-color: var(--theme-color-1);
-  color: var(--button-text-color);
-}
-
-/* Alerts */
-.alert-primary {
-  color: var(--theme-color-1);
-  background-color: var(--theme-color-1-10);
-  border-color: var (--theme-color-1);
-}
-
 /* Elementos nav/tabs */
 .nav-tabs .nav-link.active {
   color: var(--theme-color-1);
-  border-color: var (--theme-color-1);
+  border-color: var(--theme-color-1);
 }
 
 /* Inputs */
@@ -202,16 +176,21 @@ a:hover {
 /* Checkboxes y radios */
 .custom-control-input:checked ~ .custom-control-label::before {
   background-color: var(--theme-color-1);
-  border-color: var (--theme-color-1);
+  border-color: var(--theme-color-1);
 }
 
 /* Header */
 .navbar {
   background-color: var(--theme-color-1) !important;
-  padding: 0 1rem !important; /* Reducimos el padding horizontal y lo forzamos */
+  padding: 0 1rem !important;
   height: 70px;
   display: flex;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
 }
 
 .navbar .navbar-contents {
@@ -221,24 +200,15 @@ a:hover {
   justify-content: space-between;
 }
 
-.navbar .navbar-left {
+.navbar .navbar-left, .navbar .navbar-center, .navbar .navbar-right {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
 .navbar .navbar-center {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
   flex-grow: 1;
   justify-content: center;
-}
-
-.navbar .navbar-right {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
 }
 
 .navbar .user {
@@ -246,7 +216,6 @@ a:hover {
   align-items: center;
   gap: 0.5rem;
 }
-
 
 .navbar .d-flex.align-items-center.w-100 {
   display: flex !important;
@@ -264,9 +233,9 @@ a:hover {
 .navbar .d-flex.align-items-center:first-child {
   display: flex !important;
   align-items: center;
-  gap: 0.5rem; /* Reducimos el espacio entre elementos */
-  width: 85px; /* Ancho fijo del menú principal */
-  padding-left: 0; /* Eliminamos padding izquierdo */
+  gap: 0.5rem;
+  width: 85px;
+  padding-left: 0;
 }
 
 /* Sección derecha */
@@ -280,16 +249,15 @@ a:hover {
   align-items: center;
   justify-content: flex-end;
   gap: 1rem;
-  width: 300px; /* Ancho fijo */
-  padding-right: 0; /* Eliminamos padding derecho */
+  width: 300px;
+  padding-right: 0;
 }
 
 /* Ajustes responsive */
 @media (max-width: 767px) {
   .navbar {
-    background-color: var(--theme-color-1) !important;
-    padding: 0.5rem 1rem;
     height: 60px;
+    padding: 0.5rem 1rem;
   }
   
   .menu-mobile {
@@ -324,20 +292,20 @@ a:hover {
 .menu .main-menu ul li a,
 .menu .main-menu ul li i,
 .menu .main-menu ul li a span {
-  color: var(--theme-color-5) !important; /* Gris de marca */
+  color: var(--theme-color-5) !important;
   font-family: var(--content-font-family);
-  height: 85px; /* Reducido de 110px */
-  padding: 10px 0; /* Reducido el padding */
+  height: 85px;
+  padding: 10px 0;
 }
 
 .menu .main-menu ul li i {
-  font-size: 26px; /* Reducido el tamaño del ícono */
+  font-size: 26px;
   line-height: 30px;
-  margin-bottom: 5px; /* Reducido el espacio entre ícono y texto */
+  margin-bottom: 5px;
 }
 
 .menu .main-menu ul li span {
-  font-size: 12px; /* Texto más pequeño */
+  font-size: 12px;
   line-height: 1.2;
 }
 
@@ -345,60 +313,38 @@ a:hover {
 .menu .main-menu ul li.active a,
 .menu .main-menu ul li.active i,
 .menu .main-menu ul li.active span {
-  color: var(--theme-color-3) !important; /* Amarillo */
+  color: var(--theme-color-3) !important;
+}
+
+.menu .main-menu ul li.active {
+  background-color: rgba(254, 206, 0, 0.2);
+}
+
+.menu .main-menu ul li.active:after {
+  background: var(--theme-color-3) !important;
+  width: 4px !important;
 }
 
 /* Menú principal - estado hover */
 .menu .main-menu ul li a:hover,
 .menu .main-menu ul li a:hover i,
 .menu .main-menu ul li a:hover span {
-  color: var(--theme-color-3) !important; /* Amarillo */
-}
-
-/* Sección activa del menú */
-.menu .main-menu ul li.active {
-  background-color: rgba(254, 206, 0, 0.2); /* Amarillo con opacidad */
-}
-
-.menu .main-menu ul li.active:after {
-  background: var(--theme-color-3) !important; /* Barra indicadora amarilla */
-  width: 4px !important;
-}
-
-/* Menú principal */
-.menu .main-menu ul li a span,  /* Solo el texto del enlace */
-.menu .main-menu ul li i {
-  color: var(--theme-color-5);
-  font-family: var(--content-font-family);
-}
-
-.menu .main-menu .menu-title {
-  font-family: var(--heading-font-family);
-  font-weight: 600;
-}
-
-/* Hover estados del menú */
-.menu .main-menu ul li a:hover,
-.menu .main-menu ul li a:focus {
   color: var(--theme-color-3) !important;
 }
 
 /* Submenu normal */
 .menu .sub-menu ul li a,
 .menu .sub-menu ul li i {
-  color: var(--theme-color-5) !important; /* Gris de marca */
+  color: var(--theme-color-5) !important;
   font-family: var(--content-font-family);
   border-radius: 0 !important;
 }
 
-/* Submenu normal */
-.menu .sub-menu ul li a span,  /* Solo el texto del enlace */
-.menu .sub-menu ul li i:not(.simple-icon-arrow-down) { /* Excluir el ícono de flecha */
+.menu .sub-menu ul li a span,
+.menu .sub-menu ul li i:not(.simple-icon-arrow-down) {
   color: var(--theme-color-5) !important;
-  font-family: var(--content-font-family);
 }
 
-/* Asegurar que el ícono de flecha use su propia fuente */
 .simple-icon-arrow-down {
   font-family: 'simple-line-icons' !important;
 }
@@ -407,32 +353,24 @@ a:hover {
 .menu .sub-menu ul li.active a,
 .menu .sub-menu ul li.active i,
 .menu .sub-menu ul li a:hover {
-  color: var(--theme-color-1) !important; /* Verde de marca */
-}
-
-/* Estado activo del submenu */
-.menu .sub-menu ul li.active a span,  /* Solo el texto del enlace */
-.menu .sub-menu ul li.active i:not(.simple-icon-arrow-down),
-.menu .sub-menu ul li a:hover span {  /* Solo el texto en hover */
   color: var(--theme-color-1) !important;
 }
 
-/* Indicador de selección del submenu */
 .menu .sub-menu ul li.active:after {
-  background: var(--theme-color-1) !important; /* Verde de marca */
+  background: var(--theme-color-1) !important;
 }
 
 /* Para los submenus anidados */
 .menu .sub-menu ul.inner-level-menu li a,
 .menu .sub-menu ul.inner-level-menu li i {
-  color: var(--theme-color-5) !important; /* Gris de marca */
-  font-family: var (--content-font-family);
+  color: var(--theme-color-5) !important;
+  font-family: var(--content-font-family);
 }
 
 .menu .sub-menu ul.inner-level-menu li.active a,
 .menu .sub-menu ul.inner-level-menu li.active i,
 .menu .sub-menu ul.inner-level-menu li a:hover {
-  color: var (--theme-color-1) !important; /* Verde de marca */
+  color: var(--theme-color-1) !important;
 }
 
 /* Iconos en el header con color blanco */
@@ -443,20 +381,6 @@ a:hover {
 
 /* Menú móvil */
 @media (max-width: 767px) {
-  .navbar {
-    background-color: var(--theme-color-1) !important;
-    padding: 0.5rem 1rem;
-    height: 60px;
-  }
-  
-  .menu-mobile {
-    background-color: var(--theme-color-4);
-  }
-
-  .navbar .navbar-center {
-    display: none;
-  }
-
   .menu .main-menu ul li a {
     height: 65px;
   }
@@ -493,10 +417,7 @@ p,
 }
 
 /* Ajustes específicos de peso de fuente */
-.nav-tabs .nav-link {
-  font-weight: 500;
-}
-
+.nav-tabs .nav-link,
 .btn {
   font-weight: 500;
 }
@@ -519,20 +440,21 @@ p,
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
-  width: 85px !important; /* Ancho fijo del contenedor */
-  padding: 0 !important; /* Eliminar padding */
-  margin: 0 !important; /* Eliminar margin */
+  width: 85px !important;
+  padding: 0 !important;
+  margin: 0 !important;
   background: transparent;
   border: none;
   flex-shrink: 0;
   position: relative;
+  transition: transform 0.3s ease;
 }
 
 .menu-button i {
   font-size: 1.2rem;
   line-height: 1;
-  width: 24px; /* Ancho exacto del icono */
-  height: 24px; /* Alto exacto del icono */
+  width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -541,7 +463,7 @@ p,
 
 /* Asegurar que el hover no afecte el tamaño */
 .menu-button:hover {
-  width: 24px !important;
+  width: 85px !important;
   height: 24px !important;
 }
 
@@ -556,29 +478,29 @@ p,
 
 /* Color blanco para el ícono del menú en el header */
 .navbar .menu-button i {
-  color: var(--theme-color-4) !important; /* Color blanco */
+  color: var(--theme-color-4) !important;
 }
 
 /* Color blanco para el nombre de usuario en el header */
 .navbar .user .name {
-  color: var(--theme-color-4) !important; /* Color blanco */
+  color: var(--theme-color-4) !important;
 }
 
 /* Menú */
 .menu {
   position: fixed;
-  top: 70px; /* Mismo valor que la altura del header */
+  top: 70px;
   bottom: 0;
-  padding-top: 0; /* Eliminar el padding superior */
+  padding-top: 0;
   z-index: 5;
-  height: calc(100% - 70px); /* Restar la altura del header */
+  height: calc(100% - 70px);
 }
 
 /* Contenido principal */
 main {
-  margin-left: 350px; /* 120px del menú principal + 230px del submenú */
+  margin-left: 350px;
   margin-right: 60px;
-  margin-top: 100px; /* Aumentamos de 70px a 100px */
+  margin-top: 100px;
   margin-bottom: 20px;
   transition: margin-left 300ms;
 }
@@ -593,7 +515,7 @@ main {
     height: calc(100% - 70px);
   }
   main {
-    margin-top: 100px; /* Mantenemos el espacio en pantallas grandes */
+    margin-top: 100px;
   }
 
   .menu .main-menu ul li a {
@@ -610,7 +532,7 @@ main {
     height: calc(100% - 70px);
   }
   main {
-    margin-top: 90px; /* Ajustamos un poco para pantallas medianas */
+    margin-top: 90px;
   }
 
   .menu .main-menu ul li a {
@@ -629,7 +551,7 @@ main {
   main {
     margin-left: 15px !important;
     margin-right: 15px !important;
-    margin-top: 80px !important; /* Ajustamos para móviles */
+    margin-top: 80px !important;
   }
 }
 
@@ -703,19 +625,19 @@ main {
 
 /* Menú principal - ajustes de espaciado */
 .menu .main-menu ul li a {
-  padding: 12px 0; /* Aumentamos el padding vertical de 8px a 12px */
+  padding: 12px 0;
   height: 75px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2px; /* Reducimos el espacio entre ícono y texto */
+  gap: 2px;
 }
 
 .menu .main-menu ul li i {
-  font-size: 24px; /* Ajustamos tamaño del ícono */
+  font-size: 24px;
   line-height: 1;
-  margin-bottom: 2px; /* Reducimos el espacio bajo el ícono */
+  margin-bottom: 2px;
 }
 
 .menu .main-menu ul li span {
@@ -764,23 +686,23 @@ main {
 
 /* Ajustes para elementos del menú principal */
 .menu .main-menu ul li {
-  margin-bottom: 15px; /* Aumentamos el espacio entre elementos del menú */
+  margin-bottom: 15px;
 }
 
 .menu .main-menu ul li a {
-  height: 65px; /* Reducimos la altura total */
-  padding: 5px 0; /* Reducimos el padding vertical */
+  height: 65px;
+  padding: 5px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0px; /* Eliminamos el espacio entre ícono y texto */
+  gap: 0px;
 }
 
 .menu .main-menu ul li i {
   font-size: 24px;
   line-height: 1;
-  margin-bottom: 1px; /* Mínimo espacio bajo el ícono */
+  margin-bottom: 1px;
 }
 
 .menu .main-menu ul li span {
@@ -810,7 +732,7 @@ main {
 
 /* Base styles para elementos del menú */
 .menu .main-menu ul li {
-  padding: 10px 0; /* Agregamos padding vertical al li */
+  padding: 10px 0;
 }
 
 .menu .main-menu ul li a {
@@ -820,13 +742,13 @@ main {
   justify-content: center;
   align-items: center;
   gap: 2px;
-  padding: 0; /* Quitamos el padding del enlace */
+  padding: 0;
 }
 
 /* Estado activo - fondo amarillo */
 .menu .main-menu ul li.active {
-  background-color: rgba(254, 206, 0, 0.2); /* Amarillo con opacidad */
-  padding: 15px 0; /* Aumentamos el padding vertical cuando está activo */
+  background-color: rgba(254, 206, 0, 0.2);
+  padding: 15px 0;
 }
 
 /* Media queries */
@@ -859,12 +781,12 @@ main {
 
 /* Estilo para subsección activa en el menú secundario */
 .menu .sub-menu ul li a.subsection-active {
-    color: var(--theme-color-1) !important; /* Verde del tema */
-    font-weight: 500;
+  color: var(--theme-color-1) !important;
+  font-weight: 500;
 }
 
 .menu .sub-menu ul li a.subsection-active span {
-    color: var(--theme-color-1) !important;
+  color: var(--theme-color-1) !important;
 }
 
 /* Estilos para el header */
@@ -917,7 +839,7 @@ main {
 .navbar .menu-button:hover i,
 .navbar .header-icon:hover i,
 .navbar .user:hover .name {
-  color: var(--theme-color-3) !important; /* Color amarillo del tema */
+  color: var(--theme-color-3) !important;
   transition: color 0.2s ease;
 }
 
@@ -925,7 +847,7 @@ main {
 .navbar .menu-button i,
 .navbar .header-icon i,
 .navbar .user .name {
-  color: var(--theme-color-4) !important; /* Color blanco */
+  color: var(--theme-color-4) !important;
   transition: color 0.2s ease;
 }
 
@@ -986,241 +908,241 @@ main {
 
 /* Base styles para el botón de menú */
 .menu-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .menu-button i {
-    display: inline-block;
-    color: var(--theme-color-4) !important;
-    transition: transform 0.3s ease;
-    transform: rotate(0deg);
+  display: inline-block;
+  color: var(--theme-color-4) !important;
+  transition: transform 0.3s ease;
+  transform: rotate(0deg);
 }
 
 /* Estilos base para el botón de menú */
 .menu-button {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu-button .rotate-icon {
-    font-size: 1.5rem;
-    color: var(--theme-color-4);
-    display: inline-block;
-    transition: transform 0.3s ease-in-out;
-    will-change: transform;
-    transform-origin: center;
+  font-size: 1.5rem;
+  color: var(--theme-color-4);
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+  transform-origin: center;
 }
 
 /* Estados de rotación */
 /* Estado inicial - menu y submenu ocultos (palos verticales) */
 #app-container.menu-hidden .menu-button .rotate-icon {
-    transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 /* Solo menu principal visible (palos horizontales) */
 #app-container.menu-default.menu-sub-hidden .menu-button .rotate-icon {
-    transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 
 /* Menu y submenu visibles (giro completo) */
 #app-container.menu-default:not(.menu-sub-hidden) .menu-button .rotate-icon {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 /* Hover state */
 .menu-button:hover .rotate-icon {
-    color: var(--theme-color-3);
+  color: var(--theme-color-3);
 }
 
 /* Estilos base para el botón de menú */
 .menu-button .rotate-icon {
-    font-size: 1.5rem;
-    color: var(--theme-color-4);
-    display: inline-block;
-    transition: transform 0.3s ease-in-out;
-    will-change: transform;
-    transform-origin: center;
+  font-size: 1.5rem;
+  color: var(--theme-color-4);
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+  transform-origin: center;
 }
 
 /* Estados de rotación con transiciones suaves */
 #app-container.menu-hidden .menu-button .rotate-icon {
-    transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 #app-container.menu-default.menu-sub-hidden .menu-button .rotate-icon {
-    transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 
 #app-container.menu-default:not(.menu-sub-hidden) .menu-button .rotate-icon {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 /* Tamaños de texto estandarizados */
 h1, .h1 {
-    font-size: 28px !important;
-    line-height: 1.3;
+  font-size: 28px !important;
+  line-height: 1.3;
 }
 
 h2, .h2,
 .card-title.large {
-    font-size: 24px !important;
-    line-height: 1.3;
+  font-size: 24px !important;
+  line-height: 1.3;
 }
 
 h3, .h3,
 .card-title {
-    font-size: 18px !important;
-    line-height: 1.3;
+  font-size: 18px !important;
+  line-height: 1.3;
 }
 
 p, .card-text,
 .btn,
 .nav-link,
 .dropdown-item {
-    font-size: 14px !important;
-    line-height: 1.5;
+  font-size: 14px !important;
+  line-height: 1.5;
 }
 
 /* Ajuste para íconos */
 .icon-size {
-    font-size: 42px !important;
-    margin-bottom: 1rem !important; /* Reducimos el espacio entre ícono y título */
+  font-size: 42px !important;
+  margin-bottom: 1rem !important;
 }
 
 /* Ajustes responsive */
 @media (max-width: 767px) {
-    h1, .h1 {
-        font-size: 24px !important;
-    }
-    
-    h2, .h2,
-    .card-title.large {
-        font-size: 20px !important;
-    }
-    
-    h3, .h3,
-    .card-title {
-        font-size: 16px !important;
-    }
+  h1, .h1 {
+    font-size: 24px !important;
+  }
+  
+  h2, .h2,
+  .card-title.large {
+    font-size: 20px !important;
+  }
+  
+  h3, .h3,
+  .card-title {
+    font-size: 16px !important;
+  }
 }
 
 /* Ajuste para íconos en cards */
 .icon-size {
-    font-size: 42px !important; /* Incrementamos el tamaño del ícono */
-    margin-bottom: 1rem !important; /* Reducimos el espacio entre ícono y título */
+  font-size: 42px !important;
+  margin-bottom: 1rem !important;
 }
 
 /* Ajustes para las cards de la página de inicio */
 .equal-height-container .card {
-    height: 100%;
+  height: 100%;
 }
 
 .equal-height-container .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 1.5rem 1.25rem; /* Reducimos el padding general de las cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1.5rem 1.25rem;
 }
 
 .equal-height-container .card-title {
-    font-size: 18px !important;
-    margin-top: 0;
-    margin-bottom: 1rem; /* Espacio entre título y descripción */
+  font-size: 18px !important;
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 .equal-height-container .card-text {
-    font-size: 14px !important;
-    margin-bottom: 0;
+  font-size: 14px !important;
+  margin-bottom: 0;
 }
 
 /* Contenedores principales con bordes redondeados */
 .card {
-    border-radius: var(--border-radius-md) !important;
+  border-radius: var(--border-radius-md) !important;
 }
 
 /* Cards dentro de contenedores - mantener consistencia */
 .card .card-body {
-    border-radius: var(--border-radius-md);
+  border-radius: var(--border-radius-md);
 }
 
 /* Mantener las esquinas cuadradas en header, menú y submenú */
 .navbar,
 .menu .main-menu,
 .menu .sub-menu {
-    border-radius: 0 !important;
+  border-radius: 0 !important;
 }
 
 /* Otros contenedores que necesitan bordes redondeados */
 .modal-content {
-    border-radius: var(--border-radius-md) !important;
+  border-radius: var(--border-radius-md) !important;
 }
 
 .dropdown-menu {
-    border-radius: var(--border-radius-sm) !important;
+  border-radius: var(--border-radius-sm) !important;
 }
 
 .alert {
-    border-radius: var(--border-radius-sm) !important;
+  border-radius: var(--border-radius-sm) !important;
 }
 
 /* Imágenes en cards */
 .card-img,
 .card-img-top,
 .card-img-bottom {
-    border-radius: var(--border-radius-md) !important;
+  border-radius: var(--border-radius-md) !important;
 }
 
 /* Contenedores de tabs */
 .tab-content {
-    border-radius: var(--border-radius-md);
+  border-radius: var(--border-radius-md);
 }
 
 /* Botones ya tienen su propio radio definido */
 
 /* Ajuste para tablas dentro de cards */
 .card .table {
-    border-radius: var(--border-radius-sm);
+  border-radius: var(--border-radius-sm);
 }
 
 /* Contenedor de videos y multimedia */
 .video-container {
-    border-radius: var(--border-radius-md);
-    overflow: hidden;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
 }
 
 /* Mantener bordes redondeados en responsive */
 @media (max-width: 767px) {
-    .card,
-    .modal-content,
-    .tab-content {
-        border-radius: var(--border-radius-sm) !important;
-    }
+  .card,
+  .modal-content,
+  .tab-content {
+    border-radius: var(--border-radius-sm) !important;
+  }
 }
 
 /* Ajuste para imágenes dentro de cards */
 .card .img-fluid {
-    border-radius: var(--border-radius-md) !important; /* Usar el mismo radio que las cards */
+  border-radius: var(--border-radius-md) !important;
 }
 
 /* Asegurar que las imágenes redondeadas mantengan la consistencia */
 .img-fluid.rounded {
-    border-radius: var(--border-radius-md) !important; /* Sobrescribir la clase .rounded */
+  border-radius: var(--border-radius-md) !important;
 }
 
 /* Ajuste responsive */
 @media (max-width: 767px) {
-    .card .img-fluid,
-    .img-fluid.rounded {
-        border-radius: var(--border-radius-sm) !important;
-    }
+  .card .img-fluid,
+  .img-fluid.rounded {
+    border-radius: var(--border-radius-sm) !important;
+  }
 }
 
 /* Clase para el fondo gris de marca */
@@ -1229,432 +1151,179 @@ p, .card-text,
 }
 
 .bg-brand-gray .card-body {
-    border-radius: var(--border-radius-md);
+  border-radius: var(--border-radius-md);
 }
 
 /* Ajustes responsive para el search */
 @media (max-width: 500px) {
   .navbar .search {
-      display: none;
+    display: none;
   }
 }
 
 @media (max-width: 991px) {
-    .navbar .search {
-        width: 150px;
-    }
+  .navbar .search {
+    width: 150px;
+  }
 }
 
 @media (max-width: 805px) {
-    .navbar .search {
-        width: 30px;
-        height: 30px;
-        background: transparent;
-        margin-left: 0.6rem;
-    }
-    
-    .navbar .search input {
-        display: none;
-    }
-    
-    .navbar .search .search-icon {
-        font-size: 17px;
-        width: 30px;
-        height: 30px;
-        bottom: -3px;
-        right: 0;
-    }
+  .navbar .search {
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    margin-left: 0.6rem;
+    transition: width 0.3s ease;
+  }
+  
+  .navbar .search input {
+    display: none;
+  }
+  
+  .navbar .search .search-icon {
+    font-size: 17px;
+    width: 30px;
+    height: 30px;
+    bottom: -3px;
+    right: 0;
+  }
 }
 
 /* Estilos para timeline de colaboración */
 .timeline-item {
-    position: relative;
-    padding-top: 20px;
+  position: relative;
+  padding-top: 20px;
 }
 
 .timeline-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 2px;
-    height: 100%;
-    background: rgba(var(--primary-rgb), 0.1);
-    transform: translateX(-50%);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: rgba(var(--primary-rgb), 0.1);
+  transform: translateX(-50%);
 }
 
 /* Círculos indicadores en timeline */
 .timeline-indicator {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: var(--theme-color-1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--theme-color-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
 }
 
 .timeline-indicator i {
-    color: var(--theme-color-4);
-    font-size: 24px;
+  color: var(--theme-color-4);
+  font-size: 24px;
 }
 
 /* Cards de estadísticas */
 .stat-card {
-    padding: 1.5rem;
-    text-align: center;
-    border-right: 1px solid var(--separator-color-light);
+  padding: 1.5rem;
+  text-align: center;
+  border-right: 1px solid var(--separator-color-light);
 }
 
 .stat-card:last-child {
-    border-right: none;
+  border-right: none;
 }
 
 .stat-number {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: var(--theme-color-1);
-    margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--theme-color-1);
+  margin-bottom: 0.5rem;
 }
 
 .stat-label {
-    color: var(--theme-color-5);
-    font-size: 0.9rem;
+  color: var(--theme-color-5);
+  font-size: 0.9rem;
 }
 
 /* Carousel personalizado */
 .custom-carousel {
-    border-radius: var(--border-radius-md);
-    overflow: hidden;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
 }
 
 .custom-carousel .carousel-item {
-    padding: 2rem;
+  padding: 2rem;
 }
 
 .custom-carousel .carousel-control-prev,
 .custom-carousel .carousel-control-next {
-    width: 40px;
-    height: 40px;
-    background: var(--theme-color-1);
-    border-radius: 50%;
-    opacity: 0.9;
-    top: 50%;
-    transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: var(--theme-color-1);
+  border-radius: 50%;
+  opacity: 0.9;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /* Responsive */
 @media (max-width: 767px) {
-    .timeline-item::before {
-        display: none;
-    }
-    
-    .stat-card {
-        border-right: none;
-        border-bottom: 1px solid var(--separator-color-light);
-        margin-bottom: 1rem;
-    }
-    
-    .stat-card:last-child {
-        border-bottom: none;
-    }
+  .timeline-item::before {
+    display: none;
+  }
+  
+  .stat-card {
+    border-right: none;
+    border-bottom: 1px solid var(--separator-color-light);
+    margin-bottom: 1rem;
+  }
+  
+  .stat-card:last-child {
+    border-bottom: none;
+  }
 }
 
 /* Estilos adicionales */
 .event-date {
-    min-width: 60px;
+  min-width: 60px;
 }
+
 .social-icons .btn {
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    line-height: 40px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  line-height: 40px;
 }
+
 .social-icons .btn i {
-    line-height: 38px;
+  line-height: 38px;
 }
+
 /* Estilos adicionales para el calendario */
 .calendar {
-    min-height: 400px;
-    background: #fff;
+  min-height: 400px;
+  background: #fff;
 }
+
 .fc-view-container {
-    background: #fff;
+  background: #fff;
 }
+
 .fc-event {
-    cursor: pointer;
-    padding: 2px 4px;
+  cursor: pointer;
+  padding: 2px 4px;
 }
+
 .fc-day-grid-event .fc-content {
-    white-space: normal;
+  white-space: normal;
 }
 
-/* Estilos base del navbar */
-.navbar {
-  background-color: var(--theme-color-1) !important;
-  height: 70px;
-  padding: 0 1rem !important; /* Reducimos el padding horizontal y lo forzamos */
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-}
-
-/* Contenedor principal del navbar */
-.navbar .d-flex.align-items-center.w-100 {
-  display: flex !important;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-  padding: 0;
-}
-
-/* Botón de menú */
-.menu-button {
-  width: 85px !important; /* Mismo ancho que el contenedor padre */
-  height: 24px !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: none;
-  position: relative;
-  flex-shrink: 0;
-}
-
-/* Icono del botón */
-.menu-button i {
-  width: 24px !important;
-  height: 24px !important;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  line-height: 1;
-  color: var(--theme-color-4) !important;
-  transition: transform 0.3s ease;
-}
-
-/* Prevenir efectos de hover no deseados */
-.menu-button:hover {
-  width: 85px !important;
-}
-
-/* Asegurar consistencia en estados */
-#app-container.menu-default .menu-button,
-#app-container.menu-sub-hidden .menu-button,
-#app-container.menu-hidden .menu-button {
-  width: 85px !important;
-}
-
-/* Media queries */
-@media (max-width: 991px) {
-  .menu-button {
-    width: 100px !important;
-  }
-  .menu-button:hover {
-    width: 100px !important;
-  }
-}
-
-@media (max-width: 767px) {
-  .menu-button {
-    width: 90px !important;
-  }
-  .menu-button:hover {
-    width: 90px !important;
-  }
-}
-
-/* Botón de menú */
-.menu-button {
-  width: 85px !important; /* Ancho fijo del contenedor */
-  height: 24px !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: none;
-  position: relative;
-}
-
-/* Icono del botón - contenedor hijo */
-.menu-button i {
-  width: 24px !important; /* Ancho fijo del icono */
-  height: 24px !important;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  line-height: 1;
-  transition: transform 0.3s ease;
-}
-
-/* Barra de búsqueda */
-.search {
-  margin-left: 1rem; /* Espacio entre el botón y el search */
-  width: 180px;
-  transition: all 0.3s ease;
-}
-
-/* Media queries ajustados */
-@media (max-width: 1199px) {
-  .navbar {
-    padding: 0 0.75rem !important;
-  }
-
-  .search {
-    width: 180px;
-  }
-}
-
-@media (max-width: 991px) {
-  .menu-button {
-    width: 70px !important;
-  }
-
-  .search {
-    width: 150px;
-  }
-
-  .navbar-brand .text-primary {
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 767px) {
-  .navbar {
-    height: 60px;
-    padding: 0 0.5rem !important;
-  }
-
-
-  /* Contraer search a solo ícono */
-  .search {
-    margin-left: 90px;
-    width: 120px;
-  }
-
-  .search input {
-    display: none;
-  }
-
-  .search .search-icon {
-    position: static;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* Reducir tamaños */
-  .navbar-brand .text-primary {
-    font-size: 0.9rem;
-  }
-
-  .vertical-separator {
-    height: 30px;
-    margin: 0 0.5rem;
-  }
-
-  .upec-logo {
-    height: 30px;
-  }
-
-  #fullScreenButton {
-    display: none !important;
-  }
-
-  .menu-button {
-    width: 60px !important;
-    min-width: 32px;
-    height: 32px;
-  }
-}
-
-/* Ajustes adicionales para pantallas muy pequeñas */
-@media (max-width: 575px) {
-  .navbar {
-    padding: 0 0.5rem;
-  }
-
-  .navbar-brand .text-primary {
-    font-size: 0.85rem;
-  }
-}
-
-/* Aseguramos que el icono se centre perfectamente */
-.menu-button i {
-  font-size: 1.2rem;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Ajustes responsive para el navbar en móviles */
-@media (max-width: 767px) {
-  /* Ajustamos el navbar */
-  .navbar {
-    height: 60px;
-    padding: 0 0.5rem !important;
-  }
-
-  /* Reset del contenedor principal para móviles */
-  .navbar .d-flex.align-items-center.w-100 {
-    position: relative; /* Para posicionamiento absoluto del search */
-  }
-
-  /* Ajustamos el search para que quede junto al menú */
-  .navbar .search {
-    position: relative; /* Cambiamos a relative */
-    width: 30px;
-    height: 30px;
-    margin: 0 0 0 0.5rem; /* Agregamos margen izquierdo */
-    z-index: 1;
-  }
-
-  /* Centramos el título y logo */
-  .navbar-brand {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 0;
-  }
-
-  /* Ajustamos el botón de menú */
-  .menu-button {
-    width: 60px !important;
-    z-index: 1;
-  }
-
-  /* Ajustamos el contenedor derecho */
-  .navbar .navbar-right {
-    position: relative;
-    z-index: 1;
-    margin-left: auto;
-  }
-
-  .vertical-separator {
-    height: 30px;
-    margin: 0 0.5rem;
-  }
-
-  .upec-logo {
-    height: 30px;
-  }
+/* Ajustes para el search */
+.navbar .search {
+  transition: width 0.3s ease;
 }
