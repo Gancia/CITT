@@ -174,12 +174,15 @@ $(document).ready(function() {
     });
 
     // Click handler para el logo/inicio
-    $('.navbar-brand').on('click', function(e) {
-        e.preventDefault(); // Prevenir la recarga de la página
+    $('.navbar-brand a').on('click', function(e) { // Cambiar el selector para capturar los enlaces dentro del navbar-brand
+        e.preventDefault();
 
         // Limpiar todos los estados guardados
         sessionStorage.removeItem('activeMenu');
         sessionStorage.removeItem('openCollapses');
+        
+        // Limpiar estados visuales
+        $('.main-menu ul li').removeClass('active');
         $('.sub-menu ul').hide();
         $('#app-container').addClass('menu-sub-hidden');
 
@@ -275,9 +278,26 @@ $(document).ready(function() {
 
     // Manejar clicks en los enlaces de subsección
     $('.sub-menu ul li a').on('click', function(e) {
-        e.preventDefault(); // Prevenir la recarga de la página
+        e.preventDefault();
+        const $this = $(this);
+        const href = $this.attr('href');
+        
+        // Actualizar clases activas
         $('.sub-menu ul li a').removeClass('subsection-active');
-        $(this).addClass('subsection-active');
+        $this.addClass('subsection-active');
+        
+        // Si hay un href válido, navegar a la URL con un pequeño retraso 
+        // para que se vea la animación de la clase activa
+        if (href && href !== '#') {
+            setTimeout(() => {
+                window.location.href = href;
+            }, 150);
+        }
+        
+        // En móvil, cerrar el submenú después de hacer click
+        if ($('#app-container').hasClass('menu-mobile')) {
+            $('#app-container').removeClass('sub-show-temporary');
+        }
     });
 
     // Inicializar carousels
