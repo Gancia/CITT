@@ -1640,7 +1640,7 @@ button {
     position: fixed;
     left: 120px;
     border-left: 1px solid #f3f3f3;
-    height: calc(100% - 100px);
+    height: calc(100% - 70px);
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 0;
@@ -1708,12 +1708,12 @@ button {
       .menu .sub-menu {
         left: 110px;
         width: 230px;
-        height: calc(100% - 90px); } }
+        height: calc(calc(100% - 70px)); } }
     @media (max-width: 1199px) {
       .menu .sub-menu {
         left: 100px;
         width: 230px;
-        height: calc(100% - 80px); } }
+        height: calc(100% - 70px); } }
     @media (max-width: 767px) {
       .menu .sub-menu {
         left: 90px;
