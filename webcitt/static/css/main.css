@@ -294,7 +294,6 @@ a:hover {
 .menu .main-menu ul li a span {
   color: var(--theme-color-5) !important;
   font-family: var(--content-font-family);
-  height: 85px;
   padding: 0 10px;
 }
 
@@ -316,13 +315,8 @@ a:hover {
   color: var(--theme-color-3) !important;
 }
 
-.menu .main-menu ul li.active {
-  background-color: rgba(254, 206, 0, 0.2);
-}
-
 .menu .main-menu ul li.active:after {
   background: var(--theme-color-3) !important;
-  width: 4px !important;
 }
 
 /* Menú principal - estado hover */
@@ -625,14 +619,15 @@ main {
 
 /* Menú principal - ajustes de espaciado */
 .menu .main-menu ul li a {
-  padding: 12px 0;
-  height: 75px;
+  height: 110px;
+  padding: 5px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2px;
 }
+
 
 .menu .main-menu ul li i {
   font-size: 32px;
@@ -686,17 +681,8 @@ main {
 
 /* Ajustes para elementos del menú principal */
 .menu .main-menu ul li {
-  margin-bottom: 15px;
-}
-
-.menu .main-menu ul li a {
-  height: 65px;
-  padding: 5px 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0px;
+  margin-bottom: 5px;
+  height: 110px;
 }
 
 .menu .main-menu ul li span {
@@ -725,24 +711,11 @@ main {
 }
 
 /* Base styles para elementos del menú */
-.menu .main-menu ul li {
-  padding: 10px 0;
-}
-
-.menu .main-menu ul li a {
-  height: 75px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2px;
-  padding: 0;
-}
 
 /* Estado activo - fondo amarillo */
 .menu .main-menu ul li.active {
   background-color: rgba(254, 206, 0, 0.2);
-  padding: 15px 0;
+  height: auto;
 }
 
 /* Media queries */
@@ -752,24 +725,29 @@ main {
   }
   .menu .main-menu ul li.active {
     padding: 12px 0;
+    height: auto;
   }
 }
 
 @media (max-width: 1199px) {
   .menu .main-menu ul li {
     padding: 6px 0;
+    height: auto;
   }
   .menu .main-menu ul li.active {
     padding: 10px 0;
+    height: auto;
   }
 }
 
 @media (max-width: 767px) {
   .menu .main-menu ul li {
     padding: 5px 0;
+    height: auto;
   }
   .menu .main-menu ul li.active {
     padding: 8px 0;
+    height: auto;
   }
 }
 
