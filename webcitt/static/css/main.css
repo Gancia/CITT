@@ -1304,3 +1304,6 @@ p, .card-text,
     display: none;
   }
 }
+.icon {
+  font-family:'simple-line-icons' !important;
+}
