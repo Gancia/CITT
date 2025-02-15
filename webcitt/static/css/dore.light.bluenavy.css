@@ -1623,7 +1623,7 @@ button {
         height: calc(100% - 80px); } }
     @media (max-width: 767px) {
       .menu .main-menu {
-        width: 90px;
+        width: 100px;
         height: calc(100% - 70px); }
         .menu .main-menu ul li i {
           font-size: 26px;

@@ -330,7 +330,7 @@ a:hover {
 .menu .sub-menu ul li a,
 .menu .sub-menu ul li i {
   color: var(--theme-color-5) !important;
-  font-family: var(--content-font-family);
+  font-family: 'simple-line-icons';
   border-radius: 0 !important;
 }
 
