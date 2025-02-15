@@ -295,7 +295,7 @@ a:hover {
   color: var(--theme-color-5) !important;
   font-family: var(--content-font-family);
   height: 85px;
-  padding: 10px 0;
+  padding: 0 10px;
 }
 
 .menu .main-menu ul li i {
@@ -498,7 +498,7 @@ p,
 
 /* Contenido principal */
 main {
-  margin-left: 350px;
+  /* margin-left: 350px; */
   margin-right: 60px;
   margin-top: 100px;
   margin-bottom: 20px;
@@ -635,9 +635,9 @@ main {
 }
 
 .menu .main-menu ul li i {
-  font-size: 24px;
+  font-size: 32px;
   line-height: 1;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
 }
 
 .menu .main-menu ul li span {
@@ -697,12 +697,6 @@ main {
   justify-content: center;
   align-items: center;
   gap: 0px;
-}
-
-.menu .main-menu ul li i {
-  font-size: 24px;
-  line-height: 1;
-  margin-bottom: 1px;
 }
 
 .menu .main-menu ul li span {
@@ -1167,7 +1161,7 @@ p, .card-text,
   }
 }
 
-@media (max-width: 805px) {
+@media (max-width: 860px) {
   .navbar .search {
     width: 30px;
     height: 30px;
@@ -1326,4 +1320,9 @@ p, .card-text,
 /* Ajustes para el search */
 .navbar .search {
   transition: width 0.3s ease;
+}
+@media (max-width: 629px) {
+  .hide-on-small {
+    display: none;
+  }
 }
