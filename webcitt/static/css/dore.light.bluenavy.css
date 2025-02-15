@@ -1411,7 +1411,7 @@ button {
       cursor: pointer; }
       .navbar .search .search-icon:hover {
         color: #00365a; }
-    @media (max-width: 991px) {
+    @media (max-width: 1030px) {
       .navbar .search {
         width: 115px; }
         .navbar .search input {
