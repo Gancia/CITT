@@ -124,9 +124,28 @@ $(document).ready(function() {
         icon.style.transform = `rotate(${rotationAngle}deg)`;
     }
 
+    // Función para cambiar las clases del contenedor basado en el tamaño de la pantalla
+    function toggleMenuClass() {
+        if (window.innerWidth <= 767) {
+            $('#app-container').removeClass('menu-default').addClass('menu-hidden');
+        } else {
+            $('#app-container').removeClass('menu-hidden').addClass('menu-default');
+        }
+    }
+
+    // Ejecutar la función al cargar la página
+    toggleMenuClass();
+
+    // Ejecutar la función cada vez que se cambia el tamaño de la ventana
+    $(window).resize(toggleMenuClass);
+
     // Click handler para los items del menú principal 
     $('.main-menu ul li a').on('click', function(e) {
         e.preventDefault(); // Prevenir la recarga de la página
+
+        // Ocultar el submenú
+        $('#app-container').addClass('menu-sub-hidden');
+        $('.sub-menu ul').fadeOut(200);
 
         // Obtiene el data-link del item seleccionado
         var link = $(this).attr('data-link');
@@ -134,19 +153,6 @@ $(document).ready(function() {
         
         // Verificar si el item ya está activo
         if ($(this).parent('li').hasClass('active')) {
-            // Si el submenú está visible, ocultarlo
-            if (!$('#app-container').hasClass('menu-sub-hidden')) {
-                $('.sub-menu ul').fadeOut(200, function() {
-                    $('#app-container').addClass('menu-sub-hidden');
-                    menuClickCount = 1; // Ajustar el contador para reflejar el estado
-                    updateMenuButtonState(); // Actualizar el estado del botón de menú
-                });
-            } else {
-                // Si el submenú está oculto, mostrarlo
-                showSubMenu(link);
-                menuClickCount = 0; // Ajustar el contador para reflejar el estado
-                updateMenuButtonState(); // Actualizar el estado del botón de menú
-            }
             return; // No hacer nada más si ya está activo
         }
         
@@ -208,6 +214,14 @@ $(document).ready(function() {
         updateMenuButtonState();
     });
 
+    // Click handler para el item con id "hublab"
+    $('#hublab a').on('click', function(e) {
+        e.preventDefault(); // Prevenir la recarga de la página
+
+        // Agregar las clases "menu-default" y "menu-sub-hidden" al contenedor
+        $('#app-container').addClass('menu-sub-hidden');
+    });
+
     // Eventos para los colapsadores
     $('.collapse').on('shown.bs.collapse', function() {
         saveCollapsedState(this.id);
@@ -249,6 +263,12 @@ $(document).ready(function() {
 
     // Restaurar estados de los colapsadores
     restoreCollapsedStates();
+
+    // Ocultar el submenú después de que todo el código haya corrido solo si el id es "hublab"
+    if ($('#hublab').hasClass('active')) {
+        $('#app-container').addClass('menu-sub-hidden');
+        $('.sub-menu ul').fadeOut(200);
+    }
 
     // Función para manejar el estado activo de las subsecciones
     function handleSubsectionActive() {
