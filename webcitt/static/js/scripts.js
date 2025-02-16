@@ -8,20 +8,35 @@ $(document).ready(function() {
         menuClickCount = clickIndex;
         const container = $("#app-container");
         let nextClasses = "";
-
-        // Aplicar las clases con un pequeño retraso para permitir la animación
+        
+        // Obtener la sección activa actual
+        const activeSection = $('.main-menu ul li.active a').attr('data-link');
+        const hasSubmenu = activeSection && ['ott', 'incubadora', 'uexperimentales', 'formacion'].includes(activeSection);
+        
         setTimeout(() => {
-            // Ciclo de estados del menú con rotación
-            switch (clickIndex % 3) {
-                case 0: // Todo visible
-                    nextClasses = "menu-default";
-                    break;
-                case 1: // Solo menu principal
-                    nextClasses = "menu-default menu-sub-hidden";
-                    break;
-                case 2: // Todo oculto
-                    nextClasses = "menu-hidden";
-                    break;
+            if (hasSubmenu) {
+                // Comportamiento normal de 3 estados para secciones con submenú
+                switch (clickIndex % 3) {
+                    case 0: // Todo visible
+                        nextClasses = "menu-default";
+                        break;
+                    case 1: // Solo menu principal
+                        nextClasses = "menu-default menu-sub-hidden";
+                        break;
+                    case 2: // Todo oculto
+                        nextClasses = "menu-hidden";
+                        break;
+                }
+            } else {
+                // Comportamiento alternado para secciones sin submenú
+                switch (clickIndex % 2) {
+                    case 0: // Menu visible
+                        nextClasses = "menu-default menu-sub-hidden";
+                        break;
+                    case 1: // Menu oculto
+                        nextClasses = "menu-hidden";
+                        break;
+                }
             }
 
             // Mantener clase mobile si existe
@@ -33,9 +48,9 @@ $(document).ready(function() {
             container.removeClass(allMenuClassNames);
             requestAnimationFrame(() => {
                 container.addClass(nextClasses);
-
-                // Restaurar el submenú correspondiente a la sección activa
-                if (nextClasses.includes("menu-default") && !nextClasses.includes("menu-sub-hidden")) {
+                
+                // Solo restaurar submenú si la sección actual tiene uno
+                if (hasSubmenu && nextClasses.includes("menu-default") && !nextClasses.includes("menu-sub-hidden")) {
                     const activeLink = sessionStorage.getItem('activeMenu');
                     if (activeLink) {
                         showSubMenu(activeLink);
@@ -109,17 +124,33 @@ $(document).ready(function() {
     // Función para actualizar el estado del botón de menú
     function updateMenuButtonState() {
         const icon = $(".menu-button").find('.rotate-icon')[0];
+        const activeSection = $('.main-menu ul li.active a').attr('data-link');
+        const hasSubmenu = activeSection && ['ott', 'incubadora', 'uexperimentales', 'formacion'].includes(activeSection);
+        
         let rotationAngle;
-        switch (menuClickCount % 3) {
-            case 0: // Menú principal y secundario visibles
-                rotationAngle = 0;
-                break;
-            case 1: // Solo menú principal visible
-                rotationAngle = -90;
-                break;
-            case 2: // Todo oculto
-                rotationAngle = -180;
-                break;
+        if (hasSubmenu) {
+            // Rotación de 3 estados para secciones con submenú
+            switch (menuClickCount % 3) {
+                case 0: // Todo visible
+                    rotationAngle = 0;
+                    break;
+                case 1: // Solo menú principal
+                    rotationAngle = -90;
+                    break;
+                case 2: // Todo oculto
+                    rotationAngle = -180;
+                    break;
+            }
+        } else {
+            // Rotación de 2 estados para secciones sin submenú
+            switch (menuClickCount % 2) {
+                case 0: // Menú visible
+                    rotationAngle = 0;
+                    break;
+                case 1: // Menú oculto
+                    rotationAngle = -180;
+                    break;
+            }
         }
         icon.style.transform = `rotate(${rotationAngle}deg)`;
     }
@@ -141,41 +172,51 @@ $(document).ready(function() {
 
     // Click handler para los items del menú principal 
     $('.main-menu ul li a').on('click', function(e) {
-        e.preventDefault(); // Prevenir la recarga de la página
-
-        // Ocultar el submenú
-        $('#app-container').addClass('menu-sub-hidden');
-        $('.sub-menu ul').fadeOut(200);
-
+        e.preventDefault();
+        
         // Obtiene el data-link del item seleccionado
         var link = $(this).attr('data-link');
         var href = $(this).attr('href');
         
         // Verificar si el item ya está activo
         if ($(this).parent('li').hasClass('active')) {
-            return; // No hacer nada más si ya está activo
+            // Si ya está activo, alternamos la visibilidad del submenú
+            if ($('#app-container').hasClass('menu-sub-hidden')) {
+                // Si está oculto, lo mostramos
+                $('#app-container').removeClass('menu-sub-hidden');
+                $('.sub-menu ul[data-link="' + link + '"]').fadeIn(200);
+                // Actualizamos el contador para sincronizar con el botón
+                menuClickCount = 0;
+            } else {
+                // Si está visible, lo ocultamos
+                $('#app-container').addClass('menu-sub-hidden');
+                $('.sub-menu ul').fadeOut(200);
+                // Actualizamos el contador para sincronizar con el botón
+                menuClickCount = 1;
+            }
+            // Actualizamos el estado del botón
+            updateMenuButtonState();
+            return;
         }
         
-        // Remueve la clase active de todos los items
+        // Si no está activo, procedemos con el comportamiento normal
         $('.main-menu ul li').removeClass('active');
-        // Agrega la clase active al item seleccionado
         $(this).parent('li').addClass('active');
         
-        // Muestra el submenú correspondiente
         showSubMenu(link);
         
-        // Si estamos en móvil y es una sección válida, muestra temporalmente el submenú
         if ($('#app-container').hasClass('menu-mobile') && 
-            ['ott', 'incubadora', 'uexperimentales', 'hublab', 'formacion'].includes(link)) {
+            ['ott', 'incubadora', 'uexperimentales', 'formacion'].includes(link)) {
             $('#app-container').addClass('sub-show-temporary');
         }
 
-        // Guarda el estado del menú en sessionStorage solo si es una sección válida
-        if (['ott', 'incubadora', 'uexperimentales', 'hublab', 'formacion'].includes(link)) {
+        if (['ott', 'incubadora', 'uexperimentales', 'formacion'].includes(link)) {
             sessionStorage.setItem('activeMenu', link);
+            // Reseteamos el contador al mostrar una nueva sección
+            menuClickCount = 0;
+            updateMenuButtonState();
         }
 
-        // Redireccionar a la vista correspondiente
         window.location.href = href;
     });
 
@@ -201,16 +242,23 @@ $(document).ready(function() {
         event.preventDefault();
         event.stopPropagation();
         
+        const activeSection = $('.main-menu ul li.active a').attr('data-link');
+        const hasSubmenu = activeSection && ['ott', 'incubadora', 'uexperimentales', 'formacion'].includes(activeSection);
+        
         // Forzar reflow antes de la animación
         const icon = $(this).find('.rotate-icon')[0];
         icon.style.transition = 'none';
-        icon.offsetHeight; // Forzar reflow
+        icon.offsetHeight;
         icon.style.transition = 'transform 0.3s ease-in-out';
         
-        // Incrementar contador y aplicar clases
-        setMenuClassNames(++menuClickCount);
-
-        // Ajustar la rotación del ícono para que sea consistente y en sentido antihorario
+        // Incrementar contador considerando si tiene submenú
+        if (hasSubmenu) {
+            menuClickCount = (menuClickCount + 1) % 3;
+        } else {
+            menuClickCount = (menuClickCount + 1) % 2;
+        }
+        
+        setMenuClassNames(menuClickCount);
         updateMenuButtonState();
     });
 
