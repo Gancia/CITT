@@ -1767,7 +1767,7 @@ button {
   @media (max-width: 767px) {
     #app-container.main-hidden .main-menu,
     #app-container.menu-hidden .main-menu {
-      transform: translateX(-90px); } }
+      transform: translateX(-100px); } }
 
 #app-container.main-hidden.sub-hidden .sub-menu,
 #app-container.menu-hidden .sub-menu {
