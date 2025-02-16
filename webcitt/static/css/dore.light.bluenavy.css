@@ -1665,7 +1665,9 @@ button {
           font-size: 13px;
           display: block;
           padding: 8px 0;
-          margin-bottom: 10px; }
+          margin-bottom: 10px; 
+          margin-left: -10px;
+        }
           .menu .sub-menu ul li a span {
             vertical-align: middle;
             height: 16px; }

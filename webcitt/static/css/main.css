@@ -12,7 +12,7 @@
   --button-text-color: #fff;
 
   /* Colores principales */
-  --theme-color-1: #126937;
+  --theme-color-1: #006633;
   --theme-color-2: #116133;
   --theme-color-3: #FECE00;
   --theme-color-4: #FFFFFF;
@@ -359,12 +359,14 @@ a:hover {
 .menu .sub-menu ul.inner-level-menu li i {
   color: var(--theme-color-5) !important;
   font-family: var(--content-font-family);
+  
 }
 
 .menu .sub-menu ul.inner-level-menu li.active a,
 .menu .sub-menu ul.inner-level-menu li.active i,
 .menu .sub-menu ul.inner-level-menu li a:hover {
   color: var(--theme-color-1) !important;
+  font-weight: 900;
 }
 
 /* Iconos en el header con color blanco */
@@ -754,7 +756,7 @@ main {
 /* Estilo para subsección activa en el menú secundario */
 .menu .sub-menu ul li a.subsection-active {
   color: var(--theme-color-1) !important;
-  font-weight: 500;
+  font-weight: 900;
 }
 
 .menu .sub-menu ul li a.subsection-active span {

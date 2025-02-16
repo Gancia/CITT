@@ -34,12 +34,26 @@ urlpatterns = [
     path('incubadora/proyectos_incubados/', views.incubadora_proyectos_incubados_view, name='incubadora_proyectos_incubados'),
     
     
-    
+# Unidades Experimentales   
     path('uexperimentales/', views.uexperimentales_view, name='uexperimentales'),
-    path('uexperimentales/centro-alonso/', views.uexperimentales_centro_alonso_view, name='uexperimentales_centro_alonso'),
-    path('uexperimentales/centro-fransisco/', views.uexperimentales_centro_fransisco_view, name='uexperimentales_centro_fransisco'),
-    path('uexperimentales/realidad-aumentada/', views.uexperimentales_realidad_aumentada_view, name='uexperimentales_realidad_aumentada'),
+# Unidades Experimentales_San Francisco
+    path('uexperimentales/sanfrancisco/sobre/', views.uexperimentales_sanfrancisco_sobre_view, name='uexperimentales_sanfrancisco_sobre'),
+    path('uexperimentales/sanfrancisco/areas_especialiazacion/', views.uexperimentales_sanfrancisco_areas_especializacion_view, name='uexperimentales_sanfrancisco_areas_especializacion'),
+    path('uexperimentales/sanfrancisco/recursos/', views.uexperimentales_sanfrancisco_recursos_view, name='uexperimentales_sanfrancisco_recursos'),
+    path('uexperimentales/sanfrancisco/servicios/', views.uexperimentales_sanfrancisco_servicios_view, name='uexperimentales_sanfrancisco_servicios'),
+    path('uexperimentales/sanfrancisco/resultados/', views.uexperimentales_sanfrancisco_resultados_view, name='uexperimentales_sanfrancisco_resultados'),
+     path('uexperimentales/sanfrancisco/contacto/', views.uexperimentales_sanfrancisco_contacto_view, name='uexperimentales_sanfrancisco_contacto'),
+
+# Unidades Experimentales Smartlab
+    path('uexperimentales/smartlab/sobre', views.uexperimentales_smartlab_sobre_view, name='uexperimentales_smartlab_sobre'),
+    path('uexperimentales/smartlab/areas_especializacion', views.uexperimentales_smartlab_areas_especializacion_view, name='uexperimentales_smartlab_areas_especializacion'),
+    path('uexperimentales/smartlab/recursos', views.uexperimentales_smartlab_recursos_view, name='uexperimentales_smartlab_recursos'),
+    path('uexperimentales/smartlab/servicios', views.uexperimentales_smartlab_servicios_view, name='uexperimentales_smartlab_servicios'),
+    path('uexperimentales/smartlab/resultados', views.uexperimentales_smartlab_resultados_view, name='uexperimentales_smartlab_resultados'),
+    path('uexperimentales/smartlab/contacto', views.uexperimentales_smartlab_contacto_view, name='uexperimentales_smartlab_contacto'),
+
     path('uexperimentales/smartdatalab/', views.uexperimentales_smartdatalab_view, name='uexperimentales_smartdatalab'),
+    
     
     path('hublab/', views.hublab_view, name='hublab'),
     path('hublab/planta-lacteos', views.hublab_planta_lacteos_view, name='hublab_planta_lacteos'),

@@ -138,21 +138,63 @@ def uexperimentales_view(request):
     return render(request, 'uexperimentales/uexperimentales.html', {
         'seccion_activa': 'uexperimentales'
     })
-
-def uexperimentales_centro_alonso_view(request):
-    return render(request, 'uexperimentales/centro_alonso.html', {
+# Unidades Experimentales_San Francisco
+def uexperimentales_sanfrancisco_sobre_view(request):
+    return render(request, 'uexperimentales/sanfrancisco/sobre.html', {
+        'seccion_activa': 'uexperimentales'
+    })
+def uexperimentales_sanfrancisco_areas_especializacion_view(request):
+    return render(request, 'uexperimentales/sanfrancisco/areas_especializacion.html', {
+        'seccion_activa': 'uexperimentales'
+    })
+def uexperimentales_sanfrancisco_recursos_view(request):
+    return render(request, 'uexperimentales/sanfrancisco/recursos.html', {
+        'seccion_activa': 'uexperimentales'
+    })
+def uexperimentales_sanfrancisco_servicios_view(request):
+    return render(request, 'uexperimentales/sanfrancisco/servicios.html', {
+        'seccion_activa': 'uexperimentales'
+    })
+def uexperimentales_sanfrancisco_resultados_view(request):
+    return render(request, 'uexperimentales/sanfrancisco/resultados.html', {
+        'seccion_activa': 'uexperimentales'
+    })
+def uexperimentales_sanfrancisco_contacto_view(request):
+    return render(request, 'uexperimentales/sanfrancisco/contacto.html', {
         'seccion_activa': 'uexperimentales'
     })
 
-def uexperimentales_centro_fransisco_view(request):
-    return render(request, 'uexperimentales/centro_fransisco.html', {
+
+# Unidades Experimentales Smart Lab
+def uexperimentales_smartlab_sobre_view(request):
+    return render(request, 'uexperimentales/smartlab/sobre.html', {
+        'seccion_activa': 'uexperimentales'
+    })
+def uexperimentales_smartlab_areas_especializacion_view(request):
+    return render(request, 'uexperimentales/smartlab/areas_especializacion.html', {
+        'seccion_activa': 'uexperimentales'
+    })
+def uexperimentales_smartlab_recursos_view(request):
+    return render(request, 'uexperimentales/smartlab/recursos.html', {
+        'seccion_activa': 'uexperimentales'
+    })
+def uexperimentales_smartlab_servicios_view(request):
+    return render(request, 'uexperimentales/smartlab/servicios.html', {
+        'seccion_activa': 'uexperimentales'
+    })
+def uexperimentales_smartlab_resultados_view(request):
+    return render(request, 'uexperimentales/smartlab/resultados.html', {
+        'seccion_activa': 'uexperimentales'
+    })
+def uexperimentales_smartlab_contacto_view(request):
+    return render(request, 'uexperimentales/smartlab/contacto.html', {
         'seccion_activa': 'uexperimentales'
     })
 
-def uexperimentales_realidad_aumentada_view(request):
-    return render(request, 'uexperimentales/realidad_aumentada.html', {
-        'seccion_activa': 'uexperimentales'
-    })
+
+
+
+
 
 def uexperimentales_smartdatalab_view(request):
     return render(request, 'uexperimentales/smartdatalab.html', {

@@ -1,312 +1,323 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Orígenes - HubLab{% endblock %}
+
 
 {% block content %}
-<div class="container-fluid disable-text-selection">
-  <div class="row">
-      <div class="col-12">
+<div class="container-fluid">
+    <div class="row ">
+        <div class="col-12 survey-app text-center">
+            <div class="mb-2">
+                <h1>UNIDADES EXPERIMENTALES</h1>
+            </div>
+            <div>
+                <h3>El CITT busca crear condiciones para que los resultados de la investigación sean transferidos a la sociedad para generar innovación; promoviendo la vinculación y la capacitación.
+                </h3>
+            </div>
 
-          <div class="mb-3">
-              <h1>HUBLAB</h1>
+
+            <ul class="nav nav-tabs separator-tabs ml-0 mb-5" role="tablist">
+            </ul>
+             <div class="position-relative mb-3">
+                <video id="my-video" class="video-js card-img video-content" controls
+                    preload="auto" poster="{% static 'img/social/header3.jpg' %}"
+                    data-setup="{}">
+                    <source
+                        src="https://virprot.com/videos/smartfactory.mp4"
+                        type='video/mp4'>
+                </video>
+            </div>
+        </div>
+    </div>
 
 
-              <nav class="breadcrumb-container d-none d-sm-block d-lg-inline-block" aria-label="breadcrumb">
-                  <ol class="breadcrumb pt-0">
-                      <li class="breadcrumb-item">
-                          <a href="#">Home</a>
-                      </li>
-                      <li class="breadcrumb-item">
-                          <a href="#">Library</a>
-                      </li>
-                      <li class="breadcrumb-item active" aria-current="page">Data</li>
-                  </ol>
-              </nav>
-          </div>
-          <div class="mb-2">
-              <a class="btn pt-0 pl-0 d-inline-block d-md-none" data-toggle="collapse" href="#displayOptions"
-                  role="button" aria-expanded="true" aria-controls="displayOptions">
-                  Display Options
-                  <i class="simple-icon-arrow-down align-middle"></i>
-              </a>
-              <div class="d-md-block collapse show" id="displayOptions">
-                  <span class="mr-3 mb-2 d-inline-block float-md-left">
 
-                      <a href="#" class="mr-2 view-icon">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
-                              <path class="view-icon-svg" d="M17.5,3H6.5a.5.5,0,0,1,0-1h11a.5.5,0,0,1,0,1Z" />
-                              <path class="view-icon-svg"
-                                  d="M3,2V3H1V2H3m.12-1H.88A.87.87,0,0,0,0,1.88V3.12A.87.87,0,0,0,.88,4H3.12A.87.87,0,0,0,4,3.12V1.88A.87.87,0,0,0,3.12,1Z" />
-                              <path class="view-icon-svg"
-                                  d="M3,9v1H1V9H3m.12-1H.88A.87.87,0,0,0,0,8.88v1.24A.87.87,0,0,0,.88,11H3.12A.87.87,0,0,0,4,10.12V8.88A.87.87,0,0,0,3.12,8Z" />
-                              <path class="view-icon-svg"
-                                  d="M3,16v1H1V16H3m.12-1H.88a.87.87,0,0,0-.88.88v1.24A.87.87,0,0,0,.88,18H3.12A.87.87,0,0,0,4,17.12V15.88A.87.87,0,0,0,3.12,15Z" />
-                              <path class="view-icon-svg"
-                                  d="M17.5,10H6.5a.5.5,0,0,1,0-1h11a.5.5,0,0,1,0,1Z" />
-                              <path class="view-icon-svg"
-                                  d="M17.5,17H6.5a.5.5,0,0,1,0-1h11a.5.5,0,0,1,0,1Z" /></svg>
-                      </a>
-                      <a href="#" class="mr-2 view-icon active">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
-                              <path class="view-icon-svg"
-                                  d="M7,2V8H1V2H7m.12-1H.88A.87.87,0,0,0,0,1.88V8.12A.87.87,0,0,0,.88,9H7.12A.87.87,0,0,0,8,8.12V1.88A.87.87,0,0,0,7.12,1Z" />
-                              <path class="view-icon-svg"
-                                  d="M17,2V8H11V2h6m.12-1H10.88a.87.87,0,0,0-.88.88V8.12a.87.87,0,0,0,.88.88h6.24A.87.87,0,0,0,18,8.12V1.88A.87.87,0,0,0,17.12,1Z" />
-                              <path class="view-icon-svg"
-                                  d="M7,12v6H1V12H7m.12-1H.88a.87.87,0,0,0-.88.88v6.24A.87.87,0,0,0,.88,19H7.12A.87.87,0,0,0,8,18.12V11.88A.87.87,0,0,0,7.12,11Z" />
-                              <path class="view-icon-svg"
-                                  d="M17,12v6H11V12h6m.12-1H10.88a.87.87,0,0,0-.88.88v6.24a.87.87,0,0,0,.88.88h6.24a.87.87,0,0,0,.88-.88V11.88a.87.87,0,0,0-.88-.88Z" />
-                          </svg>
-                      </a>
-                  </span>
-                  <div class="d-block d-md-inline-block">
-                      <div class="btn-group float-md-left mr-1 mb-1">
-                          <button class="btn btn-outline-dark btn-xs dropdown-toggle" type="button"
-                              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Filtrar por Unidad Experimental
-                          </button>
-                          <div class="dropdown-menu">
-                              <a class="dropdown-item" href="#">Realidad Extendida</a>
-                              <a class="dropdown-item" href="#">Smart Process Lab</a>
-                              <a class="dropdown-item" href="#">FabLab</a>
-                              <a class="dropdown-item" href="#">Smart Data Lab</a>
-                              <a class="dropdown-item" href="#">Centro experimental San Francisco</a>
-                              <a class="dropdown-item" href="#">Centro experimental Alonso Tadeo</a>
-                              <a class="dropdown-item" href="#">Turismo</a>
-                          </div>
-                      </div>
-                      <div class="btn-group float-md-left mr-1 mb-1">
-                          <button class="btn btn-outline-dark btn-xs dropdown-toggle" type="button"
-                              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Filtrar por categoria
-                          </button>
-                          <div class="dropdown-menu">
-                              <a class="dropdown-item" href="#">Laboratorio real</a>
-                              <a class="dropdown-item" href="#">Laboratorio virtual</a>
-                              <a class="dropdown-item" href="#">Software especializado</a>
-                              <a class="dropdown-item" href="#">Simulación</a>
-                          </div>
-                      </div>
 
-                      <div class="search-sm d-inline-block float-md-left mr-1 mb-1 align-top">
-                          <input placeholder="Search...">
-                      </div>
-                  </div>
-                  <div class="float-md-right">
-                      <span class="text-muted text-small">Displaying 1-10 of 210 items </span>
-                      <button class="btn btn-outline-dark btn-xs dropdown-toggle" type="button"
-                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          20
-                      </button>
-                      <div class="dropdown-menu dropdown-menu-right">
-                          <a class="dropdown-item" href="#">10</a>
-                          <a class="dropdown-item active" href="#">20</a>
-                          <a class="dropdown-item" href="#">30</a>
-                          <a class="dropdown-item" href="#">50</a>
-                          <a class="dropdown-item" href="#">100</a>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="separator mb-5"></div>
-      </div>
-  </div>
 
-  <div class="row list disable-text-selection" data-check-all="checkAll">
+    <div class="tab-content active">
 
-      <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
-          <div class="card">
-              <div class="position-relative">
-                  <a href="{% url 'hublab_planta_lacteos' %}"><img class="card-img-top" src="{% static 'img/cards/lacteos.png' %}"
-                          alt="Card image cap">
-                  <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">Disponible</span>
-              </div>
-              <div class="card-body">
-                  <div class="row">
-                      <div class="col-12">
-                          
-                              <p class="list-item-heading mb-4 pt-1">Planta Industrial de producción de lacteos</p>
-                          </a>
-                          <footer>
-                              <p class="text-muted text-small mb-0 font-weight-light">Categoría: Laboratorio real</p>
-                              <p class="text-muted text-small mb-0 font-weight-light">Unidad Experimental: C.E-San Francisco</p>
-                              <p class="text-muted text-small mb-0 font-weight-light">Diseñado para estudiantes de Alimentos, logística, Industrial, Administración, procesos y afines</p>   
-                              <p class="text-muted text-small mb-0 font-weight-light">Actualizado: enero 2025</p>
-                              <p class="text-muted text-small mb-0 font-weight-light">Visitas 18.080</p>
-                          </footer>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+         <div class="player" data-plyr-provider="youtube" data-plyr-embed-id="qyjwyQXVY1g"></div>
 
-      <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
-          <div class="card">
-              <div class="position-relative">
-                  <a href="#"><img class="card-img-top" src="{% static 'img/cards/proyecto2 1.png' %}"
-                          alt="Card image cap"></a>
-                  <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">Disponible</span>
-              </div>
-              <div class="card-body">
-                  <div class="row">
-                      <div class="col-12">
-                          <a href="#">
-                              <p class="list-item-heading mb-4 pt-1">Laboratorio virtual para diseño y análisis de procesos industriales</p>
-                          </a>
-                          <footer>
-                              <p class="text-muted text-small mb-0 font-weight-light">Categoría: Laboratorio virtual</p>
-                              <p class="text-muted text-small mb-0 font-weight-light">Unidad Experimental: Lab-Realidad Extendida</p>
-                              <p class="text-muted text-small mb-0 font-weight-light">Diseñado para estudiantes de logística, Industrial, Administración, procesos y afines</p>   
-                              <p class="text-muted text-small mb-0 font-weight-light">Actualizado: enero 2025</p>
-                              <p class="text-muted text-small mb-0 font-weight-light">Visitas 11.360</p>
-                          </footer>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+     </div>
 
-      <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
-          <div class="card">
-              <div class="position-relative">
-                  <a href="#"><img class="card-img-top" src="{% static 'img/cards/flexsim.png' %}"
-                          alt="Card image cap"></a>
-                  <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">En desarrollo</span>
-              </div>
-              <div class="card-body">
-                  <div class="row">
-                      <div class="col-12">
-                          <a href="#">
-                              <p class="list-item-heading mb-4 pt-1">Software de Simulación de procesos Industriales FLEXSIM</p>
-                          </a>
-                          <footer>
-                              <p class="text-muted text-small mb-0 font-weight-light">Categoría: Software</p>
-                              <p class="text-muted text-small mb-0 font-weight-light">Unidad Experimental: Lab-Realidad Extendida</p>
-                              <p class="text-muted text-small mb-0 font-weight-light">Diseñado para estudiantes de logística, Industrial, Administración, procesos y afines</p>   
-                              <p class="text-muted text-small mb-0 font-weight-light">Actualizado: enero 2025</p>
-                              <p class="text-muted text-small mb-0 font-weight-light">Visitas 11.360</p>
-                          </footer>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
 
-      <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
-          <div class="card">
-              <div class="position-relative">
-                  <a href="#"><img class="card-img-top" src="{% static 'img/cards/tulcan.png' %}"
-                          alt="Card image cap"></a>
-                  <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">Próximamente</span>
-              </div>
-              <div class="card-body">
-                  <div class="row">
-                      <div class="col-12">
-                          <a href="#">
-                              <p class="list-item-heading mb-4 pt-1">Recorrido Turimo Cementerio ciudad de Tulcán</p>
-                          </a>
-                          <footer>
-                              <p class="text-muted text-small mb-0 font-weight-light">Categoría: Laboratorio Real</p>
-                              <p class="text-muted text-small mb-0 font-weight-light">Unidad Experimental: Lab-Turismo</p>
-                              <p class="text-muted text-small mb-0 font-weight-light">Diseñado para estudiantes de turismo, ambiental y afines</p>   
-                              <p class="text-muted text-small mb-0 font-weight-light">Actualizado: enero 2025</p>
-                              <p class="text-muted text-small mb-0 font-weight-light">Visitas 11.360</p>
-                          </footer>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+    <h5 class="mb-4">Sectores que trabajamos</h5>
 
-      <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
-          <div class="card">
-              <div class="position-relative">
-                  <a href="#"><img class="card-img-top" src="{% static 'img/cards/tulcan.png' %}"
-                          alt="Card image cap"></a>
-                  <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">Próximamente</span>
-              </div>
-              <div class="card-body">
-                  <div class="row">
-                      <div class="col-12">
-                          <a href="#">
-                              <p class="list-item-heading mb-4 pt-1">Recorrido Turimo Cementerio ciudad de Tulcán</p>
-                          </a>
-                          <footer>
-                              <p class="text-muted text-small mb-0 font-weight-light">Categoría: Laboratorio Real</p>
-                              <p class="text-muted text-small mb-0 font-weight-light">Unidad Experimental: Lab-Turismo</p>
-                              <p class="text-muted text-small mb-0 font-weight-light">Diseñado para estudiantes de turismo, ambiental y afines</p>   
-                              <p class="text-muted text-small mb-0 font-weight-light">Actualizado: enero 2025</p>
-                              <p class="text-muted text-small mb-0 font-weight-light">Visitas 11.360</p>
-                          </footer>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+    <div class="row mb-4">
+        <div class="col-md-12 mb-4 pl-0 pr-0">
+            <div class="slick-container">
+                <div class="slick basic" >
 
-      <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
-          <div class="card">
-              <div class="position-relative">
-                  <a href="#"><img class="card-img-top" src="{% static 'img/cards/lacteos.png' %}"
-                          alt="Card image cap"></a>
-                  <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">Disponible</span>
-              </div>
-              <div class="card-body">
-                  <div class="row">
-                      <div class="col-12">
-                          <a href="#">
-                              <p class="list-item-heading mb-4 pt-1">Planta Industrial de producción de lacteos</p>
-                          </a>
-                          <footer>
-                              <p class="text-muted text-small mb-0 font-weight-light">Categoría: Laboratorio real</p>
-                              <p class="text-muted text-small mb-0 font-weight-light">Unidad Experimental: C.E-San Francisco</p>
-                              <p class="text-muted text-small mb-0 font-weight-light">Diseñado para estudiantes de Alimentos, logística, Industrial, Administración, procesos y afines</p>   
-                              <p class="text-muted text-small mb-0 font-weight-light">Actualizado: enero 2025</p>
-                              <p class="text-muted text-small mb-0 font-weight-light">Visitas 18.080</p>
-                          </footer>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+                    <div class="card d-flex flex-row">
+                        <div class="w-50 position-relative">
+                            <img class="card-img-left" src="{% static 'img/cards/industry.jpg' %}" alt="Card image cap">
+                            <span
+                                class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                        </div>
+                        <div class="w-50">
+                            <div class="card-body">
+                                <h2 >Industria 4.0</h2>
+                                Mejora procesos, reduce tiempos de espera, aumenta la seguridad laboral, ahorra costes y facilita los procesos de entrenamiento y formación mediante el uso de tecnologías 4.0
+                                <br>
+                                <br>
+                                <ul >
+                                    <li>Realidad Extendida</li>
+                                    <li>Simulación</li>
+                                    <li>Inteligencia artificial</li>
+                                    <li>Analitica de datos</li>
+                                    <li>Automatización</li>
+                                    <li>Fabricación aditiva</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card d-flex flex-row">
+                        <div class="w-50 position-relative">
+                            <img class="card-img-left" src="img/cards/ods.webp" alt="Card image cap">
+                            <span
+                                class="badge badge-pill badge-theme-1 position-absolute badge-top-left">Sector 1</span>
+                        </div>
+                        <div class="w-50">
+                            <div class="card-body">
+                                <h2 >Non profit y ODS</h2>
+                                Alinea los objetivos de tu Empresa con los ODS y logra experiencias impresionantes para sensibilizar, concienciar y educar a beneficiarios  comunicando de una forma diferencial tus proyectos y misión.
+                                <br>
+                                <br>
+                                <ul >
+                                    <li>Preliminary thinking systems</li>
+                                    <li>Bandwidth efficient</li>
+                                    <li>Green space</li>
+                                    <li>Social impact</li>
+                                    <li>Thought partnership</li>
+                                    <li>Fully ethical life</li>
+                                </ul>
 
-      <div class="col-12">
-          <nav class="mt-4 mb-3">
-              <ul class="pagination justify-content-center mb-0">
-                  <li class="page-item ">
-                      <a class="page-link first" href="#">
-                          <i class="simple-icon-control-start"></i>
-                      </a>
-                  </li>
-                  <li class="page-item ">
-                      <a class="page-link prev" href="#">
-                          <i class="simple-icon-arrow-left"></i>
-                      </a>
-                  </li>
-                  <li class="page-item active">
-                      <a class="page-link" href="#">1</a>
-                  </li>
-                  <li class="page-item ">
-                      <a class="page-link" href="#">2</a>
-                  </li>
-                  <li class="page-item">
-                      <a class="page-link" href="#">3</a>
-                  </li>
-                  <li class="page-item ">
-                      <a class="page-link next" href="#" aria-label="Next">
-                          <i class="simple-icon-arrow-right"></i>
-                      </a>
-                  </li>
-                  <li class="page-item ">
-                      <a class="page-link last" href="#">
-                          <i class="simple-icon-control-end"></i>
-                      </a>
-                  </li>
-              </ul>
-          </nav>
-      </div>
-  </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card d-flex flex-row">
+                        <div class="w-50 position-relative">
+                            <img class="card-img-left" src="img/cards/realdiadvirtual.jpg" alt="Card image cap">
+                            <span
+                                class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                        </div>
+                        <div class="w-50">
+                            <div class="card-body">
+                                <h2 >Educación</h2>
+                                Complementa los procesos educativos de formacn y capación para estudiantes y empresas con la oferta de productos y servicios de los laboratorios con equipamiento en ultima tecnología.
+                                <br>
+                                <br>
+                                <ul >
+                                    <li>Laboratorio XR</li>
+                                    <li>Laboratorio Fablab</li>
+                                    <li>Laboratorio Smart Data Lab</li>
+                                    <li>Laboratorio de Turismo</li>
+                                    <li>Laboratorio de Agropecuaria</li>
+                                    <li>Centros experimentales</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card d-flex flex-row">
+                        <div class="w-50 position-relative">
+                            <img class="card-img-left" src="img/cards/thumb-4.jpg" alt="Card image cap">
+                            <span
+                                class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                        </div>
+                        <div class="w-50">
+                            <div class="card-body">
+                                <h2 class="mb-4">Cultura</h2>
+                                Crea espacios de entretenimiento cultural inmersivos, colaborativos e innovadores, que lleven la experiencia de tus usuarios a otro nivel mientras obtienes un reveneu de tu inversión.
+                                <br>
+                                <br>
+                                <ul >
+                                    <li>Laboratorio XR</li>
+                                    <li>Laboratorio Fablab</li>
+                                    <li>Laboratorio Smart Data Lab</li>
+                                    <li>Laboratorio de Turismo</li>
+                                    <li>Laboratorio de Agropecuaria</li>
+                                    <li>Centros experimentales</li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card d-flex flex-row">
+                        <div class="w-50 position-relative">
+                            <img class="card-img-left" src="img/cards/upec1.jpg" alt="Card image cap">
+                            <span
+                                class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                        </div>
+                        <div class="w-50">
+                            <div class="card-body">
+                                <h2 >Educación</h2>
+                                Complementa los procesos educativos de formacn y capación para estudiantes y empresas con la oferta de productos y servicios de los laboratorios con equipamiento en ultima tecnología.
+                                <br>
+                                <br>
+                                <ul >
+                                    <li>Laboratorio XR</li>
+                                    <li>Laboratorio Fablab</li>
+                                    <li>Laboratorio Smart Data Lab</li>
+                                    <li>Laboratorio de Turismo</li>
+                                    <li>Laboratorio de Agropecuaria</li>
+                                    <li>Centros experimentales</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="slick-navs-dots slider-nav text-center">
+                    <a href="#" class="left-arrow">
+                        <i class="simple-icon-arrow-left"></i>
+                    </a>
+                    <div class="slider-dot-container"></div>
+                    <a href="#" class="right-arrow">
+                        <i class="simple-icon-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-12 col-xl-8">
+            <div class="card mb-4">
+                <div class="card-body">
+
+                    <div class="glide gallery mb-4">
+                        <div class="glide__track" data-glide-el="track">
+                            <div class="glide__slides Active">
+                                <a href="img/cards/upec1.jpg">
+                                    <img class="card-img" src="img/cards/upec1.jpg" alt="First image">
+                                </a>
+                                <a href="img/cards/upec2.png">
+                                    <img class="card-img" src="img/cards/upec2.png" alt="Second image">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-5">
+                        <h2 class="card-title">¿Quiénes somos?</h2>
+                        <p>
+                            El CITT es uno de los centros de investigación, innovación y transferencia de tecnología más modernos del norte del país. Creado por la Universidad Politécnica Estatal del Carchi, donde se encuentran laboratorios y equipos de vanguardia en diversas áreas del conocimiento.
+
+                            El Centro de Innovación & Transferencia de Tecnología (CITT) se crea como una Oficina de Transferencia de Tecnología. Organismo clave para detonar el desarrollo económico y la competitividad en nuestra Institución y en nuestro país.
+                            Es un centro de investigación regional y nacional, destacándose por brindar a los investigadores todas las facilidades para que puedan ejecutar programas y proyectos investigativos, buscando la solución de problemas sociales, productivos, tecnológicos y ambientales del país, articulando los ámbitos de docencia, investigación científica/ innovación, posgrados y transferencia de tecnología.
+                        </p>
+
+                    </div>
+
+                    <div class="position-relative mb-3">
+                        <video id="my-video" class="video-js card-img video-content" controls
+                            preload="auto" poster="img/cards/upec3.jpg"
+                            data-setup="{}">
+                            <source
+                                src="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_30fps_normal.mp4"
+                                type='video/mp4'>
+                        </video>
+                    </div>
+                    <div class="mb-5">
+                        <h2 class="card-title">Objetivos del CITT</h2>
+                        <p>
+                            El objetivo principal del CITT es fortalecer la investigación, innovación y transferencia de tecnología a través de la articulación de la academia con los Objetivos de Desarrollo Sostenible, proponiendo estrategias y monitoreo permanente de programas, proyectos e indicadores que tributen al desarrollo de la región.
+                            Ofrecer sus instalaciones a investigadores para que desarrollen su actividad científica; fortaleciendo la generación y transferencia del conocimiento; para solucionar los problemas de la comunidad y la sociedad.
+                            Se lo plantea hacer por medio de:
+                        </p>
+                        Se lo plantea hacer por medio de:
+                    </div>
+                    <div class="mb-5">
+                        <ul>
+                            <li>La transferencia de la tecnología a otros ámbitos académicos, productivos y sociales.</li>
+                            <li>La captación de investigadores nacionales e internacionales.</li>
+                            <li>La generación de procesos de innovación social, técnica y tecnológica.</li>
+                            <li>El desarrollo científico entre la sociedad civil, empresas e instituciones públicas y privadas, nacionales y extranjeras.</li>
+                            <li>La oferta de los resultados obtenidos a la comunidad y sectores productivos.</li>
+
+                        </ul>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-12 col-xl-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Policies</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#" class="btn-link">Preliminary thinking systems</a></li>
+                        <li><a href="#" class="btn-link">Bandwidth efficient</a></li>
+                        <li><a href="#" class="btn-link">Green space</a></li>
+                        <li><a href="#" class="btn-link">Social impact</a></li>
+                        <li><a href="#" class="btn-link">Thought partnership</a></li>
+                        <li><a href="#" class="btn-link">Fully ethical life</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Categories</h5>
+
+                    <div class="d-flex flex-row align-items-center mb-3">
+                        <a class="d-block position-relative" href="#">
+                            <i class="iconsminds-director large-icon initial-height"></i>
+                        </a>
+                        <div class="pl-3 pt-2 pr-2 pb-2">
+                            <a href="#">
+                                <p class="list-item-heading mb-1">Using the Template</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-3">
+                        <a class="d-block position-relative" href="#">
+                            <i class="iconsminds-security-settings large-icon initial-height"></i>
+                        </a>
+                        <div class="pl-3 pt-2 pr-2 pb-2">
+                            <a href="#">
+                                <p class="list-item-heading mb-1">Security</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-3">
+                        <a class="d-block position-relative" href="#">
+                            <i class="iconsminds-male large-icon initial-height"></i>
+                        </a>
+                        <div class="pl-3 pt-2 pr-2 pb-2">
+                            <a href="#">
+                                <p class="list-item-heading mb-1">Account Settings</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center">
+                        <a class="d-block position-relative" href="#">
+                            <i class="iconsminds-newspaper large-icon initial-height"></i>
+                        </a>
+                        <div class="pl-3 pt-2 pr-2 pb-2">
+                            <a href="#">
+                                <p class="list-item-heading mb-1">Policies and Docs</p>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
 </div>
 {% endblock %}
 

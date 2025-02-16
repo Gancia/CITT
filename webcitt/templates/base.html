@@ -8,22 +8,22 @@
       content="width=device-width, initial-scale=1, maximum-scale=1" />
 
     <!-- Archivos CSS -->
-    <link
-      rel="stylesheet"
-      href="{% static 'font/iconsmind-s/css/iconsminds.css' %}" />
-    <link
-      rel="stylesheet"
-      href="{% static 'font/simple-line-icons/css/simple-line-icons.css' %}" />
+    <link rel="stylesheet" href="{% static 'font/iconsmind-s/css/iconsminds.css' %}" />
+    <link rel="stylesheet" href="{% static 'font/simple-line-icons/css/simple-line-icons.css' %}" />
     <link rel="stylesheet" href="{% static 'css/vendor/bootstrap.min.css' %}" />
-    <link
-      rel="stylesheet"
-      href="{% static 'css/vendor/bootstrap.rtl.only.min.css' %}" />
-    <link
-      rel="stylesheet"
-      href="{% static 'css/vendor/perfect-scrollbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/vendor/bootstrap.rtl.only.min.css' %}" />
+    
+    <link rel="stylesheet" href="{% static 'css/vendor/perfect-scrollbar.css' %}" />
     <link rel="stylesheet" href="{% static 'css/dore.light.bluenavy.css' %}" />
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/vendor/slick.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/vendor/select2.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/vendor/select2-bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/vendor/component-custom-switch.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/vendor/glide.core.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/vendor/baguetteBox.min.css' %}" />
 
     <title>Portal CITT</title>
   </head>
@@ -111,21 +111,21 @@
           <ul class="list-unstyled">
             <li class="{% if seccion_activa == 'ott' %}active{% endif %}">
               <a href="{% url 'ott' %}" data-link="ott">
-                <i class="iconsminds-police-station"></i>
+                <i class="iconsminds-chemical"></i>
                 <span style="display: block;">OTT</span>
               </a>
             </li>
             <li
               class="{% if seccion_activa == 'incubadora' %}active{% endif %}">
               <a href="{% url 'incubadora' %}" data-link="incubadora">
-                <i class="iconsminds-plant"></i>
+                <i class="iconsminds-monitor---laptop"></i>
                 <span style="display: block;">Incubadora</span>
               </a>
             </li>
             <li
               class="{% if seccion_activa == 'uexperimentales' %}active{% endif %}">
               <a href="{% url 'uexperimentales' %}" data-link="uexperimentales">
-                <i class="iconsminds-chemical"></i>
+                <i class="iconsminds-cpu"></i>
                 <span style="display: block;">Unidades Experimentales</span>
               </a>
             </li>
@@ -146,8 +146,8 @@
       </div>
 
       <!-- Menú Secundario -->
-      <div class="sub-menu">
-        <div class="scroll">
+      <div class="sub-menu" >
+        <div class="scroll" style="margin-left: -15px;">
           <!-- Submenú OTT -->
           <ul class="list-unstyled" data-link="ott">
             <li>
@@ -352,55 +352,108 @@
           </ul>
 
           <!-- Submenú Unidades Experimentales-->
-          <ul class="list-unstyled" data-link="uexperimentales">
+          <ul class="list-unstyled" data-link="uexperimentales" id="uexperimentales">
             <li>
-              <a href="#" data-toggle="collapse" data-target="#collapse-ue-centros"
-                aria-expanded="false"
-                aria-controls="#collapse-ue-centros"
-                class="rotate-arrow-icon opacity-50">
+              <a href="" data-toggle="collapse" data-target="#collapse-ue-centro1"
+                aria-expanded="true"
+                aria-controls="#collapse-ue-centro1"
+                class="rotate-arrow-icon opacity-5">
                 <i class="simple-icon-arrow-down"></i>
-                <span class="d-inline-block">Centros Experimentales</span>
+                <span class="d-inline-block p-0 pb-2 font-weight-bold">C.E-SAN FRANCISCO</span>
               </a>
-              <div id="collapse-ue-centros" class="collapse">
-                <ul class="list-unstyled inner-level-menu">
+              <div id="collapse-ue-centro1" class="collapse" data-parent="#uexperimentales">
+                <ul class="list-unstyled inner-level-menu ">
                   <!-- Pestañas desplegables-->
                   <li>
-                    <a href="{% url 'uexperimentales_centro_fransisco' %}">
-                      <span class="d-inline-block">Centro Experimental San Fransisco</span>
+                    <a href="{% url 'uexperimentales_sanfrancisco_sobre' %}">
+                      <i class="iconsminds-home d-inline-block" style="font-size: 12px; " ></i>
+                      <span class="d-inline-block opacity-50 " style="font-size: 12px; height: 16px ">Sobre el centro</span>
                     </a>
                   </li>
                   <li>
-                    <a href="{% url 'uexperimentales_centro_alonso' %}">
-                      <span class="d-inline-block">Centro Experimental Alonso Tadeo</span>
+                    <a href="{% url 'uexperimentales_sanfrancisco_areas_especializacion' %}">
+                      <i class="iconsminds-synchronize d-inline-block" style="font-size: 12px; " ></i>
+                      <span class="d-inline-block opacity-50 "style="font-size: 12px; height: 16px">Áreas de Especialización</span>
                     </a>
                   </li>
+                  <li>
+                    <a href="{% url 'uexperimentales_sanfrancisco_recursos' %}">
+                      <i class="iconsminds-user d-inline-block" style="font-size: 12px; " ></i>
+                      <span class="d-inline-block opacity-50 "style="font-size: 12px; height: 16px">Recursos</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'uexperimentales_sanfrancisco_servicios' %}">
+                      <i class="iconsminds-idea d-inline-block" style="font-size: 12px; " ></i>
+                      <span class="d-inline-block opacity-50 "style="font-size: 12px; height: 16px">Servicios Ofrecidos</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'uexperimentales_sanfrancisco_resultados' %}">
+                      <i class="iconsminds-start-2 d-inline-block" style="font-size: 12px; " ></i>
+                      <span class="d-inline-block opacity-50 "style="font-size: 12px; height: 16px">Resultados e Impacto</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'uexperimentales_sanfrancisco_contacto' %}">
+                      <i class="iconsminds-location-2 d-inline-block" style="font-size: 12px; " ></i>
+                      <span class="d-inline-block opacity-50 "style="font-size: 12px; height: 16px">Contacto</span>
+                    </a>
+                  </li>
+
                 </ul>
               </div>
             </li>
             <li>
               <a href="#" data-toggle="collapse" data-target="#collapse-ue-laboratorios"
-                aria-expanded="false"
+                aria-expanded="true"
                 aria-controls="#collapse-ue-laboratorios"
-                class="rotate-arrow-icon opacity-50">
+                class="rotate-arrow-icon opacity-5">
                 <i class="simple-icon-arrow-down"></i>
-                <span class="d-inline-block">Laboratorios</span>
+                <span class="d-inline-block p-0 pb-2 font-weight-bold">SMARTLAB 4.0</span>
               </a>
-              <div id="collapse-ue-laboratorios" class="collapse">
+              <div id="collapse-ue-laboratorios" class="collapse" data-parent="#uexperimentales">
+
                 <ul class="list-unstyled inner-level-menu">
                   <!-- Pestañas desplegables-->
                   <li>
-                    <a href="{% url 'uexperimentales_realidad_aumentada' %}">
-                      <i class="iconsminds-monitor---tablet d-inline-block" ></i>
-                      <span class="d-inline-block">Laboratorio RA</span>
+                    <a href="{% url 'uexperimentales_smartlab_sobre' %}">
+                      <i class="iconsminds-home d-inline-block" style="font-size: 12px; " ></i>
+                      <span class="d-inline-block opacity-50 " style="font-size: 12px; height: 16px ">Sobre el centro</span>
                     </a>
                   </li>
                   <li>
-                    <a href="{% url 'uexperimentales_smartdatalab' %}">
-                      <i class="simple-icon-organization d-inline-block"></i>
-                      <span class="d-inline-block">SamrtDataLab</span>
+                    <a href="{% url 'uexperimentales_smartlab_areas_especializacion' %}">
+                      <i class="iconsminds-synchronize d-inline-block" style="font-size: 12px; " ></i>
+                      <span class="d-inline-block opacity-50 "style="font-size: 12px; height: 16px">Áreas de Especialización</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'uexperimentales_smartlab_recursos' %}">
+                      <i class="iconsminds-user d-inline-block" style="font-size: 12px; " ></i>
+                      <span class="d-inline-block opacity-50 "style="font-size: 12px; height: 16px">Recursos</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'uexperimentales_smartlab_servicios' %}">
+                      <i class="iconsminds-idea d-inline-block" style="font-size: 12px; " ></i>
+                      <span class="d-inline-block opacity-50 "style="font-size: 12px; height: 16px">Servicios Ofrecidos</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'uexperimentales_smartlab_resultados' %}">
+                      <i class="iconsminds-start-2 d-inline-block" style="font-size: 12px; " ></i>
+                      <span class="d-inline-block opacity-50 "style="font-size: 12px; height: 16px">Resultados e Impacto</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'uexperimentales_smartlab_contacto' %}">
+                      <i class="iconsminds-location-2 d-inline-block" style="font-size: 12px; " ></i>
+                      <span class="d-inline-block opacity-50 "style="font-size: 12px; height: 16px">Contacto</span>
                     </a>
                   </li>
                 </ul>
+
               </div>
             </li>
           </ul>
@@ -446,7 +499,11 @@
     <script src="{% static 'js/vendor/mousetrap.min.js' %}"></script>
     <script src="{% static 'js/dore.script.js' %}"></script>
     <script src="{% static 'js/scripts.js' %}"></script>
-
+    <script src="{% static 'js/vendor/slick.min.js' %}"></script>
+    <script src="{% static 'js/vendor/glide.min.js' %}"></script>
+    <script src="{% static 'js/vendor/select2.full.js' %}"></script>
+    <script src="{% static 'js/vendor/Sortable.js' %}"></script>
+    <script src="{% static 'js/vendor/Chart.bundle.min.js' %}"></script>
     {% block extra_scripts %}{% endblock %}
   </body>
 </html>
