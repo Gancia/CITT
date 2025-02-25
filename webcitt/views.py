@@ -56,23 +56,23 @@ def incubadora_view(request):
         'seccion_activa': 'incubadora'
     })
 
-def incubadora_comunidad_innovadores_view(request):
-    return render(request, 'incubadora/comunidad_innovadores.html', {
+def incubadora_comunidad_emprendedores_view(request):
+    return render(request, 'incubadora/comunidad_emprendedores.html', {
         'seccion_activa': 'incubadora'
     })
 
-def incubadora_espacios_trabajo_view(request):
-    return render(request, 'incubadora/espacios_trabajo.html', {
+def incubadora_espacios_coworking_view(request):
+    return render(request, 'incubadora/espacios_coworking.html', {
         'seccion_activa': 'incubadora'
     })
 
-def incubadora_foro_colaborativo_view(request):
-    return render(request, 'incubadora/foro_colaborativo.html', {
+def incubadora_foro_emprendedores_view(request):
+    return render(request, 'incubadora/foro_emprendedores.html', {
         'seccion_activa': 'incubadora'
     })
 
-def incubadora_herramientas_tecnologicas_view(request):
-    return render(request, 'incubadora/herramientas_tecnologicas.html', {
+def incubadora_herramientas_innovacion_view(request):
+    return render(request, 'incubadora/herramientas_innovacion.html', {
         'seccion_activa': 'incubadora'
     })
 
@@ -116,8 +116,8 @@ def incubadora_acceso_financiamiento_view(request):
         'seccion_activa': 'incubadora'
     })
 
-def incubadora_emprendedores_destacados_view(request):
-    return render(request, 'incubadora/emprendedores_destacados.html', {
+def incubadora_historias_exito_view(request):
+    return render(request, 'incubadora/historias_exito.html', {
         'seccion_activa': 'incubadora'
     })
 
@@ -128,6 +128,11 @@ def incubadora_historias_impacto_view(request):
 
 def incubadora_proyectos_incubados_view(request):
     return render(request, 'incubadora/proyectos_incubados.html', {
+        'seccion_activa': 'incubadora'
+    })
+
+def incubadora_quienes_somos_view(request):
+    return render(request, 'incubadora/quienes_somos.html', {
         'seccion_activa': 'incubadora'
     })
 
