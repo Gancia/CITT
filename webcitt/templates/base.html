@@ -14,7 +14,9 @@
     <link rel="stylesheet" href="{% static 'css/vendor/bootstrap.rtl.only.min.css' %}" />
     
     <link rel="stylesheet" href="{% static 'css/vendor/perfect-scrollbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/vendor/main1.scss' %}" />
     <link rel="stylesheet" href="{% static 'css/dore.light.bluenavy.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/dore.light.bluenavy.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -28,9 +30,23 @@
     <title>Portal CITT</title>
   </head>
 
-  <body id="app-container" class="menu-default menu-sub-hidden">
+
+  <body id="app-container" class="menu-default ">
+    <style>
+
+#app-container,
+#app-container * {
+    transition: none !important;
+    animation: none !important;
+}
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        document.body.classList.add("menu-sub-hidden");
+    });
+    </script>
     <!-- Navbar -->
-    <nav class="navbar fixed-top">
+    <nav class="navbar fixed-topz">
       <div class="d-flex align-items-center w-100">
         <!-- Sección izquierda -->
         <div class="d-flex align-items-center">
