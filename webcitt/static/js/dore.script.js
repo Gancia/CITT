@@ -4588,3 +4588,4 @@ $.fn.dore = function (options) {
     }
   });
 };
+
