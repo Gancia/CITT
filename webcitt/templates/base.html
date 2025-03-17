@@ -31,7 +31,7 @@
   </head>
 
 
-  <body id="app-container" class="menu-default ">
+  <body id="app-container" class="menu-default">
     <style>
 
 #app-container,
@@ -122,7 +122,7 @@
     <!-- Menú -->
     <div class="menu">
       <!-- Menú Principal -->
-      <div class="main-menu">
+      <div class="main-menu" style="border-radius: 20px !important;">
         <div class="scroll">
           <ul class="list-unstyled">
             <li class="{% if seccion_activa == 'ott' %}active{% endif %}">
@@ -162,7 +162,7 @@
       </div>
 
       <!-- Menú Secundario -->
-      <div class="sub-menu" >
+      <div class="sub-menu" style="border-radius: 20px !important;">
         <div class="scroll" style="margin-left: -15px;">
           <!-- Submenú OTT -->
           <ul class="list-unstyled" data-link="ott">
@@ -375,6 +375,22 @@
 
           <!-- Submenú Unidades Experimentales-->
           <ul class="list-unstyled" data-link="uexperimentales" id="uexperimentales">
+
+            <div style="
+            padding: 10px 15px;
+            margin-left: 25px;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: white;
+            background-color: #197546;
+            box-shadow: 0px 0px 15px rgba(0, 255, 204, 0.5);
+            border-radius: 8px;
+            text-align: center;
+          ">
+            CENTROS EXPERIMENTALES
+          </div>
+
             <li>
               <a href="" data-toggle="collapse" data-target="#collapse-ue-centro1"
                 aria-expanded="true"
@@ -422,10 +438,80 @@
                       <span class="d-inline-block opacity-50 "style="font-size: 12px; height: 16px">Contacto</span>
                     </a>
                   </li>
+                </ul>
+              </div>
+            </li>
+
+            <!-- CENTRO EXPERIMENTAL ALONZO TADEO-->
+            <li>
+              <a href="" data-toggle="collapse" data-target="#collapse-ue-centro2"
+                aria-expanded="true"
+                aria-controls="#collapse-ue-centro2"
+                class="rotate-arrow-icon opacity-5">
+                <i class="simple-icon-arrow-down"></i>
+                <span class="d-inline-block p-0 pb-2 font-weight-bold">C.E-ALONZO TADEO</span>
+              </a>
+              <div id="collapse-ue-centro2" class="collapse" data-parent="#uexperimentales">
+                <ul class="list-unstyled inner-level-menu ">
+                  <!-- Pestañas desplegables-->
+                  <li>
+                    <a href="{% url 'uexperimentales_tadeo_sobre' %}">
+                      <i class="iconsminds-home d-inline-block" style="font-size: 12px; " ></i>
+                      <span class="d-inline-block opacity-50 " style="font-size: 12px; height: 16px ">Sobre el centro</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'uexperimentales_tadeo_areas_especializacion' %}">
+                      <i class="iconsminds-synchronize d-inline-block" style="font-size: 12px; " ></i>
+                      <span class="d-inline-block opacity-50 "style="font-size: 12px; height: 16px">Áreas de Especialización</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'uexperimentales_tadeo_recursos' %}">
+                      <i class="iconsminds-user d-inline-block" style="font-size: 12px; " ></i>
+                      <span class="d-inline-block opacity-50 "style="font-size: 12px; height: 16px">Recursos</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'uexperimentales_tadeo_servicios' %}">
+                      <i class="iconsminds-idea d-inline-block" style="font-size: 12px; " ></i>
+                      <span class="d-inline-block opacity-50 "style="font-size: 12px; height: 16px">Servicios Ofrecidos</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'uexperimentales_tadeo_resultados' %}">
+                      <i class="iconsminds-start-2 d-inline-block" style="font-size: 12px; " ></i>
+                      <span class="d-inline-block opacity-50 "style="font-size: 12px; height: 16px">Resultados e Impacto</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'uexperimentales_tadeo_contacto' %}">
+                      <i class="iconsminds-location-2 d-inline-block" style="font-size: 12px; " ></i>
+                      <span class="d-inline-block opacity-50 "style="font-size: 12px; height: 16px">Contacto</span>
+                    </a>
+                  </li>
 
                 </ul>
               </div>
             </li>
+
+            <div style="
+            
+            padding: 10px 15px;
+            margin-left: 25px;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: white;
+            background-color: #197546;
+            box-shadow: 0px 0px 15px rgba(0, 255, 204, 0.5);
+            border-radius: 8px;
+            text-align: center;
+          ">
+            LABORATORIOS DE INVESTIGACIÓN
+          </div>
+
+
             <li>
               <a href="#" data-toggle="collapse" data-target="#collapse-ue-laboratorios"
                 aria-expanded="true"

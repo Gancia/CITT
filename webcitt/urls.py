@@ -43,7 +43,15 @@ urlpatterns = [
     path('uexperimentales/sanfrancisco/recursos/', views.uexperimentales_sanfrancisco_recursos_view, name='uexperimentales_sanfrancisco_recursos'),
     path('uexperimentales/sanfrancisco/servicios/', views.uexperimentales_sanfrancisco_servicios_view, name='uexperimentales_sanfrancisco_servicios'),
     path('uexperimentales/sanfrancisco/resultados/', views.uexperimentales_sanfrancisco_resultados_view, name='uexperimentales_sanfrancisco_resultados'),
-     path('uexperimentales/sanfrancisco/contacto/', views.uexperimentales_sanfrancisco_contacto_view, name='uexperimentales_sanfrancisco_contacto'),
+    path('uexperimentales/sanfrancisco/contacto/', views.uexperimentales_sanfrancisco_contacto_view, name='uexperimentales_sanfrancisco_contacto'),
+# Unidades Experimentales_Alonso Tadeo
+    path('uexperimentales/tadeo/sobre/', views.uexperimentales_tadeo_sobre_view, name='uexperimentales_tadeo_sobre'),
+    path('uexperimentales/tadeo/areas_especialiazacion/', views.uexperimentales_tadeo_areas_especializacion_view, name='uexperimentales_tadeo_areas_especializacion'),
+    path('uexperimentales/tadeo/recursos/', views.uexperimentales_tadeo_recursos_view, name='uexperimentales_tadeo_recursos'),
+    path('uexperimentales/tadeo/servicios/', views.uexperimentales_tadeo_servicios_view, name='uexperimentales_tadeo_servicios'),
+    path('uexperimentales/tadeo/resultados/', views.uexperimentales_tadeo_resultados_view, name='uexperimentales_tadeo_resultados'),
+    path('uexperimentales/tadeo/contacto/', views.uexperimentales_tadeo_contacto_view, name='uexperimentales_tadeo_contacto'),
+
 
 # Unidades Experimentales Smartlab
     path('uexperimentales/smartlab/sobre', views.uexperimentales_smartlab_sobre_view, name='uexperimentales_smartlab_sobre'),

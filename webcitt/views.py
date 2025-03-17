@@ -143,6 +143,7 @@ def uexperimentales_view(request):
     return render(request, 'uexperimentales/uexperimentales.html', {
         'seccion_activa': 'uexperimentales'
     })
+
 # Unidades Experimentales_San Francisco
 def uexperimentales_sanfrancisco_sobre_view(request):
     return render(request, 'uexperimentales/sanfrancisco/sobre.html', {
@@ -168,6 +169,33 @@ def uexperimentales_sanfrancisco_contacto_view(request):
     return render(request, 'uexperimentales/sanfrancisco/contacto.html', {
         'seccion_activa': 'uexperimentales'
     })
+
+# Unidades Experimentales_Alonzo Tadeo
+def uexperimentales_tadeo_sobre_view(request):
+    return render(request, 'uexperimentales/tadeo/sobre.html', {
+        'seccion_activa': 'uexperimentales'
+    })
+def uexperimentales_tadeo_areas_especializacion_view(request):
+    return render(request, 'uexperimentales/tadeo/areas_especializacion.html', {
+        'seccion_activa': 'uexperimentales'
+    })
+def uexperimentales_tadeo_recursos_view(request):
+    return render(request, 'uexperimentales/tadeo/recursos.html', {
+        'seccion_activa': 'uexperimentales'
+    })
+def uexperimentales_tadeo_servicios_view(request):
+    return render(request, 'uexperimentales/tadeo/servicios.html', {
+        'seccion_activa': 'uexperimentales'
+    })
+def uexperimentales_tadeo_resultados_view(request):
+    return render(request, 'uexperimentales/tadeo/resultados.html', {
+        'seccion_activa': 'uexperimentales'
+    })
+def uexperimentales_tadeo_contacto_view(request):
+    return render(request, 'uexperimentales/tadeo/contacto.html', {
+        'seccion_activa': 'uexperimentales'
+    })
+
 
 
 # Unidades Experimentales Smart Lab
