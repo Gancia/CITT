@@ -66,6 +66,8 @@ urlpatterns = [
     
     path('hublab/', views.hublab_view, name='hublab'),
     path('hublab/planta-lacteos', views.hublab_planta_lacteos_view, name='hublab_planta_lacteos'),
-    
-    
+    path('hublab/planta-lacteos1', views.hublab_planta_lacteos1_view, name='hublab_planta_lacteos1'),
+    path('hublab/planta-lacteos2', views.hublab_planta_lacteos2_view, name='hublab_planta_lacteos2'),
+    path('hublab/planta-lacteos3', views.hublab_planta_lacteos3_view, name='hublab_planta_lacteos3'),
+    path('hublab/planta-lacteos4', views.hublab_planta_lacteos4_view, name='hublab_planta_lacteos4'),
 ]

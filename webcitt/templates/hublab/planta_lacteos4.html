@@ -11,9 +11,9 @@
       <div class="card-body" style="padding: 0.5rem;">
         <div class="row">
 
-          <div class="col-10" 
-            style="padding-top: 10px;padding-right: 5px; padding-left: 20px;"> <a href="{% url 'hublab_planta_lacteos' %}"
-            class="mbW-6" style="font-size: 1.3rem; text-align: left; font-weight: 700;">PLANTA DE PROCESAMIENTO DE PRODUCTOS LÁCTEOS</a>
+          <div class="col-10"
+          style="padding-top: 10px;padding-right: 5px; padding-left: 20px;"> <a href="{% url 'hublab_planta_lacteos' %}"
+          class="mbW-6" style="font-size: 1.3rem; text-align: left; font-weight: 700;">PLANTA DE PROCESAMIENTO DE PRODUCTOS LÁCTEOS</a>
 
           </div>
           <div class="col-2 col-center " style="text-align: center;">
@@ -30,20 +30,20 @@
             class="card-headers glide gallery glide--ltr glide--carousel glide--swipeable">
             <ul class=" nav nav-tabs card-header-tabs " role="tablist">
               <li class="nav-item">
-                <a class="nav-link active" id="first-tab" data-toggle="tab"
+                <a class="nav-link " id="first-tab" data-toggle="tab"
                   href="#galeria" role="tab"
                   aria-controls="first" aria-selected="true"><i
                     class="iconsminds-home large-icon1 initial-height"></i>Presentación</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="second-tab" data-toggle="tab"
+                <a class="nav-link " id="second-tab" data-toggle="tab"
                   href="#simuladores" role="tab"
                   aria-controls="second" aria-selected="false"><i
                     class="iconsminds-gear large-icon1 initial-height"></i>Recursos
                   de Aprendizaje y Práctica</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="third-tab" data-toggle="tab"
+                <a class="nav-link active" id="third-tab" data-toggle="tab"
                   href="#tutoriales" role="tab"
                   aria-controls="third" aria-selected="false"><i
                     class="iconsminds-optimization large-icon1 initial-height"></i>Investigación,
@@ -71,7 +71,7 @@
         </div>
 
         <div class="tab-content card mb-2 ">
-          <div class="tab-pane fade show active" id="galeria" role="tabpanel" aria-labelledby="first-tab">
+          <div class="tab-pane fade " id="galeria" role="tabpanel" aria-labelledby="first-tab">
             <div id="carouselProductos" class="carousel slide" data-ride="carousel">
                 <!-- Indicadores -->
                 <ol class="carousel-indicators">
@@ -139,7 +139,7 @@
             </div>
         </div>
           <!-- Contenido de Simuladores -->
-          <div class="tab-pane fade" id="simuladores" role="tabpanel"
+          <div class="tab-pane fade " id="simuladores" role="tabpanel"
             aria-labelledby="second-tab">
             <div class="content-section " data-view="simuladores">
               <iframe width="100%" height="630" src="{% static 'img/360/lacteos1/index.html' %}"
@@ -147,10 +147,9 @@
             </div>
           </div>
 
-          <!-- Contenido de Simuladores -->
-          <div class="tab-pane fade" id="tutoriales" role="tabpanel"
+          <!-- Contenido de tUTORIALES -->
+          <div class="tab-pane fade " id="tutoriales" role="tabpanel"
             aria-labelledby="third-tab">
-            
     <!-- Indicadores Clave de Rendimiento -->
     <div class="row mb-4">
       <div class="col-12">
@@ -207,38 +206,12 @@
           </div>
       </div>
   </div>
-  
-      <!-- Distribución de Proyectos -->
-      <div class="row mb-4">
-        <div class="col-lg-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Distribución de Proyectos por Área</h5>
-                    <div class="chart-container">
-                        <canvas id="distribucionProyectosChart"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Evolución de Transferencias Tecnológicas</h5>
-                    <div class="chart-container">
-                        <canvas id="evolucionTransferenciasChart"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-            </div>
-            
-            <script src="{% static 'js/vendor/Chart.bundle.min.js' %}"></script>
 
-           
+  
+          </div>
 
           <!-- PDF Viewer -->
-          <div class="tab-pane fade" id="docs" role="tabpanel"
+          <div class="tab-pane fade show active" id="docs" role="tabpanel"
             aria-labelledby="four-tab"
             class="content-section"
             data-view="documentosPDF">
@@ -321,9 +294,10 @@
                 <div class="pb-2">
                   <li>
                     <a href="{% url 'hublab_planta_lacteos2' %}">
+
                       <i class="iconsminds-monitor---tablet active"></i>
                       <span class=" d-inline-block"
-                        >Simulador recorrido
+                      >Simulador recorrido
                         360</span>
                     </a>
                   </li>
@@ -350,6 +324,7 @@
                 data-toggle="collapse" data-target="#collapseTwo"
                 aria-expanded="false"
                 aria-controls="collapseTwo">
+
                 <i class="simple-icon-login "></i>
                 <span class="d-inline-block">Tutoriales y documentación</span>
               </button>
@@ -386,7 +361,7 @@
                   <li>
                     <a href="{% url 'hublab_planta_lacteos3' %}">
                       <i class="iconsminds-monitor---tablet"></i>
-                      <span class="d-inline-block">Ejercicios prácticos </span>
+                      <span class="d-inline-block"style="color: rgb(192, 12, 72);font-size: 0.8rem; font-weight: 800;">Ejercicios prácticos </span>
                     </a>
                   </li>
                   <li>
@@ -548,10 +523,8 @@
   </div>
 
 </div>
-
 {% endblock %}
 
 {% block extra_scripts %}
 <!-- Scripts específicos para la página de inicio si son necesarios -->
- 
 {% endblock %}

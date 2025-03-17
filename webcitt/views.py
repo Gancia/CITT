@@ -247,7 +247,23 @@ def hublab_planta_lacteos_view(request):
     return render(request, 'hublab/planta_lacteos.html', {
         'seccion_activa': 'hublab'
     })
+def hublab_planta_lacteos1_view(request):
+    return render(request, 'hublab/planta_lacteos1.html', {
+        'seccion_activa': 'hublab'
+    })
 
+def hublab_planta_lacteos2_view(request):
+    return render(request, 'hublab/planta_lacteos2.html', {
+        'seccion_activa': 'hublab'
+    })
+def hublab_planta_lacteos3_view(request):
+    return render(request, 'hublab/planta_lacteos3.html', {
+        'seccion_activa': 'hublab'
+    })
+def hublab_planta_lacteos4_view(request):
+    return render(request, 'hublab/planta_lacteos4.html', {
+        'seccion_activa': 'hublab'
+    })
 
 # Formación
 def formacion_view(request):
