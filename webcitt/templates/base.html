@@ -217,7 +217,7 @@
               <a href="#" data-toggle="collapse" data-target="#collapse-incubadora-startup"
                 aria-expanded="false"
                 aria-controls="#collapse-incubadora-startup"
-                class="rotate-arrow-icon opacity-50">
+                class="rotate-arrow-icon collapsed opacity-50 collapsed">
                 <i class="simple-icon-arrow-down"></i>
                 <span class="d-inline-block">Rutas de Emprendimiento</span>
               </a>
@@ -225,27 +225,27 @@
                 <ul class="list-unstyled inner-level-menu">
                   <!-- Pestañas desplegables-->
                   <li>
-                    <a href="{% url 'incubadora_proceso_incubacion' %}">
-                      <i class="simple-icon-rocket d-inline-block icon"></i> 
-                      <span class="d-inline-block">Incubación</span>
-                    </a>
-                  </li>
-                  <li>
                     <a href="{% url 'incubadora_quienes_somos' %}">
                       <i class="simple-icon-rocket d-inline-block icon"></i> 
                       <span class="d-inline-block">Incubadora UPEC</span>
                     </a>
                   </li>
                   <li>
-                    <a href="{% url 'incubadora_registro_ideas' %}">
-                      <i class="iconsminds-box-full d-inline-block icon"></i>
-                      <span class="d-inline-block">Registro </span>
+                    <a href="{% url 'incubadora_proceso_incubacion' %}">
+                      <i class="simple-icon-rocket d-inline-block icon"></i> 
+                      <span class="d-inline-block">Pre-Incubación</span>
                     </a>
                   </li>
                   <li>
-                    <a href="{% url 'incubadora_recursos_emprendedores' %}">
-                      <i class="iconsminds-calendar-4"></i>
-                      <span class="d-inline-block">Recursos </span>
+                    <a href="{% url 'incubadora_proceso_incubacion' %}">
+                      <i class="simple-icon-rocket d-inline-block icon"></i> 
+                      <span class="d-inline-block">Incubación</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'incubadora_registro_ideas' %}">
+                      <i class="iconsminds-box-full d-inline-block icon"></i>
+                      <span class="d-inline-block">Registro </span>
                     </a>
                   </li>
                 </ul>
@@ -256,7 +256,7 @@
               <a href="#" data-toggle="collapse" data-target="#collapse-incubadora-recursos"
                 aria-expanded="false"
                 aria-controls="#collapse-incubadora-recursos"
-                class="rotate-arrow-icon opacity-50">
+                class="rotate-arrow-icon collapsed opacity-50">
                 <i class="simple-icon-arrow-down"></i>
                 <span class="d-inline-block">Espacios y Recursos</span>
               </a>
@@ -266,6 +266,12 @@
                   <li>
                     <a href="{% url 'incubadora_espacios_coworking' %}">
                       <span class="d-inline-block">Espacios de Coworking</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'incubadora_recursos_emprendedores' %}">
+                      <i class="iconsminds-calendar-4"></i>
+                      <span class="d-inline-block">Recursos </span>
                     </a>
                   </li>
                   <li>
@@ -286,7 +292,7 @@
               <a href="#" data-toggle="collapse" data-target="#collapse-incubadora-red"
                 aria-expanded="false"
                 aria-controls="#collapse-incubadora-red"
-                class="rotate-arrow-icon opacity-50">
+                class="rotate-arrow-icon collapsed opacity-50">
                 <i class="simple-icon-arrow-down"></i>
                 <span class="d-inline-block">Formación y Mentoría</span>
               </a>
@@ -316,7 +322,7 @@
               <a href="#" data-toggle="collapse" data-target="#collapse-incubadora-exito"
                 aria-expanded="false"
                 aria-controls="#collapse-incubadora-exito"
-                class="rotate-arrow-icon opacity-50">
+                class="rotate-arrow-icon collapsed opacity-50">
                 <i class="simple-icon-arrow-down"></i>
                 <span class="d-inline-block">Escalamiento</span>
               </a>
@@ -341,14 +347,13 @@
                 </ul>
               </div>
             </li>
-
             <li>
               <a href="#" data-toggle="collapse" data-target="#collapse-incubadora-historias"
                 aria-expanded="false"
                 aria-controls="#collapse-incubadora-historias"
-                class="rotate-arrow-icon opacity-50">
+                class="rotate-arrow-icon collapsed opacity-50">
                 <i class="simple-icon-arrow-down"></i>
-                <span class="d-inline-block">Contacto </span>
+                <span class="d-inline-block">Impacto y Resultados </span>
               </a>
               <div id="collapse-incubadora-historias" class="collapse">
                 <ul class="list-unstyled inner-level-menu">
@@ -371,6 +376,36 @@
                 </ul>
               </div>
             </li>
+            <li>
+              <a href="#" data-toggle="collapse" data-target="#collapse-incubadora-historias"
+                aria-expanded="false"
+                aria-controls="#collapse-incubadora-historias"
+                class="rotate-arrow-icon collapsed opacity-50">
+                <i class="simple-icon-arrow-down"></i>
+                <span class="d-inline-block">Contacto </span>
+              </a>
+              <div id="collapse-incubadora-historias" class="collapse">
+                <ul class="list-unstyled inner-level-menu">
+                  <!-- Pestañas desplegables-->
+                  <li>
+                    <a href="{% url 'incubadora_historias_exito' %}">
+                      <span class="d-inline-block">Formulario de Contacto</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'incubadora_historias_impacto' %}">
+                      <span class="d-inline-block">Ubicación y Redes Sociales</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'incubadora_proyectos_incubados' %}">
+                      <span class="d-inline-block">Acceso a Biblioteca Virtual</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+           
           </ul>
 
           <!-- Submenú Unidades Experimentales-->
@@ -395,7 +430,7 @@
               <a href="" data-toggle="collapse" data-target="#collapse-ue-centro1"
                 aria-expanded="true"
                 aria-controls="#collapse-ue-centro1"
-                class="rotate-arrow-icon opacity-5">
+                class="rotate-arrow-icon collapsed opacity-5">
                 <i class="simple-icon-arrow-down"></i>
                 <span class="d-inline-block p-0 pb-2 font-weight-bold">C.E-SAN FRANCISCO</span>
               </a>
@@ -516,7 +551,7 @@
               <a href="#" data-toggle="collapse" data-target="#collapse-ue-laboratorios"
                 aria-expanded="true"
                 aria-controls="#collapse-ue-laboratorios"
-                class="rotate-arrow-icon opacity-5">
+                class="rotate-arrow-icon collapsed opacity-5">
                 <i class="simple-icon-arrow-down"></i>
                 <span class="d-inline-block p-0 pb-2 font-weight-bold">SMARTLAB 4.0</span>
               </a>
