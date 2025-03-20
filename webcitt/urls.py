@@ -14,26 +14,12 @@ urlpatterns = [
     path('ott/impacto-resultados/', views.ott_impacto_resultados_view, name='ott_impacto_resultados'),
     path('ott/contacto/', views.ott_contacto_view, name='ott_contacto'),
     
-    
-    
     path('incubadora/', views.incubadora_view, name='incubadora'),
-    path('incubadora/comunidad-innovadores/', views.incubadora_comunidad_emprendedores_view, name='incubadora_comunidad_emprendedores'),
-    path('incubadora/espacios-trabajo/', views.incubadora_espacios_coworking_view, name='incubadora_espacios_coworking'),
-    path('incubadora/foro-colaborativo/', views.incubadora_foro_emprendedores_view, name='incubadora_foro_emprendedores'),
-    path('incubadora/herramientas/', views.incubadora_herramientas_innovacion_view, name='incubadora_herramientas_innovacion'),
-    path('incubadora/proceso-incubacion/', views.incubadora_proceso_incubacion_view, name='incubadora_proceso_incubacion'),
-    path('incubadora/incubacion/', views.incubadora_incubacion_view, name='incubadora_incubacion'),
-    path('incubadora/recursos-emprendedores/', views.incubadora_recursos_emprendedores_view, name='incubadora_recursos_emprendedores'),
-    path('incubadora/red-mentores/', views.incubadora_red_mentores_view, name='incubadora_red_mentores'),
-    path('incubadora/registro-ideas/', views.incubadora_registro_ideas_view, name='incubadora_registro_ideas'),
-    path('incubadora/servicios-mentoria/', views.incubadora_servicios_mentoria_view, name='incubadora_servicios_mentoria'),
-    path('incubadora/talleres-cursos/', views.incubadora_talleres_cursos_view, name='incubadora_talleres_cursos'),
-    path('incubadora/programas-aceleracion/', views.incubadora_programas_aceleracion_view, name='incubadora_programas_aceleracion'),
-    path('incubadora/acceso-financiamiento/', views.incubadora_acceso_financiamiento_view, name='incubadora_acceso_financiamiento'),
-    path('incubadora/historias_exito/', views.incubadora_historias_exito_view, name='incubadora_historias_exito'),
-    path('incubadora/historias_impacto/', views.incubadora_historias_impacto_view, name='incubadora_historias_impacto'),
-    path('incubadora/proyectos_incubados/', views.incubadora_proyectos_incubados_view, name='incubadora_proyectos_incubados'),
-    path('incubadora/quienes_somos/', views.incubadora_quienes_somos_view, name='incubadora_quienes_somos'),
+    path('incubadora/presentacion/', views.incubadora_presentacion_view, name='incubadora_presentacion'),
+    path('incubadora/proceso/', views.incubadora_proceso_view, name='incubadora_proceso'),
+    path('incubadora/servicios/', views.incubadora_servicios_view, name='incubadora_servicios'),
+    path('incubadora/casos-exito/', views.incubadora_casos_exito_view, name='incubadora_casos_exito'),
+    path('incubadora/contacto/', views.incubadora_contacto_view, name='incubadora_contacto'),
     
     
 # Unidades Experimentales   

@@ -214,198 +214,35 @@
           <!-- Submenú Incubadora -->
           <ul class="list-unstyled" data-link="incubadora">
             <li>
-              <a href="#" data-toggle="collapse" data-target="#collapse-incubadora-startup"
-                aria-expanded="false"
-                aria-controls="#collapse-incubadora-startup"
-                class="rotate-arrow-icon collapsed opacity-50 collapsed">
-                <i class="simple-icon-arrow-down"></i>
-                <span class="d-inline-block">Rutas de Emprendimiento</span>
+              <a href="{% url 'incubadora_presentacion' %}">
+                <i class="simple-icon-info"></i>
+                <span class="d-inline-block">Presentación</span>
               </a>
-              <div id="collapse-incubadora-startup" class="collapse">
-                <ul class="list-unstyled inner-level-menu">
-                  <!-- Pestañas desplegables-->
-                  <li>
-                    <a href="{% url 'incubadora_quienes_somos' %}">
-                      <i class="simple-icon-rocket d-inline-block icon"></i> 
-                      <span class="d-inline-block">Incubadora UPEC</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="{% url 'incubadora_proceso_incubacion' %}">
-                      <i class="simple-icon-rocket d-inline-block icon"></i> 
-                      <span class="d-inline-block">Pre-Incubación</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="{% url 'incubadora_incubacion' %}">
-                      <i class="simple-icon-rocket d-inline-block icon"></i> 
-                      <span class="d-inline-block">Incubación</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="{% url 'incubadora_registro_ideas' %}">
-                      <i class="iconsminds-box-full d-inline-block icon"></i>
-                      <span class="d-inline-block">Registro </span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-
-            <li>
-              <a href="#" data-toggle="collapse" data-target="#collapse-incubadora-recursos"
-                aria-expanded="false"
-                aria-controls="#collapse-incubadora-recursos"
-                class="rotate-arrow-icon collapsed opacity-50">
-                <i class="simple-icon-arrow-down"></i>
-                <span class="d-inline-block">Espacios y Recursos</span>
-              </a>
-              <div id="collapse-incubadora-recursos" class="collapse">
-                <ul class="list-unstyled inner-level-menu">
-                  <!-- Pestañas desplegables-->
-                  <li>
-                    <a href="{% url 'incubadora_espacios_coworking' %}">
-                      <span class="d-inline-block">Espacios de Coworking</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="{% url 'incubadora_recursos_emprendedores' %}">
-                      <i class="iconsminds-calendar-4"></i>
-                      <span class="d-inline-block">Entornos Virtuales </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="{% url 'incubadora_herramientas_innovacion' %}">
-                      <span class="d-inline-block">Herramientas de Innovación</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="{% url 'incubadora_servicios_mentoria' %}">
-                      <span class="d-inline-block">Servicios de mentoría</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-
-            <li>
-              <a href="#" data-toggle="collapse" data-target="#collapse-incubadora-red"
-                aria-expanded="false"
-                aria-controls="#collapse-incubadora-red"
-                class="rotate-arrow-icon collapsed opacity-50">
-                <i class="simple-icon-arrow-down"></i>
-                <span class="d-inline-block">Formación y Mentoría</span>
-              </a>
-              <div id="collapse-incubadora-red" class="collapse">
-                <ul class="list-unstyled inner-level-menu">
-                  <!-- Pestañas desplegables-->
-                  <li>
-                    <a href="{% url 'incubadora_comunidad_emprendedores' %}">
-                      <span class="d-inline-block">Comunidad de innovadores</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="{% url 'incubadora_red_mentores' %}">
-                      <span class="d-inline-block">Red de mentores</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="{% url 'incubadora_foro_emprendedores' %}">
-                      <span class="d-inline-block">Foro Emprendedores</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-
-            <li>
-              <a href="#" data-toggle="collapse" data-target="#collapse-incubadora-exito"
-                aria-expanded="false"
-                aria-controls="#collapse-incubadora-exito"
-                class="rotate-arrow-icon collapsed opacity-50">
-                <i class="simple-icon-arrow-down"></i>
-                <span class="d-inline-block">Escalamiento</span>
-              </a>
-              <div id="collapse-incubadora-exito" class="collapse">
-                <ul class="list-unstyled inner-level-menu">
-                  <!-- Pestañas desplegables-->
-                  <li>
-                    <a href="{% url 'incubadora_talleres_cursos' %}">
-                      <span class="d-inline-block">Talleres y cursos</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="{% url 'incubadora_programas_aceleracion' %}">
-                      <span class="d-inline-block">Programas de aceleración</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="{% url 'incubadora_acceso_financiamiento' %}">
-                      <span class="d-inline-block">Acceso a financiamiento</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
             </li>
             <li>
-              <a href="#" data-toggle="collapse" data-target="#collapse-incubadora-historias"
-                aria-expanded="false"
-                aria-controls="#collapse-incubadora-historias"
-                class="rotate-arrow-icon collapsed opacity-50">
-                <i class="simple-icon-arrow-down"></i>
-                <span class="d-inline-block">Impacto y Resultados </span>
+              <a href="{% url 'incubadora_proceso' %}">
+                <i class="simple-icon-graph"></i>
+                <span class="d-inline-block">Proceso</span>
               </a>
-              <div id="collapse-incubadora-historias" class="collapse">
-                <ul class="list-unstyled inner-level-menu">
-                  <!-- Pestañas desplegables-->
-                  <li>
-                    <a href="{% url 'incubadora_historias_exito' %}">
-                      <span class="d-inline-block">Emprendedores destacados</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="{% url 'incubadora_historias_impacto' %}">
-                      <span class="d-inline-block">Historias de impacto</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="{% url 'incubadora_proyectos_incubados' %}">
-                      <span class="d-inline-block">Proyectos incubados</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
             </li>
             <li>
-              <a href="#" data-toggle="collapse" data-target="#collapse-incubadora-historias"
-                aria-expanded="false"
-                aria-controls="#collapse-incubadora-historias"
-                class="rotate-arrow-icon collapsed opacity-50">
-                <i class="simple-icon-arrow-down"></i>
-                <span class="d-inline-block">Contacto </span>
+              <a href="{% url 'incubadora_servicios' %}">
+                <i class="simple-icon-rocket"></i>
+                <span class="d-inline-block">Servicios</span>
               </a>
-              <div id="collapse-incubadora-historias" class="collapse">
-                <ul class="list-unstyled inner-level-menu">
-                  <!-- Pestañas desplegables-->
-                  <li>
-                    <a href="{% url 'incubadora_historias_exito' %}">
-                      <span class="d-inline-block">Formulario de Contacto</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="{% url 'incubadora_historias_impacto' %}">
-                      <span class="d-inline-block">Ubicación y Redes Sociales</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="{% url 'incubadora_proyectos_incubados' %}">
-                      <span class="d-inline-block">Acceso a Biblioteca Virtual</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
             </li>
-           
+            <li>
+              <a href="{% url 'incubadora_casos_exito' %}">
+                <i class="simple-icon-star"></i>
+                <span class="d-inline-block">Casos de Éxito</span>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'incubadora_contacto' %}">
+                <i class="simple-icon-envelope"></i>
+                <span class="d-inline-block">Contacto</span>
+              </a>
+            </li>
           </ul>
 
           <!-- Submenú Unidades Experimentales-->

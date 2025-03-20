@@ -56,87 +56,28 @@ def incubadora_view(request):
         'seccion_activa': 'incubadora'
     })
 
-def incubadora_comunidad_emprendedores_view(request):
-    return render(request, 'incubadora/comunidad_emprendedores.html', {
+def incubadora_presentacion_view(request):
+    return render(request, 'incubadora/presentacion.html', {
         'seccion_activa': 'incubadora'
     })
 
-def incubadora_espacios_coworking_view(request):
-    return render(request, 'incubadora/espacios_coworking.html', {
+def incubadora_proceso_view(request):
+    return render(request, 'incubadora/proceso.html', {
         'seccion_activa': 'incubadora'
     })
 
-def incubadora_foro_emprendedores_view(request):
-    return render(request, 'incubadora/foro_emprendedores.html', {
+def incubadora_servicios_view(request):
+    return render(request, 'incubadora/servicios.html', {
         'seccion_activa': 'incubadora'
     })
 
-def incubadora_herramientas_innovacion_view(request):
-    return render(request, 'incubadora/herramientas_innovacion.html', {
+def incubadora_casos_exito_view(request):
+    return render(request, 'incubadora/casos-exito.html', {
         'seccion_activa': 'incubadora'
     })
 
-def incubadora_proceso_incubacion_view(request):
-    return render(request, 'incubadora/proceso_incubacion.html', {
-        'seccion_activa': 'incubadora'
-    })
-def incubadora_incubacion_view(request):
-    return render(request, 'incubadora/incubacion.html', {
-        'seccion_activa': 'incubadora'
-    })
-
-def incubadora_recursos_emprendedores_view(request):
-    return render(request, 'incubadora/recursos_emprendedores.html', {
-        'seccion_activa': 'incubadora'
-    })
-
-def incubadora_red_mentores_view(request):
-    return render(request, 'incubadora/red_mentores.html', {
-        'seccion_activa': 'incubadora'
-    })
-
-def incubadora_registro_ideas_view(request):
-    return render(request, 'incubadora/registro_ideas.html', {
-        'seccion_activa': 'incubadora'
-    })
-
-def incubadora_servicios_mentoria_view(request):
-    return render(request, 'incubadora/servicios_mentoria.html', {
-        'seccion_activa': 'incubadora'
-    })
-
-def incubadora_talleres_cursos_view(request):
-    return render(request, 'incubadora/talleres_cursos.html', {
-        'seccion_activa': 'incubadora'
-    })
-
-def incubadora_programas_aceleracion_view(request):
-    return render(request, 'incubadora/programas_aceleracion.html', {
-        'seccion_activa': 'incubadora'
-    })
-
-def incubadora_acceso_financiamiento_view(request):
-    return render(request, 'incubadora/acceso_financiamiento.html', {
-        'seccion_activa': 'incubadora'
-    })
-
-def incubadora_historias_exito_view(request):
-    return render(request, 'incubadora/historias_exito.html', {
-        'seccion_activa': 'incubadora'
-    })
-
-def incubadora_historias_impacto_view(request):
-    return render(request, 'incubadora/historias_impacto.html', {
-        'seccion_activa': 'incubadora'
-    })
-
-def incubadora_proyectos_incubados_view(request):
-    return render(request, 'incubadora/proyectos_incubados.html', {
-        'seccion_activa': 'incubadora'
-    })
-
-def incubadora_quienes_somos_view(request):
-    return render(request, 'incubadora/quienes_somos.html', {
+def incubadora_contacto_view(request):
+    return render(request, 'incubadora/contacto.html', {
         'seccion_activa': 'incubadora'
     })
 

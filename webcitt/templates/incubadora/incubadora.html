@@ -3,103 +3,70 @@
 
 {% block content %}
 <div class="container-fluid">
-    <!-- Encabezado principal -->
-    <div class="text-center mb-4">
-        <h1>Incubadora de Empresas - UPEC</h1>
-        <h3>
-            La Incubadora de Empresas de la UPEC impulsa proyectos innovadores, promoviendo el emprendimiento y la transferencia de conocimientos hacia el ecosistema empresarial y social.
-        </h3>
+    <div class="row">
+        <div class="col-12">
+            <h1>Incubadora de Empresas UPEC</h1>
+            <div class="separator mb-5"></div>
+        </div>
     </div>
 
-    <!-- Video introductorio -->
-<div class="position-relative mb-4">
-<div class="embed-responsive embed-responsive-16by9">
-    <iframe 
-        class="embed-responsive-item" 
-        src="https://www.youtube.com/embed/_89kW5wlfug" 
-        title="Video Introductorio de la Incubadora" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-    </iframe>
-</div>
-</div>
-
-
-    <!-- Servicios de la Incubadora -->
-    <section>
-        <h5 class="mb-4">Servicios de la Incubadora</h5>
-        <div class="row slick-container">
-            <!-- Asesoría y Consultoría -->
-            <div class="col-md-4">
-                <div class="card h-100">
-                    <img class="card-img-top" src="{% static 'img/cards/asesoria.jpg' %}" alt="Asesoría y Consultoría">
-                    <div class="card-body">
-                        <h5 class="card-title">Asesoría y Consultoría</h5>
-                        <p>
-                            Brindamos orientación personalizada en áreas clave como estrategia empresarial, financiamiento, y desarrollo de modelos de negocio.
-                        </p>
-                        <ul>
-                            <li>Evaluación de Ideas de Negocio</li>
-                            <li>Diseño de Modelos CANVAS</li>
-                            <li>Planificación Estratégica</li>
-                            <li>Gestión Financiera</li>
-                        </ul>
-                    </div>
+    <div class="row">
+        <div class="col-12 col-xl-8 offset-xl-2">
+            <!-- Sección de navegación principal -->
+            <div class="row mb-5">
+                <div class="col-12 col-md-4 mb-4">
+                    <a href="{% url 'incubadora_presentacion' %}" class="card">
+                        <div class="card-body text-center">
+                            <i class="simple-icon-info icon-xlarge mb-3"></i>
+                            <h5>Presentación</h5>
+                            <p>Conoce nuestra misión, visión, objetivos y equipo</p>
+                        </div>
+                    </a>
                 </div>
-            </div>
-
-            <!-- Espacios de Coworking -->
-            <div class="col-md-4">
-                <img class="card-img-top" src="{%static 'img/cards/coworking.png' %}" alt="Espacios de Coworking">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Espacios de Coworking</h5>
-                        <p>
-                            Proveemos infraestructura y espacios colaborativos equipados con tecnología para facilitar el desarrollo de proyectos.
-                        </p>
-                        <ul>
-                            <li>Acceso a Internet de Alta Velocidad</li>
-                            <li>Áreas de Trabajo Compartidas</li>
-                            <li>Salas de Reunión</li>
-                            <li>Laboratorios de Prototipado</li>
-                        </ul>
-                    </div>
+                
+                <div class="col-12 col-md-4 mb-4">
+                    <a href="{% url 'incubadora_proceso' %}" class="card">
+                        <div class="card-body text-center">
+                            <i class="simple-icon-graph icon-xlarge mb-3"></i>
+                            <h5>Proceso</h5>
+                            <p>Descubre nuestras etapas de incubación y realiza tu diagnóstico</p>
+                        </div>
+                    </a>
                 </div>
-            </div>
-
-            <!-- Formación y Networking -->
-            <div class="col-md-4">
-                <div class="card h-100">
-                    <img class="card-img-top" src="{% static 'img/cards/networking.png' %}" alt="Formación y Networking">
-                    <div class="card-body">
-                        <h5 class="card-title">Formación y Networking</h5>
-                        <p>
-                            Organizamos capacitaciones y eventos que conectan a emprendedores con expertos y redes de financiamiento.
-                        </p>
-                        <ul>
-                            <li>Talleres y Seminarios</li>
-                            <li>Charlas con Expertos</li>
-                            <li>Vinculación con Inversionistas</li>
-                            <li>Acceso a Redes de Mentores</li>
-                        </ul>
-                    </div>
+                
+                <div class="col-12 col-md-4 mb-4">
+                    <a href="{% url 'incubadora_servicios' %}" class="card">
+                        <div class="card-body text-center">
+                            <i class="simple-icon-rocket icon-xlarge mb-3"></i>
+                            <h5>Servicios</h5>
+                            <p>Explora nuestros reportes y recursos disponibles</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="col-12 col-md-4 mb-4">
+                    <a href="{% url 'incubadora_casos_exito' %}" class="card">
+                        <div class="card-body text-center">
+                            <i class="simple-icon-star icon-xlarge mb-3"></i>
+                            <h5>Casos de Éxito</h5>
+                            <p>Conoce los proyectos exitosos de nuestra incubadora</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="col-12 col-md-4 mb-4">
+                    <a href="{% url 'incubadora_contacto' %}" class="card">
+                        <div class="card-body text-center">
+                            <i class="simple-icon-envelope icon-xlarge mb-3"></i>
+                            <h5>Contacto</h5>
+                            <p>Ponte en contacto con nuestro equipo</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Descripción Incubadora -->
-    <section class="mt-4">
-        <div class="card">
-            <div class="card-body">
-                <h2 class="card-title">¿Qué es la Incubadora de Empresas?</h2>
-                <p>
-                    La Incubadora de Empresas de la UPEC es un espacio creado para apoyar a emprendedores en la transformación de sus ideas en negocios sostenibles. Ofrecemos servicios de acompañamiento, formación y acceso a recursos que potencian la innovación y el desarrollo empresarial en la región.
-                </p>
-            </div>
-        </div>
-    </section>
+    </div>
+</div>
 {% endblock %}
 
 {% block extra_scripts %}

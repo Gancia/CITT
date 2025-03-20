@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h1>Proceso de Incubación</h1>
+            <div class="separator mb-5"></div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-12 col-xl-8 offset-xl-2">
+            <!-- Proceso visual de las tres etapas -->
+            <div class="process-flow mb-5">
+                <div class="stage pre-incubacion">
+                    <h3>Pre-incubación</h3>
+                    <!-- Contenido de pre-incubación -->
+                </div>
+                
+                <div class="stage incubacion">
+                    <h3>Incubación</h3>
+                    <!-- Contenido de incubación -->
+                </div>
+                
+                <div class="stage post-incubacion">
+                    <h3>Post-incubación</h3>
+                    <!-- Contenido de post-incubación -->
+                </div>
+            </div>
+            
+            <!-- CTA para ficha de diagnóstico -->
+            <div class="diagnostico-cta text-center">
+                <h2>¿Listo para comenzar?</h2>
+                <p>Complete nuestra ficha de diagnóstico para identificar la fase más adecuada para su proyecto</p>
+                <a href="#" class="btn btn-primary">Completar Diagnóstico</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

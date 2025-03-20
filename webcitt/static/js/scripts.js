@@ -426,4 +426,24 @@ $(document).ready(function() {
             }, 1000);
         }
     });
+
+    // Event handler para los enlaces del menú
+    $('.menu a').on('click', function(e) {
+        if ($(this).attr('href') === '#') {
+            e.preventDefault();
+            return;
+        }
+
+        var href = $(this).attr('href');
+        var link = $(this).data('link');
+
+        // Solo guardamos el estado para las secciones principales
+        if (['ott', 'incubadora', 'uexperimentales', 'formacion'].includes(link)) {
+            sessionStorage.setItem('activeMenu', link);
+            menuClickCount = 0;
+            updateMenuButtonState();
+        }
+
+        window.location.href = href;
+    });
 });
