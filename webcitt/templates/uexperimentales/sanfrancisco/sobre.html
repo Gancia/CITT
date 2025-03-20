@@ -1,33 +1,476 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
+
 {% block content %}
-<div class="container-fluid disable-text-selection">
-  <div class="row">
-      <div class="col-12">
+<div class="container-fluid">
+    <div class="row ">
+        <div class="mb-3">
+            <h1>Sobre el Centro Experimental</h1>
 
-          <div class="mb-3">
-              <h1>Sobre el Centro Experimental</h1>
+            <nav class="breadcrumb-container d-none d-sm-block d-lg-inline-block" aria-label="breadcrumb">
+                <ol class="breadcrumb pt-0">
+                    <li class="breadcrumb-item">
+                        <a href="{% url 'uexperimentales' %}">Unidades Experimentales</a>
+                    </li>
+
+                    <li class="breadcrumb-item active" aria-current="page">Centro Experimental San Francisco</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="col-12 survey-app text-center  ">
+
+            <div class="position-relative">
+                <!-- Imagen de fondo -->
+                <img src="{% static 'img/cards/ue1.jpg' %}" alt="Industria 4.0" class="background-image">
+            
+                <!-- Contenedor del contenido -->
+                <div class="overlay-content">
+                    <!-- Texto informativo -->
+                    <div class="left-content">
+                        <h1>CENTRO EXPERIMENTAL SAN FRANCISCO</h1>
+                        <p><br>
+                            Son unidades de apoyo que brindan soporte tecnológico para la investigación, desarrollo e innovación; disponen de talento humano, infraestructura, equipamiento especializado y presupuesto. Estan conformadas por los laboratorios de investigación, así como por los centros experimentales.
+                            </p>
+                        <small>Espacios innovadores para el desarrollo de proyectos, investigación aplicada y formación práctica en el sector industrial.</small>
+
+                    </div>
+            
+                    <!-- Contenedores futuristas -->
+                    <div class="info-box right-content">
+                    
+                            <h3>🔬 ¿Qué te ofrecen las Unidades Experimentales?</h3>
+                            <p>Acceso a tecnología de vanguardia, simulaciones avanzadas y entornos de aprendizaje inmersivos divididos en:</p>
+                       
+            
+                        <!-- Contenedor secundario - Qué ofrecen -->
+                        <div class="info-container">
+                            <div class="info-box">
+                                <h4>🏭 Centros Experimentales</h4>
+                                <p>Enfocados en plantas de producción y fincas, ideales para la experimentación en entornos productivos reales.</p>
+                            </div>
+                            <div class="info-box">
+                                <h4>🧪 Laboratorios de Formación</h4>
+                                <p>Laboratorios tecnológicos con infraestructura avanzada para la capacitación en nuevas tecnologías.</p>
+                            </div>
+                        </div>
+                <!-- Botón de más información -->
+                    <div class="info-button">
+                        <a href="#" class="btn-info">💡 Quiero más información</a>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+            
+            <style>
+                /* Contenedor principal */
+                .position-relative {
+                    position: relative;
+                    width: 100%;
+                }
+            
+                /* Imagen de fondo */
+                .background-image {
+                    width: 100%;
+                    height: 50vh;
+                    object-fit: cover;
+                    display: block;
+                }
+            
+                /* Overlay con fondo semi-transparente */
+                .overlay-content {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 2rem;
+                    color: white;
+                    background: rgba(0, 0, 0, 0.5); /* Efecto oscuro */
+                }
+            
+                /* Contenido informativo a la izquierda */
+                .left-content {
+                    max-width: 40%;
+                }
+            
+                /* Contenedor principal a la derecha */
+                .right-content {
+                    max-width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+            
+                /* Contenedor principal de Unidades Experimentales */
+                .main-box {
+                    background: linear-gradient(135deg, rgba(0, 255, 204, 0.8), rgba(0, 153, 255, 0.9));
+                    padding: 1.5rem;
+                    border-radius: 15px;
+                    text-align: center;
+                    font-size: 1.2rem;
+                    box-shadow: 0px 0px 15px rgba(0, 255, 204, 0.5);
+                }
+            
+                /* Contenedor de las dos opciones */
+                .info-container {
+                    display: flex;
+                    gap: 1rem;
+                }
+            
+                /* Estilo de los cuadros secundarios */
+                .info-box {
+                    flex: 1;
+                    background: rgba(255, 255, 255, 0.1);
+                    backdrop-filter: blur(10px);
+                    padding: 1rem;
+                    border-radius: 10px;
+                    text-align: center;
+                    font-size: 1rem;
+                    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+                }
+            
+                /* Botón futurista */
+                .info-button {
+                    text-align: center;
+                    margin-top: 1rem;
+                }
+            
+                .btn-info {
+                    background: linear-gradient(135deg, #00ffcc, #0099ff);
+                    color: white;
+                    padding: 10px 20px;
+                    border-radius: 50px;
+                    font-size: 1rem;
+                    text-decoration: none;
+                    box-shadow: 0px 0px 10px rgba(0, 255, 204, 0.8);
+                    transition: 0.3s;
+                }
+            
+                .btn-info:hover {
+                    background: linear-gradient(135deg, #0099ff, #00ffcc);
+                    box-shadow: 0px 0px 20px rgba(0, 255, 204, 1);
+                }
+            
+                /* Diseño adaptable */
+                @media (max-width: 768px) {
+                    .overlay-content {
+                        flex-direction: column;
+                        align-items: center;
+                        text-align: center;
+                    }
+            
+                    .left-content, .right-content {
+                        max-width: 90%;
+                    }
+            
+                    .info-container {
+                        flex-direction: column;
+                    }
+                }
+            </style>
+            
+ 
+            <!-- Tablas laboratorios -->
+            
+
+            <ul class="nav nav-tabs separator-tabs ml-0 mb-5" role="tablist"></ul>
+
+        </div>
+    </div>
+
+   
+    <div class="tab-content active">
+         <div class="player" data-plyr-provider="youtube" data-plyr-embed-id="qyjwyQXVY1g"></div>
+     </div>
 
 
-              <nav class="breadcrumb-container d-none d-sm-block d-lg-inline-block" aria-label="breadcrumb">
-                  <ol class="breadcrumb pt-0">
-                      <li class="breadcrumb-item">
-                          <a href="#">Home</a>
-                      </li>
-                      <li class="breadcrumb-item">
-                          <a href="#">Library</a>
-                      </li>
-                      <li class="breadcrumb-item active" aria-current="page">Data</li>
-                  </ol>
-              </nav>
-          </div>
+    <!-- Categoria laboratorios -->
 
-          <div class="separator mb-5"></div>
-      </div>
-  </div>
+    <div class="row">
+        <div class="col-12 col-md-12 col-xl-8">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-titles">Laboratorios de Investigación</h2>
+                    <div class="position-relative mb-3">
+                        <video id="my-video" class="video-js card-img video-content" controls
+                        preload="auto" poster="{% static 'img/cards/ue12.png' %}"
+                        data-setup="{}">
+                        <source
+                            src="https://virprot.com/videos/smartfactory.mp4"
+                            type='video/mp4'>
+                    </video>
+                    </div>
 
-  
+                    <div class="mb-5">
+                        <p>
+                            Los laboratorios de investigación son espacios diseñados para impulsar la innovación, el desarrollo y el aprendizaje práctico. Cuentan con tecnología avanzada, infraestructura especializada y talento humano capacitado, permitiendo a estudiantes y docentes participar en proyectos de alto impacto. Se crean en respuesta a necesidades académicas e institucionales, con aprobación del Consejo de Investigación. Los laboratorios formativos son gestionados por los Directores de Carrera, mientras que los científicos están liderados por un docente investigador designado por Rectorado.                    </div>
+
+                        <h2 class="card-title">¿Por qué son importantes?</h2>
+                        <ul>
+                            <li>Fomentan la investigación aplicada y la experimentación.</li>
+                            <li>Brindan acceso a equipos y tecnología de vanguardia.</li>
+                            <li>Conectan a estudiantes con proyectos reales e innovadores.</li>
+                            <li>Son clave para el desarrollo de soluciones en diversas industrias.</li>
+                        </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-12 col-xl-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Policies</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#" class="btn-link">Preliminary thinking systems</a></li>
+                        <li><a href="#" class="btn-link">Bandwidth efficient</a></li>
+                        <li><a href="#" class="btn-link">Green space</a></li>
+                        <li><a href="#" class="btn-link">Social impact</a></li>
+                        <li><a href="#" class="btn-link">Thought partnership</a></li>
+                        <li><a href="#" class="btn-link">Fully ethical life</a></li>
+                    </ul>
+
+                    <h2>Laboratorios</h2>
+                    <table>
+                        <tr>
+                            <th>Responsable</th>
+                            <th>Nombre</th>
+                            <th>Resolución</th>
+                            <th>Carrera</th>
+                        </tr>
+                        <tr>
+                            <td>MSc. Marco Burbano</td>
+                            <td><a href="#" class="btn-link">Planta de procesamiento de productos lácteos</td>
+                            <td>RCI-SVO-001-N°006.1-2023</td>
+                            <td>Alimentos</td>
+                        </tr>
+                        <tr>
+                            <td>MSc. Marco Burbano</td>
+                            <td>Planta de procesamiento de productos Carnicos</td>
+                            <td>RCI-SVO-001-N°006.1-2023</td>
+                            <td>Alimentos</td>
+                        </tr>
+                        <tr>
+                            <td>MSc. Marco Burbano</td>
+                            <td>Planta de procesamiento de productos de Panificación</td>
+                            <td>RCI-SVO-001-N°006.1-2023</td>
+                            <td>Alimentos</td>
+                        </tr>
+                        <tr>
+                            <td>MSc. Marco Burbano</td>
+                            <td>Planta de procesamiento de productos de almidón</td>
+                            <td>RCI-SVO-001-N°006.1-2023</td>
+                            <td>Alimentos</td>
+                        </tr>
+                
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+      <!-- Categoria Centros experimentales -->
+
+      <div class="row">
+        <div class="col-12 col-md-12 col-xl-8">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-titles">Centros Experimentales</h2>
+                    <div class="position-relative mb-3">
+                        <video id="my-video" class="video-js card-img video-content" controls
+                        preload="auto" poster="{% static 'img/cards/ue11.png' %}"
+                        data-setup="{}">
+                        <source
+                            src="https://virprot.com/videos/smartfactory.mp4"
+                            type='video/mp4'>
+                    </video>
+                    </div>
+
+                    <div class="mb-5">
+                        <p>
+                            Los laboratorios de investigación son espacios diseñados para impulsar la innovación, el desarrollo y el aprendizaje práctico. Cuentan con tecnología avanzada, infraestructura especializada y talento humano capacitado, permitiendo a estudiantes y docentes participar en proyectos de alto impacto. Se crean en respuesta a necesidades académicas e institucionales, con aprobación del Consejo de Investigación. Los laboratorios formativos son gestionados por los Directores de Carrera, mientras que los científicos están liderados por un docente investigador designado por Rectorado.                    </div>
+
+                        <h2 class="card-title">¿Por qué son importantes?</h2>
+                        <ul>
+                            <li>Fomentan la investigación aplicada y la experimentación.</li>
+                            <li>Brindan acceso a equipos y tecnología de vanguardia.</li>
+                            <li>Conectan a estudiantes con proyectos reales e innovadores.</li>
+                            <li>Son clave para el desarrollo de soluciones en diversas industrias.</li>
+                        </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-12 col-xl-4">
+            <div class="card mb-4">
+                <div class="card-body">
+
+                    <h2>Centros Experimentales</h2>
+                    <h3>Centro Experimental San Francisco</h3>
+                    <table>
+                        <tr>
+                            <th>N.</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td><a href="{% url 'hublab_planta_lacteos' %}" class="btn-link">Planta de procesamiento de productos lácteos</td>
+                            <td>En la planta de lácteos se procesa la leche para obtener diversos productos como leche pasteurizada, yogur, queso, crema, mantequilla y otros derivados, a través de procesos como pasteurización, fermentación y elaboración. 
+                        <tr>
+                            <td>2</td>
+                            <td>Planta de procesamiento de productos Carnicos</td>
+                            <td>En la Planta de Cárnicos se transforma se producen cortes frescos, embutidos (chorizo, salchichas, mortadela), carnes marinadas, jamones, productos curados y envasados.</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Planta de procesamiento de productos de Panificación</td>
+                            <td>Alimentos</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Planta de procesamiento de productos de almidón</td>
+                            <td>Alimentos</td>
+                        </tr>
+                
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+        <!-- Tablas laboratorios -->
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Organización de las Unidades Experimentales</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f4f4f4; }
+            h2 { color: #333; }
+        </style>
+    
+    <div class="card mb-4">
+        <div class="card-body">
+    
+        <h1>Organización de las Unidades Experimentales</h1>
+        
+        <h2>Centros Experimentales</h2>
+        <table>
+            <tr>
+                <th>Responsable</th>
+                <th>Nombre</th>
+                <th>Resolución</th>
+                <th>Carrera</th>
+            </tr>
+            <tr>
+                <td>MSc. Marco Burbano</td>
+                <td>Planta de procesamiento de productos lácteos</td>
+                <td>RCI-SVO-001-N°006.1-2023</td>
+                <td>Alimentos</td>
+            </tr>
+            <tr>
+                <td>MSc. Marco Burbano</td>
+                <td>Planta de procesamiento de productos Carnicos</td>
+                <td>RCI-SVO-001-N°006.1-2023</td>
+                <td>Alimentos</td>
+            </tr>
+            <tr>
+                <td>MSc. Marco Burbano</td>
+                <td>Planta de procesamiento de productos de Panificación</td>
+                <td>RCI-SVO-001-N°006.1-2023</td>
+                <td>Alimentos</td>
+            </tr>
+            <tr>
+                <td>MSc. Marco Burbano</td>
+                <td>Planta de procesamiento de productos de almidón</td>
+                <td>RCI-SVO-001-N°006.1-2023</td>
+                <td>Alimentos</td>
+            </tr>
+    
+        </table>
+        
+        <h2>Laboratorios</h2>
+        <table>
+            <tr>
+                <th>Responsable</th>
+                <th>Nombre</th>
+                <th>Resolución</th>
+                <th>Carrera</th>
+            </tr>
+            <tr>
+                <td>MSc. Argenis Heredia</td>
+                <td>Laboratorio de Herramientas Tecnológicas y de Simulación</td>
+                <td>RCI-SO-02-N°079-2022</td>
+                <td>Logística</td>
+            </tr>
+            <tr>
+                <td>MSc. Gerardo Mera</td>
+                <td>Business Lab - UPEC</td>
+                <td>RCI-SVO-001-N°006.4-2023</td>
+                <td>Comercio Exterior</td>
+            </tr>
+            <tr>
+                <td>MSc. Marco Burbano</td>
+                <td>Laboratorio de Evaluación Sensorial de Alimentos</td>
+                <td>RCI-SVO-009-N°114-2022</td>
+                <td>Alimentos</td>
+            </tr>
+            <tr>
+                <td>MSc. Sofia Zapata</td>
+                <td>Asuntos Públicos</td>
+                <td>RCI-SVO-001-N°006-2023</td>
+                <td>Administración Pública</td>
+            </tr>
+            <tr>
+                <td>MSc. Hernán Benavides</td>
+                <td>Laboratorio de Tecnologías Agropecuarias</td>
+                <td>RCI-SVO-001-N°006.2-2023</td>
+                <td>Agropecuaria</td>
+            </tr>
+            <tr>
+                <td>MSc. Carlos Guano</td>
+                <td>Laboratorio de Robótica y Electrónica Aplicada</td>
+                <td>RCI-SVO-001-N°006.3-2023</td>
+                <td>Computación</td>
+            </tr>
+            <tr>
+                <td>MSc. Fernando Pazmiño</td>
+                <td>Laboratorio en Herramientas Tecnológicas en Multimedia</td>
+                <td>No. 106-CSUP-2024</td>
+                <td>Multimedia</td>
+            </tr>
+            <tr>
+                <td>MSc. Freddy Quinde</td>
+                <td>Laboratorio Empresarial</td>
+                <td>No. 47-SVO-CI-2024</td>
+                <td>Administración de Empresas</td>
+            </tr>
+            <tr>
+                <td>PhD. Hernán Benavides</td>
+                <td>Laboratorio de Producción Láctea y Bienestar Animal</td>
+                <td>No. 56-SVO-CI-2024</td>
+                <td>Agropecuaria</td>
+            </tr>
+        </table>
+    
+    </div>
+    </div>
+    
 </div>
 {% endblock %}
 

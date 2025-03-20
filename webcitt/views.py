@@ -143,6 +143,7 @@ def uexperimentales_view(request):
     return render(request, 'uexperimentales/uexperimentales.html', {
         'seccion_activa': 'uexperimentales'
     })
+
 # Unidades Experimentales_San Francisco
 def uexperimentales_sanfrancisco_sobre_view(request):
     return render(request, 'uexperimentales/sanfrancisco/sobre.html', {
@@ -168,6 +169,33 @@ def uexperimentales_sanfrancisco_contacto_view(request):
     return render(request, 'uexperimentales/sanfrancisco/contacto.html', {
         'seccion_activa': 'uexperimentales'
     })
+
+# Unidades Experimentales_Alonzo Tadeo
+def uexperimentales_tadeo_sobre_view(request):
+    return render(request, 'uexperimentales/tadeo/sobre.html', {
+        'seccion_activa': 'uexperimentales'
+    })
+def uexperimentales_tadeo_areas_especializacion_view(request):
+    return render(request, 'uexperimentales/tadeo/areas_especializacion.html', {
+        'seccion_activa': 'uexperimentales'
+    })
+def uexperimentales_tadeo_recursos_view(request):
+    return render(request, 'uexperimentales/tadeo/recursos.html', {
+        'seccion_activa': 'uexperimentales'
+    })
+def uexperimentales_tadeo_servicios_view(request):
+    return render(request, 'uexperimentales/tadeo/servicios.html', {
+        'seccion_activa': 'uexperimentales'
+    })
+def uexperimentales_tadeo_resultados_view(request):
+    return render(request, 'uexperimentales/tadeo/resultados.html', {
+        'seccion_activa': 'uexperimentales'
+    })
+def uexperimentales_tadeo_contacto_view(request):
+    return render(request, 'uexperimentales/tadeo/contacto.html', {
+        'seccion_activa': 'uexperimentales'
+    })
+
 
 
 # Unidades Experimentales Smart Lab
@@ -219,7 +247,23 @@ def hublab_planta_lacteos_view(request):
     return render(request, 'hublab/planta_lacteos.html', {
         'seccion_activa': 'hublab'
     })
+def hublab_planta_lacteos1_view(request):
+    return render(request, 'hublab/planta_lacteos1.html', {
+        'seccion_activa': 'hublab'
+    })
 
+def hublab_planta_lacteos2_view(request):
+    return render(request, 'hublab/planta_lacteos2.html', {
+        'seccion_activa': 'hublab'
+    })
+def hublab_planta_lacteos3_view(request):
+    return render(request, 'hublab/planta_lacteos3.html', {
+        'seccion_activa': 'hublab'
+    })
+def hublab_planta_lacteos4_view(request):
+    return render(request, 'hublab/planta_lacteos4.html', {
+        'seccion_activa': 'hublab'
+    })
 
 # Formación
 def formacion_view(request):
