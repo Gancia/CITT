@@ -80,6 +80,10 @@ def incubadora_proceso_incubacion_view(request):
     return render(request, 'incubadora/proceso_incubacion.html', {
         'seccion_activa': 'incubadora'
     })
+def incubadora_incubacion_view(request):
+    return render(request, 'incubadora/incubacion.html', {
+        'seccion_activa': 'incubadora'
+    })
 
 def incubadora_recursos_emprendedores_view(request):
     return render(request, 'incubadora/recursos_emprendedores.html', {

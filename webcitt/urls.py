@@ -22,6 +22,7 @@ urlpatterns = [
     path('incubadora/foro-colaborativo/', views.incubadora_foro_emprendedores_view, name='incubadora_foro_emprendedores'),
     path('incubadora/herramientas/', views.incubadora_herramientas_innovacion_view, name='incubadora_herramientas_innovacion'),
     path('incubadora/proceso-incubacion/', views.incubadora_proceso_incubacion_view, name='incubadora_proceso_incubacion'),
+    path('incubadora/incubacion/', views.incubadora_incubacion_view, name='incubadora_incubacion'),
     path('incubadora/recursos-emprendedores/', views.incubadora_recursos_emprendedores_view, name='incubadora_recursos_emprendedores'),
     path('incubadora/red-mentores/', views.incubadora_red_mentores_view, name='incubadora_red_mentores'),
     path('incubadora/registro-ideas/', views.incubadora_registro_ideas_view, name='incubadora_registro_ideas'),
