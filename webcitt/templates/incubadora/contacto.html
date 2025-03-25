@@ -17,15 +17,30 @@
                 <div class="col-12 col-md-6 mb-4">
                     <h2>Información de Contacto</h2>
                     <div class="contact-info">
-                        <!-- Aquí irá la información de contacto -->
+                        <p><strong>Dirección:</strong> Calle Falsa 123, Ciudad, País</p>
+                        <p><strong>Teléfono:</strong> +123 456 7890</p>
+                        <p><strong>Email:</strong> contacto@incubadora.com</p>
                     </div>
                 </div>
                 
                 <!-- Formulario de contacto -->
                 <div class="col-12 col-md-6">
                     <h2>Envíanos un Mensaje</h2>
-                    <form class="contact-form">
-                        <!-- Aquí irá el formulario de contacto -->
+                    <form class="contact-form" method="post" action="{% url 'contacto' %}">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
                     </form>
                 </div>
             </div>
@@ -35,7 +50,16 @@
                 <div class="col-12">
                     <h2>Ubicación</h2>
                     <div class="map-container">
-                        <!-- Aquí irá el mapa -->
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019112374928!2d-122.419415484681!3d37.77492927975971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c2f2f2f2f%3A0x2f2f2f2f2f2f2f2f!2sCalle%20Falsa%20123%2C%20Ciudad%2C%20Pa%C3%ADs!5e0!3m2!1ses!2s!4v1616161616161!5m2!1ses!2s" 
+                            width="100%" 
+                            height="450" 
+                            frameborder="0" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            aria-hidden="false" 
+                            tabindex="0">
+                        </iframe>
                     </div>
                 </div>
             </div>
