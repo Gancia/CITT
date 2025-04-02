@@ -6,6 +6,7 @@ from . import views
 
 urlpatterns = [
   path('ott/', views.ott_view, name='ott'),
+  path('grappelli/', include('grappelli.urls')),
     path('ott/quienes-somos/', views.ott_quienes_somos_view, name='ott_quienes_somos'),
     path('ott/servicios/', views.ott_servicios_view, name='ott_servicios'),
     path('ott/innovacion-tecnologica/', views.ott_innovacion_tecnologica_view, name='ott_innovacion_tecnologica'),
