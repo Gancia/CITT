@@ -10,14 +10,82 @@
         </div>
     </div>
     
-    <div class="row">
-        <div class="col-12 col-xl-8 offset-xl-2">
+    <div class="row justify-content-center">
+        <div class="col-12">
             <!-- Grid de casos de éxito -->
             <div class="row">
-                <!-- Aquí irán las tarjetas de casos de éxito -->
-                <!-- Cada tarjeta tendrá una imagen, título, descripción breve y enlace a más detalles -->
+                <!-- Tarjeta de caso de éxito 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="{% static '/img\ott\caso1.jpg' %}" alt="Caso de Éxito 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Startup Innovadora</h5>
+                            <p class="card-text">Esta startup ha revolucionado el mercado con su tecnología innovadora, logrando un crecimiento exponencial.</p>
+                            <a href="#" class="btn btn-outline-primary">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tarjeta de caso de éxito 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="{% static '/img\ott\caso2.jpg' %}" alt="Caso de Éxito 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Empresa Social</h5>
+                            <p class="card-text">Una empresa que ha generado un impacto social significativo, mejorando la calidad de vida de muchas personas.</p>
+                            <a href="#" class="btn btn-outline-primary">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tarjeta de caso de éxito 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="{% static 'img\social\Ott7.png' %}" alt="Caso de Éxito 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Proyecto Sostenible</h5>
+                            <p class="card-text">Un proyecto que ha implementado prácticas sostenibles, contribuyendo al cuidado del medio ambiente.</p>
+                            <a href="#" class="btn btn-outline-primary">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tarjeta de caso de éxito 4 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="{% static 'img/casos-exito/caso4.jpg' %}" alt="Caso de Éxito 4">
+                        <div class="card-body">
+                            <h5 class="card-title">Innovación en Salud</h5>
+                            <p class="card-text">Una empresa que ha desarrollado soluciones innovadoras en el sector salud, mejorando la atención médica.</p>
+                            <a href="#" class="btn btn-outline-primary">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tarjeta de caso de éxito 5 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="{% static 'img/casos-exito/caso5.jpg' %}" alt="Caso de Éxito 5">
+                        <div class="card-body">
+                            <h5 class="card-title">Tecnología Educativa</h5>
+                            <p class="card-text">Una startup que ha transformado la educación con su plataforma tecnológica, facilitando el aprendizaje.</p>
+                            <a href="#" class="btn btn-outline-primary">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tarjeta de caso de éxito 6 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="{% static 'img/casos-exito/caso6.jpg' %}" alt="Caso de Éxito 6">
+                        <div class="card-body">
+                            <h5 class="card-title">Energía Renovable</h5>
+                            <p class="card-text">Un proyecto que ha implementado soluciones de energía renovable, contribuyendo a un futuro más sostenible.</p>
+                            <a href="#" class="btn btn-outline-primary">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block extra_scripts %}
+<!-- Scripts específicos para la página de casos de éxito si son necesarios -->
 {% endblock %}

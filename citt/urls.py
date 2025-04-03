@@ -21,6 +21,7 @@ from webcitt import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     
+    path('grappelli/', include('grappelli.urls')), # grappelli URLS
     
     path('', views.home_view, name='home'),
     path('', include('webcitt.urls')),
