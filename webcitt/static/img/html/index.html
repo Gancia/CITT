@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escenario Virtual</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .iframe-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        #unity-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: black;
+
+        }
+        #unity-canvas {
+            width: 100%;
+            height: 100%;
+        }
+        @media (max-width: 768px) {
+            #unity-container {
+                flex-direction: column;
+            }
+            #unity-canvas {
+                width: 100vw;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="iframe-container">
+        <iframe src="https://bucketvirtualpro.s3.amazonaws.com/escenariosHtm/14026/index.html" title="Escenario Virtual" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div id="unity-container" class="unity-desktop">
+        <canvas id="unity-canvas"></canvas>
+        <div id="unity-loading-bar" style="display: none;">
+            <div id="unity-logo"></div>
+            <div id="unity-progress-bar-empty">
+                <div id="unity-progress-bar-full" style="width: 100%;"></div>
+            </div>
+        </div>
+        <div id="unity-warning"></div>
+        <div id="unity-footer">
+            <div id="unity-webgl-logo"></div>
+            <div id="unity-fullscreen-button" onclick="toggleUnityFullscreen(event)"></div>
+            <div id="unity-build-title">ap35</div>
+        </div>
+    </div>
+    <script>
+        function toggleUnityFullscreen(event) {
+            event.stopPropagation(); // Evita interferencias con el otro botón de pantalla completa
+            var canvas = document.getElementById("unity-canvas");
+            if (!document.fullscreenElement) {
+                canvas.requestFullscreen().catch(err => {
+                    console.log(`Error al activar pantalla completa: ${err.message}`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+    </script>
+</body>
+</html>
