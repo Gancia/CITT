@@ -227,7 +227,7 @@ a:hover {
 
 /* Sección izquierda */
 .navbar .d-flex:first-child {
-  flex: 1;s
+  flex: 1;
 }
 
 .navbar .d-flex.align-items-center:first-child {
