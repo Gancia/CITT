@@ -1,14 +1,22 @@
 from django.contrib import admin
+from .models import Proyecto, Categoria, EstadoProyecto, Mentor, Integrante, Documento, Imagen, Submodulo
 
-# Register your models here.
-from django.contrib import admin
-from .models import Proyecto, Categoria, EstadoProyecto, Mentor, Integrante, Documento
+class ImagenInline(admin.TabularInline):
+    model = Imagen
+    extra = 1
+    fields = ('tipo', 'archivo', 'video_url', 'descripcion')
+
+class SubmoduloInline(admin.TabularInline):
+    model = Submodulo
+    extra = 1
+    fields = ('nombre', 'categoria_submodulo', 'imagenes_videos', 'archivo_pdf', 'archivo_html')
 
 @admin.register(Proyecto)
 class ProyectoAdmin(admin.ModelAdmin):
     list_display = ('nombre', 'categoria', 'estado', 'mentor', 'fecha_inicio', 'fecha_fin')
     search_fields = ('nombre',)
     list_filter = ('categoria', 'estado')
+    inlines = [ImagenInline, SubmoduloInline]
 
 @admin.register(Categoria)
 class CategoriaAdmin(admin.ModelAdmin):
