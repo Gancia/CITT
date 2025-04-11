@@ -227,7 +227,7 @@ a:hover {
 
 /* Sección izquierda */
 .navbar .d-flex:first-child {
-  flex: 1;
+  flex: 1;s
 }
 
 .navbar .d-flex.align-items-center:first-child {
@@ -266,18 +266,6 @@ a:hover {
 
   .navbar .navbar-center {
     display: none;
-  }
-  .menu-sub-hidden .sub-menu {
-    transform: translateX(-100%); /* Oculta el submenú */
-  }
-  #app-container.menu-hidden .main-menu {
-    transform: translateX(-100%); /* Oculta el menú principal */
-  }
-  .menu-sub-hidden .sub-menu {
-    transform: translateX(0) !important; /* Asegura que el submenú sea visible */
-  }
-  #app-container.menu-hidden .main-menu {
-    transform: translateX(0) !important; /* Asegura que el menú principal sea visible */
   }
 }
 
