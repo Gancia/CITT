@@ -157,10 +157,19 @@ $(document).ready(function() {
 
     // Función para cambiar las clases del contenedor basado en el tamaño de la pantalla
     function toggleMenuClass() {
+        const container = $('#app-container');
         if (window.innerWidth <= 767) {
-            $('#app-container').removeClass('menu-default').addClass('menu-hidden');
+            container.removeClass('menu-default').removeClass('menu-sub-hidden').removeClass('menu-hidden');
+            $('.sub-menu ul').show(); // Asegura que el submenú sea visible
         } else {
-            $('#app-container').removeClass('menu-hidden').addClass('menu-default');
+            container.removeClass('menu-hidden').addClass('menu-default');
+        }
+
+        // Asegura que el submenú sea visible si hay un menú activo
+        const activeLink = sessionStorage.getItem('activeMenu');
+        if (activeLink && ['ott', 'incubadora', 'uexperimentales', 'formacion'].includes(activeLink)) {
+            container.removeClass('menu-sub-hidden');
+            $('.sub-menu ul[data-link="' + activeLink + '"]').show();
         }
     }
 
