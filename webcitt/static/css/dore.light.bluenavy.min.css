@@ -2182,7 +2182,7 @@ button {
 }
 
 #app-container.menu-hidden .sub-menu,#app-container.menu-sub-hidden .sub-menu,#app-container.sub-hidden .sub-menu {
-    transform: translateX(-330px)
+    transform: translateX(-500px)
 }
 
 @media (max-width: 1439px) {
@@ -2226,7 +2226,7 @@ button {
 }
 
 #app-container.main-hidden.sub-hidden .sub-menu,#app-container.menu-hidden .sub-menu {
-    transform: translateX(-350px)
+    transform: translateX(-550px)
 }
 
 @media (max-width: 1439px) {
