@@ -10,13 +10,7 @@ class Categoria(models.Model):
     def __str__(self):
         return self.nombre
 
-class EstadoProyecto(models.Model):
-    nombre = models.CharField(max_length=50, unique=True)
-    descripcion = models.TextField(blank=True, null=True)
-    activo = models.BooleanField(default=True)  # Campo para indicar si el estado está activo o inactivo
-
-    def __str__(self):
-        return self.nombre
+# Removed the EstadoProyecto model
 
 class Mentor(models.Model):
     usuario = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -39,7 +33,7 @@ class Proyecto(models.Model):
     mentor = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)  # Relación directa con User
     imagen = models.ImageField(upload_to='proyectos_imagenes/', blank=True, null=True)  # Campo para una única imagen
     descripcion_corta = models.CharField(max_length=255, blank=True, null=True)  # Campo para una descripción breve
-    recursos = models.ManyToManyField('Recurso', blank=True, related_name='proyectos')  # Actualizado el nombre del modelo
+    recursos = None  # Removed ManyToManyField
 
     def __str__(self):
         return self.nombre
@@ -57,6 +51,30 @@ class CarpetaRecurso(models.Model):  # Nuevo modelo para representar carpetas
     def __str__(self):
         return self.nombre
 
+class Archivo(models.Model):
+    TIPO_ARCHIVO_CHOICES = [
+        ('pdf', 'PDF'),
+        ('html', 'HTML'),
+        ('imagen', 'Imagen'),
+        ('video', 'Video'),
+        ('otro', 'Otro'),
+    ]
+
+    tipo = models.CharField(max_length=10, choices=TIPO_ARCHIVO_CHOICES)
+    archivo = models.FileField(upload_to='archivos/', blank=True, null=True)
+    url = models.URLField(blank=True, null=True)  # Nuevo campo para URL
+    fecha_subida = models.DateTimeField(auto_now_add=True)
+
+    def clean(self):
+        # Validar que solo uno de los campos 'archivo' o 'url' esté presente
+        if self.archivo and self.url:
+            raise ValidationError("Solo puede proporcionar un archivo o una URL, no ambos.")
+        if not self.archivo and not self.url:
+            raise ValidationError("Debe proporcionar un archivo o una URL.")
+
+    def __str__(self):
+        return f"{self.tipo} - {self.archivo.name if self.archivo else self.url}"
+
 class Recurso(models.Model):  # Renombrado de Submodulo a Recurso
     MODULO_CHOICES = [
         ('presentacion', 'Presentación'),
@@ -68,11 +86,11 @@ class Recurso(models.Model):  # Renombrado de Submodulo a Recurso
 
     nombre = models.CharField(max_length=255)
     proyecto = models.ForeignKey(
-        Proyecto,
+        'Proyecto',  # Relación con el modelo Proyecto
         on_delete=models.CASCADE,
-        related_name='recursos_set',
-        null=True,
-        blank=True
+        related_name='recursos',  # Updated related_name
+        help_text="Proyecto al que pertenece este recurso.",
+        default=1  # Replace '1' with the ID of your placeholder project
     )
     modulo = models.CharField(max_length=50, choices=MODULO_CHOICES)
     archivos = models.ManyToManyField(
@@ -83,7 +101,7 @@ class Recurso(models.Model):  # Renombrado de Submodulo a Recurso
     )
     activo = models.BooleanField(default=True)
     carpeta = models.ForeignKey(
-        CarpetaRecurso,
+        'CarpetaRecurso',
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
@@ -126,13 +144,4 @@ class Integrante(models.Model):
     rol = models.CharField(max_length=100)
     
     def __str__(self):
-        return f"{self.usuario.first_name} {self.usuario.last_name} - {self.proyecto.nombre}"  
-
-class Documento(models.Model):
-    proyecto = models.ForeignKey(Proyecto, on_delete=models.CASCADE, related_name='documentos')
-    nombre = models.CharField(max_length=255)
-    archivo = models.FileField(upload_to='documentos_proyectos/')
-    fecha_subida = models.DateTimeField(auto_now_add=True)
-    
-    def __str__(self):
-        return self.nombre
+        return f"{self.usuario.first_name} {self.usuario.last_name} - {self.proyecto.nombre}"
