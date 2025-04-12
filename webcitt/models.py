@@ -21,6 +21,20 @@ class Mentor(models.Model):
         return f"{self.usuario.first_name} {self.usuario.last_name}"  
 
 class Proyecto(models.Model):
+    DEPENDENCIA_CHOICES = [
+        ('san_francisco', 'Centro Experimental - San Francisco'),
+        ('alfonso_tadeo', 'Centro Experimental - Alfonso Tadeó'),
+        ('realidad_virtual', 'Laboratorio de Realidad Virtual - Extendida (Logística)'),
+        ('fablab', 'Laboratorio Fablab'),
+        ('lacteos', 'Planta de Procesamiento de Productos Lácteos'),
+        ('robotica', 'Laboratorio de Robótica y Electrónica Aplicada'),
+        ('multimedia', 'Laboratorio de Formación Informativa de Multimedia'),
+        ('diagnostico', 'Laboratorio Investigación de Diagnóstico Serológico Molecular'),
+        ('turismo', 'Laboratorio de Turismo del Carchi'),
+        ('sensorial', 'Laboratorio de Evaluación Sensorial de Alimentos'),
+        ('asuntos_publicos', 'Laboratorio de Asuntos Públicos'),
+    ]
+
     nombre = models.CharField(max_length=200)
     descripcion = models.TextField()
     fecha_inicio = models.DateField()
@@ -34,6 +48,13 @@ class Proyecto(models.Model):
     imagen = models.ImageField(upload_to='proyectos_imagenes/', blank=True, null=True)  # Campo para una única imagen
     descripcion_corta = models.CharField(max_length=255, blank=True, null=True)  # Campo para una descripción breve
     recursos = None  # Removed ManyToManyField
+    dependencia = models.CharField(
+        max_length=50,
+        choices=DEPENDENCIA_CHOICES,
+        blank=True,
+        null=True,
+        help_text="Seleccione la dependencia asociada al proyecto."
+    )
 
     def __str__(self):
         return self.nombre
