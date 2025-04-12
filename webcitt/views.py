@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from webcitt.models import Proyecto
 
 # Create your views here.
 def home_view(request):
@@ -184,8 +185,10 @@ def uexperimentales_smartdatalab_view(request):
 # HubLab
 
 def hublab_view(request):
+    proyectos = Proyecto.objects.all()  # Obtén todos los proyectos
     return render(request, 'hublab/hublab.html', {
-        'seccion_activa': 'hublab'
+        'proyectos': proyectos,  # Agrega los proyectos al contexto
+        'seccion_activa': 'hublab'  # Mantén la sección activa para el submenú
     })
 
 def hublab_planta_lacteos_view(request):

@@ -1,18 +1,20 @@
 from django.contrib import admin
 from django.utils.html import format_html
+from django.http import HttpResponse
+from django.urls import path
 from .models import Proyecto, Categoria, Mentor, Integrante, Recurso, ArchivoRecurso, CarpetaRecurso
 
 class ArchivoRecursoInline(admin.TabularInline):
     model = ArchivoRecurso
     extra = 1
-    fields = ('nombre', 'tipo', 'archivo')  # Ensure correct fields are displayed
+    fields = ('tipo', 'archivo', 'url')  # Updated fields
 
 class RecursoInline(admin.TabularInline):
     model = Recurso
     extra = 1
-    fields = ('nombre', 'modulo', 'proyecto', 'carpeta', 'activo', 'archivos')  # Copia los campos necesarios
-    filter_horizontal = ('archivos',)  # Copia la configuración de filtros
-    readonly_fields = ('proyecto',)  # Muestra el proyecto como solo lectura
+    fields = ('nombre', 'modulo', 'proyecto', 'carpeta', 'activo', 'archivos')
+    filter_horizontal = ('archivos',)
+    readonly_fields = ('proyecto',)
 
 @admin.register(Proyecto)
 class ProyectoAdmin(admin.ModelAdmin):
@@ -23,14 +25,8 @@ class ProyectoAdmin(admin.ModelAdmin):
     inlines = [RecursoInline]
     readonly_fields = ('vista_previa_imagen',)
 
-    def imagen_proyecto(self, obj):
-        if obj.imagen and obj.imagen.url:  # Cambiado '&&' por 'and'
-            return format_html('<img src="{}" style="width: 50px; height: auto;" />', obj.imagen.url)
-        return "No image"
-    imagen_proyecto.short_description = "Imagen"
-
     def vista_previa_imagen(self, obj):
-        if obj.imagen and obj.imagen.url:  # Cambiado '&&' por 'and'
+        if obj.imagen and obj.imagen.url:
             return format_html('<img src="{}" style="max-width: 300px; height: auto;" />', obj.imagen.url)
         return "No image"
     vista_previa_imagen.short_description = "Vista Previa de la Imagen"
@@ -38,7 +34,10 @@ class ProyectoAdmin(admin.ModelAdmin):
     fields = ('nombre', 'descripcion', 'fecha_inicio', 'fecha_fin', 'categoria', 'activo', 'mentor', 'imagen', 'vista_previa_imagen')
 
     class Media:
-        js = ('js/admin_proyecto.js',)  # Archivo JS para manejar actualizaciones dinámicas
+        css = {
+            'all': ('css/custom_admin.css',)
+        }
+        js = ('js/custom_admin.js',)
 
 @admin.register(Categoria)
 class CategoriaAdmin(admin.ModelAdmin):
@@ -54,25 +53,106 @@ class IntegranteAdmin(admin.ModelAdmin):
 
 @admin.register(Recurso)
 class RecursoAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'modulo', 'proyecto', 'carpeta', 'activo')  # Incluye 'proyecto'
+    list_display = ('nombre', 'modulo', 'proyecto', 'carpeta', 'activo')
     list_editable = ('activo',)
-    list_filter = ('activo', 'modulo', 'carpeta', 'proyecto')  # Agrega 'proyecto' al filtro
-    search_fields = ('nombre', 'carpeta__nombre', 'proyecto__nombre')  # Permite buscar por 'proyecto'
-    fields = ('nombre', 'modulo', 'proyecto', 'carpeta', 'activo', 'archivos')  # Incluye 'proyecto'
-    filter_horizontal = ('archivos',)  # Habilita la interfaz para seleccionar múltiples archivos
+    list_filter = ('activo', 'modulo', 'carpeta', 'proyecto')
+    search_fields = ('nombre', 'carpeta__nombre', 'proyecto__nombre')
+    fields = ('nombre', 'modulo', 'proyecto', 'carpeta', 'activo', 'archivos')
+    filter_horizontal = ('archivos',)
 
     class Media:
         js = ('js/admin_recurso.js',)
 
 @admin.register(ArchivoRecurso)
 class ArchivoRecursoAdmin(admin.ModelAdmin):
-    list_display = ('tipo', 'archivo', 'url', 'fecha_subida')  # Updated fields
-    list_filter = ('tipo', 'fecha_subida')  # Filters for the list view
-    search_fields = ('tipo', 'archivo', 'url')  # Updated searchable fields
-    fields = ('tipo', 'archivo', 'url')  # Updated form fields
+    list_display = ('tipo', 'archivo', 'url', 'fecha_subida')
+    list_filter = ('tipo', 'fecha_subida')
+    search_fields = ('tipo', 'archivo', 'url')
+    fields = ('tipo', 'archivo', 'url')
 
 @admin.register(CarpetaRecurso)
 class CarpetaRecursoAdmin(admin.ModelAdmin):
     list_display = ('nombre',)
     search_fields = ('nombre',)
+
+class CustomAdminSite(admin.AdminSite):
+    site_header = "Gestión de Proyectos"
+    site_title = "Panel de Administración"
+    index_title = "Bienvenido al Panel de Administración"
+
+    def get_urls(self):
+        urls = super().get_urls()
+        custom_urls = [
+            path('custom-view/', self.admin_view(self.custom_view))
+        ]
+        return custom_urls + urls
+
+    def custom_view(self, request):
+        # HTML content for the custom view
+        html_content = """
+        <html>
+        <head>
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+            <style>
+                .btn-large {
+                    font-size: 18px; /* Original font size */
+                    padding: 15px 30px; /* Original padding */
+                    margin: 10px; /* Original margin */
+                    background-color: #007bff;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    display: inline-flex;
+                    align-items: center;
+                    text-decoration: none;
+                }
+                .btn-large i {
+                    margin-right: 10px;
+                }
+                .btn-small {
+                    font-size: 12px;
+                    padding: 8px 15px;
+                    margin: 5px;
+                    background-color: #6c757d;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    display: inline-flex;
+                    align-items: center;
+                    text-decoration: none;
+                }
+                .btn-small i {
+                    margin-right: 5px;
+                }
+                body {
+                    font-family: Arial, sans-serif;
+                    padding: 20px;
+                }
+                h1 {
+                    margin-bottom: 20px;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>Gestión de Proyectos</h1>
+            <a href="/admin/webcitt/proyecto/" class="btn-large">
+                <i class="fas fa-folder"></i> Proyectos
+            </a>
+            <a href="/admin/webcitt/categoria/" class="btn-small">
+                <i class="fas fa-tags"></i> Categorías
+            </a>
+            <a href="/admin/webcitt/mentor/" class="btn-small">
+                <i class="fas fa-user-tie"></i> Mentores
+            </a>
+            <a href="/admin/webcitt/recurso/" class="btn-small">
+                <i class="fas fa-file-alt"></i> Recursos
+            </a>
+        </body>
+        </html>
+        """
+        return HttpResponse(html_content)
+
+admin_site = CustomAdminSite(name='custom_admin')
 
