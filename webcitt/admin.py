@@ -1,24 +1,24 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from .models import Proyecto, Categoria, EstadoProyecto, Mentor, Integrante, Documento, Recurso, ArchivoRecurso, CarpetaSubmodulo, CarpetaRecurso
+from .models import Proyecto, Categoria, EstadoProyecto, Mentor, Integrante, Documento, Recurso, ArchivoRecurso, CarpetaRecurso
 
-class RecursoInline(admin.TabularInline):  # Renombrado de SubmoduloInline a RecursoInline
+class RecursoInline(admin.TabularInline):
     model = Recurso
     extra = 1
-    fields = ('nombre', 'modulo', 'carpeta', 'archivo', 'archivos', 'activo')  # Renombrado de archivos_multimedia a archivos
+    fields = ('nombre', 'modulo', 'carpeta', 'activo')  # Removed 'archivo'
 
-class ArchivoRecursoInline(admin.TabularInline):  # Renombrado de ArchivoSubmoduloInline a ArchivoRecursoInline
+class ArchivoRecursoInline(admin.TabularInline):
     model = ArchivoRecurso
     extra = 1
     fields = ('nombre', 'tipo', 'archivo')
 
 class ArchivoRecursoInline(admin.TabularInline):
-    model = Recurso.archivos.through  # Renombrado de archivos_multimedia a archivos
+    model = Recurso.archivos.through
     extra = 1
 
 @admin.register(Proyecto)
 class ProyectoAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'categoria', 'mentor', 'fecha_inicio', 'fecha_fin', 'activo', 'imagen_proyecto')
+    list_display = ('nombre', 'categoria', 'mentor', 'fecha_inicio', 'fecha_fin', 'activo')
     list_editable = ('activo',)
     list_filter = ('categoria', 'activo')
     search_fields = ('nombre', 'mentor__username')
@@ -26,13 +26,13 @@ class ProyectoAdmin(admin.ModelAdmin):
     readonly_fields = ('vista_previa_imagen',)
 
     def imagen_proyecto(self, obj):
-        if obj.imagen and obj.imagen.url:  # Fixed logical operator
+        if obj.imagen and obj.imagen.url:
             return format_html('<img src="{}" style="width: 50px; height: auto;" />', obj.imagen.url)
         return "No image"
     imagen_proyecto.short_description = "Imagen"
 
     def vista_previa_imagen(self, obj):
-        if obj.imagen and obj.imagen.url:  # Fixed logical operator
+        if obj.imagen and obj.imagen.url:
             return format_html('<img src="{}" style="max-width: 300px; height: auto;" />', obj.imagen.url)
         return "No image"
     vista_previa_imagen.short_description = "Vista Previa de la Imagen"
@@ -63,27 +63,22 @@ class IntegranteAdmin(admin.ModelAdmin):
 class DocumentoAdmin(admin.ModelAdmin):
     list_display = ('nombre', 'proyecto', 'fecha_subida')
 
-@admin.register(Recurso)  # Renombrado de Submodulo a Recurso
+@admin.register(Recurso)
 class RecursoAdmin(admin.ModelAdmin):
     list_display = ('nombre', 'modulo', 'carpeta', 'activo')
     list_editable = ('activo',)
     list_filter = ('activo', 'modulo', 'carpeta')
     search_fields = ('nombre', 'carpeta__nombre')
-    fields = ('nombre', 'modulo', 'carpeta', 'archivos', 'activo')  # Solo un campo de archivos
-    filter_horizontal = ('archivos',)  # Permitir selección múltiple de archivos
+    fields = ('nombre', 'modulo', 'carpeta', 'activo')  # Removed 'archivo'
+    filter_horizontal = ('archivos',)
 
     class Media:
-        js = ('js/admin_recurso.js',)  # Archivo JavaScript personalizado
+        js = ('js/admin_recurso.js',)
 
 @admin.register(ArchivoRecurso)
 class ArchivoRecursoAdmin(admin.ModelAdmin):
     list_display = ('nombre', 'tipo', 'archivo', 'fecha_subida')
     list_filter = ('tipo', 'fecha_subida')
-    search_fields = ('nombre',)
-
-@admin.register(CarpetaSubmodulo)
-class CarpetaSubmoduloAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'descripcion')
     search_fields = ('nombre',)
 
 @admin.register(CarpetaRecurso)
