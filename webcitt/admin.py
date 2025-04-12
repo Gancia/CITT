@@ -66,9 +66,10 @@ class RecursoAdmin(admin.ModelAdmin):
 
 @admin.register(ArchivoRecurso)
 class ArchivoRecursoAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'tipo', 'archivo', 'fecha_subida')
-    list_filter = ('tipo', 'fecha_subida')
-    search_fields = ('nombre',)
+    list_display = ('tipo', 'archivo', 'url', 'fecha_subida')  # Updated fields
+    list_filter = ('tipo', 'fecha_subida')  # Filters for the list view
+    search_fields = ('tipo', 'archivo', 'url')  # Updated searchable fields
+    fields = ('tipo', 'archivo', 'url')  # Updated form fields
 
 @admin.register(CarpetaRecurso)
 class CarpetaRecursoAdmin(admin.ModelAdmin):

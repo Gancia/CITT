@@ -130,13 +130,20 @@ class ArchivoRecurso(models.Model):  # Renombrado de ArchivoSubmodulo a ArchivoR
         ('otro', 'Otro'),
     ]
 
-    nombre = models.CharField(max_length=255)
     tipo = models.CharField(max_length=10, choices=TIPO_ARCHIVO_CHOICES)
-    archivo = models.FileField(upload_to='recursos/archivos/')
-    fecha_subida = models.DateTimeField(auto_now_add=True)  # Removed default
+    archivo = models.FileField(upload_to='recursos/archivos/', blank=True, null=True)
+    url = models.URLField(blank=True, null=True)  # Nuevo campo para URL
+    fecha_subida = models.DateTimeField(auto_now_add=True)
+
+    def clean(self):
+        # Validar que solo uno de los campos 'archivo' o 'url' esté presente
+        if self.archivo and self.url:
+            raise ValidationError("Solo puede proporcionar un archivo o una URL, no ambos.")
+        if not self.archivo and not self.url:
+            raise ValidationError("Debe proporcionar un archivo o una URL.")
 
     def __str__(self):
-        return f"{self.nombre} ({self.tipo})"
+        return f"{self.tipo} - {self.archivo.name if self.archivo else self.url}"
 
 class Integrante(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
