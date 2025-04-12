@@ -26,26 +26,6 @@ class Mentor(models.Model):
     def __str__(self):
         return f"{self.usuario.first_name} {self.usuario.last_name}"  
 
-class Imagen(models.Model):
-    TIPO_CHOICES = [
-        ('imagen', 'Imagen'),
-        ('video', 'Video'),
-        ('youtube', 'YouTube'),
-    ]
-
-    proyecto = models.ForeignKey(
-        'Proyecto',
-        on_delete=models.CASCADE,
-        related_name='imagenes_set'  # Updated related_name to avoid conflict
-    )
-    tipo = models.CharField(max_length=10, choices=TIPO_CHOICES, default='imagen')  # Field to specify type
-    archivo = models.FileField(upload_to='proyectos_imagenes/', blank=True, null=True)  # For images or uploaded videos
-    video_url = models.URLField(blank=True, null=True)  # For YouTube links
-    descripcion = models.CharField(max_length=255, blank=True, null=True)
-
-    def __str__(self):
-        return self.descripcion or f"{self.tipo.capitalize()} {self.id}"
-
 class Proyecto(models.Model):
     nombre = models.CharField(max_length=200)
     descripcion = models.TextField()
@@ -58,42 +38,57 @@ class Proyecto(models.Model):
     activo = models.BooleanField(default=True)  # Campo para indicar si el proyecto está activo o inactivo
     mentor = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)  # Relación directa con User
     imagen = models.ImageField(upload_to='proyectos_imagenes/', blank=True, null=True)  # Campo para una única imagen
-    submodulos = models.ManyToManyField('Submodulo', blank=True, related_name='proyectos')
     descripcion_corta = models.CharField(max_length=255, blank=True, null=True)  # Campo para una descripción breve
+    recursos = models.ManyToManyField('Recurso', blank=True, related_name='proyectos')  # Actualizado el nombre del modelo
 
     def __str__(self):
         return self.nombre
 
-class Submodulo(models.Model):
-    CATEGORIA_SUBMODULO_CHOICES = [
+class CarpetaSubmodulo(models.Model):
+    nombre = models.CharField(max_length=255, unique=True)
+    descripcion = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return self.nombre
+
+class CarpetaRecurso(models.Model):  # Nuevo modelo para representar carpetas
+    nombre = models.CharField(max_length=255, unique=True)
+
+    def __str__(self):
+        return self.nombre
+
+class Recurso(models.Model):  # Renombrado de Submodulo a Recurso
+    MODULO_CHOICES = [
         ('presentacion', 'Presentación'),
         ('recursosAprendizaje', 'Recursos de Aprendizaje y Práctica'),
+        ('investigacion', 'Investigación, Innovación y Desarrollo'),
+        ('servicios', 'Servicios y Soporte'),
+        ('colaboracion', 'Colaboración y Networking')
     ]
 
     nombre = models.CharField(max_length=255)
     proyecto = models.ForeignKey(
         Proyecto,
         on_delete=models.CASCADE,
-        related_name='submodulos_set',
-        null=True,  # Permite valores nulos
-        blank=True  # Permite que el campo sea opcional en formularios
+        related_name='recursos_set',
+        null=True,
+        blank=True
     )
-    categoria_submodulo = models.CharField(max_length=50, choices=CATEGORIA_SUBMODULO_CHOICES)
-    imagenes_videos = models.ManyToManyField(Imagen, blank=True)  # For Presentación
-    archivo_pdf = models.FileField(
-        upload_to='submodulos/pdf/',
+    modulo = models.CharField(max_length=50, choices=MODULO_CHOICES)
+    archivos = models.ManyToManyField(
+        'ArchivoRecurso',
         blank=True,
+        related_name='recursos',
+        help_text="Suba uno o varios archivos asociados a este recurso."
+    )
+    activo = models.BooleanField(default=True)
+    carpeta = models.ForeignKey(
+        CarpetaRecurso,
+        on_delete=models.SET_NULL,
         null=True,
-        validators=[FileExtensionValidator(allowed_extensions=['pdf'])]
-    )  # For Recursos de Aprendizaje
-    archivo_html = models.FileField(
-        upload_to='submodulos/html/',
         blank=True,
-        null=True,
-        validators=[FileExtensionValidator(allowed_extensions=['html'])]
-    )  # For Recursos de Aprendizaje
-    activo = models.BooleanField(default=True)  # Campo para indicar si el submódulo está activo o inactivo
-    archivos = models.ManyToManyField('ArchivoSubmodulo', blank=True, related_name='submodulos')
+        related_name='recursos'
+    )
 
     def __str__(self):
         return self.nombre
@@ -108,25 +103,19 @@ def validar_tipo_archivo(archivo, tipo):
     elif tipo == 'video' and not archivo.name.lower().endswith(('.mp4', '.avi', '.mov', '.mkv')):
         raise ValidationError('El archivo debe ser un video.')
 
-class ArchivoSubmodulo(models.Model):
+class ArchivoRecurso(models.Model):  # Renombrado de ArchivoSubmodulo a ArchivoRecurso
     TIPO_ARCHIVO_CHOICES = [
         ('pdf', 'PDF'),
         ('html', 'HTML'),
         ('imagen', 'Imagen'),
         ('video', 'Video'),
+        ('otro', 'Otro'),
     ]
 
-    submodulo = models.ForeignKey(
-        'Submodulo',
-        on_delete=models.CASCADE,
-        related_name='archivos_submodulo'  # Cambia el related_name para evitar conflictos
-    )
     nombre = models.CharField(max_length=255)
     tipo = models.CharField(max_length=10, choices=TIPO_ARCHIVO_CHOICES)
-    archivo = models.FileField(upload_to='submodulos/archivos/')
-
-    def clean(self):
-        validar_tipo_archivo(self.archivo, self.tipo)
+    archivo = models.FileField(upload_to='recursos/archivos/')
+    fecha_subida = models.DateTimeField(auto_now_add=True)  # Removed default
 
     def __str__(self):
         return f"{self.nombre} ({self.tipo})"
