@@ -43,4 +43,4 @@ urlpatterns = [
     path('register/', views.register_view, name='register'),
     path('logout/', views.salir, name='salir')
     
-] + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])
+] + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0]) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

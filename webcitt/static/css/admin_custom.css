@@ -1,0 +1,42 @@
+/* Botones de agregar */
+button.addlink, .addlink {
+    background-color: #d4edda !important; /* Verde claro */
+    color: #155724 !important; /* Texto verde oscuro */
+    border-color: #c3e6cb !important;
+}
+
+button.addlink:hover, .addlink:hover {
+    background-color: #c3e6cb !important;
+    color: #0b2e13 !important;
+}
+
+/* Botones de borrar */
+button.deletelink, .deletelink {
+    background-color: #f8d7da !important; /* Rojo claro */
+    color: #721c24 !important; /* Texto rojo oscuro */
+    border-color: #f5c6cb !important;
+}
+
+button.deletelink:hover, .deletelink:hover {
+    background-color: #f5c6cb !important;
+    color: #491217 !important;
+}
+
+/* Botones de guardar */
+button.default, .default {
+    background-color: #fff3cd !important; /* Amarillo claro */
+    color: #856404 !important; /* Texto amarillo oscuro */
+    border-color: #ffeeba !important;
+}
+
+button.default:hover, .default:hover {
+    background-color: #ffeeba !important;
+    color: #533f03 !important;
+}
+
+/* Otros ajustes */
+button, .button {
+    border-radius: 5px !important; /* Bordes redondeados */
+    padding: 5px 10px !important;
+    font-weight: bold !important;
+}
