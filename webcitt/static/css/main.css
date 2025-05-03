@@ -1309,3 +1309,9 @@ p, .card-text,
 .icon {
   font-family:'simple-line-icons' !important;
 }
+.card-img-top {
+  width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+  height: 200px; /* Ajusta la altura deseada */
+  object-fit: cover; /* Recorta la imagen para que se ajuste al contenedor */
+  object-position: center; /* Centra la imagen dentro del recorte */
+}
