@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
@@ -231,6 +231,16 @@ def hublab_planta_lacteos4_view(request):
     return render(request, 'hublab/planta_lacteos4.html', {
         'seccion_activa': 'hublab'
     })
+
+def proyecto_detalle_view(request, pk):
+    # Obtener el proyecto por su ID (pk)
+    proyecto = get_object_or_404(Proyecto, pk=pk)
+
+    # Pasar el proyecto al contexto
+    context = {
+        'proyecto': proyecto,
+        'seccion_activa': 'hublab'   }
+    return render(request, 'hublab/proyecto_detalle.html', context)
 
 # Formación
 def formacion_view(request):
