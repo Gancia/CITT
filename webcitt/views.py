@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
-from webcitt.models import Proyecto
+from webcitt.models import Proyecto, Categoria
 
 # Create your views here.
 def home_view(request):
@@ -185,11 +185,29 @@ def uexperimentales_smartdatalab_view(request):
 # HubLab
 
 def hublab_view(request):
-    proyectos = Proyecto.objects.all()  # Obtén todos los proyectos
-    return render(request, 'hublab/hublab.html', {
-        'proyectos': proyectos,  # Agrega los proyectos al contexto
-        'seccion_activa': 'hublab'  # Mantén la sección activa para el submenú
-    })
+    # Obtener los filtros de la solicitud GET
+    unidad_experimental = request.GET.get('unidad_experimental')  # Filtro por dependencia
+    categoria = request.GET.get('categoria')  # Filtro por categoría
+
+    # Filtrar los proyectos según los parámetros
+    proyectos = Proyecto.objects.all()
+    if unidad_experimental:
+        proyectos = proyectos.filter(dependencia=unidad_experimental)
+    if categoria:
+        proyectos = proyectos.filter(categoria__nombre=categoria)
+
+    # Obtener todas las dependencias y categorías para los filtros
+    dependencias = Proyecto.DEPENDENCIA_CHOICES
+    categorias = Categoria.objects.all()
+
+    context = {
+        'proyectos': proyectos,
+        'dependencias': dependencias,
+        'categorias': categorias,
+        'unidad_experimental_seleccionada': unidad_experimental,
+        'categoria_seleccionada': categoria,
+    }
+    return render(request, 'hublab/hublab.html', context)
 
 def hublab_planta_lacteos_view(request):
     return render(request, 'hublab/planta_lacteos.html', {

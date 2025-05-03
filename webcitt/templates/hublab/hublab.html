@@ -67,13 +67,10 @@
                               Filtrar por Unidad Experimental
                           </button>
                           <div class="dropdown-menu">
-                              <a class="dropdown-item" href="#">Realidad Extendida</a>
-                              <a class="dropdown-item" href="#">Smart Process Lab</a>
-                              <a class="dropdown-item" href="#">FabLab</a>
-                              <a class="dropdown-item" href="#">Smart Data Lab</a>
-                              <a class="dropdown-item" href="#">Centro experimental San Francisco</a>
-                              <a class="dropdown-item" href="#">Centro experimental Alonso Tadeo</a>
-                              <a class="dropdown-item" href="#">Turismo</a>
+                              <a class="dropdown-item" href="?unidad_experimental=">Todas</a>
+                              {% for key, value in dependencias %}
+                                  <a class="dropdown-item {% if unidad_experimental_seleccionada == key %}active{% endif %}" href="?unidad_experimental={{ key }}">{{ value }}</a>
+                              {% endfor %}
                           </div>
                       </div>
                       <div class="btn-group float-md-left mr-1 mb-1">
@@ -82,10 +79,10 @@
                               Filtrar por categoria
                           </button>
                           <div class="dropdown-menu">
-                              <a class="dropdown-item" href="#">Laboratorio real</a>
-                              <a class="dropdown-item" href="#">Laboratorio virtual</a>
-                              <a class="dropdown-item" href="#">Software especializado</a>
-                              <a class="dropdown-item" href="#">Simulación</a>
+                              <a class="dropdown-item" href="?categoria=">Todas</a>
+                              {% for categoria in categorias %}
+                                  <a class="dropdown-item {% if categoria_seleccionada == categoria.nombre %}active{% endif %}" href="?categoria={{ categoria.nombre }}">{{ categoria.nombre }}</a>
+                              {% endfor %}
                           </div>
                       </div>
 
@@ -113,8 +110,8 @@
       </div>
   </div>
 
+  <!-- Mostrar los proyectos filtrados -->
   <div class="row list disable-text-selection" data-check-all="checkAll">
-
       {% for proyecto in proyectos %}
       <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
           <div class="card">
@@ -132,10 +129,9 @@
                           </a>
                           <footer>
                               <p class="text-muted text-small mb-0 font-weight-light">Categoría: {{ proyecto.categoria.nombre }}</p>
-                              <p class="text-muted text-small mb-0 font-weight-light">Unidad Experimental: {{ proyecto.unidad_experimental|default:"N/A" }}</p>
-                              <!--Descripción Cortadel proyecto -->
+                              <p class="text-muted text-small mb-0 font-weight-light">Unidad Experimental: {{ proyecto.get_dependencia_display }}</p>
                               <p class="text-muted text-small mb-0 font-weight-light">{{ proyecto.descripcion|truncatewords:20 }}</p>
-                              <p class="text-muted text-small mb-0 font-weight-light">Actualizado: {{ proyecto.fecha_actualizacion|date:"F Y" }}</p>
+                              <p class="text-muted text-small mb-0 font-weight-light">Actualizado: {{ proyecto.ultima_actualizacion|date:"F Y" }}</p>
                               <p class="text-muted text-small mb-0 font-weight-light">Visitas: {{ proyecto.visitas|default:"0" }}</p>
                           </footer>
                       </div>
