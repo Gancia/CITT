@@ -1,0 +1,32 @@
+{% extends "admin/change_form.html" %}
+{% load static %}
+
+{% block extrastyle %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/admin_custom.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="custom-navbar">
+    <div>
+        <a href="{% url 'admin:index' %}">Dashboard</a>
+        <a href="{% url 'admin:webcitt_proyecto_changelist' %}">Proyectos</a>
+        <a href="#">CONFIGURACION</a>
+        <a href="#">DESCRIPCION</a>
+        <a href="#">CATEGORIAS</a>
+        <a href="#">GALERIA</a>
+        <a href="#">LISTAS</a>
+        <a href="#">R.VIRTUAL</a>
+        <a href="#">TUTORIALES</a>
+        <a href="#">DESCARGAS</a>
+        <a href="#">DESCARGAS</a>
+        <a href="#">DESCARGAS</a>
+    </div>
+    <div>
+        <span>Admin: {{ user.username }}</span>
+    </div>
+</div>
+
+<div class="admin-custom-container">
+    {{ block.super }}
+</div>
+{% endblock %}
