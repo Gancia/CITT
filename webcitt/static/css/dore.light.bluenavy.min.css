@@ -2823,7 +2823,7 @@ main .container-fluid {
     border-radius: calc(.25rem - 1px);
     height: 100%;
     object-fit: cover;
-    max-height: 200px;
+    max-height: 300px;
     width: unset
 }
 
@@ -6658,7 +6658,7 @@ i.large-icon {
 }
 
 .col-right {
-    padding-left: 20px
+    padding-left: 10px
 }
 
 @media (max-width: 991px) {
@@ -7089,8 +7089,8 @@ i.large-icon {
 }
 
 .rtl .col-left {
-    padding-left: 20px;
-    padding-right: 15px
+    padding-left: 10px;
+    padding-right: 5px
 }
 
 @media (max-width: 991px) {
@@ -7100,8 +7100,8 @@ i.large-icon {
 }
 
 .rtl .col-right {
-    padding-right: 20px;
-    padding-left: 15px
+    padding-right: 10px;
+    padding-left: 5px
 }
 
 @media (max-width: 991px) {

@@ -4,8 +4,9 @@
 
 
 {% block content %}
-<div class="container-fluid">
+<div class="container-fluid disable-text-selection">
     <div class="row ">
+        <div class="col-12">
         <div class="mb-3">
             <h1>Sobre el Centro Experimental</h1>
 
@@ -19,17 +20,18 @@
                 </ol>
             </nav>
         </div>
+    </div>
 
         <div class="col-12 survey-app text-center  ">
 
-            <div class="position-relative">
+            <div class="position-relative mb-4">
                 <!-- Imagen de fondo -->
                 <img src="{% static 'img/cards/ue1.jpg' %}" alt="Industria 4.0" class="background-image">
             
                 <!-- Contenedor del contenido -->
-                <div class="overlay-content">
+                <div class="overlay-content mb-3">
                     <!-- Texto informativo -->
-                    <div class="left-content">
+                    <div class="left-content  mb-3">
                         <h1>CENTRO EXPERIMENTAL SAN FRANCISCO</h1>
                         <p><br>
                             Son unidades de apoyo que brindan soporte tecnológico para la investigación, desarrollo e innovación; disponen de talento humano, infraestructura, equipamiento especializado y presupuesto. Estan conformadas por los laboratorios de investigación, así como por los centros experimentales.
@@ -39,27 +41,6 @@
                     </div>
             
                     <!-- Contenedores futuristas -->
-                    <div class="info-box right-content">
-                    
-                            <h3>🔬 ¿Qué te ofrecen las Unidades Experimentales?</h3>
-                            <p>Acceso a tecnología de vanguardia, simulaciones avanzadas y entornos de aprendizaje inmersivos divididos en:</p>
-                       
-            
-                        <!-- Contenedor secundario - Qué ofrecen -->
-                        <div class="info-container">
-                            <div class="info-box">
-                                <h4>🏭 Centros Experimentales</h4>
-                                <p>Enfocados en plantas de producción y fincas, ideales para la experimentación en entornos productivos reales.</p>
-                            </div>
-                            <div class="info-box">
-                                <h4>🧪 Laboratorios de Formación</h4>
-                                <p>Laboratorios tecnológicos con infraestructura avanzada para la capacitación en nuevas tecnologías.</p>
-                            </div>
-                        </div>
-                <!-- Botón de más información -->
-                    <div class="info-button">
-                        <a href="#" class="btn-info">💡 Quiero más información</a>
-                    </div>
 
                     </div>
                 </div>
@@ -107,57 +88,6 @@
                     flex-direction: column;
                     gap: 1rem;
                 }
-            
-                /* Contenedor principal de Unidades Experimentales */
-                .main-box {
-                    background: linear-gradient(135deg, rgba(0, 255, 204, 0.8), rgba(0, 153, 255, 0.9));
-                    padding: 1.5rem;
-                    border-radius: 15px;
-                    text-align: center;
-                    font-size: 1.2rem;
-                    box-shadow: 0px 0px 15px rgba(0, 255, 204, 0.5);
-                }
-            
-                /* Contenedor de las dos opciones */
-                .info-container {
-                    display: flex;
-                    gap: 1rem;
-                }
-            
-                /* Estilo de los cuadros secundarios */
-                .info-box {
-                    flex: 1;
-                    background: rgba(255, 255, 255, 0.1);
-                    backdrop-filter: blur(10px);
-                    padding: 1rem;
-                    border-radius: 10px;
-                    text-align: center;
-                    font-size: 1rem;
-                    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
-                }
-            
-                /* Botón futurista */
-                .info-button {
-                    text-align: center;
-                    margin-top: 1rem;
-                }
-            
-                .btn-info {
-                    background: linear-gradient(135deg, #00ffcc, #0099ff);
-                    color: white;
-                    padding: 10px 20px;
-                    border-radius: 50px;
-                    font-size: 1rem;
-                    text-decoration: none;
-                    box-shadow: 0px 0px 10px rgba(0, 255, 204, 0.8);
-                    transition: 0.3s;
-                }
-            
-                .btn-info:hover {
-                    background: linear-gradient(135deg, #0099ff, #00ffcc);
-                    box-shadow: 0px 0px 20px rgba(0, 255, 204, 1);
-                }
-            
                 /* Diseño adaptable */
                 @media (max-width: 768px) {
                     .overlay-content {
@@ -179,9 +109,7 @@
  
             <!-- Tablas laboratorios -->
             
-
             <ul class="nav nav-tabs separator-tabs ml-0 mb-5" role="tablist"></ul>
-
         </div>
     </div>
 
@@ -191,287 +119,131 @@
      </div>
 
 
+
+     <div class="row">
+        <!-- Columna de texto -->
+        <div class="col-12 col-md-12 col-xl-6">
+            <div class="card mb-4">
+                <div class="card-body" style="height: 320px;">
+                    <h2 class="card-titles mb-4">¿Qué es el Centro Experimental San Francisco?</h2>
+                    <p>El Centro Experimental San Francisco (CESF) es mucho más que una finca pedagógica; es un entorno único e innovador de aprendizaje activo, investigación científica aplicada y compromiso social, administrado cuidadosamente por la Escuela de Desarrollo Integral Agropecuario (EDIA) de la Universidad Politécnica Estatal del Carchi (UPEC).</p>
+                    <p>Con una extensión privilegiada de 45 hectáreas, el CESF actúa como un auténtico laboratorio vivo, donde estudiantes de diversas disciplinas —Ingeniería Agropecuaria, Ingeniería en Alimentos, Turismo y Ciencias Ambientales, entre otras— encuentran la oportunidad invaluable de aplicar sus conocimientos en escenarios reales y situaciones concretas.</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Columna de imagen -->
+        <div class="col-12 col-md-12 col-xl-6">
+            <div class="card mb-4">
+            <div class="card-bodys" style="height: 320px;">
+                <img src="{% static 'img/cards/upecsanfrancisco.jpg' %}" alt="Centro Experimental San Francisco" class="responsive border-0 card-img-top mb-3 " style="object-fit: cover; border-radius: 10px; height: 100%;">
+            </div>
+        </div>
+        </div>
+    </div>
+
     <!-- Categoria laboratorios -->
 
-    <div class="row">
-        <div class="col-12 col-md-12 col-xl-8">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h2 class="card-titles">Laboratorios de Investigación</h2>
-                    <div class="position-relative mb-3">
-                        <video id="my-video" class="video-js card-img video-content" controls
-                        preload="auto" poster="{% static 'img/cards/ue12.png' %}"
-                        data-setup="{}">
-                        <source
-                            src="https://virprot.com/videos/smartfactory.mp4"
-                            type='video/mp4'>
-                    </video>
+    <div class="tab-content mb-4">
+
+            <div class="row">
+                <div class="col-lg-12 col-6 mb-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <ul class="nav nav-tabs separator-tabs ml-0 mb-5" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="first-tab" data-toggle="tab" href="#first" role="tab"
+                                        aria-controls="first" aria-selected="true">NUESTRA MISIÓN</a>
+                                </li>
+                            </ul>
+                            <p class="mb-3">
+                                Formamos profesionales líderes, éticos y altamente capacitados mediante un modelo de aprendizaje experiencial, investigación aplicada de alto impacto y una firme dedicación a la sostenibilidad agropecuaria, alimentaria, agroindustrial, turística y ambiental.
+                            </p>
+                        </div>
+                        <img class="card-img" src="{% static 'img/cards/upecsanfrancisco1.png' %}" alt="Card image">
                     </div>
-
-                    <div class="mb-5">
-                        <p>
-                            Los laboratorios de investigación son espacios diseñados para impulsar la innovación, el desarrollo y el aprendizaje práctico. Cuentan con tecnología avanzada, infraestructura especializada y talento humano capacitado, permitiendo a estudiantes y docentes participar en proyectos de alto impacto. Se crean en respuesta a necesidades académicas e institucionales, con aprobación del Consejo de Investigación. Los laboratorios formativos son gestionados por los Directores de Carrera, mientras que los científicos están liderados por un docente investigador designado por Rectorado.                    </div>
-
-                        <h2 class="card-title">¿Por qué son importantes?</h2>
-                        <ul>
-                            <li>Fomentan la investigación aplicada y la experimentación.</li>
-                            <li>Brindan acceso a equipos y tecnología de vanguardia.</li>
-                            <li>Conectan a estudiantes con proyectos reales e innovadores.</li>
-                            <li>Son clave para el desarrollo de soluciones en diversas industrias.</li>
-                        </ul>
-
                 </div>
-            </div>
-        </div>
 
-        <div class="col-12 col-md-12 col-xl-4">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h5 class="card-title">Policies</h5>
-                    <ul class="list-unstyled mb-0">
-                        <li><a href="#" class="btn-link">Preliminary thinking systems</a></li>
-                        <li><a href="#" class="btn-link">Bandwidth efficient</a></li>
-                        <li><a href="#" class="btn-link">Green space</a></li>
-                        <li><a href="#" class="btn-link">Social impact</a></li>
-                        <li><a href="#" class="btn-link">Thought partnership</a></li>
-                        <li><a href="#" class="btn-link">Fully ethical life</a></li>
-                    </ul>
+                <div class="col-lg-12 col-6 mb-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <ul class="nav nav-tabs separator-tabs ml-0 mb-5" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="first-tab" data-toggle="tab" href="#first" role="tab"
+                                        aria-controls="first" aria-selected="true">NUESTRA VISIÓN</a>
+                                </li>
+                            </ul>
+                            <p class="mb-3">
+                                Nuestra aspiración es convertir al CESF en un centro referente, reconocido a nivel nacional e internacional por su excelencia en educación agropecuaria sostenible, su destacada innovación en alimentos y su liderazgo en turismo educativo rural.
+                            </p>
 
-                    <h2>Laboratorios</h2>
-                    <table>
-                        <tr>
-                            <th>Responsable</th>
-                            <th>Nombre</th>
-                            <th>Resolución</th>
-                            <th>Carrera</th>
-                        </tr>
-                        <tr>
-                            <td>MSc. Marco Burbano</td>
-                            <td><a href="#" class="btn-link">Planta de procesamiento de productos lácteos</td>
-                            <td>RCI-SVO-001-N°006.1-2023</td>
-                            <td>Alimentos</td>
-                        </tr>
-                        <tr>
-                            <td>MSc. Marco Burbano</td>
-                            <td>Planta de procesamiento de productos Carnicos</td>
-                            <td>RCI-SVO-001-N°006.1-2023</td>
-                            <td>Alimentos</td>
-                        </tr>
-                        <tr>
-                            <td>MSc. Marco Burbano</td>
-                            <td>Planta de procesamiento de productos de Panificación</td>
-                            <td>RCI-SVO-001-N°006.1-2023</td>
-                            <td>Alimentos</td>
-                        </tr>
-                        <tr>
-                            <td>MSc. Marco Burbano</td>
-                            <td>Planta de procesamiento de productos de almidón</td>
-                            <td>RCI-SVO-001-N°006.1-2023</td>
-                            <td>Alimentos</td>
-                        </tr>
-                
-                    </table>
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-
-      <!-- Categoria Centros experimentales -->
-
-      <div class="row">
-        <div class="col-12 col-md-12 col-xl-8">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h2 class="card-titles">Centros Experimentales</h2>
-                    <div class="position-relative mb-3">
-                        <video id="my-video" class="video-js card-img video-content" controls
-                        preload="auto" poster="{% static 'img/cards/ue11.png' %}"
-                        data-setup="{}">
-                        <source
-                            src="https://virprot.com/videos/smartfactory.mp4"
-                            type='video/mp4'>
-                    </video>
+                        </div>
+                        <img class="card-img" src="{% static 'img/cards/ue.jpg' %}" alt="Card image">
                     </div>
-
-                    <div class="mb-5">
-                        <p>
-                            Los laboratorios de investigación son espacios diseñados para impulsar la innovación, el desarrollo y el aprendizaje práctico. Cuentan con tecnología avanzada, infraestructura especializada y talento humano capacitado, permitiendo a estudiantes y docentes participar en proyectos de alto impacto. Se crean en respuesta a necesidades académicas e institucionales, con aprobación del Consejo de Investigación. Los laboratorios formativos son gestionados por los Directores de Carrera, mientras que los científicos están liderados por un docente investigador designado por Rectorado.                    </div>
-
-                        <h2 class="card-title">¿Por qué son importantes?</h2>
-                        <ul>
-                            <li>Fomentan la investigación aplicada y la experimentación.</li>
-                            <li>Brindan acceso a equipos y tecnología de vanguardia.</li>
-                            <li>Conectan a estudiantes con proyectos reales e innovadores.</li>
-                            <li>Son clave para el desarrollo de soluciones en diversas industrias.</li>
-                        </ul>
-
                 </div>
-            </div>
-        </div>
 
-        <div class="col-12 col-md-12 col-xl-4">
-            <div class="card mb-4">
-                <div class="card-body">
+                <div class="col-lg-12 col-6 mb-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <ul class="nav nav-tabs separator-tabs ml-0 mb-5" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="first-tab" data-toggle="tab" href="#first" role="tab"
+                                        aria-controls="first" aria-selected="true">Ubicación y Territorio</a>
+                                </li>
+                            </ul>
+                            <p class="mb-3">
+                                Ubicado estratégicamente a una altitud de 2.959 metros sobre el nivel del mar, el CESF disfruta de un clima frío andino, con temperaturas que oscilan entre 3°C y 18°C.
+                                <br>
+                                • 37 hectáreas de potreros
+                                • 4 hectáreas agrícolas experimentales
+                                • 0.5 hectáreas de frutales
+                                • Zonas de conservación forestal e hídrica                                
+                                <br>
+                            </p>
 
-                    <h2>Centros Experimentales</h2>
-                    <h3>Centro Experimental San Francisco</h3>
-                    <table>
-                        <tr>
-                            <th>N.</th>
-                            <th>Nombre</th>
-                            <th>Descripción</th>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td><a href="{% url 'hublab_planta_lacteos' %}" class="btn-link">Planta de procesamiento de productos lácteos</td>
-                            <td>En la planta de lácteos se procesa la leche para obtener diversos productos como leche pasteurizada, yogur, queso, crema, mantequilla y otros derivados, a través de procesos como pasteurización, fermentación y elaboración. 
-                        <tr>
-                            <td>2</td>
-                            <td>Planta de procesamiento de productos Carnicos</td>
-                            <td>En la Planta de Cárnicos se transforma se producen cortes frescos, embutidos (chorizo, salchichas, mortadela), carnes marinadas, jamones, productos curados y envasados.</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Planta de procesamiento de productos de Panificación</td>
-                            <td>Alimentos</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Planta de procesamiento de productos de almidón</td>
-                            <td>Alimentos</td>
-                        </tr>
-                
-                    </table>
+                        </div>
+                        <img class="card-img" src="{% static 'img/cards/ue1.jpg' %}" alt="Card image">
+                    </div>
                 </div>
+                <div class="col-lg-12 col-6 mb-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <ul class="nav nav-tabs separator-tabs ml-0 mb-5" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="first-tab" data-toggle="tab" href="#first" role="tab"
+                                        aria-controls="first" aria-selected="true">Historia y Equipo Técnico</a>
+                                </li>
+                            </ul>
+                            <p class="mb-3">
+                                Fundado en el año 2009 como parte fundamental del proyecto educativo de la EDIA-UPEC, el CESF ha experimentado un crecimiento continuo en infraestructura, recursos tecnológicos, proyectos de investigación e impacto comunitario.
+
+                                Equipo técnico:
+                                <br>
+                                • Director: Ing. Andrés Villarreal Estrada
+                                • 3 Ingenieros Agropecuarios
+                                • 1 Veterinario clínico
+                                • 2 Tecnólogos en Alimentos                                
+
+                            </p>
+
+                        </div>
+                        <img class="card-img" src="{% static 'img/cards/OTT3.jpg' %}" alt="Card image">
+                    </div>
+                </div>
+
             </div>
-
-
-        </div>
+     
     </div>
 
-        <!-- Tablas laboratorios -->
 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Organización de las Unidades Experimentales</title>
-        <style>
-            body { font-family: Arial, sans-serif; margin: 20px; }
-            table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
-            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-            th { background-color: #f4f4f4; }
-            h2 { color: #333; }
-        </style>
-    
-    <div class="card mb-4">
-        <div class="card-body">
-    
-        <h1>Organización de las Unidades Experimentales</h1>
-        
-        <h2>Centros Experimentales</h2>
-        <table>
-            <tr>
-                <th>Responsable</th>
-                <th>Nombre</th>
-                <th>Resolución</th>
-                <th>Carrera</th>
-            </tr>
-            <tr>
-                <td>MSc. Marco Burbano</td>
-                <td>Planta de procesamiento de productos lácteos</td>
-                <td>RCI-SVO-001-N°006.1-2023</td>
-                <td>Alimentos</td>
-            </tr>
-            <tr>
-                <td>MSc. Marco Burbano</td>
-                <td>Planta de procesamiento de productos Carnicos</td>
-                <td>RCI-SVO-001-N°006.1-2023</td>
-                <td>Alimentos</td>
-            </tr>
-            <tr>
-                <td>MSc. Marco Burbano</td>
-                <td>Planta de procesamiento de productos de Panificación</td>
-                <td>RCI-SVO-001-N°006.1-2023</td>
-                <td>Alimentos</td>
-            </tr>
-            <tr>
-                <td>MSc. Marco Burbano</td>
-                <td>Planta de procesamiento de productos de almidón</td>
-                <td>RCI-SVO-001-N°006.1-2023</td>
-                <td>Alimentos</td>
-            </tr>
-    
-        </table>
-        
-        <h2>Laboratorios</h2>
-        <table>
-            <tr>
-                <th>Responsable</th>
-                <th>Nombre</th>
-                <th>Resolución</th>
-                <th>Carrera</th>
-            </tr>
-            <tr>
-                <td>MSc. Argenis Heredia</td>
-                <td>Laboratorio de Herramientas Tecnológicas y de Simulación</td>
-                <td>RCI-SO-02-N°079-2022</td>
-                <td>Logística</td>
-            </tr>
-            <tr>
-                <td>MSc. Gerardo Mera</td>
-                <td>Business Lab - UPEC</td>
-                <td>RCI-SVO-001-N°006.4-2023</td>
-                <td>Comercio Exterior</td>
-            </tr>
-            <tr>
-                <td>MSc. Marco Burbano</td>
-                <td>Laboratorio de Evaluación Sensorial de Alimentos</td>
-                <td>RCI-SVO-009-N°114-2022</td>
-                <td>Alimentos</td>
-            </tr>
-            <tr>
-                <td>MSc. Sofia Zapata</td>
-                <td>Asuntos Públicos</td>
-                <td>RCI-SVO-001-N°006-2023</td>
-                <td>Administración Pública</td>
-            </tr>
-            <tr>
-                <td>MSc. Hernán Benavides</td>
-                <td>Laboratorio de Tecnologías Agropecuarias</td>
-                <td>RCI-SVO-001-N°006.2-2023</td>
-                <td>Agropecuaria</td>
-            </tr>
-            <tr>
-                <td>MSc. Carlos Guano</td>
-                <td>Laboratorio de Robótica y Electrónica Aplicada</td>
-                <td>RCI-SVO-001-N°006.3-2023</td>
-                <td>Computación</td>
-            </tr>
-            <tr>
-                <td>MSc. Fernando Pazmiño</td>
-                <td>Laboratorio en Herramientas Tecnológicas en Multimedia</td>
-                <td>No. 106-CSUP-2024</td>
-                <td>Multimedia</td>
-            </tr>
-            <tr>
-                <td>MSc. Freddy Quinde</td>
-                <td>Laboratorio Empresarial</td>
-                <td>No. 47-SVO-CI-2024</td>
-                <td>Administración de Empresas</td>
-            </tr>
-            <tr>
-                <td>PhD. Hernán Benavides</td>
-                <td>Laboratorio de Producción Láctea y Bienestar Animal</td>
-                <td>No. 56-SVO-CI-2024</td>
-                <td>Agropecuaria</td>
-            </tr>
-        </table>
-    
-    </div>
-    </div>
+
+
+
+
+
     
 </div>
+
 {% endblock %}
 
 {% block extra_scripts %}
