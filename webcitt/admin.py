@@ -76,9 +76,16 @@ class CarpetaRecursoAdmin(admin.ModelAdmin):
     search_fields = ('nombre',)
 
 class CustomAdminSite(admin.AdminSite):
-    site_header = "Gestión de Proyectos"
-    site_title = "Panel de Administración"
+    site_header = "Administración de WebCITT"
+    site_title = "WebCITT Admin"
     index_title = "Bienvenido al Panel de Administración"
+
+    def each_context(self, request):
+        context = super().each_context(request)
+        context['css_files'] = [
+            'css/admin_custom.css',  # Ruta del archivo CSS
+        ]
+        return context
 
     def get_urls(self):
         urls = super().get_urls()
