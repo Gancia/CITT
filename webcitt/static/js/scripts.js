@@ -446,4 +446,31 @@ $(document).ready(function() {
 
         window.location.href = href;
     });
+
+    if (typeof window.menuCase !== 'undefined' && window.menuCase === 1) {
+        const container = $("#app-container");
+        // Opcional: si quieres asegurar que muestre 'menu-default' y 'menu-sub-hidden'
+        container.removeClass(allMenuClassNames);
+        container.addClass("menu-default menu-sub-hidden");
+    }
+});
+$(document).ready(function() {
+    // ...todo tu código existente...
+
+    // Al final del ready(), verifica el menu_case
+    if (typeof window.menuCase !== 'undefined' && window.menuCase === 1) {
+        // Llamar al modo case 1 para “Solo menú principal”
+        setMenuClassNames(1);
+        updateMenuButtonState();
+    }
+});
+$(document).ready(function() {
+    // ...todo tu código existente...
+
+    // Al final del ready(), verifica el menu_case
+    if (typeof window.menuCase !== 'undefined' && window.menuCase === 1) {
+        // Llamar al modo case 1 para “Solo menú principal”
+        setMenuClassNames(1);
+        updateMenuButtonState();
+    }
 });

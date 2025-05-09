@@ -7,7 +7,7 @@ from webcitt.models import Proyecto, Categoria
 # Create your views here.
 def home_view(request):
     return render(request, "inicio.html",
-                  {"active_section": "home"})
+     {"active_section": "home"})
 
 # OTT
 def ott_view(request):
@@ -22,32 +22,38 @@ def ott_quienes_somos_view(request):
 
 def ott_servicios_view(request):
     return render(request, 'ott/servicios.html', {
-        'seccion_activa': 'ott'
+        'seccion_activa': 'ott',
+        'menu_case':'1'
     })
 
 def ott_innovacion_tecnologica_view(request):
     return render(request, 'ott/innovacion_tecnologica.html', {
-        'seccion_activa': 'ott'
+        'seccion_activa': 'ott',
+        'menu_case':'1'
     })
 
 def ott_capacitacion_consultoria_view(request):
     return render(request, 'ott/capacitacion_consultoria.html', {
-        'seccion_activa': 'ott'
+        'seccion_activa': 'ott',
+        'menu_case':'1'
     })
 
 def ott_colaboracion_industria_view(request):
     return render(request, 'ott/colaboracion_industria.html', {
-        'seccion_activa': 'ott'
+        'seccion_activa': 'ott',
+        'menu_case':'1'
     })
 
 def ott_impacto_resultados_view(request):
     return render(request, 'ott/impacto_resultados.html', {
-        'seccion_activa': 'ott'
+        'seccion_activa': 'ott',
+        'menu_case':'1'
     })
 
 def ott_contacto_view(request):
     return render(request, 'ott/contacto.html', {
-        'seccion_activa': 'ott'
+        'seccion_activa': 'ott',
+        'menu_case':'1'
     })
 
 
@@ -59,27 +65,32 @@ def incubadora_view(request):
 
 def incubadora_presentacion_view(request):
     return render(request, 'incubadora/presentacion.html', {
-        'seccion_activa': 'incubadora'
+        'seccion_activa': 'incubadora',
+        'menu_case':'1'
     })
 
 def incubadora_proceso_view(request):
     return render(request, 'incubadora/proceso.html', {
-        'seccion_activa': 'incubadora'
+        'seccion_activa': 'incubadora',
+        'menu_case':'1'
     })
 
 def incubadora_servicios_view(request):
     return render(request, 'incubadora/servicios.html', {
-        'seccion_activa': 'incubadora'
+        'seccion_activa': 'incubadora',
+        'menu_case':'1'
     })
 
 def incubadora_casos_exito_view(request):
     return render(request, 'incubadora/casos-exito.html', {
-        'seccion_activa': 'incubadora'
+        'seccion_activa': 'incubadora',
+        'menu_case':'1'
     })
 
 def incubadora_contacto_view(request):
     return render(request, 'incubadora/contacto.html', {
-        'seccion_activa': 'incubadora'
+        'seccion_activa': 'incubadora',
+        'menu_case':'1'
     })
 
 
@@ -93,53 +104,65 @@ def uexperimentales_view(request):
 # Unidades Experimentales_San Francisco
 def uexperimentales_sanfrancisco_sobre_view(request):
     return render(request, 'uexperimentales/sanfrancisco/sobre.html', {
-        'seccion_activa': 'uexperimentales'
+        'seccion_activa': 'uexperimentales',
+        'menu_case':'1'
     })
 def uexperimentales_sanfrancisco_areas_especializacion_view(request):
     return render(request, 'uexperimentales/sanfrancisco/areas_especializacion.html', {
-        'seccion_activa': 'uexperimentales'
+        'seccion_activa': 'uexperimentales',
+        'menu_case':'1'
     })
 def uexperimentales_sanfrancisco_recursos_view(request):
     return render(request, 'uexperimentales/sanfrancisco/recursos.html', {
-        'seccion_activa': 'uexperimentales'
+        'seccion_activa': 'uexperimentales',
+        'menu_case':'1'
     })
 def uexperimentales_sanfrancisco_servicios_view(request):
     return render(request, 'uexperimentales/sanfrancisco/servicios.html', {
-        'seccion_activa': 'uexperimentales'
+        'seccion_activa': 'uexperimentales',
+        'menu_case':'1'
     })
 def uexperimentales_sanfrancisco_resultados_view(request):
     return render(request, 'uexperimentales/sanfrancisco/resultados.html', {
-        'seccion_activa': 'uexperimentales'
+        'seccion_activa': 'uexperimentales',
+        'menu_case':'1'
     })
 def uexperimentales_sanfrancisco_contacto_view(request):
     return render(request, 'uexperimentales/sanfrancisco/contacto.html', {
-        'seccion_activa': 'uexperimentales'
+        'seccion_activa': 'uexperimentales',
+        'menu_case':'1'
     })
 
 # Unidades Experimentales_Alonzo Tadeo
 def uexperimentales_tadeo_sobre_view(request):
     return render(request, 'uexperimentales/tadeo/sobre.html', {
-        'seccion_activa': 'uexperimentales'
+        'seccion_activa': 'uexperimentales',
+        'menu_case':'1'
     })
 def uexperimentales_tadeo_areas_especializacion_view(request):
     return render(request, 'uexperimentales/tadeo/areas_especializacion.html', {
-        'seccion_activa': 'uexperimentales'
+        'seccion_activa': 'uexperimentales',
+        'menu_case':'1'
     })
 def uexperimentales_tadeo_recursos_view(request):
     return render(request, 'uexperimentales/tadeo/recursos.html', {
-        'seccion_activa': 'uexperimentales'
+        'seccion_activa': 'uexperimentales',
+        'menu_case':'1'
     })
 def uexperimentales_tadeo_servicios_view(request):
     return render(request, 'uexperimentales/tadeo/servicios.html', {
-        'seccion_activa': 'uexperimentales'
+        'seccion_activa': 'uexperimentales',
+        'menu_case':'1'
     })
 def uexperimentales_tadeo_resultados_view(request):
     return render(request, 'uexperimentales/tadeo/resultados.html', {
-        'seccion_activa': 'uexperimentales'
+        'seccion_activa': 'uexperimentales',
+        'menu_case':'1'
     })
 def uexperimentales_tadeo_contacto_view(request):
     return render(request, 'uexperimentales/tadeo/contacto.html', {
-        'seccion_activa': 'uexperimentales'
+        'seccion_activa': 'uexperimentales',
+        'menu_case':'1'
     })
 
 
@@ -147,27 +170,33 @@ def uexperimentales_tadeo_contacto_view(request):
 # Unidades Experimentales Smart Lab
 def uexperimentales_smartlab_sobre_view(request):
     return render(request, 'uexperimentales/smartlab/sobre.html', {
-        'seccion_activa': 'uexperimentales'
+        'seccion_activa': 'uexperimentales',
+        'menu_case':'1'
     })
 def uexperimentales_smartlab_areas_especializacion_view(request):
     return render(request, 'uexperimentales/smartlab/areas_especializacion.html', {
-        'seccion_activa': 'uexperimentales'
+        'seccion_activa': 'uexperimentales',
+        'menu_case':'1'
     })
 def uexperimentales_smartlab_recursos_view(request):
     return render(request, 'uexperimentales/smartlab/recursos.html', {
-        'seccion_activa': 'uexperimentales'
+        'seccion_activa': 'uexperimentales',
+        'menu_case':'1'
     })
 def uexperimentales_smartlab_servicios_view(request):
     return render(request, 'uexperimentales/smartlab/servicios.html', {
-        'seccion_activa': 'uexperimentales'
+        'seccion_activa': 'uexperimentales',
+        'menu_case':'1'
     })
 def uexperimentales_smartlab_resultados_view(request):
     return render(request, 'uexperimentales/smartlab/resultados.html', {
-        'seccion_activa': 'uexperimentales'
+        'seccion_activa': 'uexperimentales',
+        'menu_case':'1'
     })
 def uexperimentales_smartlab_contacto_view(request):
     return render(request, 'uexperimentales/smartlab/contacto.html', {
-        'seccion_activa': 'uexperimentales'
+        'seccion_activa': 'uexperimentales',
+        'menu_case':'1'
     })
 
 
@@ -177,7 +206,8 @@ def uexperimentales_smartlab_contacto_view(request):
 
 def uexperimentales_smartdatalab_view(request):
     return render(request, 'uexperimentales/smartdatalab.html', {
-        'seccion_activa': 'uexperimentales'
+        'seccion_activa': 'uexperimentales',
+        'menu_case':'1'
     })
 
 
