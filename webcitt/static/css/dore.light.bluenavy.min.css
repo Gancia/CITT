@@ -8273,6 +8273,12 @@ i.large-icon {
 body {
     min-height: calc(100% - 150px);
     position: relative;
+    padding-bottom: 0px
+}
+
+body1 {
+    min-height: calc(100% - 150px);
+    position: relative;
     padding-bottom: 90px
 }
 

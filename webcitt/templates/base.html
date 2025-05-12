@@ -45,7 +45,7 @@
     });
     </script>
     <!-- Navbar -->
-    <nav class="navbar fixed-topz">
+    <nav class="navbar fixed-top">
       <div class="d-flex align-items-center w-100">
         <!-- Sección izquierda -->
         <div class="d-flex align-items-center">
@@ -76,11 +76,40 @@
 
         <!-- Sección derecha -->
         <div class="d-flex align-items-center">
-          <button class="header-icon btn btn-empty " type="button" id="fullScreenButton">
-            <i class="simple-icon-size-fullscreen"></i>
-            <i class="simple-icon-size-actual"></i>
-          </button>
+                <button class="header-icon btn btn-empty d-none d-sm-inline-block" type="button" id="fullScreenButton">
+                    <i class="simple-icon-size-fullscreen"></i>
+                    <i class="simple-icon-size-actual"></i>
+                </button>
           </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var btn = document.getElementById("fullScreenButton");
+    // Restaurar fullscreen si estaba activo antes de navegar
+    if (localStorage.getItem("citt_fullscreen") === "1" && !document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+    }
+    if (btn) {
+      btn.addEventListener("click", function() {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+          localStorage.setItem("citt_fullscreen", "1");
+        } else {
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+            localStorage.setItem("citt_fullscreen", "0");
+          }
+        }
+      });
+    }
+    // Si el usuario sale de fullscreen manualmente, actualiza el estado
+    document.addEventListener("fullscreenchange", function() {
+      if (!document.fullscreenElement) {
+        localStorage.setItem("citt_fullscreen", "0");
+      }
+    });
+  });
+</script>
+
           {% if user.is_authenticated %}
             <!-- Usuario -->
             <div class="user d-inline-block ml-3 dropdown">
@@ -452,11 +481,11 @@
     </div>
 
     <!-- Contenido Principal -->
-    <main>
+    <main >
       {% block content %} {% endblock %}
     </main>
 
-    <!-- Footer -->
+    <!-- Footer 
     <footer class="page-footer">
       <div class="footer-content">
         <div class="container-fluid">
@@ -467,7 +496,7 @@
           </div>
         </div>
       </div>
-    </footer>
+    </footer> -->
 
     <!-- Scripts -->
     <script>
