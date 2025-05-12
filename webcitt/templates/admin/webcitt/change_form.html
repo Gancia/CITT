@@ -5,28 +5,68 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/admin_custom.css' %}">
 {% endblock %}
 
+{% block extrahead %}
+<script src="{% static 'js/admin_custom.js' %}"></script>
+{% endblock %}
+
 {% block content %}
 <div class="custom-navbar">
     <div>
-        <a href="{% url 'admin:index' %}">Dashboard</a>
-        <a href="{% url 'admin:webcitt_proyecto_changelist' %}">Proyectos</a>
-        <a href="#">CONFIGURACION</a>
-        <a href="#">DESCRIPCION</a>
-        <a href="#">CATEGORIAS</a>
-        <a href="#">GALERIA</a>
-        <a href="#">LISTAS</a>
-        <a href="#">R.VIRTUAL</a>
-        <a href="#">TUTORIALES</a>
-        <a href="#">DESCARGAS</a>
-        <a href="#">DESCARGAS</a>
-        <a href="#">DESCARGAS</a>
+        <a href="#" class="nav-link" data-target="configuracion">CONFIGURACION</a>
+        <a href="#" class="nav-link" data-target="descripcion">DESCRIPCION</a>
+        <a href="#" class="nav-link" data-target="categorias">CATEGORIAS</a>
+        <a href="#" class="nav-link" data-target="galeria">GALERIA</a>
+        <a href="#" class="nav-link" data-target="listas">LISTAS</a>
+        <a href="#" class="nav-link" data-target="rvirtual">R.VIRTUAL</a>
+        <a href="#" class="nav-link" data-target="tutoriales">TUTORIALES</a>
+        <a href="#" class="nav-link" data-target="descargas">DESCARGAS</a>
+        <a href="#" class="nav-link" data-target="practicas">PRACTICAS</a>
+        <a href="#" class="nav-link" data-target="documentacion">DOCUMENTACIÓN</a>
     </div>
     <div>
         <span>Admin: {{ user.username }}</span>
     </div>
 </div>
+<div class="custom-header">
+    <h1>Proyecto: {{ object.nombre }}</h1>
 
 <div class="admin-custom-container">
+    <div class="admin-custom-left">
+        
     {{ block.super }}
+    <div id="configuracion" class="form-section">
+        <h2>Configuración</h2>
+        <form>
+            <label for="config-name">Nombre:</label>
+            <input type="text" id="config-name" name="config-name" value="{{ object.nombre }}">
+            <label for="config-fecha">Fecha de Inicio:</label>
+            <input type="date" id="config-fecha" name="config-fecha" value="{{ object.fecha_inicio }}">
+            <button type="submit">Guardar</button>
+        </form>
+    </div>
+
+    <!-- Descripción -->
+    <div id="descripcion" class="form-section">
+        <h2>Descripción</h2>
+        <form>
+            <label for="desc-text">Descripción:</label>
+            <textarea id="desc-text" name="desc-text">{{ object.descripcion }}</textarea>
+            <button type="submit">Guardar</button>
+        </form>
+    </div>
+
+    <!-- Categorías -->
+    <div id="categorias" class="form-section">
+        <h2>Categorías</h2>
+        <form>
+            <label for="category">Categoría:</label>
+            <input type="text" id="category" name="category" value="{{ object.categoria }}">
+            <button type="submit">Guardar</button>
+        </form>
+    </div>
+
+
 </div>
+<!-- Formularios -->
+    
 {% endblock %}

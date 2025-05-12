@@ -1,37 +1,67 @@
+/* Importar fuentes desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;500&display=swap');
+
+/* Variables de colores */
+:root {
+  --color-verde: #006400; /* Verde oscuro */
+  --color-amarillo: #ffd700; /* Amarillo */
+  --color-rojo: #e90909; /* Rojo */
+  --color-blanco: #ffffff; /* Blanco */
+  --color-gris-hover: #495057; /* Gris oscuro para hover */
+  --heading-font-family: 'Montserrat', sans-serif;
+  --content-font-family: 'Poppins', sans-serif;
+}
+.body {
+  --heading-font-family: 'Poppins', sans-serif;
+  --content-font-family: 'Poppins', sans-serif;
+}
+
+/* Encabezados (h1, h2, h3, etc.) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font-family);
+  font-weight: 700; /* Negrita */
+}
+
+/* Texto general (párrafos, enlaces, etc.) */
+body, p, a, span, div {
+  font-family: var(--content-font-family);
+  font-weight: 400; /* Regular */
+}
+
 /* Botones de agregar */
 button.addlink, .addlink {
-    background-color: #d4edda !important; /* Verde claro */
-    color: #155724 !important; /* Texto verde oscuro */
-    border-color: #c3e6cb !important;
+    background-color: var(--color-verde) !important;
+    color: var(--color-blanco) !important;
+    border-color: var(--color-verde) !important;
 }
 
 button.addlink:hover, .addlink:hover {
-    background-color: #c3e6cb !important;
-    color: #0b2e13 !important;
+    background-color: var(--color-gris-hover) !important;
+    color: var(--color-blanco) !important;
 }
 
 /* Botones de borrar */
 button.deletelink, .deletelink {
-    background-color: #f8d7da !important; /* Rojo claro */
-    color: #721c24 !important; /* Texto rojo oscuro */
-    border-color: #f5c6cb !important;
+    background-color: var(--color-rojo) !important;
+    color: var(--color-blanco) !important;
+    border-color: var(--color-rojo) !important;
 }
 
 button.deletelink:hover, .deletelink:hover {
-    background-color: #f5c6cb !important;
-    color: #491217 !important;
+    background-color: var(--color-gris-hover) !important;
+    color: var(--color-blanco) !important;
 }
 
 /* Botones de guardar */
 button.default, .default {
-    background-color: #fff3cd !important; /* Amarillo claro */
-    color: #856404 !important; /* Texto amarillo oscuro */
-    border-color: #ffeeba !important;
+    background-color: var(--color-amarillo) !important;
+    color: var(--color-verde) !important;
+    border-color: var(--color-amarillo) !important;
 }
 
 button.default:hover, .default:hover {
-    background-color: #ffeeba !important;
-    color: #533f03 !important;
+    background-color: var(--color-gris-hover) !important;
+    color: var(--color-blanco) !important;
 }
 
 /* Otros ajustes */
@@ -39,4 +69,40 @@ button, .button {
     border-radius: 5px !important; /* Bordes redondeados */
     padding: 5px 10px !important;
     font-weight: bold !important;
+    font-family: var(--content-font-family);
+    font-weight: 500; /* Seminegrita */
+}
+
+/* Estilos de la barra de navegación */
+.custom-navbar {
+  background-color: var(--color-gris-hover); /* Fondo verde */
+  color: var(--color-blanco); /* Texto blanco */
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Estilos de los enlaces */
+.custom-navbar a {
+  color: var(--color-amarillo); /* Texto amarillo */
+  text-decoration: none;
+  margin-right: 10px;
+  padding: 8px 15px;
+  border-radius: 4px;
+}
+
+.custom-navbar a:hover {
+  background-color: var(--color-gris-hover); /* Fondo gris oscuro */
+  color: var(--color-blanco); /* Texto blanco */
+}
+
+/* Ocultar secciones por defecto */
+.form-section {
+    display: none;
+}
+
+/* Mostrar la sección activa */
+.form-section.active {
+    display: block;
 }

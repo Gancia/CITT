@@ -94,72 +94,7 @@ class CustomAdminSite(admin.AdminSite):
         ]
         return custom_urls + urls
 
-    def custom_view(self, request):
-        # HTML content for the custom view
-        html_content = """
-        <html>
-        <head>
-            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-            <style>
-                .btn-large {
-                    font-size: 18px; /* Original font size */
-                    padding: 15px 30px; /* Original padding */
-                    margin: 10px; /* Original margin */
-                    background-color: #007bff;
-                    color: white;
-                    border: none;
-                    border-radius: 5px;
-                    cursor: pointer;
-                    display: inline-flex;
-                    align-items: center;
-                    text-decoration: none;
-                }
-                .btn-large i {
-                    margin-right: 10px;
-                }
-                .btn-small {
-                    font-size: 12px;
-                    padding: 8px 15px;
-                    margin: 5px;
-                    background-color: #6c757d;
-                    color: white;
-                    border: none;
-                    border-radius: 5px;
-                    cursor: pointer;
-                    display: inline-flex;
-                    align-items: center;
-                    text-decoration: none;
-                }
-                .btn-small i {
-                    margin-right: 5px;
-                }
-                body {
-                    font-family: Arial, sans-serif;
-                    padding: 20px;
-                }
-                h1 {
-                    margin-bottom: 20px;
-                }
-            </style>
-        </head>
-        <body>
-            <h1>Gestión de Proyectos</h1>
-            <a href="/admin/webcitt/proyecto/" class="btn-large">
-                <i class="fas fa-folder"></i> Proyectos
-            </a>
-            <a href="/admin/webcitt/categoria/" class="btn-small">
-                <i class="fas fa-tags"></i> Categorías
-            </a>
-            <a href="/admin/webcitt/mentor/" class="btn-small">
-                <i class="fas fa-user-tie"></i> Mentores
-            </a>
-            <a href="/admin/webcitt/recurso/" class="btn-small">
-                <i class="fas fa-file-alt"></i> Recursos
-            </a>
-        </body>
-        </html>
-        """
-        return HttpResponse(html_content)
+    
 
 admin_site = CustomAdminSite(name='custom_admin')
 
