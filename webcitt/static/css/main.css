@@ -272,7 +272,7 @@ a:hover {
 /* Menú principal */
 .menu .main-menu {
   background: var(--theme-color-4);
-  height: calc(100% - 70px);
+  height: calc(105% - 70px);
   overflow-y: auto;
   scrollbar-width: thin;
   -ms-overflow-style: none;

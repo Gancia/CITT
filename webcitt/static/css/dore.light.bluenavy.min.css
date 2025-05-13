@@ -2155,7 +2155,7 @@ button {
     .menu .sub-menu {
         left:90px;
         width: 230px;
-        height: calc(100% - 70px)
+        height: calc(105% - 70px)
     }
 }
 

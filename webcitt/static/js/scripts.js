@@ -157,7 +157,7 @@ $(document).ready(function() {
 
     // Función para cambiar las clases del contenedor basado en el tamaño de la pantalla
     function toggleMenuClass() {
-        if (window.innerWidth <= 100) {
+        if (window.innerWidth <= 769) {
             $('#app-container').removeClass('menu-default').addClass('menu-hidden');
         } else {
             $('#app-container').removeClass('menu-hidden').addClass('menu-default');
