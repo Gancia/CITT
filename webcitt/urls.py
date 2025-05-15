@@ -59,5 +59,5 @@ urlpatterns = [
     path('hublab/planta-lacteos3', views.hublab_planta_lacteos3_view, name='hublab_planta_lacteos3'),
     path('hublab/planta-lacteos4', views.hublab_planta_lacteos4_view, name='hublab_planta_lacteos4'),
 
-    path('proyecto/<int:pk>/', views.proyecto_detalle_view, name='proyecto_detalle'),
+    path('proyecto/<slug:nombre>/', views.proyecto_detalle_view, name='proyecto_detalle'),
 ]
