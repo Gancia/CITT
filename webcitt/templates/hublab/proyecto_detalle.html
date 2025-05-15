@@ -490,5 +490,18 @@
 {% endblock %}
 
 {% block extra_scripts %}
-<!-- Scripts específicos para la página de inicio si son necesarios -->
+<script>
+$(document).ready(function() {
+    // Evita el scroll al top al hacer clic en los controles del carrusel
+    $('.carousel-control-prev, .carousel-control-next').on('click', function(e) {
+        e.preventDefault();
+        // Bootstrap maneja el slide automáticamente
+    });
+    // Evita el scroll al top al hacer clic en los indicadores del carrusel
+    $('.carousel-indicators li').on('click', function(e) {
+        e.preventDefault();
+        // Bootstrap maneja el slide automáticamente
+    });
+});
+</script>
 {% endblock %}
