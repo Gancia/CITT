@@ -1,0 +1,507 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ proyecto.nombre }} - Detalle{% endblock %}
+
+{% block content %}
+<div class="row" style="  margin-left: -20px; margin-top: -20px; margin-right: -50px; margin-bottom: 20px;">
+  <div class="col-12 col-md-12 col-xl-9 ">
+    <div class="card mb-2">
+
+      <div class="card-body" style="padding: 0.5rem;">
+        <div class="row">
+
+          <div class="col-10"
+          style="padding-top: 10px;padding-right: 5px; padding-left: 20px;"> <div href="{% url 'hublab_planta_lacteos' %}"
+          class="mbW-6" style="font-size: 1.3rem; text-align: left; font-weight: 700;">{{ proyecto.nombre }}</div>
+
+          </div>
+          <div class="col-2 col-center " style="text-align: center;">
+
+            <button class="btn btn-header-light icon-button ">
+              <a href="#" style="color: brown"><i
+                  class="simple-icon-heart mr-1"></i></a>
+            </button>
+            <span>4 Likes</span>
+          </div>
+        </div>
+        <div class="card mb-3" style="padding: 15px;">
+          <div
+            class="card-headers glide gallery glide--ltr glide--carousel glide--swipeable">
+            <ul class=" nav nav-tabs card-header-tabs " role="tablist">
+              <li class="nav-item">
+                <a class="nav-link " id="first-tab" data-toggle="tab"
+                  href="#galeria" role="tab"
+                  aria-controls="first" aria-selected="true"><i
+                    class="iconsminds-home large-icon1 initial-height"></i>Presentación</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " id="second-tab" data-toggle="tab"
+                  href="#simuladores" role="tab"
+                  aria-controls="second" aria-selected="false"><i
+                    class="iconsminds-gear large-icon1 initial-height"></i>Recursos
+                  de Aprendizaje y Práctica</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" id="third-tab" data-toggle="tab"
+                  href="#tutoriales" role="tab"
+                  aria-controls="third" aria-selected="false"><i
+                    class="iconsminds-optimization large-icon1 initial-height"></i>Investigación,
+                  Innovación y Desarrollo</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" id="four-tab" data-toggle="tab" href="#docs"
+                  role="tab"
+                  aria-controls="four" aria-selected="false"><i
+                    class="iconsminds-conference large-icon1 initial-height"></i>Servicios
+                  y Soporte</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" id="five-tab" data-toggle="tab"
+                  href="#innov" role="tab"
+                  aria-controls="five" aria-selected="false"><i
+                    class="iconsminds-conference large-icon1 initial-height"></i>Colaboración
+                  y Networking</a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="tab-content card mb-2 ">
+          <div class="tab-pane fade " id="galeria" role="tabpanel" aria-labelledby="first-tab">
+            <div id="carouselProductos" class="carousel slide" data-ride="carousel">
+                <!-- Indicadores -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselProductos" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselProductos" data-slide-to="1"></li>
+                    <li data-target="#carouselProductos" data-slide-to="2"></li>
+                    <li data-target="#carouselProductos" data-slide-to="3"></li>
+                    <li data-target="#carouselProductos" data-slide-to="4"></li>
+                    <li data-target="#carouselProductos" data-slide-to="5"></li>
+                </ol>
+                
+                <!-- Slides -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{% static 'img/products/P6.png' %}" class="d-block w-100" alt="Producto 6">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'img/products/P1.png' %}" class="d-block w-100" alt="Producto 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'img/products/P3.png' %}" class="d-block w-100" alt="Producto 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'img/products/P4.png' %}" class="d-block w-100" alt="Producto 4">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'img/products/P5.png' %}" class="d-block w-100" alt="Producto 5">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'img/products/P2.png' %}" class="d-block w-100" alt="Producto 2">
+                    </div>
+                </div>
+                
+                <!-- Controles -->
+                <a class="carousel-control-prev" href="#carouselProductos" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselProductos" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Siguiente</span>
+                </a>
+            </div>
+        
+            <!-- Miniaturas -->
+            <div class="row mt-3">
+                <div class="col-2">
+                    <img src="{% static 'img/products/P6.png' %}" class="img-thumbnail" data-target="#carouselProductos" data-slide-to="0">
+                </div>
+                <div class="col-2">
+                    <img src="{% static 'img/products/P1.png' %}" class="img-thumbnail" data-target="#carouselProductos" data-slide-to="1">
+                </div>
+                <div class="col-2">
+                    <img src="{% static 'img/products/P3.png' %}" class="img-thumbnail" data-target="#carouselProductos" data-slide-to="2">
+                </div>
+                <div class="col-2">
+                    <img src="{% static 'img/products/P4.png' %}" class="img-thumbnail" data-target="#carouselProductos" data-slide-to="3">
+                </div>
+                <div class="col-2">
+                    <img src="{% static 'img/products/P5.png' %}" class="img-thumbnail" data-target="#carouselProductos" data-slide-to="4">
+                </div>
+                <div class="col-2">
+                    <img src="{% static 'img/products/P2.png' %}" class="img-thumbnail" data-target="#carouselProductos" data-slide-to="5">
+                </div>
+            </div>
+        </div>
+          <!-- Contenido de Simuladores -->
+          <div class="tab-pane fade " id="simuladores" role="tabpanel"
+            aria-labelledby="second-tab">
+            <div class="content-section " data-view="simuladores">
+              <iframe width="100%" height="630" src="{% static 'img/360/lacteos1/index.html' %}"
+                style="border:none;"></iframe>
+            </div>
+          </div>
+
+          <!-- Contenido de tUTORIALES -->
+          <div class="tab-pane fade " id="tutoriales" role="tabpanel"
+            aria-labelledby="third-tab">
+    <!-- Indicadores Clave de Rendimiento -->
+    <div class="row mb-4">
+      <div class="col-12">
+          <div class="card">
+              <div class="card-body">
+                  <h2 class="mb-4">Indicadores Clave de Rendimiento 2023</h2>
+                  <div class="row">
+                      <div class="col-md-6 col-lg-3 mb-4">
+                          <div class="card dashboard-small-chart">
+                              <div class="card-body">
+                                  <p class="lead color-theme-1 mb-1 value">25</p>
+                                  <p class="mb-0 label text-small">Patentes Registradas</p>
+                                  <div class="chart">
+                                      <canvas id="patentesChart"></canvas>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-6 col-lg-3 mb-4">
+                          <div class="card dashboard-small-chart">
+                              <div class="card-body">
+                                  <p class="lead color-theme-1 mb-1 value">42</p>
+                                  <p class="mb-0 label text-small">Licencias Otorgadas</p>
+                                  <div class="chart">
+                                      <canvas id="licenciasChart"></canvas>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-6 col-lg-3 mb-4">
+                          <div class="card dashboard-small-chart">
+                              <div class="card-body">
+                                  <p class="lead color-theme-1 mb-1 value">15</p>
+                                  <p class="mb-0 label text-small">Empresas Derivadas</p>
+                                  <div class="chart">
+                                      <canvas id="empresasChart"></canvas>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-6 col-lg-3 mb-4">
+                          <div class="card dashboard-small-chart">
+                              <div class="card-body">
+                                  <p class="lead color-theme-1 mb-1 value">$2.5M</p>
+                                  <p class="mb-0 label text-small">Ingresos Generados</p>
+                                  <div class="chart">
+                                      <canvas id="ingresosChart"></canvas>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  
+          </div>
+
+          <!-- PDF Viewer -->
+          <div class="tab-pane fade show active" id="docs" role="tabpanel"
+            aria-labelledby="four-tab"
+            class="content-section"
+            data-view="documentosPDF">
+            <div class="video-container">
+              <div class="pdf-viewer-container">
+                <iframe
+                  src="{% static 'img/documentos/GUÍA DIDÁCTICA Unidad 2.pdf' %}"
+                  frameborder="0"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+
+            <style>
+                    .video-container {
+                      position: relative;
+
+                      height: 620px;
+                      overflow: hidden;
+                    }
+                  
+                    .video-container .pdf-viewer-container {
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      width: 100%;
+                      height: 100%;
+                    }
+                  
+                    .pdf-viewer-container iframe {
+                      width: 100%;
+                      height: 100%;
+                    }
+                  </style>
+          </div>
+
+          <!-- Contenido de Simuladores -->
+          <div class="tab-pane fade" id="documentacions" role="tabpanel"
+            aria-labelledby="four-tab">
+            <div class="video-container">
+              <iframe
+                width="100%"
+                height="610"
+                src="https://www.youtube.com/embed/Z4AuIpzZUTc"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenedor 2-->
+  <div class="col-12 col-md-12 col-xl-3">
+
+    <div class="card mb-2">
+      <div class="card-body">
+        <h3 class="card-title">CATEGORIAS</h3>
+        <ul class=" nav nav-tabs">
+          <li class="nav-item">
+            <i class="pb-2 iconsminds-monitor-3 large-icon initial-height">
+            </i>Recursos de Aprendizaje y Práctica
+          </li>
+        </ul>
+        <br>
+
+        <div>
+          <div id="accordion">
+            <div>
+              <button class="btn btn-link p-0 pb-2 font-weight-bold"
+                data-toggle="collapse" data-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                <i class="simple-icon-login "></i>
+                <span class="d-inline-block">Modelos y Simulaciones</span>
+              </button>
+              <div id="collapseOne" class="collapse show"
+                data-parent="#accordion">
+                <div class="pb-2">
+                  <li>
+                    <a href="{% url 'hublab_planta_lacteos2' %}">
+
+                      <i class="iconsminds-monitor---tablet active"></i>
+                      <span class=" d-inline-block"
+                      >Simulador recorrido
+                        360</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="iconsminds-monitor---tablet"></i>
+                      <span class="d-inline-block">Simulación proceso
+                        productivo</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="iconsminds-monitor---tablet"></i>
+                      <span class="d-inline-block">Simulador Realidad
+                        Aumentada</span>
+                    </a>
+                  </li>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <button class="btn btn-link collapsed p-0 pb-2 font-weight-bold"
+                data-toggle="collapse" data-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo">
+
+                <i class="simple-icon-login "></i>
+                <span class="d-inline-block">Tutoriales y documentación</span>
+              </button>
+              <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                <div class="pb-2">
+                  <li>
+                    <a href="{% url 'hublab_planta_lacteos1' %}">
+                      <i class="iconsminds-monitor---tablet"></i>
+                      <span class="d-inline-block">Guía interactiva sobre cómo
+                        usar</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="iconsminds-monitor---tablet"></i>
+                      <span class="d-inline-block">Requisitos técnicos para
+                        ejecutar</span>
+                    </a>
+                  </li>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <button class="btn btn-link collapsed p-0 pb-2 font-weight-bold"
+                data-toggle="collapse" data-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree">
+                <i class="simple-icon-login "></i>
+                <span class="d-inline-block">Prácticas Guiadas</span>
+              </button>
+              <div id="collapseThree" class="collapse" data-parent="#accordion">
+                <div class="pb-2">
+                  <li>
+                    <a href="{% url 'hublab_planta_lacteos3' %}">
+                      <i class="iconsminds-monitor---tablet"></i>
+                      <span class="d-inline-block"style="color: rgb(192, 12, 72);font-size: 0.8rem; font-weight: 800;">Ejercicios prácticos </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="iconsminds-monitor---tablet"></i>
+                      <span class="d-inline-block">Ejercicios prácticos 2</span>
+                    </a>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div>
+              <button class="btn btn-link collapsed p-0 pb-2 font-weight-bold"
+                data-toggle="collapse" data-target="#collapseFour"
+                aria-expanded="false"
+                aria-controls="collapseFour">
+                <i class="simple-icon-login "></i>
+                <span class="d-inline-block">Proyectos y Ejercicios</span>
+              </button>
+              <div id="collapseFour" class="collapse" data-parent="#accordion">
+                <div class="pb-2">
+                  <li>
+                    <a href="#">
+                      <i class="iconsminds-monitor---tablet"></i>
+                      <span class="d-inline-block">Repositorios de
+                        proyectos</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="iconsminds-monitor---tablet"></i>
+                      <span class="d-inline-block">Plantillas de
+                        proyectos</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="iconsminds-monitor---tablet"></i>
+                      <span class="d-inline-block">Ejercicios prácticos</span>
+                    </a>
+                  </li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title ">DESCRIPCIÓN DEL LABORATORIO</h3>
+        <table class="table table-hover">
+          <tbody class="opacity-50">
+            <tr>
+              <th scope="row">
+                <i class="iconsminds-monitor---tablet"></i> Descripción
+              </th>
+              <td>
+                <!-- Botón para abrir el modal -->
+                <button type="button" class="btn btn-link p-0" data-toggle="modal" data-target="#descripcionModal">Ver descripción</button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <i class="iconsminds-monitor---tablet"></i> Categoría
+              </th>
+              <td>{{ proyecto.categoria.nombre }}</td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <i class="iconsminds-monitor---tablet"></i> Unidad Experimental
+              </th>
+              <td>{{ proyecto.get_dependencia_display }}</td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <i class="iconsminds-monitor---tablet"></i> Fecha de Inicio
+              </th>
+              <td>{{ proyecto.fecha_inicio }}</td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <i class="iconsminds-monitor---tablet"></i> Fecha de Fin
+              </th>
+              <td>{{ proyecto.fecha_fin|default:'No especificada' }}</td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <i class="iconsminds-monitor---tablet"></i> Mentor
+              </th>
+              <td>{{ proyecto.mentor }}</td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <i class="iconsminds-monitor---tablet"></i> Descripción Corta
+              </th>
+              <td>{{ proyecto.descripcion_corta }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Modal -->
+<div class="modal fade" id="descripcionModal" tabindex="-1" role="dialog" aria-labelledby="descripcionModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="descripcionModalLabel">Descripción del Proyecto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {{ proyecto.descripcion }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+$(document).ready(function() {
+    // Evita el scroll al top al hacer clic en los controles del carrusel
+    $('.carousel-control-prev, .carousel-control-next').on('click', function(e) {
+        e.preventDefault();
+        // Bootstrap maneja el slide automáticamente
+    });
+    // Evita el scroll al top al hacer clic en los indicadores del carrusel
+    $('.carousel-indicators li').on('click', function(e) {
+        e.preventDefault();
+        // Bootstrap maneja el slide automáticamente
+    });
+});
+</script>
+{% endblock %}
