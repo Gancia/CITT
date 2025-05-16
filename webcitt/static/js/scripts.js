@@ -417,7 +417,7 @@ $(document).ready(function() {
     $('[data-toggle="tooltip"]').tooltip();
 
     // Smooth scroll para enlaces internos
-    $('a[href^="#"]').on('click', function(e) {
+    $('a[href^="#"]').not('.carousel-control-prev, .carousel-control-next').on('click', function(e) {
         e.preventDefault();
         const target = $(this.getAttribute('href'));
         if(target.length) {

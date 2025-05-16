@@ -18,10 +18,10 @@ class RecursoInline(admin.TabularInline):
 
 @admin.register(Proyecto)
 class ProyectoAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'dependencia','categoria', 'mentor', 'fecha_inicio', 'fecha_fin', 'activo')
+    list_display = ('nombre','slug', 'dependencia','categoria', 'mentor', 'fecha_inicio', 'fecha_fin', 'activo')
     list_editable = ('activo',)
     list_filter = ('dependencia', 'categoria', 'activo')
-    search_fields = ('nombre', 'mentor__username')
+    search_fields = ('nombre', 'mentor__username','slug')
     inlines = [RecursoInline]
     readonly_fields = ('vista_previa_imagen',)
 
@@ -31,7 +31,7 @@ class ProyectoAdmin(admin.ModelAdmin):
         return "No image"
     vista_previa_imagen.short_description = "Vista Previa de la Imagen"
 
-    fields = ('nombre', 'descripcion', 'fecha_inicio', 'fecha_fin', 'categoria','dependencia', 'activo', 'mentor', 'imagen', 'vista_previa_imagen')
+    fields = ('nombre', 'slug','descripcion', 'fecha_inicio', 'fecha_fin', 'categoria','dependencia', 'activo', 'mentor', 'imagen', 'vista_previa_imagen')
 
     class Media:
         css = {

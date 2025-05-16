@@ -48,6 +48,8 @@ class Proyecto(models.Model):
     imagen = models.ImageField(upload_to='proyectos_imagenes/', blank=True, null=True)  # Campo para una única imagen
     descripcion_corta = models.CharField(max_length=255, blank=True, null=True)  # Campo para una descripción breve
     recursos = None  # Removed ManyToManyField
+    likes = models.PositiveIntegerField(default=0)  # Contador de "me gusta"
+    slug = models.SlugField(max_length=100, unique=True, null=True)  # Campo slug para URL amigable
     dependencia = models.CharField(
         max_length=50,
         choices=DEPENDENCIA_CHOICES,
