@@ -35,13 +35,14 @@
                         <div class="card-body">
                             <ul class="nav nav-tabs separator-tabs ml-0 mb-5" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="first-tab" data-toggle="tab" href="#first" role="tab"
-                                        aria-controls="first" aria-selected="true">Infraestructura Física</a>
+                                    <a class="nav-link active h4 font-weight-bold" id="first-tab" data-toggle="tab" href="#first" role="tab" 
+                                    aria-controls="first" aria-selected="true">Infraestructura Física</a>
                                         <p> El Centro Experimental San Francisco cuenta con una robusta infraestructura física diseñada para facilitar prácticas interdisciplinarias avanzadas en condiciones reales. Entre sus recursos físicos destacan: 
 
                                 </li> 
                             </ul>
                         </div>
+                    
     
         <!-- Columna de imagen -->
         
@@ -162,10 +163,298 @@
                 <img src="{% static 'img/cards/upecsanfrancisco.jpg' %}" alt="Imagen derecha" class="img-fluid rounded shadow" style="max-height: 300px;">
             </div>
         </div>
-
-
+    </div>
 </div>
-        
+<!--prueba Laboratorios y Plantas Piloto-->
+<style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
+    h2 { text-align: center; margin-bottom: 20px; }
+    .list-modal { list-style: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+    .list-modal li { }
+    .list-modal button {
+      background: #007BFF; color: #fff; border: none; padding: 10px 15px; border-radius: 4px;
+      cursor: pointer; transition: background 0.3s;
+    }
+    .list-modal button:hover { background: #0056b3; }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: auto;
+      padding: 20px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 500px;
+      position: relative;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .modal-content h3 { margin-top: 0; }
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <section id="laboratorios">
+    <h2>Laboratorios y Plantas Piloto</h2>
+    <ul class="list-modal">
+      <li><button data-modal="vet-modal">Laboratorio Veterinario</button></li>
+      <li><button data-modal="lacteos-modal">Planta Piloto de Lácteos</button></li>
+      <li><button data-modal="carnicos-modal">Planta Piloto de Cárnicos</button></li>
+      <li><button data-modal="frutas-modal">Planta de Procesamiento de Frutas</button></li>
+      <li><button data-modal="harinas-modal">Laboratorio de Harinas y Balanceados</button></li>
+    </ul>
+
+    <!-- Modal Veterinario -->
+    <div class="modal" id="vet-modal">
+      <div class="modal-content">
+        <span class="close" data-close>&times;</span>
+        <h3>Laboratorio Veterinario</h3>
+        <p>Especializado en diagnóstico animal, particularmente en enfermedades como la brucelosis, análisis clínicos y estudios nutricionales del ganado.</p>
+      </div>
+    </div>
+
+    <!-- Modal Lácteos -->
+    <div class="modal" id="lacteos-modal">
+      <div class="modal-content">
+        <span class="close" data-close>&times;</span>
+        <h3>Planta Piloto de Lácteos</h3>
+        <p>Equipada con pasteurizadores, homogeneizadores y tanques fermentadores, esta planta permite producir quesos artesanales, yogures y otros derivados lácteos con estándares rigurosos de calidad.</p>
+      </div>
+    </div>
+
+    <!-- Modal Cárnicos -->
+    <div class="modal" id="carnicos-modal">
+      <div class="modal-content">
+        <span class="close" data-close>&times;</span>
+        <h3>Planta Piloto de Cárnicos</h3>
+        <p>Instalaciones para la elaboración artesanal de embutidos, utilizando equipos como cutters y embutidoras para carnes de res y cerdo.</p>
+      </div>
+    </div>
+
+    <!-- Modal Frutas -->
+    <div class="modal" id="frutas-modal">
+      <div class="modal-content">
+        <span class="close" data-close>&times;</span>
+        <h3>Planta de Procesamiento de Frutas</h3>
+        <p>Espacios dedicados a la producción artesanal de jugos, conservas y mermeladas, aprovechando frutas altoandinas.</p>
+      </div>
+    </div>
+
+    <!-- Modal Harinas -->
+    <div class="modal" id="harinas-modal">
+      <div class="modal-content">
+        <span class="close" data-close>&times;</span>
+        <h3>Laboratorio de Harinas y Balanceados</h3>
+        <p>Cuenta con equipos avanzados como molinos de martillos y extrusores para elaborar piensos balanceados y estudiar su impacto en la nutrición animal.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <script>
+    // Abrir modal
+    document.querySelectorAll('[data-modal]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const modal = document.getElementById(btn.dataset.modal);
+        modal.style.display = 'flex';
+      });
+    });
+    // Cerrar modal
+    document.querySelectorAll('.close').forEach(span => {
+      span.addEventListener('click', () => {
+        span.closest('.modal').style.display = 'none';
+      });
+    });
+    // Cerrar al hacer clic fuera del contenido
+    window.addEventListener('click', e => {
+      if (e.target.classList.contains('modal')) {
+        e.target.style.display = 'none';
+      }
+    });
+  </script>
+
+<!--prueba-->
+
+<style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
+    h2 { text-align: center; margin-bottom: 30px; }
+    .infografia {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .item {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .item svg {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 15px;
+      fill: #007BFF;
+    }
+    .item h4 {
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+    .item p {
+      font-size: 0.95rem;
+      line-height: 1.4;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <section class="infografia-section">
+    <h2>Recursos Agropecuarios</h2>
+    <div class="infografia">
+      <!-- Ganadería -->
+      <div class="item">
+        <img src="{% static 'img/vaca.jpg' %}" alt="Vaca" class="img-fluid mb-2" style="max-width: 80px;">
+        <h4>Ganadería</h4>
+        <p>Hato diversificado de aproximadamente 80 cabezas de ganado bovino para leche y carne, además de cuyes y ovejas manejadas bajo sistemas integrados.</p>
+      </div>
+
+      <!-- Cultivos Experimentales -->
+      <div class="item">
+        <img src="{% static 'img/CULTIVO.jpg' %}" alt="Vaca" class="img-fluid mb-2" style="max-width: 90px;">
+        <h4>Cultivos Experimentales</h4>
+        <p>Parcelas agrícolas experimentales dedicadas a cultivos como papa, maíz de altura, hortalizas, fresas y otros cultivos de clima frío.</p>
+      </div>
+
+      <!-- Agricultura Protegida -->
+      <div class="item">
+        <img src="{% static 'img/AGRICULTURA.png' %}" alt="Vaca" class="img-fluid mb-2" style="max-width: 80px;">
+        <h4>Agricultura Protegida</h4>
+        <p>Invernaderos con chapas de policarbonato que permiten la producción continua y experimental de hortalizas y frutas sensibles a las condiciones externas.</p>
+      </div>
+
+      <!-- Frutales -->
+      <div class="item">
+        <img src="{% static 'img/parcela.png' %}" alt="parcela"class="img-fluid mb-2" style="max-width: 80px;">
+        <h4>Frutales</h4>
+        <p>Parcelas específicas para la producción y experimentación con frutales altoandinos como tomate de árbol, uvilla, granadilla y manzana.</p>
+      </div>
+
+      <!-- Conservación de Flora y Fauna -->
+      <div class="item">
+        <img src="{% static 'img/fauna.png' %}" alt="Vaca" class="img-fluid mb-2" style="max-width: 80px;">
+        <h4>Conservación de Flora y Fauna</h4>
+        <p>Áreas dedicadas a la conservación activa con cercos vivos de especies nativas como aliso, polilepis, arrayán y acacias, proporcionando condiciones ideales para estudios forestales y ecológicos.</p>
+      </div>
+    </div>
+  </section>
+
+<!--prueba-->
+
+<!--prueba-->
+
+ <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
+    h2 { text-align: center; margin-bottom: 20px; }
+
+    .tabs {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+    .tab-buttons {
+      display: flex;
+      justify-content: space-around;
+      border-bottom: 2px solid #ccc;
+    }
+    .tab-buttons button {
+      background: none;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.3s;
+    }
+    .tab-buttons button.active {
+      border-color: #007BFF;
+      color: #007BFF;
+      font-weight: bold;
+    }
+    .tab-content {
+      display: none;
+      padding: 20px 0;
+    }
+    .tab-content.active { display: block; }
+  </style>
+</head>
+<body>
+  <section>
+    <h2>Equipamiento y Tecnologías</h2>
+    <div class="tabs">
+      <div class="tab-buttons">
+        <button class="active" data-tab="maquinaria">Maquinaria Agrícola</button>
+        <button data-tab="monitoreo">Monitoreo Ambiental</button>
+        <button data-tab="software">Software</button>
+        <button data-tab="conservacion">Conservación de Agua</button>
+      </div>
+      <div class="tab-content active" id="maquinaria">
+        <p><strong>Maquinaria Agrícola Avanzada:</strong> Dos tractores agrícolas de 85 HP, sembradoras neumáticas, cortadoras y segadoras de forraje para manejo eficiente y profesional de parcelas y pastizales.</p>
+      </div>
+      <div class="tab-content" id="monitoreo">
+        <p><strong>Tecnología de Monitoreo Ambiental:</strong> Uso de drones Phantom 4 RTK para monitoreo de índices NDVI y sistemas de sensores ambientales para análisis preciso del suelo, clima y vegetación.</p>
+      </div>
+      <div class="tab-content" id="software">
+        <p><strong>Software Especializado:</strong> Sistemas avanzados como QGIS, Farm Management Systems y bases de datos PostGIS para mapeo agrícola detallado y planificación productiva eficiente.</p>
+      </div>
+      <div class="tab-content" id="conservacion">
+        <p><strong>Sistemas de Conservación de Agua:</strong> Infraestructura tecnológica para la conservación hídrica y protección contra erosión del suelo, integrando prácticas sostenibles con tecnología avanzada.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const buttons = document.querySelectorAll('.tab-buttons button');
+    const contents = document.querySelectorAll('.tab-content');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
+
+<!--prueba-->
+
+
 
         
 
