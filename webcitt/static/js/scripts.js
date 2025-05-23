@@ -474,3 +474,38 @@ $(document).ready(function() {
         updateMenuButtonState();
     }
 });
+
+function replaceContent(url, fileName) {
+  const contentContainer = document.getElementById('dynamic-content');
+  const fileExtension = fileName.split('.').pop().toLowerCase();
+
+  contentContainer.innerHTML = '';
+
+  if (['png', 'jpg', 'jpeg', 'gif'].includes(fileExtension)) {
+    const img = document.createElement('img');
+    img.src = url;
+    img.style.maxWidth = '100%';
+    img.style.maxHeight = '630px';
+    img.style.display = 'block';
+    img.style.margin = '0 auto';
+    contentContainer.appendChild(img);
+  } else if (['mp4', 'avi', 'mov', 'mkv'].includes(fileExtension)) {
+    const video = document.createElement('video');
+    video.src = url;
+    video.controls = true;
+    video.style.maxWidth = '100%';
+    video.style.maxHeight = '630px';
+    video.style.display = 'block';
+    video.style.margin = '0 auto';
+    contentContainer.appendChild(video);
+  } else if (['pdf'].includes(fileExtension)) {
+    const iframe = document.createElement('iframe');
+    iframe.src = url;
+    iframe.style.width = '100%';
+    iframe.style.height = '630px';
+    iframe.style.border = 'none';
+    contentContainer.appendChild(iframe);
+  } else {
+    contentContainer.innerHTML = '<p class="text-danger">El tipo de archivo no es soportado.</p>';
+  }
+}

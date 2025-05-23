@@ -1309,3 +1309,10 @@ p, .card-text,
 .icon {
   font-family:'simple-line-icons' !important;
 }
+#dynamic-content {
+  min-height: 650px;
+  max-height: 650px;
+  height: 650px;
+  overflow: auto;
+  position: relative;
+}
