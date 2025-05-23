@@ -184,3 +184,5 @@ class Integrante(models.Model):
     
     def __str__(self):
         return f"{self.usuario.first_name} {self.usuario.last_name} - {self.proyecto.nombre}"
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'

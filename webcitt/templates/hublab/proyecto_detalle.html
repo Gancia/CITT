@@ -72,50 +72,55 @@
 
         <div class="tab-content card mb-2 ">
   <!-- Tab content area -->
-  <div id="dynamic-content" class="tab-content card mb-2">
+  <div id="dynamic-content" class="tab-content card mb-2" style="height:630px; min-height:630px; max-height:630px; overflow:auto;">
     <!-- Contenido inicial -->
     <div class="content-section" data-view="simuladores">
       <iframe id="dynamic-iframe" width="100%" height="630" src="{% static 'img/360/lacteos1/index.html' %}" style="border:none;"></iframe>
     </div>
   </div>
 
-  <script>
-    function replaceContent(url, fileName) {
-      const contentContainer = document.getElementById('dynamic-content');
-      const fileExtension = fileName.split('.').pop();
+  <!-- Incluye PDF.js desde CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+function replaceContent(url, fileName) {
+  const contentContainer = document.getElementById('dynamic-content');
+  const fileExtension = fileName.split('.').pop().toLowerCase();
+  contentContainer.innerHTML = '';
 
-      // Limpia el contenido actual
-      contentContainer.innerHTML = '';
-
-      // Carga el contenido dependiendo del tipo de archivo
-      if (['png', 'jpg', 'jpeg', 'gif'].includes(fileExtension)) {
-        // Imagen
+  if (['pdf'].includes(fileExtension)) {
+    contentContainer.innerHTML = '<div id="pdf-viewer" style="height:630px; overflow:auto;"></div>';
+    const pdfjsLib = window['pdfjs-dist/build/pdf'];
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    pdfjsLib.getDocument(url).promise.then(function(pdf) {
+      pdf.getPage(1).then(function(page) {
+        var scale = 1.5;
+        var viewport = page.getViewport({scale: scale});
+        var canvas = document.createElement('canvas');
+        var context = canvas.getContext('2d');
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+        document.getElementById('pdf-viewer').appendChild(canvas);
+        page.render({canvasContext: context, viewport: viewport});
+      });
+    });
+  } else if (['png', 'jpg', 'jpeg', 'gif'].includes(fileExtension)) {
         const img = document.createElement('img');
         img.src = url;
         img.style.maxWidth = '100%';
         img.style.height = 'auto';
         contentContainer.appendChild(img);
       } else if (['mp4', 'avi', 'mov', 'mkv'].includes(fileExtension)) {
-        // Video
         const video = document.createElement('video');
         video.src = url;
         video.controls = true;
         video.style.maxWidth = '100%';
+        video.style.height = '100%';
         contentContainer.appendChild(video);
-      } else if (['pdf'].includes(fileExtension)) {
-        // PDF
-        const iframe = document.createElement('iframe');
-        iframe.src = url;
-        iframe.style.width = '100%';
-        iframe.style.height = '630px';
-        iframe.style.border = 'none';
-        contentContainer.appendChild(iframe);
       } else {
-        // Archivo no soportado
         contentContainer.innerHTML = '<p class="text-danger">El tipo de archivo no es soportado.</p>';
       }
-    }
-  </script>
+}
+</script>
           
         </div>
       </div>
