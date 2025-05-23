@@ -2,6 +2,7 @@ from django.db import models
 from django.core.validators import FileExtensionValidator
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
+import zipfile
 
 class Categoria(models.Model):
     nombre = models.CharField(max_length=100, unique=True)
@@ -68,11 +69,28 @@ class CarpetaSubmodulo(models.Model):
     def __str__(self):
         return self.nombre
 
-class CarpetaRecurso(models.Model):  # Nuevo modelo para representar carpetas
-    nombre = models.CharField(max_length=255, unique=True)
+class CarpetaRecurso(models.Model):  # Modelo para representar carpetas
+    MODULO_CHOICES = [
+        ('presentacion', 'Presentación'),
+        ('recursosAprendizaje', 'Recursos de Aprendizaje y Práctica'),
+        ('investigacion', 'Investigación, Innovación y Desarrollo'),
+        ('servicios', 'Servicios y Soporte'),
+        ('colaboracion', 'Colaboración y Networking')
+    ]
+    nombre = models.CharField(max_length=255)
+    proyecto = models.ForeignKey(
+        'Proyecto',
+        on_delete=models.CASCADE,  # Asegura que las carpetas se eliminen solo con su proyecto
+        related_name='carpetas',
+        help_text="Proyecto al que pertenece esta carpeta."
+    )
+    modulo = models.CharField(max_length=50, choices=MODULO_CHOICES, default='presentacion')
+
+    class Meta:
+        unique_together = ('nombre', 'proyecto')  # Garantiza que no haya duplicados por proyecto
 
     def __str__(self):
-        return self.nombre
+        return self.nombre  # Muestra solo el nombre de la carpeta
 
 class Archivo(models.Model):
     TIPO_ARCHIVO_CHOICES = [
@@ -99,33 +117,24 @@ class Archivo(models.Model):
         return f"{self.tipo} - {self.archivo.name if self.archivo else self.url}"
 
 class Recurso(models.Model):  # Renombrado de Submodulo a Recurso
-    MODULO_CHOICES = [
-        ('presentacion', 'Presentación'),
-        ('recursosAprendizaje', 'Recursos de Aprendizaje y Práctica'),
-        ('investigacion', 'Investigación, Innovación y Desarrollo'),
-        ('servicios', 'Servicios y Soporte'),
-        ('colaboracion', 'Colaboración y Networking')
-    ]
-
     nombre = models.CharField(max_length=255)
     proyecto = models.ForeignKey(
         'Proyecto',  # Relación con el modelo Proyecto
         on_delete=models.CASCADE,
         related_name='recursos',  # Updated related_name
         help_text="Proyecto al que pertenece este recurso.",
-        default=1  # Replace '1' with the ID of your placeholder project
+        default=1  # Replace '1' with el ID de un proyecto existente
     )
-    modulo = models.CharField(max_length=50, choices=MODULO_CHOICES)
-    archivos = models.ManyToManyField(
-        'ArchivoRecurso',
+    archivo = models.FileField(
+        upload_to='recursos/archivos/',
         blank=True,
-        related_name='recursos',
-        help_text="Suba uno o varios archivos asociados a este recurso."
+        null=True,
+        help_text="Suba un archivo ZIP que contenga un archivo HTML."
     )
     activo = models.BooleanField(default=True)
     carpeta = models.ForeignKey(
         'CarpetaRecurso',
-        on_delete=models.SET_NULL,
+        on_delete=models.SET_NULL,  # Agregado el argumento obligatorio
         null=True,
         blank=True,
         related_name='recursos'

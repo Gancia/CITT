@@ -71,147 +71,52 @@
         </div>
 
         <div class="tab-content card mb-2 ">
-          <div class="tab-pane fade " id="galeria" role="tabpanel" aria-labelledby="first-tab">
-            <div id="carouselProductos" class="carousel slide" data-ride="carousel">
-                <!-- Indicadores -->
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselProductos" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselProductos" data-slide-to="1"></li>
-                    <li data-target="#carouselProductos" data-slide-to="2"></li>
-                    <li data-target="#carouselProductos" data-slide-to="3"></li>
-                    <li data-target="#carouselProductos" data-slide-to="4"></li>
-                    <li data-target="#carouselProductos" data-slide-to="5"></li>
-                </ol>
-                
-                <!-- Slides -->
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="{% static 'img/products/P6.png' %}" class="d-block w-100" alt="Producto 6">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="{% static 'img/products/P1.png' %}" class="d-block w-100" alt="Producto 1">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="{% static 'img/products/P3.png' %}" class="d-block w-100" alt="Producto 3">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="{% static 'img/products/P4.png' %}" class="d-block w-100" alt="Producto 4">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="{% static 'img/products/P5.png' %}" class="d-block w-100" alt="Producto 5">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="{% static 'img/products/P2.png' %}" class="d-block w-100" alt="Producto 2">
-                    </div>
-                </div>
-                
-                <!-- Controles -->
-                <a class="carousel-control-prev" href="#carouselProductos" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Anterior</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselProductos" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Siguiente</span>
-                </a>
-            </div>
-        
-            <!-- Miniaturas -->
-            <div class="row mt-3">
-                <div class="col-2">
-                    <img src="{% static 'img/products/P6.png' %}" class="img-thumbnail" data-target="#carouselProductos" data-slide-to="0">
-                </div>
-                <div class="col-2">
-                    <img src="{% static 'img/products/P1.png' %}" class="img-thumbnail" data-target="#carouselProductos" data-slide-to="1">
-                </div>
-                <div class="col-2">
-                    <img src="{% static 'img/products/P3.png' %}" class="img-thumbnail" data-target="#carouselProductos" data-slide-to="2">
-                </div>
-                <div class="col-2">
-                    <img src="{% static 'img/products/P4.png' %}" class="img-thumbnail" data-target="#carouselProductos" data-slide-to="3">
-                </div>
-                <div class="col-2">
-                    <img src="{% static 'img/products/P5.png' %}" class="img-thumbnail" data-target="#carouselProductos" data-slide-to="4">
-                </div>
-                <div class="col-2">
-                    <img src="{% static 'img/products/P2.png' %}" class="img-thumbnail" data-target="#carouselProductos" data-slide-to="5">
-                </div>
-            </div>
-        </div>
-          <!-- Contenido de Simuladores -->
-          <div class="tab-pane fade show active" id="simuladores" role="tabpanel"
-            aria-labelledby="second-tab">
-            <div class="content-section " data-view="simuladores">
-              <iframe width="100%" height="630" src="{% static 'img/360/lacteos1/index.html' %}"
-                style="border:none;"></iframe>
-            </div>
-          </div>
+  <!-- Tab content area -->
+  <div id="dynamic-content" class="tab-content card mb-2">
+    <!-- Contenido inicial -->
+    <div class="content-section" data-view="simuladores">
+      <iframe id="dynamic-iframe" width="100%" height="630" src="{% static 'img/360/lacteos1/index.html' %}" style="border:none;"></iframe>
+    </div>
+  </div>
 
-          <!-- Contenido de Simuladores -->
-          <div class="tab-pane fade " id="tutoriales" role="tabpanel"
-            aria-labelledby="third-tab">
-            <div class="video-container">
-              <iframe
-                width="100%"
-                height="630"
-                src="https://www.youtube.com/embed/Z4AuIpzZUTc"
-                frameborder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-            </div>
-          </div>
+  <script>
+    function replaceContent(url, fileName) {
+      const contentContainer = document.getElementById('dynamic-content');
+      const fileExtension = fileName.split('.').pop();
 
-          <!-- PDF Viewer -->
-          <div class="tab-pane fade" id="docs" role="tabpanel"
-            aria-labelledby="four-tab"
-            class="content-section"
-            data-view="documentosPDF">
-            <div class="video-container">
-              <div class="pdf-viewer-container">
-                <iframe
-                  src="{% static 'img/documentos/GUÍA DIDÁCTICA Unidad 2.pdf' %}"
-                  frameborder="0"
-                  allowfullscreen></iframe>
-              </div>
-            </div>
+      // Limpia el contenido actual
+      contentContainer.innerHTML = '';
 
-            <style>
-                    .video-container {
-                      position: relative;
-
-                      height: 620px;
-                      overflow: hidden;
-                    }
-                  
-                    .video-container .pdf-viewer-container {
-                      position: absolute;
-                      top: 0;
-                      left: 0;
-                      width: 100%;
-                      height: 100%;
-                    }
-                  
-                    .pdf-viewer-container iframe {
-                      width: 100%;
-                      height: 100%;
-                    }
-                  </style>
-          </div>
-
-          <!-- Contenido de Simuladores -->
-          <div class="tab-pane fade" id="documentacions" role="tabpanel"
-            aria-labelledby="four-tab">
-            <div class="video-container">
-              <iframe
-                width="100%"
-                height="610"
-                src="https://www.youtube.com/embed/Z4AuIpzZUTc"
-                frameborder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-            </div>
-          </div>
-
+      // Carga el contenido dependiendo del tipo de archivo
+      if (['png', 'jpg', 'jpeg', 'gif'].includes(fileExtension)) {
+        // Imagen
+        const img = document.createElement('img');
+        img.src = url;
+        img.style.maxWidth = '100%';
+        img.style.height = 'auto';
+        contentContainer.appendChild(img);
+      } else if (['mp4', 'avi', 'mov', 'mkv'].includes(fileExtension)) {
+        // Video
+        const video = document.createElement('video');
+        video.src = url;
+        video.controls = true;
+        video.style.maxWidth = '100%';
+        contentContainer.appendChild(video);
+      } else if (['pdf'].includes(fileExtension)) {
+        // PDF
+        const iframe = document.createElement('iframe');
+        iframe.src = url;
+        iframe.style.width = '100%';
+        iframe.style.height = '630px';
+        iframe.style.border = 'none';
+        contentContainer.appendChild(iframe);
+      } else {
+        // Archivo no soportado
+        contentContainer.innerHTML = '<p class="text-danger">El tipo de archivo no es soportado.</p>';
+      }
+    }
+  </script>
+          
         </div>
       </div>
     </div>
@@ -248,206 +153,56 @@
         <br>
         <div>
           <div id="accordion">
+            {% for carpeta in proyecto.carpetas.all %}
             <div>
-              <button class="btn btn-link collapsed btn btn-warning default btn-block mb-2"style="text-align: left; font-size: 12px !important;"
-                data-toggle="collapse" data-target="#collapseOne"
-                aria-expanded="true" aria-controls="collapseOne">
-                <i class="simple-icon-login "></i>
-                <span class="d-inline-block "style="   font-size: 15px; text-align: left;">Acerca de la planta piloto</span>
+              <button class="btn btn-link collapsed btn btn-warning default btn-block mb-2"
+                style="text-align: left; font-size: 12px !important;"
+                data-toggle="collapse" data-target="#collapse{{ forloop.counter }}"
+                aria-expanded="true" aria-controls="collapse{{ forloop.counter }}">
+                <i class="simple-icon-login"></i>
+                <span class="d-inline-block" style="font-size: 15px; text-align: left;">{{ carpeta.nombre }}</span>
               </button>
-                <div id="collapseOne" class="collapse" data-parent="#accordion">
-                <div class="pb-1 mb-3 card" style=" padding: 5px;">
-          <div
-            class="card-headers glide gallery glide--ltr glide--carousel glide--swipeable" >
-            <ul class=" nav pb-1"  role="tablist" >
-              <li class="nav-item btn-block" >
-                <a class="nav-link btn btn-light default" style="text-align: left; font-size: 12px !important; padding: 4px;" id="first-tab" data-toggle="tab"
-                  href="#galeria" role="tab"
-                  aria-controls="first" aria-selected="true"><i
-                    class="iconsminds-home large-icon1 initial-height "></i>Descripción</a>
-              </li>
-              <li class="nav-item btn-block mb-0"> 
-                <a class="nav-link active btn btn-light default btn-block" style="text-align: left; font-size: 12px !important; padding: 4px;" id="second-tab" data-toggle="tab"
-                  href="#simuladores" role="tab"
-                  aria-controls="second" aria-selected="false"><i
-                    class="iconsminds-gear large-icon1 initial-height"></i>Vídeo Promo </a>
-              </li>
-              <li class="nav-item btn-block mb-0">
-                <a class="nav-link btn btn-light default btn-block" style="text-align: left; font-size: 12px !important; padding: 4px;" id="third-tab" data-toggle="tab"
-                  href="#tutoriales" role="tab"
-                  aria-controls="third" aria-selected="false"><i
-                    class="iconsminds-optimization large-icon1 initial-height"></i>Recorrido virtual 360 en imagenes</a>
-              </li>
-              <li class="nav-item btn-block mb-0">
-                <a class="nav-link btn btn-light default btn-block" style="text-align: left; font-size: 12px !important; padding: 4px;" id="four-tab" data-toggle="tab" href="#docs"
-                  role="tab"
-                  aria-controls="four" aria-selected="false"><i
-                    class="iconsminds-conference large-icon1 initial-height"></i>Recorrido virtual 360 en vídeo</a>
-              </li>
-              <li class="nav-item btn-block " style="padding: 0px;">
-                <a class="nav-link btn btn-light default btn-block" style="text-align: left; font-size: 12px !important; padding: 4px;" id="five-tab" data-toggle="tab" href="#docs"
-                  role="tab"
-                  aria-controls="five" aria-selected="false"><i
-                    class="iconsminds-conference large-icon1 initial-height"></i>La planta en modelado 3D</a>
-              </li>
-                            <li class="nav-item btn-block " style="padding: 0px;">
-                <a class="nav-link btn btn-light default btn-block" style="text-align: left; font-size: 12px !important; padding: 4px;" id="five-tab" data-toggle="tab" href="#docs"
-                  role="tab"
-                  aria-controls="five" aria-selected="false"><i
-                    class="iconsminds-conference large-icon1 initial-height"></i>Descripción del sistema de producción</a>
-              </li>
-            </ul>
-          </div>
-                  </li>                
+              <div id="collapse{{ forloop.counter }}" class="collapse" data-parent="#accordion">
+                <div class="pb-1 mb-3 card" style="padding: 5px;">
+                  <div class="card-headers glide gallery glide--ltr glide--carousel glide--swipeable">
+                    <ul class="nav pb-1" role="tablist">
+                      {% for recurso in carpeta.recursos.all %}
+                      <li class="nav-item btn-block">
+                        {% if recurso.archivo %}
+                        <a class="nav-link btn btn-light default"
+                          style="text-align: left; font-size: 12px !important; padding: 4px;"
+                          href="javascript:void(0);"
+                          onclick="replaceContent('{{ recurso.archivo.url }}', '{{ recurso.archivo.name|lower }}')">
+                          <i class="iconsminds-folder"></i>
+                          {{ recurso.nombre }}
+                        </a>
+                        {% else %}
+                        <span class="nav-link btn btn-light default text-muted"
+                          style="text-align: left; font-size: 12px !important; padding: 4px;">
+                          <i class="iconsminds-folder"></i>
+                          {{ recurso.nombre }}
+                        </span>
+                        {% endif %}
+                      </li>
+                      {% empty %}
+                      <li class="nav-item btn-block">
+                        <span class="text-muted">No hay recursos disponibles</span>
+                      </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <div>
-              <button class="btn btn-link collapsed btn btn-warning default  btn-block mb-2 " style="text-align: left;"
-                data-toggle="collapse" data-target="#collapseTwo"
-                aria-expanded="false"
-                aria-controls="collapseTwo">
-
-                <i class="simple-icon-login "></i>
-                <span class="d-inline-block">Proceso Refrigeración</span>
-              </button>
-              <div id="collapseTwo" class="collapse" data-parent="#accordion">
-                
-                <div class="pb-1 mb-3 card" style=" padding: 5px;">
-                  <li class="btn btn-info default mb-1" style="text-align: left; font-size: 12px !important;">
-                    <a href="{% url 'hublab_planta_lacteos2' %}">
-
-                      <i class="iconsminds-monitor---tablet active "></i>
-                      <span class=" d-inline-block "
-                     >Descripción</span>
-                    </a>
-                  </li>
-                  <li class="btn btn-light default mb-1" style="text-align: left; font-size: 12px !important;">
-                    <a href="#">
-                      <i class="iconsminds-monitor---tablet"></i>
-                      <span class="d-inline-block">Simulación proceso en RV</span>
-                    </a>
-                  </li>
-                  <li class="btn btn-light default mb-1" style="text-align: left; font-size: 12px !important;">
-                    <a href="#">
-                      <i class="iconsminds-monitor---tablet"></i>
-                      <span class="d-inline-block">Simulación proceso en Realidad Aumentada</span>
-                    </a>
-                  </li>
-                    <li class="btn btn-light default mb-1" style="text-align: left; font-size: 12px !important;">
-                    <a href="#">
-                      <i class="iconsminds-monitor---tablet"></i>
-                      <span class="d-inline-block">Documentación del proceso</span>
-                    </a>
-                  </li>
-                  <li class="btn btn-light default mb-1" style="text-align: left; font-size: 12px !important;">
-                    <a href="#">
-                      <i class="iconsminds-monitor---tablet"></i>
-                      <span class="d-inline-block">Maquinaria y equipo</span>
-                    </a>
-                  </li>
-                  <li class="btn btn-light default mb-1" style="text-align: left; font-size: 12px !important;">
-                    <a href="#">
-                      <i class="iconsminds-monitor---tablet"></i>
-                      <span class="d-inline-block">Distribución de planta</span>
-                    </a>
-                  </li>
-                  <li class="btn btn-light default mb-1" style="text-align: left; font-size: 12px !important;">
-                    <a href="#">
-                      <i class="iconsminds-monitor---tablet"></i>
-                      <span class="d-inline-block">Vídeo tutorial Reconocimiento general</span>
-                    </a>
-                  </li>
-                                    <li class="btn btn-light default mb-1" style="text-align: left; font-size: 12px !important;">
-                    <a href="#">
-                      <i class="iconsminds-monitor---tablet"></i>
-                      <span class="d-inline-block">Vídeo recorrido virtual del proceso en 360 </span>
-                    </a>
-                  </li>
-                                    <li class="btn btn-light default mb-1" style="text-align: left; font-size: 12px !important;">
-                    <a href="#">
-                      <i class="iconsminds-monitor---tablet"></i>
-                      <span class="d-inline-block">Guía de práctica 1</span>
-                    </a>
-                  </li>
-                                    <li class="btn btn-light default mb-1" style="text-align: left; font-size: 12px !important;">
-                    <a href="#">
-                      <i class="iconsminds-monitor---tablet"></i>
-                      <span class="d-inline-block">Guía de práctica 2</span>
-                    </a>
-                  </li>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <button class="btn btn-link collapsed btn btn-warning default btn-block mb-2" style="text-align: left;"
-                data-toggle="collapse" data-target="#collapseThree"
-                aria-expanded="false"
-                aria-controls="collapseThree">
-                <i class="simple-icon-login "></i>
-                <span class="d-inline-block">Prácticas Guiadas</span>
-              </button>
-              <div id="collapseThree" class="collapse" data-parent="#accordion">
-                <div class="pb-2">
-                  <li>
-                    <a href="#">
-                      <i class="iconsminds-monitor---tablet"></i>
-                      <span class="d-inline-block">Ejercicios prácticos </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="iconsminds-monitor---tablet"></i>
-                      <span class="d-inline-block">Ejercicios prácticos 2</span>
-                    </a>
-                  </li>
-                </div>
-              </div>
-            </div>
-            <div>
-              <button class="btn btn-link collapsed btn btn-warning default btn-block mb-2 " style="text-align: left;"
-                data-toggle="collapse" data-target="#collapseFour"
-                aria-expanded="false"
-                aria-controls="collapseFour">
-                <i class="simple-icon-login "></i>
-                <span class="d-inline-block">Proyectos y Ejercicios</span>
-              </button>
-              <div id="collapseFour" class="collapse" data-parent="#accordion">
-                <div class="pb-2">
-                  <li>
-                    <a href="#">
-                      <i class="iconsminds-monitor---tablet"></i>
-                      <span class="d-inline-block">Repositorios de
-                        proyectos</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="iconsminds-monitor---tablet"></i>
-                      <span class="d-inline-block">Plantillas de
-                        proyectos</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="iconsminds-monitor---tablet"></i>
-                      <span class="d-inline-block">Ejercicios prácticos</span>
-                    </a>
-                  </li>
-                </div>
-              </div>
-            </div>
+            {% empty %}
+            <p class="text-muted">No hay carpetas disponibles para este proyecto.</p>
+            {% endfor %}
           </div>
         </div>
       </div>
     </div>
-
-
   </div>
 
-</div>
 {% endblock %}
 
 {% block extra_scripts %}

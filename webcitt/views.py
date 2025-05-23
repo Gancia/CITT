@@ -262,14 +262,13 @@ def hublab_planta_lacteos4_view(request):
         'seccion_activa': 'hublab'
     })
 
-def proyecto_detalle_view(request, nombre):
-    # Obtener el proyecto por su ID (pk)
-    proyecto = get_object_or_404(Proyecto, slug=nombre)
+def proyecto_detalle_view(request, slug):
+    proyecto = get_object_or_404(Proyecto, slug=slug)
 
-    # Pasar el proyecto al contexto
     context = {
         'proyecto': proyecto,
-        'seccion_activa': 'hublab'   }
+        'seccion_activa': 'hublab'
+    }
     return render(request, 'hublab/proyecto_detalle.html', context)
 
 # Formación

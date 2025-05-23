@@ -12,9 +12,30 @@ class ArchivoRecursoInline(admin.TabularInline):
 class RecursoInline(admin.TabularInline):
     model = Recurso
     extra = 1
-    fields = ('nombre', 'modulo', 'proyecto', 'carpeta', 'activo', 'archivos')
-    filter_horizontal = ('archivos',)
+    fields = ('nombre', 'proyecto', 'carpeta', 'archivo', 'activo')  # Cambiado 'archivos' por 'archivo'
     readonly_fields = ('proyecto',)
+
+    def formfield_for_foreignkey(self, db_field, request, **kwargs):
+        if db_field.name == "carpeta":
+            if request.resolver_match.kwargs.get('object_id'):
+                proyecto_id = request.resolver_match.kwargs['object_id']
+                kwargs["queryset"] = CarpetaRecurso.objects.filter(proyecto_id=proyecto_id)
+        return super().formfield_for_foreignkey(db_field, request, **kwargs)
+
+class CarpetaRecursoInline(admin.TabularInline):
+    model = CarpetaRecurso
+    extra = 1
+    fields = ('nombre', 'modulo')
+    verbose_name = "Carpeta"
+    verbose_name_plural = "Carpetas"
+
+    def get_queryset(self, request):
+        # Filtra las carpetas para que solo se muestren las del proyecto actual
+        qs = super().get_queryset(request)
+        if request.resolver_match.kwargs.get('object_id'):
+            proyecto_id = request.resolver_match.kwargs['object_id']
+            return qs.filter(proyecto_id=proyecto_id)
+        return qs.none()
 
 @admin.register(Proyecto)
 class ProyectoAdmin(admin.ModelAdmin):
@@ -22,7 +43,7 @@ class ProyectoAdmin(admin.ModelAdmin):
     list_editable = ('activo',)
     list_filter = ('dependencia', 'categoria', 'activo')
     search_fields = ('nombre', 'mentor__username','slug')
-    inlines = [RecursoInline]
+    inlines = [CarpetaRecursoInline, RecursoInline]  # Incluye las carpetas como inline
     readonly_fields = ('vista_previa_imagen',)
 
     def vista_previa_imagen(self, obj):
@@ -53,12 +74,11 @@ class IntegranteAdmin(admin.ModelAdmin):
 
 @admin.register(Recurso)
 class RecursoAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'modulo', 'proyecto', 'carpeta', 'activo')
+    list_display = ('nombre', 'proyecto', 'carpeta', 'archivo', 'activo')  # Cambiado 'archivos' por 'archivo'
     list_editable = ('activo',)
-    list_filter = ('activo', 'modulo', 'carpeta', 'proyecto')
+    list_filter = ('activo', 'carpeta', 'proyecto')
     search_fields = ('nombre', 'carpeta__nombre', 'proyecto__nombre')
-    fields = ('nombre', 'modulo', 'proyecto', 'carpeta', 'activo', 'archivos')
-    filter_horizontal = ('archivos',)
+    fields = ('nombre', 'proyecto', 'carpeta', 'archivo', 'activo')  # Cambiado 'archivos' por 'archivo'
 
     class Media:
         js = ('js/admin_recurso.js',)
@@ -72,8 +92,10 @@ class ArchivoRecursoAdmin(admin.ModelAdmin):
 
 @admin.register(CarpetaRecurso)
 class CarpetaRecursoAdmin(admin.ModelAdmin):
-    list_display = ('nombre',)
-    search_fields = ('nombre',)
+    list_display = ('nombre', 'proyecto', 'modulo')
+    list_filter = ('proyecto', 'modulo')
+    search_fields = ('nombre', 'proyecto__nombre')
+    fields = ('nombre', 'proyecto', 'modulo')
 
 class CustomAdminSite(admin.AdminSite):
     site_header = "Administración de WebCITT"
@@ -93,8 +115,6 @@ class CustomAdminSite(admin.AdminSite):
             path('custom-view/', self.admin_view(self.custom_view))
         ]
         return custom_urls + urls
-
-    
 
 admin_site = CustomAdminSite(name='custom_admin')
 
