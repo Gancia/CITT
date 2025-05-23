@@ -88,12 +88,19 @@ function replaceContent(url, fileName) {
   contentContainer.innerHTML = '';
 
   if (['zip'].includes(fileExtension)) {
-    // Supón que la URL del ZIP es /media/recursos/archivos/miarchivo.zip
-    // y que el index.html está en /media/recursos/archivos/miarchivo/index.html
+    // Construye la ruta al index.html descomprimido
     const folder = fileName.replace('.zip', '');
     const indexUrl = `/media/recursos/archivos/${folder}/index.html`;
     const iframe = document.createElement('iframe');
     iframe.src = indexUrl;
+    iframe.style.width = '100%';
+    iframe.style.height = '630px';
+    iframe.style.border = 'none';
+    contentContainer.appendChild(iframe);
+  } else if (['html'].includes(fileExtension)) {
+    // Instancia el iframe para archivos HTML directos
+    const iframe = document.createElement('iframe');
+    iframe.src = url;
     iframe.style.width = '100%';
     iframe.style.height = '630px';
     iframe.style.border = 'none';
@@ -115,21 +122,21 @@ function replaceContent(url, fileName) {
       });
     });
   } else if (['png', 'jpg', 'jpeg', 'gif'].includes(fileExtension)) {
-        const img = document.createElement('img');
-        img.src = url;
-        img.style.maxWidth = '100%';
-        img.style.height = 'auto';
-        contentContainer.appendChild(img);
-      } else if (['mp4', 'avi', 'mov', 'mkv'].includes(fileExtension)) {
-        const video = document.createElement('video');
-        video.src = url;
-        video.controls = true;
-        video.style.maxWidth = '100%';
-        video.style.height = '100%';
-        contentContainer.appendChild(video);
-      } else {
-        contentContainer.innerHTML = '<p class="text-danger">El tipo de archivo no es soportado.</p>';
-      }
+    const img = document.createElement('img');
+    img.src = url;
+    img.style.maxWidth = '100%';
+    img.style.height = 'auto';
+    contentContainer.appendChild(img);
+  } else if (['mp4', 'avi', 'mov', 'mkv'].includes(fileExtension)) {
+    const video = document.createElement('video');
+    video.src = url;
+    video.controls = true;
+    video.style.maxWidth = '100%';
+    video.style.height = '100%';
+    contentContainer.appendChild(video);
+  } else {
+    contentContainer.innerHTML = '<p class="text-danger">El tipo de archivo no es soportado.</p>';
+  }
 }
 </script>
           

@@ -1,5 +1,6 @@
-from django.urls import path, include
+from django.urls import path, include, re_path
 from . import views
+from .views import media_no_xframe
 
 
 #Ulrs de la aplicacion webcitt
@@ -60,4 +61,5 @@ urlpatterns = [
     path('hublab/planta-lacteos4', views.hublab_planta_lacteos4_view, name='hublab_planta_lacteos4'),
 
     path('proyecto/<slug:slug>/', views.proyecto_detalle_view, name='proyecto_detalle'),
+    re_path(r'^media/(?P<path>.*)$', media_no_xframe),
 ]

@@ -3,6 +3,9 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from webcitt.models import Proyecto, Categoria
+from django.http import FileResponse, Http404
+from django.conf import settings
+import os
 
 # Create your views here.
 def home_view(request):
@@ -311,3 +314,12 @@ def register_view(request):
 def salir(request):
     logout(request)
     return redirect('home')
+
+def media_no_xframe(request, path):
+    file_path = os.path.join(settings.MEDIA_ROOT, path)
+    if not os.path.exists(file_path):
+        raise Http404()
+    response = FileResponse(open(file_path, 'rb'))
+    # Elimina la cabecera X-Frame-Options
+    response['X-Frame-Options'] = ''
+    return response
