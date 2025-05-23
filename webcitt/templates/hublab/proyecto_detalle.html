@@ -147,31 +147,184 @@
             </div>
           </div>
 
-          <!-- Contenido de Simuladores -->
+          <!-- Contenido de Investigación -->
           <div class="tab-pane fade " id="tutoriales" role="tabpanel"
             aria-labelledby="third-tab">
             <div class="video-container">
-              <iframe
-                width="100%"
-                height="630"
-                src="https://www.youtube.com/embed/Z4AuIpzZUTc"
-                frameborder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
+              <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 30px;
+    }
+
+    .accordion {
+      background-color:rgb(23, 136, 61);
+      color: white;
+      cursor: pointer;
+      padding: 15px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+      margin-bottom: 5px;
+      border-radius: 5px;
+    }
+
+    .accordion:hover {
+      background-color: rgb(56, 179, 97);
+    }
+
+    .panel {
+      padding: 0 15px;
+      background-color: white;
+      display: none;
+      overflow: hidden;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .panel p {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Proyectos de investigación</h2>
+
+  <button class="accordion"><h2>2025</h2></button>
+  <div class="panel">
+    <p>• Martínez, L. (2024). Logística 4.0 en entornos virtuales. Revista Logística y Tecnología.
+Innovación aplicada: Uso de gemelos digitales en procesos logísticos internos.
+Colaboraciones: Convenio con el laboratorio RX de la UPEC.
+Propiedad intelectual: 1 software en proceso de registro SENADI.</p>
+    <p>• Referencia B</p>
+  </div>
+
+  <button class="accordion"><h2>2024</h2></button>
+  <div class="panel">
+    <p>• Referencia C</p>
+    <p>• Referencia D</p>
+  </div>
+
+  <button class="accordion"><h2>2023</h2></button>
+  <div class="panel">
+    <p>• Referencia E</p>
+    <p>• Referencia F</p>
+  </div>
+
+  <!--button class="accordion">Fecha 4: 20/04/2025</button>
+  <div class="panel">
+    <p>• Referencia G</p>
+    <p>• Referencia H</p>
+  </div>
+
+  <button class="accordion">Fecha 5: 05/05/2025</button>
+  <div class="panel">
+    <p>• Referencia I</p>
+    <p>• Referencia J</p>
+  </div-->
+
+  <script>
+    const acc = document.querySelectorAll(".accordion");
+    acc.forEach(btn => {
+      btn.addEventListener("click", function () {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    });
+  </script>
+
             </div>
           </div>
 
-          <!-- PDF Viewer -->
+          <!-- PDF contacto -->
+           
+
           <div class="tab-pane fade" id="docs" role="tabpanel"
             aria-labelledby="four-tab"
             class="content-section"
             data-view="documentosPDF">
             <div class="video-container">
               <div class="pdf-viewer-container">
-                <iframe
-                  src="{% static 'img/documentos/GUÍA DIDÁCTICA Unidad 2.pdf' %}"
-                  frameborder="0"
-                  allowfullscreen></iframe>
+                <head>
+    <title>Mapa UPEC - Contacto</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Estilos de Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+        }
+
+        .info {
+            flex: 1;
+            padding: 40px;
+            background-color: #f2f2f2;
+        }
+
+        .info h2 {
+            margin-top: 0;
+        }
+
+        #map {
+            flex: 1;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="info">
+        <h2>Contacto</h2>
+        <p><strong>Universidad Politécnica Estatal del Carchi (UPEC)</strong></p>
+        <p>Dirección: Av. Universitaria y Eloy Alfaro, Tulcán, Ecuador</p>
+        <p>Teléfono: +593 6 298-1114</p>
+        <p>Correo: info@upec.edu.ec</p>
+        <p>Sitio web: <a href="https://www.upec.edu.ec" target="_blank">www.upec.edu.ec</a></p>
+    </div>
+
+    <div id="map"></div>
+</div>
+
+<!-- Script de Leaflet -->
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+<script>
+    const upecCoords = [0.8043331672443506, -77.73481800078392]; 
+
+    var map = L.map('map').setView(upecCoords, 15);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    L.marker(upecCoords).addTo(map)
+        .bindPopup("<b>Universidad Politécnica Estatal del Carchi</b><br>Tulcán, Provincia del Carchi")
+        .openPopup();
+</script>
+
+</body>
               </div>
             </div>
 
