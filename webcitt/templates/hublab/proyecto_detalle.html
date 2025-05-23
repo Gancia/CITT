@@ -87,7 +87,18 @@ function replaceContent(url, fileName) {
   const fileExtension = fileName.split('.').pop().toLowerCase();
   contentContainer.innerHTML = '';
 
-  if (['pdf'].includes(fileExtension)) {
+  if (['zip'].includes(fileExtension)) {
+    // Supón que la URL del ZIP es /media/recursos/archivos/miarchivo.zip
+    // y que el index.html está en /media/recursos/archivos/miarchivo/index.html
+    const folder = fileName.replace('.zip', '');
+    const indexUrl = `/media/recursos/archivos/${folder}/index.html`;
+    const iframe = document.createElement('iframe');
+    iframe.src = indexUrl;
+    iframe.style.width = '100%';
+    iframe.style.height = '630px';
+    iframe.style.border = 'none';
+    contentContainer.appendChild(iframe);
+  } else if (['pdf'].includes(fileExtension)) {
     contentContainer.innerHTML = '<div id="pdf-viewer" style="height:630px; overflow:auto;"></div>';
     const pdfjsLib = window['pdfjs-dist/build/pdf'];
     pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
@@ -177,13 +188,25 @@ function replaceContent(url, fileName) {
                           {% for recurso in carpeta.recursos.all %}
                           <li class="nav-item btn-block">
                             {% if recurso.archivo %}
-                            <a class="nav-link btn btn-light default"
-                              style="text-align: left; font-size: 12px !important; padding: 4px;"
-                              href="javascript:void(0);"
-                              onclick="replaceContent('{{ recurso.archivo.url }}', '{{ recurso.archivo.name|lower }}')">
-                              <i class="iconsminds-folder"></i>
-                              {{ recurso.nombre }}
-                            </a>
+                              {% if recurso.archivo.name|lower|slice:"-4:" == ".zip" %}
+  {% with recurso.archivo.url|cut:".zip"|add:"/index.html" as index_url %}
+    <a class="nav-link btn btn-light default"
+      style="text-align: left; font-size: 12px !important; padding: 4px;"
+      href="javascript:void(0);"
+      onclick="replaceContent('{{ index_url }}', 'index.html')">
+      <i class="iconsminds-folder"></i>
+      {{ recurso.nombre }}
+    </a>
+  {% endwith %}
+{% else %}
+  <a class="nav-link btn btn-light default"
+    style="text-align: left; font-size: 12px !important; padding: 4px;"
+    href="javascript:void(0);"
+    onclick="replaceContent('{{ recurso.archivo.url }}', '{{ recurso.archivo.name|lower }}')">
+    <i class="iconsminds-folder"></i>
+    {{ recurso.nombre }}
+  </a>
+{% endif %}
                             {% else %}
                             <span class="nav-link btn btn-light default text-muted"
                               style="text-align: left; font-size: 12px !important; padding: 4px;">

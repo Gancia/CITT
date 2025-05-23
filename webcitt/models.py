@@ -3,6 +3,8 @@ from django.core.validators import FileExtensionValidator
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 import zipfile
+import os
+from django.conf import settings
 
 class Categoria(models.Model):
     nombre = models.CharField(max_length=100, unique=True)
@@ -142,6 +144,16 @@ class Recurso(models.Model):  # Renombrado de Submodulo a Recurso
 
     def __str__(self):
         return self.nombre
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        if self.archivo and self.archivo.name.endswith('.zip'):
+            folder_name = os.path.splitext(os.path.basename(self.archivo.name))[0]
+            destino = os.path.join(settings.MEDIA_ROOT, 'recursos/archivos', folder_name)
+            os.makedirs(destino, exist_ok=True)
+            archivo_zip_path = self.archivo.path
+            with zipfile.ZipFile(archivo_zip_path, 'r') as zip_ref:
+                zip_ref.extractall(destino)
 
 def validar_tipo_archivo(archivo, tipo):
     if tipo == 'pdf' and not archivo.name.endswith('.pdf'):

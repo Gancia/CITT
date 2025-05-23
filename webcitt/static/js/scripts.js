@@ -477,7 +477,12 @@ $(document).ready(function() {
 
 function replaceContent(url, fileName) {
   const contentContainer = document.getElementById('dynamic-content');
-  const fileExtension = fileName.split('.').pop().toLowerCase();
+  // Si fileName no tiene extensión, usa la de la URL
+  let fileExtension = fileName.split('.').pop().toLowerCase();
+  if (fileExtension === fileName.toLowerCase()) {
+    // No hay extensión en fileName, intenta con la URL
+    fileExtension = url.split('.').pop().toLowerCase();
+  }
 
   contentContainer.innerHTML = '';
 
@@ -499,6 +504,13 @@ function replaceContent(url, fileName) {
     video.style.margin = '0 auto';
     contentContainer.appendChild(video);
   } else if (['pdf'].includes(fileExtension)) {
+    const iframe = document.createElement('iframe');
+    iframe.src = url;
+    iframe.style.width = '100%';
+    iframe.style.height = '630px';
+    iframe.style.border = 'none';
+    contentContainer.appendChild(iframe);
+  } else if (['html'].includes(fileExtension)) {
     const iframe = document.createElement('iframe');
     iframe.src = url;
     iframe.style.width = '100%';
