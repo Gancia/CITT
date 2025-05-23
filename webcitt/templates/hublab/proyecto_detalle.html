@@ -35,34 +35,34 @@
         <div class="card mb-1 " style="padding: 5px;">
           <div
             class="card-headers glide gallery glide--ltr glide--carousel glide--swipeable">
-            <ul class=" nav  " role="tablist">
-              <li class="nav-item ">
-                <a class="nav-link btn btn-primary default" id="first-tab" data-toggle="tab"
-                  href="#galeria" role="tab"
+            <ul class="nav" role="tablist" id="modulo-tabs">
+              <li class="nav-item">
+                <a class="nav-link btn btn-primary default btn-block " id="first-tab" data-toggle="tab"
+                  href="javascript:void(0);" data-modulo="inicio" role="tab"
                   aria-controls="first" aria-selected="true"><i
                     class="iconsminds-home large-icon1 initial-height "></i>Inicio</a>
               </li>
-              <li class="nav-item"> 
-                <a class="nav-link active btn btn-primary default btn-block" id="second-tab" data-toggle="tab"
-                  href="#simuladores" role="tab"
+              <li class="nav-item">
+                <a class="nav-link btn btn-primary default active " id="second-tab" data-toggle="tab"
+                  href="javascript:void(0);" data-modulo="recursosAprendizaje" role="tab"
                   aria-controls="second" aria-selected="false"><i
                     class="iconsminds-gear large-icon1 initial-height"></i>Recursos de Aprendizaje y Práctica</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link btn btn-primary default btn-block" id="third-tab" data-toggle="tab"
-                  href="#tutoriales" role="tab"
+                  href="javascript:void(0);" data-modulo="investigacion" role="tab"
                   aria-controls="third" aria-selected="false"><i
                     class="iconsminds-optimization large-icon1 initial-height"></i>Investigación, Innovación y Desarrollo</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link btn btn-primary default btn-block" id="four-tab" data-toggle="tab" href="#docs"
-                  role="tab"
+                <a class="nav-link btn btn-primary default btn-block" id="four-tab" data-toggle="tab"
+                  href="javascript:void(0);" data-modulo="servicios" role="tab"
                   aria-controls="four" aria-selected="false"><i
                     class="iconsminds-conference large-icon1 initial-height"></i>Servicios y Soporte</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link btn btn-primary default btn-block" id="five-tab" data-toggle="tab" href="#docs"
-                  role="tab"
+                <a class="nav-link btn btn-primary default btn-block" id="five-tab" data-toggle="tab"
+                  href="javascript:void(0);" data-modulo="colaboracion" role="tab"
                   aria-controls="five" aria-selected="false"><i
                     class="iconsminds-conference large-icon1 initial-height"></i>Contacto</a>
               </li>
@@ -153,49 +153,57 @@
         <br>
         <div>
           <div id="accordion">
-            {% for carpeta in proyecto.carpetas.all %}
-            <div>
-              <button class="btn btn-link collapsed btn btn-warning default btn-block mb-2"
-                style="text-align: left; font-size: 12px !important;"
-                data-toggle="collapse" data-target="#collapse{{ forloop.counter }}"
-                aria-expanded="true" aria-controls="collapse{{ forloop.counter }}">
-                <i class="simple-icon-login"></i>
-                <span class="d-inline-block" style="font-size: 15px; text-align: left;">{{ carpeta.nombre }}</span>
-              </button>
-              <div id="collapse{{ forloop.counter }}" class="collapse" data-parent="#accordion">
-                <div class="pb-1 mb-3 card" style="padding: 5px;">
-                  <div class="card-headers glide gallery glide--ltr glide--carousel glide--swipeable">
-                    <ul class="nav pb-1" role="tablist">
-                      {% for recurso in carpeta.recursos.all %}
-                      <li class="nav-item btn-block">
-                        {% if recurso.archivo %}
-                        <a class="nav-link btn btn-light default"
-                          style="text-align: left; font-size: 12px !important; padding: 4px;"
-                          href="javascript:void(0);"
-                          onclick="replaceContent('{{ recurso.archivo.url }}', '{{ recurso.archivo.name|lower }}')">
-                          <i class="iconsminds-folder"></i>
-                          {{ recurso.nombre }}
-                        </a>
-                        {% else %}
-                        <span class="nav-link btn btn-light default text-muted"
-                          style="text-align: left; font-size: 12px !important; padding: 4px;">
-                          <i class="iconsminds-folder"></i>
-                          {{ recurso.nombre }}
-                        </span>
-                        {% endif %}
-                      </li>
-                      {% empty %}
-                      <li class="nav-item btn-block">
-                        <span class="text-muted">No hay recursos disponibles</span>
-                      </li>
-                      {% endfor %}
-                    </ul>
+            {% for modulo in modulos %}
+            <div class="modulo-carpeta-list" data-modulo="{{ modulo }}" style="{% if not forloop.first %}display:none;{% endif %}">
+              {% for carpeta in proyecto.carpetas.all %}
+                {% if carpeta.modulo == modulo %}
+                <div>
+                  <button class="btn btn-link collapsed btn btn-warning default btn-block mb-2"
+                    style="text-align: left; font-size: 12px !important;"
+                    data-toggle="collapse" data-target="#collapseCarpeta{{ forloop.parentloop.counter }}_{{ forloop.counter }}"
+                    aria-expanded="false" aria-controls="collapseCarpeta{{ forloop.parentloop.counter }}_{{ forloop.counter }}">
+                    <i class="simple-icon-login"></i>
+                    <span class="d-inline-block" style="font-size: 15px; text-align: left;">{{ carpeta.nombre }}</span>
+                  </button>
+                  <div id="collapseCarpeta{{ forloop.parentloop.counter }}_{{ forloop.counter }}" class="collapse" data-parent="#accordion">
+                    <div class="pb-1 mb-3 card" style="padding: 5px;">
+                      <div class="card-headers glide gallery glide--ltr glide--carousel glide--swipeable">
+                        <ul class="nav pb-1" role="tablist">
+                          {% for recurso in carpeta.recursos.all %}
+                          <li class="nav-item btn-block">
+                            {% if recurso.archivo %}
+                            <a class="nav-link btn btn-light default"
+                              style="text-align: left; font-size: 12px !important; padding: 4px;"
+                              href="javascript:void(0);"
+                              onclick="replaceContent('{{ recurso.archivo.url }}', '{{ recurso.archivo.name|lower }}')">
+                              <i class="iconsminds-folder"></i>
+                              {{ recurso.nombre }}
+                            </a>
+                            {% else %}
+                            <span class="nav-link btn btn-light default text-muted"
+                              style="text-align: left; font-size: 12px !important; padding: 4px;">
+                              <i class="iconsminds-folder"></i>
+                              {{ recurso.nombre }}
+                            </span>
+                            {% endif %}
+                          </li>
+                          {% empty %}
+                          <li class="nav-item btn-block">
+                            <span class="text-muted">No hay recursos disponibles</span>
+                          </li>
+                          {% endfor %}
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
+                {% endif %}
+              {% empty %}
+                <p class="text-muted">No hay carpetas disponibles para este módulo.</p>
+              {% endfor %}
             </div>
             {% empty %}
-            <p class="text-muted">No hay carpetas disponibles para este proyecto.</p>
+            <p class="text-muted">No hay módulos disponibles para este proyecto.</p>
             {% endfor %}
           </div>
         </div>
@@ -207,4 +215,21 @@
 
 {% block extra_scripts %}
 <!-- Scripts específicos para la página de inicio si son necesarios -->
+<script>
+  // Mostrar solo las carpetas del módulo seleccionado
+  document.querySelectorAll('#modulo-tabs .nav-link').forEach(tab => {
+    tab.addEventListener('click', function() {
+      document.querySelectorAll('#modulo-tabs .nav-link').forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+      var modulo = this.getAttribute('data-modulo');
+      document.querySelectorAll('.modulo-carpeta-list').forEach(list => {
+        if (list.getAttribute('data-modulo') === modulo) {
+          list.style.display = '';
+        } else {
+          list.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
 {% endblock %}

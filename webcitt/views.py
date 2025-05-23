@@ -264,9 +264,12 @@ def hublab_planta_lacteos4_view(request):
 
 def proyecto_detalle_view(request, slug):
     proyecto = get_object_or_404(Proyecto, slug=slug)
+    # Obtener los módulos únicos de las carpetas relacionadas con el proyecto
+    modulos = proyecto.carpetas.values_list('modulo', flat=True).distinct()
 
     context = {
         'proyecto': proyecto,
+        'modulos': modulos,  # Pasar los módulos al contexto
         'seccion_activa': 'hublab'
     }
     return render(request, 'hublab/proyecto_detalle.html', context)

@@ -71,7 +71,7 @@ class CarpetaSubmodulo(models.Model):
 
 class CarpetaRecurso(models.Model):  # Modelo para representar carpetas
     MODULO_CHOICES = [
-        ('presentacion', 'Presentación'),
+        ('inicio', 'Inicio'),  # Cambiado de 'presentacion' a 'inicio'
         ('recursosAprendizaje', 'Recursos de Aprendizaje y Práctica'),
         ('investigacion', 'Investigación, Innovación y Desarrollo'),
         ('servicios', 'Servicios y Soporte'),
@@ -84,7 +84,7 @@ class CarpetaRecurso(models.Model):  # Modelo para representar carpetas
         related_name='carpetas',
         help_text="Proyecto al que pertenece esta carpeta."
     )
-    modulo = models.CharField(max_length=50, choices=MODULO_CHOICES, default='presentacion')
+    modulo = models.CharField(max_length=50, choices=MODULO_CHOICES, default='inicio')
 
     class Meta:
         unique_together = ('nombre', 'proyecto')  # Garantiza que no haya duplicados por proyecto
