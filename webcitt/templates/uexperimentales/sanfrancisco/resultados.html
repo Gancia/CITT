@@ -1,2 +1,300 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block content %}
+
+<div class="container-fluid disable-text-selection">
+    <div class="row ">
+        <div class="col-12">
+        <div class="mb-3">
+            <h1>Resultados e Impactos</h1>
+
+            <nav class="breadcrumb-container d-none d-sm-block d-lg-inline-block" aria-label="breadcrumb">
+                <ol class="breadcrumb pt-0">
+                    <li class="breadcrumb-item">
+                        <a href="{% url 'uexperimentales' %}">Unidades Experimentales</a>
+                    </li>
+
+                    <li class="breadcrumb-item active" aria-current="page">Centro Experimental San Francisco</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+  <div class="col-12 survey-app text-center">
+    <div class="overlay-card">
+      <div class="card-overlay">
+        <h2>Impacto Educativo</h2>
+        <p>El CESF ha demostrado un notable impacto en la formación académica y desarrollo de competencias:</p>
+        <ul>
+          <li><strong>Incremento en Desempeño Académico:</strong> Aumentos del 5% al 20% en las notas promedio en ciencias naturales y sociales.</li>
+          <li>Beneficia a estudiantes de Educación Inicial y Básica, Enfermería, Laboratorio Clínico, Ciencias de la Actividad Física y Multimedia.</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="col-12 survey-app text-center">
+      <div class="split-card">
+        <div class="split-text">
+          <h2>Producción Sostenible</h2>
+          <p>Los programas y técnicas implementadas por el CESF han resultado en mejoras palpables en la productividad agrícola y pecuaria:</p>
+          <ul>
+            <li><strong>Productividad Ganadera:</strong> Incrementos del 12% en la producción lechera, gracias a la rotación de pastos y silvopastoreo con pasturas mejoradas como <em>Megathyrsus maximus</em>.</li>
+            <li><strong>Rendimientos Agrícolas:</strong> Rotación de cultivos y conservación de suelos para estabilizar y mejorar cultivos como papa, maíz, hortalizas y frutas altoandinas.</li>
+          </ul>
+        </div>
+        <div class="split-image">
+          <img src="{% static 'img/produccion.png' %}" alt="Producción Sostenible">
+        </div>
+      </div>
+    </div>
+            
+                    <!-- Contenedores futuristas -->
+
+                    </div>
+                </div>
+            </div>
+
+
+      
+
+  
+
+    <>
+  
+  
+
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block extra_scripts %}
+
+<!--PRIMERA CARD-->
+
+      
+      <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .overlay-card {
+      position: relative;
+      width: 100%;
+  /* max-width: 900px; */ /* Elimina o comenta esta línea */
+      height: 350px;
+      margin: 0;
+      border-radius: 0;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      background-image: url('https://images.unsplash.com/photo-1577896851231-70ef18881754');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .card-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 55%;
+      height: 100%;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(8px);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .card-overlay h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #2e7d32;
+    }
+
+    .card-overlay ul {
+      padding-left: 20px;
+      list-style-type: disc;
+    }
+
+    .card-overlay li {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .overlay-card {
+        flex-direction: column;
+        height: auto;
+      }
+
+
+      .card-overlay {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .overlay-card,
+    .split-card,
+    .tab-card {
+      margin-bottom: 32px; /* Espacio entre cards */
+    }
+  </style>
+
+<!--Imagen card-->>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    .split-card {
+      display: flex;
+      width: 100%;
+  /* max-width: 1000px; */ /* Elimina o comenta esta línea */
+      height: 350px;
+      margin: 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      border-radius: 0;
+      overflow: hidden;
+    }
+
+    .split-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0 12px 12px 0;
+  }
+    
+    .split-text {
+      flex: 1;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(8px);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .split-text h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #2e7d32;
+    }
+
+    .split-text ul {
+      padding-left: 20px;
+    }
+
+    .split-text li {
+      margin-bottom: 8px;
+    }
+
+    .split-image {
+      flex: 1;
+      background-image: url('https://images.unsplash.com/photo-1577985051169-b1699d5fc57e'); /* Puedes cambiar esta URL */
+      background-size: cover;
+      background-position: center;
+    }
+
+    @media (max-width: 768px) {
+      .split-card {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .split-image {
+        height: 200px;
+      }
+    }
+
+    .overlay-card,
+    .split-card,
+    .tab-card {
+      margin-bottom: 32px; /* Espacio entre cards */
+    }
+  </style>
+
+<!-- Tabbed Card" (Tarjeta con pestañas)-->
+
+ <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .tab-card {
+      width: 100%;
+      margin: 0;
+      max-width: 800px;
+      background: white;
+      border-radius: 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+
+    .tabs {
+      display: flex;
+      background-color: #2e7d32;
+    }
+
+    .tab-button {
+      flex: 1;
+      padding: 15px;
+      text-align: center;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s;
+    }
+
+    .tab-button:hover, .tab-button.active {
+      background-color: #388e3c;
+      border-bottom: 3px solid #fff;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 25px;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      color: #2e7d32;
+    }
+
+    .overlay-card, .split-card, .tab-card {
+    margin-bottom: 32px; /* Espacio entre cards */
+    }
+      </style>
+
+
+  {% endblock %}

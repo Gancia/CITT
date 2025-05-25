@@ -2,26 +2,34 @@
 {% load static %}
 
 {% block content %}
-<div class="container-fluid disable-text-selection">
-  <div class="row">
-    <div class="col-12">
 
-      <div class="mb-3">
-        <h1>Servicios Ofrecidos</h1>
-        <nav class="breadcrumb-container d-none d-sm-block d-lg-inline-block" aria-label="breadcrumb">
-          <ol class="breadcrumb pt-0">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Library</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Data</li>
-          </ol>
-        </nav>
+      <div class="container-fluid disable-text-selection">
+    <div class="row ">
+      <div class="col-12">
+        <div class="mb-3">
+            <h1><a href="{% url 'uexperimentales' %}">SERVICIOS OFRECIDOS</a></h1>
+
+
+            <nav class="breadcrumb-container d-none d-sm-block d-lg-inline-block" aria-label="breadcrumb">
+                <ol class="breadcrumb pt-0">
+                    <li class="breadcrumb-item">
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#">Library</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Data</li>
+                </ol>
+            </nav>
+            <ul class="nav nav-tabs separator-tabs ml-0 mb-5" role="tablist"></ul>
+        </div>
       </div>
 
       
 
       <!-- CONTENEDOR DE CARDS -->
       <div class="row">
-        <div class="col-md-12 col-lg-8 mx-auto">
+        <div class="col-md-12 survey-app text-center ">
 
           <!-- CARD 1 -->
           <div class="card filter-card">
@@ -84,53 +92,134 @@
 
           <!-- CARD 2 -->
           <div class="card">
-            <div class="card-title">Investigación Aplicada y Consultoría Técnica</div>
+            <div class="col-12 survey-app text-center  "></div>
+            <div class="card-title"><h2>Investigación Aplicada y Consultoría Técnica</h2></div>
             <div class="card-content">
                  <div class="card-container"> <h3>El CESF proporciona servicios avanzados de investigación y consultoría especializada que
 contribuyen al desarrollo sostenible regional:</h3> 
                     <div class="card-container">
-    
-    <!-- Card 1 -->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          Consultoría Técnica
-        </div>
-        <div class="flip-card-back">
-          Asesoría especializada en prácticas agrícolas y pecuarias sostenibles, mejora de pasturas, sanidad animal, fertilización racional y diseño de sistemas eficientes de riego.
-        </div>
-      </div>
-    </div>
+                      <!-- Card 1 -->
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            Consultoría Técnica
+                          </div>
+                          <div class="flip-card-back">
+                            Asesoría especializada en prácticas agrícolas y pecuarias sostenibles, mejora de pasturas, sanidad animal, fertilización racional y diseño de sistemas eficientes de riego.
+                          </div>
+                        </div>
+                      </div>
 
-    <!-- Card 2 -->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          Proyectos de Innovación
-        </div>
-        <div class="flip-card-back">
-          Estudios específicos en suelos, salud animal, agroindustria, gestión ambiental y desarrollo de tecnologías agrícolas 4.0, brindando soluciones prácticas e innovadoras.
-        </div>
-      </div>
-    </div>
+                      <!-- Card 2 -->
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            Proyectos de Innovación
+                          </div>
+                          <div class="flip-card-back">
+                            Estudios específicos en suelos, salud animal, agroindustria, gestión ambiental y desarrollo de tecnologías agrícolas 4.0, brindando soluciones prácticas e innovadoras.
+                          </div>
+                        </div>
+                      </div>
 
-    <!-- Card 3 -->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          Transferencia Tecnológica
-        </div>
-        <div class="flip-card-back">
-          Colaboración con organizaciones locales y nacionales para transferir tecnologías y metodologías sostenibles de manera efectiva.
-        </div>
-      </div>
-    </div>
-</div>
-                <!-- Flip Card 1 -->
-  
+                      <!-- Card 3 -->
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            Transferencia Tecnológica
+                          </div>
+                          <div class="flip-card-back">
+                            Colaboración con organizaciones locales y nacionales para transferir tecnologías y metodologías sostenibles de manera efectiva.
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  
+                  <!-- Flip Card 1 -->
+                  <div class="col-12 survey-app text-center  ">
+                    <div class="card-title"><h2>Visitas Guiadas y Turismo Educativo</h2></div>
+                    <div class="card-content">
+                      <div class="card-container"> <h3>El CESF ofrece experiencias educativas únicas a través de programas turísticos diseñados
+                      específicamente para estudiantes de Educación Inicial y Básica, colegios, universidades, productores
+                      y público general:</h3>
+                      <div class="card-container">
+                        <div class="container">
+                          <!-- Recorridos Temáticos -->
+                          <div class="card">
+                            <img src="{% static 'img/recorido.png' %}">
+                          <div class="card-content">
+                            <!--span class="tag"--> <!--/span-->
+                            <h3>Recorridos Temáticos:</h3>
+                            <p>Visitas estructuradas que promueven el aprendizaje activo sobre 
+                              producción agropecuaria, conservación ambiental y procesos agroindustriales.</p>
+                          </div>
+                        </div>
 
-        </div>
-      </div>
+                        <!-- Talleres Vivenciales -->
+                        <div class="card">
+                          <img src="{% static 'img/taller.png' %}" alt="Talleres Vivenciales">
+                          <div class="card-content">
+                            <!--span class="tag"--> <!--/span-->
+                            <h3>Talleres Vivenciales:</h3>
+                            <p>Campamentos científicos, talleres prácticos de ciencias naturales y experiencias 
+                              directas en agricultura, pastoreo y conservación ambiental.</p>
+                          </div>
+                        </div>
+
+                        <!-- Programas Integrados -->
+                        <div class="card">
+                          <img src="{% static 'img/gran.png' %}" alt="Programas Integrados">
+                          <div class="card-content">
+                            <!--span class="tag"--><!--/span-->
+                            <h3>Programas Integrados:</h3>
+                            <p> Estancias educativas tipo "Granja-Escuela", enfocadas en competencias
+                               interdisciplinarias y fortalecimiento de destrezas ambientales y sociales.</p>
+                          </div>
+                        </div>
+                       </div>
+                      </div>
+                    </div>  
+                  </div>
+<!-- Tarjeta 1: Tienda Agro-UPEC-->
+                    <div class="card-title"><h2>Extensión, Comercialización y Venta de Productos</h2></div>
+                     <div class="card-content">
+                        <div class="icon-card-row" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">                        
+                          <div class="icon-card" onclick="toggleContent('icon-card1')">
+                            <i class="fas fa-store"></i>
+                            <h3>Tienda Agro-UPEC</h3>
+                            <div id="icon-card1" class="icon-card-content">
+                              <p>Elaborados en el CESF y disponibles en:</p>
+                              <ul>
+                              <li>🛍️ Promueve el consumo responsable</li>
+                              <li>💼 Apoya la economía local</li>
+                              <li>📚 Prácticas en Administración, Comercio Exterior, Logística y Contabilidad</li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        
+                        <div class="icon-card" onclick="toggleContent('icon-card2')">
+                          <i class="fas fa-cheese"></i>
+                          <h3>Productos Agroindustriales</h3>
+                          <div id="icon-card2" class="icon-card-content">
+                            <p>Elaborados en el CESF y disponibles en:</p>
+                            <ul>
+                              <li>🧀 Quesos artesanales</li>
+                              <li>🥛 Yogures probióticos</li>
+                              <li>🍹 Jugos naturales</li>
+                              <li>🍓 Mermeladas artesanales</li>
+                              <li>🍞 Panadería y pastelería saludable</li>
+                              <li>🛒 Ferias, eventos y comercio electrónico</li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        <script>
+                          function toggleContent(id) {
+                            const content = document.getElementById(id);
+                            content.classList.toggle("show");
+                          }
+                        </script>
 
       <script>
         const filterButtons = document.querySelectorAll('.filter-card .filters button');
@@ -154,7 +243,7 @@ contribuyen al desarrollo sostenible regional:</h3>
 {% endblock %}
 
 {% block extra_scripts %}
-<!-- Scripts adicionales si se requieren -->
+
  <!-- ESTILOS -->
       <style>
         .card {
@@ -284,7 +373,157 @@ contribuyen al desarrollo sostenible regional:</h3>
       line-height: 1.4em;
       text-align: left;
     }
+    .close-card-btn {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    background: transparent;
+    border: none;
+    font-size: 1.5em;
+    color: #888;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .card {
+    position: relative; /* Para que el botón se posicione dentro de la card */
+  }
   </style>
+
+  <!-- ESTILOS de card educativo-->
+
+
+   <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 30px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content h3 {
+      margin-top: 0;
+      color: #2c3e50;
+    }
+
+    .card-content p {
+      font-size: 0.95em;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .tag {
+      display: inline-block;
+      background-color: #e3f2fd;
+      color: #1565c0;
+      padding: 6px 12px;
+      font-size: 0.8em;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+  </style>
+
+
+  <!--tarjetas interactivas tipo Icon Card-->
+
+  <style>
+    {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f1f1f1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 40px;
+      gap: 20px;
+    }
+    
+
+    .icon-card {
+      width: 320px;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 20px;
+      cursor: pointer;
+      transition: transform 0.3s;
+      position: relative;
+      margin: 20px auto;
+    }
+
+    .icon-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .icon-card i {
+      font-size: 60px;
+      color: #2e7d32;
+      margin-bottom: 15px;
+    }
+
+    .icon-card h3 {
+      margin: 10px 0;
+      font-size: 20px;
+      color: #333;
+    }
+
+    .icon-card-content {
+      margin-top: 10px;
+      display: none;
+      text-align: left;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #444;
+    }
+
+    .icon-card-content.show {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    .icon-card ul {
+      padding-left: 20px;
+    }
+  </style>
+
+
 
 
 
