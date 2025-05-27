@@ -21,280 +21,432 @@
         </div>
     </div>
 
-  <div class="col-12 survey-app text-center">
-    <div class="overlay-card">
-      <div class="card-overlay">
-        <h2>Impacto Educativo</h2>
-        <p>El CESF ha demostrado un notable impacto en la formación académica y desarrollo de competencias:</p>
-        <ul>
-          <li><strong>Incremento en Desempeño Académico:</strong> Aumentos del 5% al 20% en las notas promedio en ciencias naturales y sociales.</li>
-          <li>Beneficia a estudiantes de Educación Inicial y Básica, Enfermería, Laboratorio Clínico, Ciencias de la Actividad Física y Multimedia.</li>
-        </ul>
-      </div>
-    </div>
+     <!-- CARD 2 -->
 
+     <div class="row">
+        <div class="col-md-12 survey-app text-center ">
 
-    <div class="col-12 survey-app text-center">
-      <div class="split-card">
-        <div class="split-text">
-          <h2>Producción Sostenible</h2>
-          <p>Los programas y técnicas implementadas por el CESF han resultado en mejoras palpables en la productividad agrícola y pecuaria:</p>
-          <ul>
-            <li><strong>Productividad Ganadera:</strong> Incrementos del 12% en la producción lechera, gracias a la rotación de pastos y silvopastoreo con pasturas mejoradas como <em>Megathyrsus maximus</em>.</li>
-            <li><strong>Rendimientos Agrícolas:</strong> Rotación de cultivos y conservación de suelos para estabilizar y mejorar cultivos como papa, maíz, hortalizas y frutas altoandinas.</li>
-          </ul>
-        </div>
-        <div class="split-image">
-          <img src="{% static 'img/produccion.png' %}" alt="Producción Sostenible">
-        </div>
-      </div>
-    </div>
-            
-                    <!-- Contenedores futuristas -->
-
-                    </div>
-                </div>
+          <!-- CARD 1 -->
+          <div class="card d-flex flex-row align-items-center" style="gap: 24px;">
+            <img src="{% static 'img/impacto.png' %}" alt="Impacto Educativo" style="width:160px; height:160px; object-fit:cover; border-radius:12px;">
+            <div>
+              <h2>Impacto Educativo</h2>
+              <p>
+                El CESF ha demostrado un notable impacto en la formación académica y desarrollo de competencias
+                en estudiantes de diferentes niveles educativos:<br>
+                • Incremento en Desempeño Académico: Se han registrado aumentos significativos del 5% al
+                20% en las notas promedio de ciencias naturales y sociales en estudiantes que participan
+                regularmente en visitas pedagógicas y actividades vivenciales en la finca. Esto es
+                particularmente relevante para las carreras de Educación Inicial y Básica, Enfermería,
+                Laboratorio Clínico, Ciencias de la Actividad Física y Multimedia.
+              </p>
             </div>
+          </div>
+          
+                      <!-- Flip Card 1 -->
+                  <div class="col-12 survey-app text-center  ">
+                    <div class="card-title"><h2>Vinculación Comunitaria</h2></div>
+                    <div class="card-content">
+                      <div class="card-container"> <h3>El CESF mantiene una fuerte relación con las comunidades rurales, aportando conocimiento práctico
+                      y técnico para el desarrollo local:
+                      </h3>
+                      <div class="card-container">
+                        <div class="container">
+                          <!-- Recorridos Temáticos -->
+                          <div class="card">
+                            <img src="{% static 'img/recorido.png' %}">
+                          <div class="card-content">
+                            <!--span class="tag"--> <!--/span-->
+                            <h3>Certificación y Capacitación:</h3>
+                            <p>Se han capacitado y certificado más de 250 productores rurales
+                            en Buenas Prácticas Ganaderas, fortaleciendo la calidad y sostenibilidad de la producción
+                            regional.</p>
+                          </div>
+                        </div>
 
+                        <!-- Talleres Vivenciales -->
+                        <div class="card">
+                          <img src="{% static 'img/taller.png' %}" alt="Talleres Vivenciales">
+                          <div class="card-content">
+                            <!--span class="tag"--> <!--/span-->
+                            <h3>Asesorías Técnicas:</h3>
+                            <p>Programas continuos de asesoría en manejo sanitario, nutricional y
+                            agrícola, contribuyendo directamente a mejorar la productividad y calidad de vida en
+                            comunidades cercanas.</p>
+                          </div>
+                        </div>
 
-      
+                        <!-- Programas Integrados -->
+                        <div class="card">
+                          <img src="{% static 'img/gran.png' %}" alt="Programas Integrados">
+                          <div class="card-content">
+                            <!--span class="tag"--><!--/span-->
+                            <h3>Apoyo a Emprendimientos Locales: </h3>
+                            <p> Se promueven y acompañan activamente
+                            emprendimientos derivados de proyectos estudiantiles y comunitarios, tales como queserías
+                            artesanales, huertos escolares y alojamientos rurales eco-sostenibles.</p>
+                          </div>
+                        </div>
+                       </div>
+                      </div>
+                    </div>  
+                  </div>
+<!-- Tarjeta 1: Tienda Agro-UPEC-->
+                    <div class="card-title"><h2>Producción Sostenible</h2></div>
+                     <div class="card-content">
+                        <div class="icon-card-row" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">                        
+                          <div class="icon-card" onclick="toggleContent('icon-card1')">
+                            <i class="fas fa-store"></i>
+                            <h3>Tienda Agro-UPEC</h3>
+                            <div id="icon-card1" class="icon-card-content">
+                              <p>Productividad Ganadera:</p>
+                              <ul>
+                              <li>🛍️ Promueve el consumo responsable</li>
+                              <li>💼 Apoya la economía local</li>
+                              <li>📚 Prácticas en Administración, Comercio Exterior, Logística y Contabilidad</li>
+                            </ul>
+                          </div>
+                        </div>
 
-  
+                        
+                        <div class="icon-card" onclick="toggleContent('icon-card2')">
+                          <i class="fas fa-cheese"></i>
+                          <h3>Rendimientos Agrícolas:</h3>
+                          <div id="icon-card2" class="icon-card-content">
+                            <p>Rendimientos Agrícolas:</p>
+                            <ul>
+                              <li>🧀 Quesos artesanales</li>
+                              <li>🥛 Yogures probióticos</li>
+                              <li>🍹 Jugos naturales</li>
+                              <li>🍓 Mermeladas artesanales</li>
+                              <li>🍞 Panadería y pastelería saludable</li>
+                              <li>🛒 Ferias, eventos y comercio electrónico</li>
+                            </ul>
+                          </div>
+                        </div>
 
-    <>
-  
-  
+                        <script>
+                          function toggleContent(id) {
+                            const content = document.getElementById(id);
+                            content.classList.toggle("show");
+                          }
+                        </script>
 
+      <script>
+        const filterButtons = document.querySelectorAll('.filter-card .filters button');
+        const items = document.querySelectorAll('.filter-card .list li');
 
+        filterButtons.forEach(btn => {
+          btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.dataset.filter;
+            items.forEach(item => {
+              item.style.display = item.dataset.cat === filter ? '' : 'none';
+            });
+          });
+        });
+      </script>
 
-
-
-
-
-
+    </div>
+  </div>
+</div>
 {% endblock %}
 
 {% block extra_scripts %}
 
-<!--PRIMERA CARD-->
-
-      
+ <!-- ESTILOS -->
       <style>
+        .card {
+          background: #fff;
+          border-radius: 12px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+          margin-bottom: 30px;
+          padding: 20px;
+        }
+
+        .filter-card .header {
+          background: #b3dab6;
+          color: #fff;
+          padding: 16px;
+          border-radius: 12px 12px 0 0;
+        }
+
+        .filter-card .filters {
+          display: flex;
+          gap: 10px;
+          margin: 15px 0;
+        }
+
+        .filter-card .filters button {
+          flex: 1;
+          padding: 10px;
+          border: none;
+          border-radius: 5px;
+          background: #eee;
+          cursor: pointer;
+        }
+
+        .filter-card .filters button.active {
+          background: #21a714;
+          color: #fff;
+        }
+
+        .filter-card .list {
+          max-height: 250px;
+          overflow-y: auto;
+          padding: 10px;
+        }
+
+        .filter-card .list li {
+          list-style: none;
+          padding: 6px 0;
+          border-bottom: 1px solid #ddd;
+        }
+
+        .card-title {
+          font-size: 1.4rem;
+          font-weight: bold;
+          border-bottom: 3px solid green;
+          margin-bottom: 15px;
+        }
+
+        .card-content {
+          color: #555;
+          font-size: 1rem;
+        }
+      </style>
+
+        <!-- ESTILOS de flip-->
+
+    <style>
     body {
-      margin: 0;
-      padding: 0;
       font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
     }
 
-    .overlay-card {
+    .card-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .flip-card {
+      background-color: transparent;
+      width: 250px;
+      height: 180px;
+      perspective: 1000px;
+    }
+
+    .flip-card-inner {
       position: relative;
       width: 100%;
-  /* max-width: 900px; */ /* Elimina o comenta esta línea */
-      height: 350px;
-      margin: 0;
-      border-radius: 0;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-      background-image: url('https://images.unsplash.com/photo-1577896851231-70ef18881754');
-      background-size: cover;
-      background-position: center;
-    }
-
-    .card-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 55%;
       height: 100%;
-      padding: 30px;
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(8px);
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
     }
 
-    .card-overlay h2 {
-      font-size: 24px;
-      margin-bottom: 15px;
-      color: #2e7d32;
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
     }
 
-    .card-overlay ul {
-      padding-left: 20px;
-      list-style-type: disc;
-    }
-
-    .card-overlay li {
-      margin-bottom: 10px;
-      font-size: 15px;
-    }
-
-    @media (max-width: 768px) {
-      .overlay-card {
-        flex-direction: column;
-        height: auto;
-      }
-
-
-      .card-overlay {
-        width: 100%;
-        height: auto;
-      }
-    }
-
-    .overlay-card,
-    .split-card,
-    .tab-card {
-      margin-bottom: 32px; /* Espacio entre cards */
-    }
-  </style>
-
-<!--Imagen card-->>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f4f4f4;
-    }
-
-    .split-card {
-      display: flex;
+    .flip-card-front, .flip-card-back {
+      position: absolute;
       width: 100%;
-  /* max-width: 1000px; */ /* Elimina o comenta esta línea */
-      height: 350px;
-      margin: 0;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      border-radius: 0;
-      overflow: hidden;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      padding: 20px;
+      box-sizing: border-box;
     }
 
-    .split-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0 12px 12px 0;
-  }
-    
-    .split-text {
-      flex: 1;
-      padding: 30px;
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(8px);
-      color: #333;
+    .flip-card-front {
+      background-color: #28a745;
+      color: white;
       display: flex;
-      flex-direction: column;
+      align-items: center;
       justify-content: center;
+      font-weight: bold;
     }
 
-    .split-text h2 {
-      font-size: 24px;
-      margin-bottom: 10px;
-      color: #2e7d32;
+    .flip-card-back {
+      background-color: white;
+      color: #333;
+      transform: rotateY(180deg);
+      font-size: 0.9em;
+      line-height: 1.4em;
+      text-align: left;
+    }
+    .close-card-btn {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    background: transparent;
+    border: none;
+    font-size: 1.5em;
+    color: #888;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .card {
+    position: relative; /* Para que el botón se posicione dentro de la card */
+  }
+  </style>
+
+  <!-- ESTILOS de card educativo-->
+
+
+   <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 30px;
     }
 
-    .split-text ul {
-      padding-left: 20px;
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
     }
 
-    .split-text li {
-      margin-bottom: 8px;
+    .card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .split-image {
-      flex: 1;
-      background-image: url('https://images.unsplash.com/photo-1577985051169-b1699d5fc57e'); /* Puedes cambiar esta URL */
-      background-size: cover;
-      background-position: center;
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
     }
 
-    @media (max-width: 768px) {
-      .split-card {
-        flex-direction: column;
-        height: auto;
-      }
-
-      .split-image {
-        height: 200px;
-      }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
     }
 
-    .overlay-card,
-    .split-card,
-    .tab-card {
-      margin-bottom: 32px; /* Espacio entre cards */
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content h3 {
+      margin-top: 0;
+      color: #2c3e50;
+    }
+
+    .card-content p {
+      font-size: 0.95em;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .tag {
+      display: inline-block;
+      background-color: #e3f2fd;
+      color: #1565c0;
+      padding: 6px 12px;
+      font-size: 0.8em;
+      border-radius: 8px;
+      margin-bottom: 12px;
     }
   </style>
 
-<!-- Tabbed Card" (Tarjeta con pestañas)-->
+   <!--tarjetas interactivas tipo Icon Card-->
 
- <style>
-    body {
+  <style>
+    {
+      box-sizing: border-box;
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
+    }
+
+    body {
+      background-color: #f1f1f1;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       padding: 40px;
+      gap: 20px;
     }
+    
 
-    .tab-card {
-      width: 100%;
-      margin: 0;
-      max-width: 800px;
-      background: white;
-      border-radius: 0;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
-    }
-
-    .tabs {
-      display: flex;
-      background-color: #2e7d32;
-    }
-
-    .tab-button {
-      flex: 1;
-      padding: 15px;
+    .icon-card {
+      width: 320px;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       text-align: center;
+      padding: 20px;
       cursor: pointer;
-      color: white;
-      font-weight: bold;
-      border-bottom: 3px solid transparent;
-      transition: all 0.3s;
+      transition: transform 0.3s;
+      position: relative;
+      margin: 20px auto;
     }
 
-    .tab-button:hover, .tab-button.active {
-      background-color: #388e3c;
-      border-bottom: 3px solid #fff;
+    .icon-card:hover {
+      transform: translateY(-5px);
     }
 
-    .tab-content {
+    .icon-card i {
+      font-size: 60px;
+      color: #2e7d32;
+      margin-bottom: 15px;
+    }
+
+    .icon-card h3 {
+      margin: 10px 0;
+      font-size: 20px;
+      color: #333;
+    }
+
+    .icon-card-content {
+      margin-top: 10px;
       display: none;
-      padding: 25px;
+      text-align: left;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #444;
     }
 
-    .tab-content.active {
+    .icon-card-content.show {
       display: block;
+      animation: fadeIn 0.4s ease;
     }
 
-    ul {
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    .icon-card ul {
       padding-left: 20px;
     }
+  </style>
 
-    li {
-      margin-bottom: 10px;
-    }
 
-    h3 {
-      color: #2e7d32;
-    }
+    
 
-    .overlay-card, .split-card, .tab-card {
-    margin-bottom: 32px; /* Espacio entre cards */
-    }
-      </style>
+  
+
+
+  
+  
+
+
+
+
+
+
 
 
   {% endblock %}
