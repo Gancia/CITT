@@ -1,28 +1,32 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from django.http import HttpResponse
 from django.urls import path
-from .models import Proyecto, Categoria, Mentor, Integrante, Recurso, ArchivoRecurso, CarpetaRecurso
+from .models import Proyecto, Categoria, Mentor, Integrante, Recurso, ArchivoRecurso, CarpetaRecurso, CarpetaSubmodulo
 
 class ArchivoRecursoInline(admin.TabularInline):
     model = ArchivoRecurso
     extra = 1
-    fields = ('tipo', 'archivo', 'url')  # Updated fields
+    fields = ('tipo', 'archivo', 'url')
 
 class RecursoInline(admin.TabularInline):
     model = Recurso
     extra = 1
-    fields = ('nombre', 'modulo', 'proyecto', 'carpeta', 'activo', 'archivos')
-    filter_horizontal = ('archivos',)
+    fields = ('nombre', 'proyecto', 'carpeta', 'activo')
     readonly_fields = ('proyecto',)
+
+class CarpetaSubmoduloInline(admin.TabularInline):
+    model = CarpetaSubmodulo
+    extra = 1
+    fields = ('nombre', 'descripcion')
+    show_change_link = True
 
 @admin.register(Proyecto)
 class ProyectoAdmin(admin.ModelAdmin):
-    list_display = ('nombre','slug', 'dependencia','categoria', 'mentor', 'fecha_inicio', 'fecha_fin', 'activo')
+    list_display = ('nombre', 'slug', 'dependencia', 'categoria', 'mentor', 'fecha_inicio', 'fecha_fin', 'activo')
     list_editable = ('activo',)
     list_filter = ('dependencia', 'categoria', 'activo')
-    search_fields = ('nombre', 'mentor__username','slug')
-    inlines = [RecursoInline]
+    search_fields = ('nombre', 'mentor__username', 'slug')
+    inlines = [RecursoInline, CarpetaSubmoduloInline]
     readonly_fields = ('vista_previa_imagen',)
 
     def vista_previa_imagen(self, obj):
@@ -31,7 +35,7 @@ class ProyectoAdmin(admin.ModelAdmin):
         return "No image"
     vista_previa_imagen.short_description = "Vista Previa de la Imagen"
 
-    fields = ('nombre', 'slug','descripcion', 'fecha_inicio', 'fecha_fin', 'categoria','dependencia', 'activo', 'mentor', 'imagen', 'vista_previa_imagen')
+    fields = ('nombre', 'slug', 'descripcion', 'fecha_inicio', 'fecha_fin', 'categoria', 'dependencia', 'activo', 'mentor', 'imagen', 'vista_previa_imagen')
 
     class Media:
         css = {
@@ -53,12 +57,11 @@ class IntegranteAdmin(admin.ModelAdmin):
 
 @admin.register(Recurso)
 class RecursoAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'modulo', 'proyecto', 'carpeta', 'activo')
+    list_display = ('nombre', 'proyecto', 'carpeta', 'activo')
     list_editable = ('activo',)
-    list_filter = ('activo', 'modulo', 'carpeta', 'proyecto')
+    list_filter = ('activo', 'carpeta', 'proyecto')
     search_fields = ('nombre', 'carpeta__nombre', 'proyecto__nombre')
-    fields = ('nombre', 'modulo', 'proyecto', 'carpeta', 'activo', 'archivos')
-    filter_horizontal = ('archivos',)
+    fields = ('nombre', 'proyecto', 'carpeta', 'activo')
 
     class Media:
         js = ('js/admin_recurso.js',)
@@ -72,8 +75,17 @@ class ArchivoRecursoAdmin(admin.ModelAdmin):
 
 @admin.register(CarpetaRecurso)
 class CarpetaRecursoAdmin(admin.ModelAdmin):
-    list_display = ('nombre',)
-    search_fields = ('nombre',)
+    list_display = ('nombre', 'proyecto', 'modulo')
+    list_filter = ('modulo', 'proyecto')
+    search_fields = ('nombre', 'proyecto__nombre')
+    fields = ('nombre', 'proyecto', 'modulo')
+
+@admin.register(CarpetaSubmodulo)
+class CarpetaSubmoduloAdmin(admin.ModelAdmin):
+    list_display = ('nombre', 'proyecto', 'descripcion')
+    list_filter = ('proyecto',)
+    search_fields = ('nombre', 'proyecto__nombre')
+    fields = ('nombre', 'descripcion', 'proyecto')
 
 class CustomAdminSite(admin.AdminSite):
     site_header = "Administración de WebCITT"
@@ -83,7 +95,7 @@ class CustomAdminSite(admin.AdminSite):
     def each_context(self, request):
         context = super().each_context(request)
         context['css_files'] = [
-            'css/admin_custom.css',  # Ruta del archivo CSS
+            'css/admin_custom.css',
         ]
         return context
 
@@ -93,8 +105,6 @@ class CustomAdminSite(admin.AdminSite):
             path('custom-view/', self.admin_view(self.custom_view))
         ]
         return custom_urls + urls
-
-    
 
 admin_site = CustomAdminSite(name='custom_admin')
 
